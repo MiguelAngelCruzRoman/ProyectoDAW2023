@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AdministradorModel extends Model
+class MedicoModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'alumno';

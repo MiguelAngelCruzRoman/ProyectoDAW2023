@@ -57,7 +57,7 @@
             </form>
 
             <div class="mb-3">
-                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src="" onclick="window.location.href='/administrador/administrarPacientes'">
+                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src="" onclick="window.location.href='/administrador/administrarMedicamentos'">
             </div>
 
         </div>

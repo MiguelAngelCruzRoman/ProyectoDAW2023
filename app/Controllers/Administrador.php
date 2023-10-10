@@ -9,7 +9,7 @@ class Administrador extends BaseController
     public function index()
     {
         return view('common/head').
-               view('common/menu').
+               view('common/menuUsers').
                view('administrador/index').
                view('common/footer');
     }
@@ -73,7 +73,8 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
-    //Sección para pacientes
+
+    //Sección para médicos
     public function administrarMedicos(){
         return view('common/head').
                view('common/menu').
@@ -81,9 +82,50 @@ class Administrador extends BaseController
                view('common/footer');
     }
 
+    public function buscarMedicos(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/administrarMedicos').
+            view('common/footer');
+    }
+
+    public function editarMedico(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/editarMedico').
+            view('common/footer');
+    }
+
+    public function editarMedico2(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/editarMedico2').
+            view('common/footer');
+    }
+
+    public function eliminarMedico(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/eliminarMedico').
+            view('common/footer');
+    }
+
+    public function agregarMedicos(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarMedicos').
+            view('common/footer');
+    }
+
+    public function agregarMedicos2(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarMedicos2').
+            view('common/footer');
+    }
 
 
-    //Sección para pacientes
+    //Sección para medicamentos
     public function administrarMedicamentos(){
         return view('common/head').
                view('common/menu').

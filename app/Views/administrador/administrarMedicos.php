@@ -1,20 +1,20 @@
 <div class="container">
     <div class="row">
-        <h1 align="center">ADMINISTRAR PACIENTES</h1>
+        <h1 align="center">ADMINISTRAR MÉDICOS</h1>
         <div class="col-12">
-        <form action="<?= base_url('index.php/administrador/buscarMedic');?>" method="GET">
+        <form action="<?= base_url('index.php/administrador/buscarMedicos');?>" method="GET">
                 <div class="col-5">
-                    <label for="columnaBusquedaPaciente">Buscar paciente por:</label>
-                    <select name="columnaBusquedaPaciente" class="form-control">
+                    <label for="columnaBusquedaMedicos">Buscar médico por:</label>
+                    <select name="columnaBusquedaMedico" class="form-control">
                             <option value="todo">todos los campos</option>
                             <option value="nombre">nombre</option>
-                            <option value="telefono">número telefónico</option>
-                            <option value="correo">correo</option>
+                            <option value="especialidad">especialidad</option>
+                            <option value="lugarTrabajo">lugar de trabajo</option>
                     </select>
                 </div>
             
                 <div class="col-5">
-                    <label for="elementoBusquedaPaciente">Parecido a:</label>
+                    <label for="elementoBusquedaMedico">Parecido a:</label>
                     <input type="text" class="form-control" name="valorCompararBusqueda" value="cualquiera">
                 </div>
 
@@ -30,10 +30,10 @@
             <table class="table">
             
                 <thead>
-                    <th>Nombre del paciente</th>
-                    <th>Número de contacto</th>
-                    <th>Correo electrónico</th>
-                    <th>Contraseña</th>
+                    <th>Nombre del médico</th>
+                    <th>Especialidad</th>
+                    <th>Lugar de trabajo</th>
+                    <th>Días de trabajo</th>
                     <th>Fecha de creación</th>
                     <th>Última modificación</th>
                     <th>Autor de modificación</th>
@@ -49,15 +49,15 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="<?= base_url('/administrador/editarPaciente/'); ?>">
+                            <a href="<?= base_url('/administrador/editarMedico/'); ?>">
                             <img src="" alt="editar" class="service-img">
-                            <h2 class="text-center">Editar Paciente</h2>
+                            <h2 class="text-center">Editar Médico</h2>
                             </a>
                         </td>
                         <td>
-                            <a href="<?= base_url('/administrador/eliminarPaciente/'); ?>">
+                            <a href="<?= base_url('/administrador/eliminarMedico/'); ?>">
                             <img src="" alt="eliminar" class="service-img">
-                            <h2 class="text-center">Eliminar Paciente</h2>
+                            <h2 class="text-center">Eliminar Médico</h2>
                             </a>
                             
                         </td>
@@ -70,9 +70,9 @@
     <br>
 
     <div class="col-md-4">
-			<button onclick="window.location='/administrador/agregarPacientes'">
+			<button onclick="window.location='/administrador/agregarMedicos'">
 				<img src="" alt="agregar" class="service-img">
-				<h2 class="text-center">Agregar Paciente</h2>
+				<h2 class="text-center">Agregar Médico</h2>
 			</button>
 
             <button onclick="window.location='/administrador/opciones'">
