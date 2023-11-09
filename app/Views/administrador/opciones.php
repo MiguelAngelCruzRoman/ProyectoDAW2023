@@ -8,19 +8,19 @@
 
 	<div class="row">
 		<div class="col-md-4">
-			<a href="<?= base_url('index.php/administrador/administrarPacientes/'); ?>">
+			<a href="<?= base_url('/administrador/administrarPacientes/'); ?>">
 				<img src="" alt="administrarPacientes" class="service-img">
 				<h2 class="text-center">Administrar Pacientes</h2>
 			</a>
 		</div>	
 		<div class="col-md-4">
-			<a href="<?= base_url('index.php/administrador/administrarMedicos/'); ?>">
+			<a href="<?= base_url('/administrador/administrarMedicos/'); ?>">
 				<img src="" alt="administrarMedicos" class="service-img">
 				<h2 class="text-center">Administrar Médicos</h2>
 			</a>
 		</div>	
 		<div class="col-md-4">
-			<a href="<?= base_url('index.php/administrador/administrarMedicamentos/'); ?>">
+			<a href="<?= base_url('/administrador/administrarMedicamentos/'); ?>">
 				<img src="" alt="administrarMedicamentos" class="service-img">
 				<h2 class="text-center">Administrar Medicamentos</h2>
 			</a>

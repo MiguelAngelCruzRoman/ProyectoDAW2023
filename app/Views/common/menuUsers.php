@@ -15,7 +15,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/index');?>">Administrador</a></li>
             <li><a class="dropdown-item" href="<?= base_url('index.php/medico/index');?>">Médico</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('');?>">Paciente</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('index.php/paciente/index');?>">Paciente</a></li>
           </ul>
         </li>
 

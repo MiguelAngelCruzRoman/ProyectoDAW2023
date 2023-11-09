@@ -2,7 +2,7 @@
     <div class="row">
         <h1 align="center">ADMINISTRAR CONSULTAS</h1>
         <div class="col-12">
-        <form action="<?= base_url('index.php/medico/buscarConsulta');?>" method="GET">
+        <form action="<?= base_url('index.php/paciente/buscarConsulta');?>" method="GET">
             <div class="col-5">
                 <label for="columnaBusquedaConsulta">Buscar consulta por:</label>
                 <select name="columnaBusquedaConsulta" class="form-control">
@@ -47,13 +47,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>
-                            <a href="<?= base_url('/medico/editarConsulta/'); ?>">
-                            <img src="" alt="editar" class="service-img">
-                            <h2 class="text-center">Editar Medicamento</h2>
-                            </a>
-                        </td>
-                    </tr>
                 </tbody>
 
             </table>
@@ -62,7 +55,6 @@
     <br>
 
     <div class="col-md-4">
-        <input type="image" class="btn btn-success mt-4" value="Agregar Consulta" src="" onclick="window.location='/medico/agregarConsulta'">
         <input type="image" class="btn btn-primary mt-4" value="Regresar" src="" onclick="window.history.back()">
 	</div>
 </div>

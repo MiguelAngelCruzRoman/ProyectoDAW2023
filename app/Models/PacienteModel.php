@@ -4,16 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class MedicoModel extends Model
+class PacienteModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'medico';
+    protected $table            = 'paciente';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
-    protected $allowedFields    = ['especialidad','turno','diasLaborales'];
+    protected $allowedFields    = ['CURP','statusSeguro','tipoSangre','alergia',
+                                    'fechaRevision','motivoRevision','habitoToxico',
+                                    'condicionesPrevias'];
 
     // Dates
     protected $useTimestamps = false;

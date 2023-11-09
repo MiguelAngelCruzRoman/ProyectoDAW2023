@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class MedicoModel extends Model
+class RecetaModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'medico';
+    protected $table            = 'receta';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
-    protected $allowedFields    = ['especialidad','turno','diasLaborales'];
+    protected $allowedFields    = ['consulta','fechaVencimiento','status'];
 
     // Dates
     protected $useTimestamps = false;

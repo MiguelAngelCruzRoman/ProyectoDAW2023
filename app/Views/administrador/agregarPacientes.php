@@ -4,9 +4,12 @@
         <div class="col-2"></div>
 
         <div class="col-8">
-            <form action="<?= base_url('/administrador/administrarPacientes');?>" method="GET">
+            <form action="<?= base_url('/administrador/agregarPacientes2');?>" method="GET">
             <?= csrf_field()?>
-                <h2>Agregar Paciente</h2>
+            
+            <h1 align="center">Agregar Medicamento</h1>
+            <h4 align="center">Información Personal</h4>
+
 
                 <div class="mab-3">
                     <label for="primerNombre" class="form-label">Primer nombre:</label>
@@ -76,9 +79,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-success">
+                    <input type="image" class="btn btn-success mt-4" value="Siguiente" src="">
                 </div>
             </form>
+
+            <div class="mb-3">
+                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src="" onclick="window.location.href='/administrador/administrarPacientes/'">
+            </div>
 
             <div class="col-2"></div>
 

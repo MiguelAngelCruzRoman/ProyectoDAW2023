@@ -70,15 +70,8 @@
     <br>
 
     <div class="col-md-4">
-			<button onclick="window.location='/administrador/agregarMedicos'">
-				<img src="" alt="agregar" class="service-img">
-				<h2 class="text-center">Agregar Médico</h2>
-			</button>
-
-            <button onclick="window.location='/administrador/opciones'">
-				<img src="" alt="paginaPrincipal" class="service-img">
-				<h2 class="text-center">Página Principal</h2>
-			</button>
+        <input type="image" class="btn btn-success mt-4" value="Agregar Médicos" src="" onclick="window.location='/administrador/agregarMedicos'">
+        <input type="image" class="btn btn-primary mt-4" value="Página Principal" src="" onclick="window.location='/administrador/opciones'">
 	</div>
 </div>
 

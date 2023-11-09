@@ -8,10 +8,7 @@ class Medico extends BaseController
 {
     public function index()
     {
-        return view('common/head').
-               view('common/menuUsers').
-               view('medico/index').
-               view('common/footer');
+
     }
 
     public function opciones(){

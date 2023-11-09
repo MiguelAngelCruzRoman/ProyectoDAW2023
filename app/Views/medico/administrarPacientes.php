@@ -47,7 +47,7 @@
         <input type="image" class="btn btn-primary mt-4" value="Administrar Consultas" src="" onclick="window.location.href='/medico/administrarConsultas'">
         <input type="image" class="btn btn-primary mt-4" value="Administrar Recetas" src="" onclick="window.location.href='/medico/administrarRecetas'">
         <input type="image" class="btn btn-primary mt-4" value="Administrar Estudios Médicos" src="" onclick="window.location.href='/medico/administrarEstudiosMedicos'">
-        <input type="image" class="btn btn-primary mt-4" value="Página principa" src="" onclick="window.location.href='/medico/opciones'">
+        <input type="image" class="btn btn-primary mt-4" value="Página principal" src="" onclick="window.location.href='/medico/opciones'">
 	</div>
 </div>
 

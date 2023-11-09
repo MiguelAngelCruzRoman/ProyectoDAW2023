@@ -8,10 +8,7 @@ class Administrador extends BaseController
 {
     public function index()
     {
-        return view('common/head').
-               view('common/menuUsers').
-               view('administrador/index').
-               view('common/footer');
+        
     }
 
     public function opciones(){
@@ -25,9 +22,15 @@ class Administrador extends BaseController
 
     //Sección para pacientes
     public function administrarPacientes(){
+        $userInfoModel = model('UserInfoModel');
+        $data['usersInfo'] = $userInfoModel->findAll();
+
+        $usersModel = model('UsersModel');
+        $data['users'] = $usersModel->findAll();
+
         return view('common/head').
                view('common/menu').
-               view('administrador/administrarPacientes').
+               view('administrador/administrarPacientes',$data).
                view('common/footer');
     }
 
@@ -70,6 +73,20 @@ class Administrador extends BaseController
         return view('common/head').
             view('common/menu').
             view('administrador/agregarPacientes').
+            view('common/footer');
+    }
+
+    public function agregarPacientes2(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarPacientes2').
+            view('common/footer');
+    }
+
+    public function agregarPacientes3(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarPacientes3').
             view('common/footer');
     }
 
