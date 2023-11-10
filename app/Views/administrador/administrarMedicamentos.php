@@ -28,38 +28,39 @@
             <table class="table">
             
                 <thead>
+                    <th>ID</th>
                     <th>Nombre comercial</th>
                     <th>Nombre científico</th>
                     <th>Forma farmacéutica</th>
                     <th>Dosis</th>
-                    <th>Fecha de creación</th>
-                    <th>Última modificación</th>
-                    <th>Autor de modificación</th>
+                    <th>Símbolos</th>
+                    <th>Caducidad</th>
+                    <th>Stock</th>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="<?= base_url('/administrador/editarMedicamento/'); ?>">
-                            <img src="" alt="editar" class="service-img">
-                            <h2 class="text-center">Editar Medicamento</h2>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<?= base_url('/administrador/eliminarMedicamento/'); ?>">
-                            <img src="" alt="eliminar" class="service-img">
-                            <h2 class="text-center">Eliminar Medicamento</h2>
-                            </a>
-                            
-                        </td>
-                    </tr>
+                    <?php foreach ($medicamentos as $medicamento):?>
+                        <tr>
+                            <td><?=$medicamento->id?></td>
+                            <td><?=$medicamento->nombreComercial?></td>
+                            <td><?=$medicamento->nombreCinetifico?></td>
+                            <td><?=$medicamento->formaFarmaceutica?></td>
+                            <td><?=$medicamento->dosis?> gm (<?=$medicamento->version?>)</td>
+                            <td><?=$medicamento->simbolo?></td>
+                            <td><?=$medicamento->fechaCaducidad?></td>
+                            <td><?=$medicamento->stock?></td>
+                            <td>
+                                <a href="<?= base_url('/administrador/editarMedicamento/'.$medicamento->id); ?>">
+                                <img src="https://cdn-icons-png.flaticon.com/128/705/705120.png" alt="editar" class="service-img" width="60" height="60">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="<?= base_url('/administrador/eliminarMedicamento/'.$medicamento->id); ?>">
+                                <img src="https://cdn-icons-png.flaticon.com/128/3541/3541990.png" alt="eliminar" class="service-img" width="60" height="60">
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
 
             </table>

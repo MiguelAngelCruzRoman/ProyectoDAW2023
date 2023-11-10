@@ -14,7 +14,7 @@ class MedicamentosModel extends Model
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
     protected $allowedFields    = ['nombreComercial','nombreCinetifico','formaFarmaceutica',
-                                    'dosis','fechaCaducidad','loteFabricación','version','simbolo',
+                                    'dosis','fechaCaducidad','loteFabricacion','version','simbolo',
                                     'imagenEmpaque','stock'];
 
     // Dates

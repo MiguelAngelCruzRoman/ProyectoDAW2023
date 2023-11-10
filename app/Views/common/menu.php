@@ -10,15 +10,32 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Opciones
+          Administrar Pacientes
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/administrarPacientes');?>">Administrar Pacientes</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/administrarMedicos');?>">Administrar Médicos</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/administrarMedicamentos');?>">Administrar Medicamentos</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/administrarPacientes');?>">Ver Pacientes</a></li>
           </ul>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Administrar Médicos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/administrarMedicos');?>">Ver Médicos</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Administrar Medicamentos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= base_url('index.php/administrador/administrarMedicamentos');?>">Ver Medicamentos</a></li>
+          </ul>
+        </li>
+        
+        
       </ul>
       <form action="<?= base_url('index.php/');?>" method="GET">
         <button class="btn btn-outline-success" type="submit">Cerrar Sesión</button>

@@ -240,9 +240,18 @@ class Administrador extends BaseController
 
     //Sección para médicos
     public function administrarMedicos(){
+        $userInfoModel = model('UserInfoModel');
+        $data['usersInfo'] = $userInfoModel->findAll();
+
+        $usersModel = model('UsersModel');
+        $data['users'] = $usersModel->findAll();
+
+        $medicoModel = model('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+
         return view('common/head').
                view('common/menu').
-               view('administrador/administrarMedicos').
+               view('administrador/administrarMedicos',$data).
                view('common/footer');
     }
 
@@ -291,9 +300,12 @@ class Administrador extends BaseController
 
     //Sección para medicamentos
     public function administrarMedicamentos(){
+        $medicamentosModel = model('MedicamentosModel');
+        $data['medicamentos'] = $medicamentosModel->findAll();
+
         return view('common/head').
                view('common/menu').
-               view('administrador/administrarMedicamentos').
+               view('administrador/administrarMedicamentos',$data).
                view('common/footer');
     }
 
