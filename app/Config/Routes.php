@@ -12,11 +12,19 @@ $routes->post('/', 'Home::index');
 $routes->get('/administrador', 'Administrador::opciones');
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarPacientes', 'Administrador::administrarPacientes');
+
 $routes->get('/administrador/buscarPacientes', 'Administrador::buscarPacientes');
-$routes->get('/administrador/editarPaciente', 'Administrador::editarPaciente');
-$routes->get('/administrador/editarPaciente2', 'Administrador::editarPaciente2');
-$routes->get('/administrador/editarPaciente3', 'Administrador::editarPaciente3');
+
+$routes->get('/administrador/editarPaciente/(:num)', 'Administrador::editarPaciente/$1');
+$routes->post('/administrador/editarPaciente2/(:num)', 'Administrador::editarPaciente2/$1');
+$routes->get('/administrador/editarPaciente2/(:num)', 'Administrador::editarPaciente2/$1');
+$routes->post('/administrador/editarPaciente2/(:num)', 'Administrador::editarPaciente2/$1');
+$routes->get('/administrador/editarPaciente3/(:num)', 'Administrador::editarPaciente3/$1');
+$routes->post('/administrador/editarPaciente3/(:num)', 'Administrador::editarPaciente3/$1');
+$routes->post('/administrador/editarPaciente/update','Administrador::pacienteUpdate');
+
 $routes->get('/administrador/eliminarPaciente', 'Administrador::eliminarPaciente');
+
 $routes->get('/administrador/agregarPacientes', 'Administrador::agregarPacientes');
 $routes->get('/administrador/agregarPacientes2', 'Administrador::agregarPacientes2');
 $routes->get('/administrador/agregarPacientes3', 'Administrador::agregarPacientes3');

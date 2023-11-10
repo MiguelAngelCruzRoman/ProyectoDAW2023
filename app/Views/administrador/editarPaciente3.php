@@ -2,73 +2,69 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="<?= base_url('/administrador/administrarPacientes');?>" method="GET">
+            <form action="<?= base_url('/administrador/editarPaciente/update');?>" method="post">
             <?= csrf_field()?>
                 <h1 align="center">Editar Paciente</h1>
                 <h4 align="center">Domicilio</h4>
                 
-                <input type="hidden" name="" value="">
+                <input type="hidden" name="id" value=<?=$id?>>
+                <input type="hidden" name="primerNombre" value=<?=$primerNombre?>>
+                <input type="hidden" name="segundoNombre" value=<?=$segundoNombre?>>
+                <input type="hidden" name="apellidoPaterno" value=<?=$apellidoPaterno?>>
+                <input type="hidden" name="apellidoMaterno" value=<?=$apellidoMaterno?>>
+                <input type="hidden" name="telefono" value=<?=$telefono?>>
+                <input type="hidden" name="CURP" value=<?=$CURP?>>
+                <input type="hidden" name="seguro" value=<?=$seguro?>>
+                <input type="hidden" name="correo" value=<?=$correo?>>
+                <input type="hidden" name="contraseña" value=<?=$contraseña?>>
+                <input type="hidden" name="sangre" value=<?=$sangre?>>
+                <input type="hidden" name="alergia" value=<?=$alergia?>>
+                <input type="hidden" name="fechaRevision" value=<?=$fechaRevision?>>
+                <input type="hidden" name="motivoRevision" value=<?=$motivoRevision?>>
+                <input type="hidden" name="idDireccion" value=<?=$direccion[0]->id?>>
 
                 <div class="mab-3">
                     <label for="estado" class="form-label">Estado:</label>
-                    <input type="text" class="form-control" name="estado" id="estado" value="Puebla">
+                    <input type="text" class="form-control" name="estado" id="estado" value="<?=$direccion[0]->estado?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="municipio" class="form-label">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio" value="Teziutlán">
+                    <input type="text" class="form-control" name="municipio" id="municipio" value="<?=$direccion[0]->municipio?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="colonia" class="form-label">Colonia:</label>
-                    <input type="text" class="form-control" name="colonia" id="colonia" value="Emiliano Zapata">
+                    <input type="text" class="form-control" name="colonia" id="colonia" value="<?=$direccion[0]->colonia?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="calle" class="form-label">Calle:</label>
-                    <input type="text" class="form-control" name="calle" id="calle" value="El Mirador">
+                    <input type="text" class="form-control" name="calle" id="calle" value="<?=$direccion[0]->calle?>">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noExterior" class="form-label">Número exterior:</label>
-                    <input type="number" class="form-control" name="noExterior" id="noExterior" value="33">
+                    <label for="noExt" class="form-label">Número exterior:</label>
+                    <input type="number" class="form-control" name="noExt" id="noExt" value="<?=$direccion[0]->noExt?>">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noInterior" class="form-label">Número interior:</label>
-                    <input type="text" class="form-control" name="noInterior" id="noInterior" value="N/A">
+                    <label for="noInt" class="form-label">Número interior:</label>
+                    <input type="text" class="form-control" name="noInt" id="noInt" value="<?=$direccion[0]->noInt?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="CP" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" name="CP" id="CP" value="73950">
+                    <input type="text" class="form-control" name="CP" id="CP" value="<?=$direccion[0]->CP?>">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tipoVivienda">Tipo de vivienda:</label>
-                    <select name="tipoVivienda" id="tipoVivienda" class="form-control">
-                        <option value="casaFirme" selected>Casa firme</option>
+                    <label for="tipo">Tipo de vivienda:</label>
+                    <select name="tipo" id="tipo" class="form-control">
+                        <option value="<?=$direccion[0]->tipo?>" selected><?=$direccion[0]->tipo?></option>
+                        <option value="casaFirme" >Casa firme</option>
                         <option value="viviendaMovil" >Vivienda móvil</option>
                         <option value="departamento" >Departamento</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="tipoCalle">Tipo de calle:</label>
-                    <select name="tipoCalle" id="tipoCalle" class="form-control">
-                        <option value="privada" selected>Privada</option>
-                        <option value="terracería" >Terracería</option>
-                        <option value="carretera" >Carretera</option>
-                        <option value="peatonal" >Peatonal</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="zonaVivienda">Zona de vivienda:</label>
-                    <select name="zonaVivienda" id="zonaVivienda" class="form-control">
-                        <option value="urbana" selected>Urbana</option>
-                        <option value="rural" >Rural</option>
-                        <option value="protegida" >Protegida</option>
                     </select>
                 </div>
 

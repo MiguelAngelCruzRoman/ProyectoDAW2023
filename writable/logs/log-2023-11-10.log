@@ -1,0 +1,926 @@
+CRITICAL - 2023-11-10 02:13:38 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:13:49 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:13:56 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:14:11 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:14:16 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:14:29 --> Undefined array key "userInfo"
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userInfo"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:14:37 --> Array to string conversion
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:14:42 --> Array to string conversion
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 APPPATH\Controllers\Administrador.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:19:48 --> Call to undefined function App\Controllers\println()
+in APPPATH\Controllers\Administrador.php on line 60.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:21:05 --> Undefined constant "App\Controllers\id"
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:21:13 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:21:24 --> Object of class stdClass could not be converted to string
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:21:36 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:23:27 --> Undefined array key "userInfo"
+in APPPATH\Controllers\Administrador.php on line 64.
+ 1 APPPATH\Controllers\Administrador.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userInfo"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:23:53 --> syntax error, unexpected token ")", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:23:56 --> syntax error, unexpected token ")", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:24:02 --> syntax error, unexpected token ")", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:25:54 --> Call to a member function findAll() on array
+in APPPATH\Controllers\Administrador.php on line 62.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:27:27 --> syntax error, unexpected token "for"
+in APPPATH\Controllers\Administrador.php on line 62.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:27:36 --> json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 APPPATH\Controllers\Administrador.php(61): json_decode([...], true)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:27:43 --> json_decode(): Argument #1 ($json) must be of type string, array given
+in APPPATH\Controllers\Administrador.php on line 61.
+ 1 APPPATH\Controllers\Administrador.php(61): json_decode([...], true)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:34:19 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Administrador.php on line 83.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:34:30 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:36:39 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:37:08 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:37:27 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:38:09 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 73.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:38:33 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Administrador.php on line 83.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:42:12 --> syntax error, unexpected token "*"
+in APPPATH\Controllers\Administrador.php on line 71.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:42:19 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 70.
+ 1 APPPATH\Controllers\Administrador.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:43:20 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 70.
+ 1 APPPATH\Controllers\Administrador.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:43:32 --> Undefined variable $usersInfo
+in APPPATH\Views\administrador\administrarPacientes.php on line 45.
+ 1 APPPATH\Views\administrador\administrarPacientes.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usersInfo', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarPacientes', [], true)
+ 5 APPPATH\Controllers\Administrador.php(72): view('administrador/administrarPacientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:43:51 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 71.
+ 1 APPPATH\Controllers\Administrador.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:46:02 --> Undefined variable $data
+in APPPATH\Controllers\Administrador.php on line 76.
+ 1 APPPATH\Controllers\Administrador.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 02:53:53 --> syntax error, unexpected token "endforeach", expecting "elseif" or "else" or "endif"
+in APPPATH\Views\administrador\administrarPacientes.php on line 66.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarPacientes', [], true)
+ 3 APPPATH\Controllers\Administrador.php(76): view('administrador/administrarPacientes', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:18:57 --> Attempt to read property "id" on array
+in APPPATH\Views\administrador\administrarPacientes.php on line 47.
+ 1 APPPATH\Views\administrador\administrarPacientes.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarPacientes', [], true)
+ 5 APPPATH\Controllers\Administrador.php(33): view('administrador/administrarPacientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:19:47 --> Undefined property: stdClass::$paciente
+in APPPATH\Views\administrador\administrarPacientes.php on line 47.
+ 1 APPPATH\Views\administrador\administrarPacientes.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$paciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarPacientes', [], true)
+ 5 APPPATH\Controllers\Administrador.php(33): view('administrador/administrarPacientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:20:32 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:20:39 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:21:01 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:21:09 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:21:24 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:21:38 --> Unclosed '{' on line 24 does not match ')'
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:21:41 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:21:46 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:22:57 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:23:07 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:28:28 --> Undefined variable $user
+in APPPATH\Views\administrador\editarPaciente.php on line 5.
+ 1 APPPATH\Views\administrador\editarPaciente.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente.php', 5)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(101): view('administrador/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('3')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:33:48 --> Undefined variable $pacietne
+in APPPATH\Views\administrador\editarPaciente.php on line 39.
+ 1 APPPATH\Views\administrador\editarPaciente.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pacietne', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente.php', 39)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(104): view('administrador/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('3')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:36:26 --> Undefined property: stdClass::$seguro
+in APPPATH\Views\administrador\editarPaciente.php on line 45.
+ 1 APPPATH\Views\administrador\editarPaciente.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$seguro', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(104): view('administrador/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('3')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:49:58 --> Too few arguments to function App\Controllers\Administrador::editarPaciente2(), 0 passed in C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php on line 919 and exactly 1 expected
+in APPPATH\Controllers\Administrador.php on line 108.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:54:56 --> Invalid file: "administrador/editarPaciente23.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('administrador/editarPaciente23.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente23', [], true)
+ 3 APPPATH\Controllers\Administrador.php(133): view('administrador/editarPaciente23', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('3')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:55:12 --> Invalid file: "administrador/editarPaciente2/3.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('administrador/editarPaciente2/3.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente2/3', [], true)
+ 3 APPPATH\Controllers\Administrador.php(133): view('administrador/editarPaciente2/3', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('3')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:55:16 --> Invalid file: "administrador/editarPaciente2/3.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('administrador/editarPaciente2/3.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente2/3', [], true)
+ 3 APPPATH\Controllers\Administrador.php(133): view('administrador/editarPaciente2/3', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('3')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 03:55:48 --> Invalid file: "administrador/editarPaciente1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('administrador/editarPaciente1.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente1', [], true)
+ 3 APPPATH\Controllers\Administrador.php(133): view('administrador/editarPaciente1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('3')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:02:53 --> Undefined variable $paciente
+in APPPATH\Views\administrador\editarPaciente2.php on line 15.
+ 1 APPPATH\Views\administrador\editarPaciente2.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $paciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente2.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(133): view('administrador/editarPaciente2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('3')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:03:30 --> Undefined variable $paciente
+in APPPATH\Views\administrador\editarPaciente2.php on line 15.
+ 1 APPPATH\Views\administrador\editarPaciente2.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $paciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente2.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(133): view('administrador/editarPaciente2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('3')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:04:36 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 113.
+ 1 APPPATH\Controllers\Administrador.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 113)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('5')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:04:40 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 113.
+ 1 APPPATH\Controllers\Administrador.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 113)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('8')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:04:45 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 113.
+ 1 APPPATH\Controllers\Administrador.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 113)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('20')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:11:54 --> Undefined variable $correa
+in APPPATH\Views\administrador\editarPaciente2.php on line 18.
+ 1 APPPATH\Views\administrador\editarPaciente2.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $correa', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente2.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(127): view('administrador/editarPaciente2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente2('8')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:18:16 --> syntax error, unexpected token "protected", expecting "," or ";"
+in APPPATH\Models\DireccionModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Models\\DireccionModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\DireccionModel')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\DireccionModel')
+ 4 SYSTEMPATH\Config\Factories.php(270): class_exists('App\\Models\\DireccionModel')
+ 5 SYSTEMPATH\Config\Factories.php(196): CodeIgniter\Config\Factories::locateClass([...], 'DireccionModel')
+ 6 SYSTEMPATH\Config\Factories.php(155): CodeIgniter\Config\Factories::getDefinedInstance([...], 'DireccionModel', [...])
+ 7 SYSTEMPATH\Common.php(827): CodeIgniter\Config\Factories::__callStatic('models', [...])
+ 8 APPPATH\Controllers\Administrador.php(134): model('DireccionModel')
+ 9 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente3('8')
+10 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+11 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:19:37 --> syntax error, unexpected token "protected", expecting "," or ";"
+in APPPATH\Models\DireccionModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Models\\DireccionModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\DireccionModel')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\DireccionModel')
+ 4 SYSTEMPATH\Config\Factories.php(270): class_exists('App\\Models\\DireccionModel')
+ 5 SYSTEMPATH\Config\Factories.php(196): CodeIgniter\Config\Factories::locateClass([...], 'DireccionModel')
+ 6 SYSTEMPATH\Config\Factories.php(155): CodeIgniter\Config\Factories::getDefinedInstance([...], 'DireccionModel', [...])
+ 7 SYSTEMPATH\Common.php(827): CodeIgniter\Config\Factories::__callStatic('models', [...])
+ 8 APPPATH\Controllers\Administrador.php(134): model('DireccionModel')
+ 9 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente3('8')
+10 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+11 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:19:53 --> Attempt to read property "estado" on array
+in APPPATH\Views\administrador\editarPaciente3.php on line 23.
+ 1 APPPATH\Views\administrador\editarPaciente3.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "estado" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente3.php', 23)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente3.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente3', [], true)
+ 5 APPPATH\Controllers\Administrador.php(156): view('administrador/editarPaciente3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente3('8')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:20:18 --> Undefined array key "estado"
+in APPPATH\Views\administrador\editarPaciente3.php on line 23.
+ 1 APPPATH\Views\administrador\editarPaciente3.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente3.php', 23)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\editarPaciente3.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarPaciente3', [], true)
+ 5 APPPATH\Controllers\Administrador.php(156): view('administrador/editarPaciente3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente3('8')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:22:09 --> syntax error, unexpected variable "$usersModel", expecting "]"
+in APPPATH\Controllers\Administrador.php on line 151.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:22:19 --> syntax error, unexpected variable "$usersModel", expecting "]"
+in APPPATH\Controllers\Administrador.php on line 151.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:54:29 --> Object of class App\Models\UsersMOdel could not be converted to string
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:54:39 --> The route for "/administrador/administrarPacientes" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/administrador/administrarPacientes')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(201): redirect('/administrador/administrarPacientes', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:55:39 --> Object of class App\Models\UsersMOdel could not be converted to string
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:56:44 --> Undefined array key "paciente"
+in APPPATH\Controllers\Administrador.php on line 171.
+ 1 APPPATH\Controllers\Administrador.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "paciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 171)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:56:54 --> Array to string conversion
+in APPPATH\Controllers\Administrador.php on line 171.
+ 1 APPPATH\Controllers\Administrador.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 171)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:57:26 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 171.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:57:30 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 171.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:57:49 --> Call to undefined method stdClass::array()
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:57:56 --> Call to undefined method stdClass::getArray()
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:58:14 --> Call to undefined method stdClass::array()
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 04:59:16 --> Undefined array key "paciente"
+in APPPATH\Controllers\Administrador.php on line 170.
+ 1 APPPATH\Controllers\Administrador.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "paciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 170)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:00:09 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Administrador.php on line 170.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:01:26 --> Object of class stdClass could not be converted to string
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:01:46 --> Call to undefined method stdClass::array()
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:01:53 --> Call to undefined method stdClass::toArray()
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:06:08 --> Object of class stdClass could not be converted to string
+in APPPATH\Controllers\Administrador.php on line 169.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-10 05:07:02 --> mysqli_sql_exception: Unknown column 'contraseña' in 'field list' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `users` ...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` ...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` ...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `users` ...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(184): CodeIgniter\Model->update('3', Array)
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#10 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-10 05:07:02 --> Unknown column 'contraseña' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `correo` = :correo:, `contraseña` = :contraseña:
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administrador.php(184): CodeIgniter\Model->update('3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-10 05:07:18 --> mysqli_sql_exception: Duplicate entry 'GHI456789XYZ012JKL' for key 'CURP' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `pacient...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `pacient...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `pacient...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `pacient...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(194): CodeIgniter\Model->update('1', Array)
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#10 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-10 05:07:18 --> Duplicate entry 'GHI456789XYZ012JKL' for key 'CURP'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `paciente` SET `CURP` = :CURP:, `statusSeguro` = :statusSeguro:, `tipoSangre` = :tipoSangre:, `alergia` = :alergia:, `fechaRevision` = :fechaRevision:, `motivoRevision` = :motivoRevision:
+WHERE `paciente`.`id` IN :paciente.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administrador.php(194): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-10 05:08:08 --> mysqli_sql_exception: Unknown column 'statusSeguro' in 'field list' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `direcci...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `direcci...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `direcci...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `direcci...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(206): CodeIgniter\Model->update('3', Array)
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#10 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-10 05:08:08 --> Unknown column 'statusSeguro' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `direccion` SET `estado` = :estado:, `statusSeguro` = :statusSeguro:, `tipoSangre` = :tipoSangre:, `alergia` = :alergia:, `fechaRevision` = :fechaRevision:, `motivoRevision` = :motivoRevision:
+WHERE `direccion`.`id` IN :direccion.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administrador.php(206): CodeIgniter\Model->update('3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-10 05:08:33 --> mysqli_sql_exception: Unknown column 'statusSeguro' in 'field list' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `direcci...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `direcci...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `direcci...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `direcci...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(206): CodeIgniter\Model->update('3', Array)
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#10 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-10 05:08:33 --> Unknown column 'statusSeguro' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `direccion` SET `estado` = :estado:, `statusSeguro` = :statusSeguro:, `tipoSangre` = :tipoSangre:, `alergia` = :alergia:, `fechaRevision` = :fechaRevision:, `motivoRevision` = :motivoRevision:
+WHERE `direccion`.`id` IN :direccion.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administrador.php(206): CodeIgniter\Model->update('3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:10:18 --> The route for "/administrador/administrarPacientes" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/administrador/administrarPacientes')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(208): redirect('/administrador/administrarPacientes', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:11:12 --> The route for "/administrador/administrarPacientes" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/administrador/administrarPacientes')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(208): redirect('/administrador/administrarPacientes', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:12:21 --> The route for "/administrador" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/administrador')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(208): redirect('/administrador', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:12:30 --> The route for "administrador/administrarPaciente" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('administrador/administrarPaciente')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(208): redirect('administrador/administrarPaciente', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:12:33 --> The route for "/administrador/administrarPaciente" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/administrador/administrarPaciente')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(208): redirect('/administrador/administrarPaciente', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-10 05:14:05 --> The route for "administrador/administrarPaciente" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('administrador/administrarPaciente')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(208): redirect('administrador/administrarPaciente', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-10 05:14:53 --> mysqli_sql_exception: Duplicate entry 'GHI456789XYZ012JKL' for key 'CURP' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `pacient...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `pacient...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `pacient...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `pacient...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(194): CodeIgniter\Model->update('1', Array)
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#10 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-10 05:14:53 --> Duplicate entry 'GHI456789XYZ012JKL' for key 'CURP'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `paciente` SET `CURP` = :CURP:, `statusSeguro` = :statusSeguro:, `tipoSangre` = :tipoSangre:, `alergia` = :alergia:, `fechaRevision` = :fechaRevision:, `motivoRevision` = :motivoRevision:
+WHERE `paciente`.`id` IN :paciente.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administrador.php(194): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')

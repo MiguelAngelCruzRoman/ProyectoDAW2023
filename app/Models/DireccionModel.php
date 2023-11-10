@@ -14,7 +14,7 @@ class DireccionModel extends Model
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
     protected $allowedFields    = ['userinfo','tipo','estado','municipio',
-                                    'colonia','calle','CP','noExt','noInt']
+                                    'colonia','calle','CP','noExt','noInt'];
 
     // Dates
     protected $useTimestamps = false;
