@@ -89,6 +89,120 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    public function agregarPacientes(){
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarPacientes').
+            view('common/footer');
+    }
+
+    public function agregarPacientes2(){
+ 
+        $data = [
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "CURP"=>$_POST['CURP'],
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "contraseña"=>$_POST['contraseña'],
+            "foto"=>$_POST['foto'],
+        ];
+
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarPacientes2',$data).
+            view('common/footer');
+    }
+
+    public function agregarPacientes3(){
+        $data = [
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "CURP"=>$_POST['CURP'],
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "contraseña"=>$_POST['contraseña'],
+            "foto"=>$_POST['foto'],
+            "statusSeguro"=>$_POST['statusSeguro'],
+            "sangre"=>$_POST['sangre'],
+            "alergia"=>$_POST['alergia'],
+            "fechaChequeo"=>$_POST['fechaChequeo'],
+            "motivoConsulta"=>$_POST['motivoConsulta'],
+            "habitosToxicos"=>$_POST['habitosToxicos'],
+            "condicionesPrevias"=>$_POST['condicionesPrevias'],
+        ];
+ 
+        return view('common/head').
+            view('common/menu').
+            view('administrador/agregarPacientes3',$data).
+            view('common/footer');
+    }
+
+    public function insertPacientes(){
+        $pacienteModel = model('PacienteModel');
+        $dataP = [
+            "CURP"=>$_POST['CURP'],
+            "statusSeguro"=>$_POST['statusSeguro'],
+            "tipoSangre"=>$_POST['sangre'],
+            "alergia"=>$_POST['alergia'],
+            "fechaRevision"=>$_POST['fechaChequeo'],
+            "motivoRevision"=>$_POST['motivoConsulta'],
+            "habitoToxico"=>$_POST['habitosToxicos'],
+            "condicionesPrevias"=>$_POST['condicionesPrevias'],
+            "created_at"=>date('d-m-Y')
+        ];
+        $pacienteModel->insert($dataP);
+
+        $usersModel = model('UsersModel');
+        $dataU = [
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "password"=>$_POST['contraseña'],
+            "paciente"=>$pacienteModel->getInsertID(),
+            "created_at"=>date('d-m-Y')
+        ];
+        $usersModel->insert($dataU);
+
+        $userInfoModel = model('UserInfoModel');
+        $dataUI = [
+            "id"=>$usersModel->getInsertID(),
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "foto"=>$_POST['foto'],
+            "created_at"=>date('d-m-Y')
+        ];
+        $userInfoModel->insert($dataUI);
+
+        $direccionModel = model ('DireccionModel');
+        $dataD= [
+            "estado"=>$_POST['estado'],
+            "municipio"=>$_POST['municipio'],
+            "colonia"=>$_POST['colonia'],
+            "calle"=>$_POST['calle'],
+            "noInt"=>$_POST['noInt'],
+            "noExt"=>$_POST['noExt'],
+            "CP"=>$_POST['CP'],
+            "tipo"=>$_POST['tipo'],
+            "userinfo"=>$usersModel->getInsertID(),
+            "created_at"=>date('d-m-Y')
+        ];
+        $direccionModel->insert($dataD);
+
+        return redirect('administrador/administrarPacientes','refresh');
+    }
+
     public function editarPaciente($id){
         $userInfoModel = model('UserInfoModel');
         $data['usersInfo'] = $userInfoModel->find($id);
@@ -96,8 +210,9 @@ class Administrador extends BaseController
         $usersModel = model('UsersModel');
         $data['users'] = $usersModel->find($id);
 
+        $idP= $usersModel->select('paciente')->find($id)->paciente;
         $pacienteModel = model('PacienteModel');
-        $data['paciente'] = $pacienteModel->find($id);
+        $data['paciente'] = $pacienteModel->find($idP);
 
         return view('common/head').
             view('common/menu').
@@ -114,11 +229,13 @@ class Administrador extends BaseController
             "segundoNombre"=>$_POST['segundoNombre'],
             "apellidoPaterno"=>$_POST['apellidoPaterno'],
             "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
             "telefono"=>$_POST['telefono'],
             "CURP"=>$_POST['CURP'],
-            "seguro"=>$_POST['seguro'],
             "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
             "contraseña"=>$_POST['contraseña'],
+            "foto"=>$_POST['foto'],
             "paciente"=>$pacienteModel->find($id)
         ];
 
@@ -133,22 +250,27 @@ class Administrador extends BaseController
         $pacienteModel = model('PacienteModel');
         $direccionModel = model('DireccionModel');
         $data = [
-            "id"=>$_POST['id'],
+            "id"=>$id,
             "primerNombre"=>$_POST['primerNombre'],
             "segundoNombre"=>$_POST['segundoNombre'],
             "apellidoPaterno"=>$_POST['apellidoPaterno'],
             "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
             "telefono"=>$_POST['telefono'],
             "CURP"=>$_POST['CURP'],
-            "seguro"=>$_POST['seguro'],
             "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
             "contraseña"=>$_POST['contraseña'],
+            "foto"=>$_POST['foto'],
             "paciente"=>$pacienteModel->find($id),
             "sangre"=>$_POST['sangre'],
             "alergia"=>$_POST['alergia'],
             "fechaRevision"=>$_POST['fechaRevision'],
             "motivoRevision"=>$_POST['motivoRevision'],
-            "direccion"=>$direccionModel->where('userinfo',$id)->findAll()
+            "direccion"=>$direccionModel->where('userinfo',$id)->findAll(),
+            "seguro"=>$_POST['seguro'],
+            "habitosToxicos"=>$_POST['habitosToxicos'],
+            "condicionesPrevias"=>$_POST['condicionesPrevias'],
         ];
 
         return view('common/head').
@@ -166,23 +288,7 @@ class Administrador extends BaseController
 
         $direccionModel = model('DireccionModel');
 
-//print($direccionModel->select('userInfo')->find($_POST['id'])->userInfo);
-        $data = array(
-            "id"=>$_POST['id'],
-            "primerNombre"=>$_POST['primerNombre'],
-            "segundoNombre"=>$_POST['segundoNombre'],
-            "apellidoPaterno"=>$_POST['apellidoPaterno'],
-            "apellidoMaterno"=>$_POST['apellidoMaterno'],
-            "telefono"=>$_POST['telefono'],
-        );
-        $userInfoModel->update($_POST['id'],$data);
-
-        $data = array(
-            "correo"=>$_POST['correo'],
-            "password"=>$_POST['contraseña'],
-        );
-        $usersModel->update($_POST['id'],$data);
-
+        //print($direccionModel->select('userInfo')->find($_POST['id'])->userInfo);
         $data = array(
             "CURP"=>$_POST['CURP'],
             "statusSeguro"=>$_POST['seguro'],
@@ -191,7 +297,24 @@ class Administrador extends BaseController
             "fechaRevision"=>$_POST['fechaRevision'],
             "motivoRevision"=>$_POST['motivoRevision'],
         );
-        $pacienteModel->update($usersModel->select('paciente')->find($_POST['id'])->paciente,$data);
+        $pacienteModel->update(($usersModel->select('paciente')->find($_POST['id'])->paciente),$data);
+
+        $data = array(
+            "correo"=>$_POST['correo'],
+            "password"=>$_POST['contraseña'],
+        );
+        $usersModel->update($_POST['id'],$data);
+
+
+        $data = array(
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "telefono"=>$_POST['telefono'],
+        );
+        $userInfoModel->update($_POST['id'],$data);
+
 
         $data = array(
             "estado"=>$_POST['estado'],
@@ -209,33 +332,24 @@ class Administrador extends BaseController
     }
 
 
-    public function eliminarPaciente(){
-        return view('common/head').
-            view('common/menu').
-            view('administrador/eliminarPaciente').
-            view('common/footer');
+    public function eliminarPaciente($id){
+        $direccionModel = model('DireccionModel');
+        $direccionModel->delete(['userinfo'=>$id]);
+
+        $userInfoModel = model('UserInfoModel');
+        $userInfoModel->delete($id);
+
+        $usersModel = model('UsersModel');
+        $usersModel->delete($id);
+
+        $pacienteModel = model('PacienteModel');
+        $pacienteModel->delete(['paciente'=>$id]);
+
+    
+        return redirect('administrador/administrarPacientes','refresh');
     }
 
-    public function agregarPacientes(){
-        return view('common/head').
-            view('common/menu').
-            view('administrador/agregarPacientes').
-            view('common/footer');
-    }
 
-    public function agregarPacientes2(){
-        return view('common/head').
-            view('common/menu').
-            view('administrador/agregarPacientes2').
-            view('common/footer');
-    }
-
-    public function agregarPacientes3(){
-        return view('common/head').
-            view('common/menu').
-            view('administrador/agregarPacientes3').
-            view('common/footer');
-    }
 
 
     //Sección para médicos

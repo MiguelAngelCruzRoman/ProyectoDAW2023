@@ -2,17 +2,39 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="<?= base_url('/administrador/agregarPacientes3');?>" method="GET">
+            <form action="<?= base_url('/administrador/agregarPacientes3');?>" method="POST">
             <?= csrf_field()?>
                 <h1 align="center">Agregar Paciente</h1>
                 <h4 align="center">Historial Médico</h4>
                 
-                <input type="hidden" name="" value="">
+                <input type="hidden" name="primerNombre" value=<?=$primerNombre?>>
+                <input type="hidden" name="segundoNombre" value=<?=$segundoNombre?>>
+                <input type="hidden" name="apellidoPaterno" value=<?=$apellidoPaterno?>>
+                <input type="hidden" name="apellidoMaterno" value=<?=$apellidoMaterno?>>
+                <input type="hidden" name="genero" value=<?=$genero?>>
+                <input type="hidden" name="telefono" value=<?=$telefono?>>
+                <input type="hidden" name="CURP" value=<?=$CURP?>>
+                <input type="hidden" name="correo" value=<?=$correo?>>
+                <input type="hidden" name="username" value=<?=$username?>>
+                <input type="hidden" name="contraseña" value=<?=$contraseña?>>
+                <input type="hidden" name="foto" value=<?=$foto?>>
+
+
+                <div class="mb-3">
+                    <label for="statusSeguro">Tipo del seguro:</label>
+                    <select name="statusSeguro" id="statusSeguro" class="form-control">
+                        <option value="" ></option>
+                        <option value="Ninguno" selected>Ninguno</option>
+                        <option value="Seguro Privado">Seguro privado</option>
+                        <option value="Seguro Social">Seguro social</option>
+                        <option value="Seguro Estudiantil">Seguro estudiantil</option>
+                    </select>
+                </div>
 
                 <div class="mb-3">
                     <label for="sangre">Tipo de sangre:</label>
                     <select name="sangre" id="sangre" class="form-control">
-                        <option value="O+" selected>O+</option>
+                        <option value="O+">O+</option>
                         <option value="O-" >O-</option>
                         <option value="A+" >A+</option>
                         <option value="A-" >A-</option>
@@ -24,50 +46,49 @@
                 <div class="mb-3">
                     <label for="alergia">Alergia:</label>
                     <select name="alergia" id="alergia" class="form-control">
-                        <option value="ninguna" selected>Ninguna</option>
-                        <option value="poliester" >poliester</option>
-                        <option value="alcohol" >alcohol</option>
-                        <option value="algodon" >algodón</option>
-                        <option value="latex" >latex</option>
+                        <option value="Ninguna" selected>Ninguna</option>
+                        <option value="Poliester" >Poliester</option>
+                        <option value="Alcohol" >Alcohol</option>
+                        <option value="Algodón" >Algodón</option>
+                        <option value="Latex" >Latex</option>
                     </select>
                 </div>
 
                 <div class="mab-3">
                     <label for="fechaChequeo" class="form-label">Fecha de última revisión:</label>
-                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" value="2023/09/23">
+                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" >
                 </div>
 
                 <div class="mb-3">
                     <label for="motivoConsulta">Motivo de última consulta:</label>
-                    <select name="alergia" id="alergia" class="form-control">
-                        <option value="preventivo" selected>preventivo</option>
-                        <option value="enfermedad" >enfermedad</option>
-                        <option value="rutinario" >rutinario</option>
-                        <option value="seguimiento" >seguimiento</option>
+                    <select name="motivoConsulta" id="motivoConsulta" class="form-control">
+                        <option value="Preventivo" selected>Preventivo</option>
+                        <option value="Enfermedad" >Enfermedad</option>
+                        <option value="Rutinario" >Rutinario</option>
+                        <option value="Seguimiento" >Seguimiento</option>
                     </select>
                 </div>
 
                 <div class="mb-3">
-                    <label for="habitosToxicos">Habítos tóxicos:</label>
-                    <input type="checkbox" name="fumar">Fumar
-                    <input type="checkbox" name="malaAlimentación">Mala alimentación
-                    <input type="checkbox" name="beber">Beber
-                    <input type="checkbox" name="faltaEjercicio">Falta de ejercicio
-                    <input type="checkbox" name="drogas">Drogas
-                    <input type="checkbox" name="dormirPoco">Dormir poco
-                    <input type="checkbox" name="grasas">Grasas
+                    <label for="#">Habítos tóxicos:</label>
+                    <input type="checkbox" name="habitosToxicos[]" value="Fumador">Fumar
+                    <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación">Mala alimentación
+                    <input type="checkbox" name="habitosToxicos[]" value="Alcohol">Alcohol
+                    <input type="checkbox" name="habitosToxicos[]" value="Drogas">Drogas
+                    <input type="checkbox" name="habitosToxicos[]" value="Ninguno">Ninguno
                 </div>
 
                 <div class="mb-3">
-                    <label for="habitosToxicos">Condiciones previas:</label>
-                    <input type="checkbox" name="diabetes">Diabetes
-                    <input type="checkbox" name="embarazo">Embarazo
-                    <input type="checkbox" name="cancer">Cancer
-                    <input type="checkbox" name="hipertension">Hipertensión
-                    <input type="checkbox" name="sobrepeso">Sobrepeso/Obesidad
-                    <input type="checkbox" name="COVID">COVID
-                    <input type="checkbox" name="bulimia">Bulimia/Anorexia
-                    <input type="checkbox" name="fiebre">Fiebre del mono
+                    <label for="#">Condiciones previas:</label>
+                    <input type="checkbox" name="condicionesPrevias[]" value="Diabetes" >Diabetes
+                    <input type="checkbox" name="condicionesPrevias[]" value="Embarazo">Embarazo
+                    <input type="checkbox" name="condicionesPrevias[]" value="Cancer">Cancer
+                    <input type="checkbox" name="condicionesPrevias[]" value="Hipertension">Hipertensión
+                    <input type="checkbox" name="condicionesPrevias[]" value="Sobrepeso">Sobrepeso/Obesidad
+                    <input type="checkbox" name="condicionesPrevias[]" value="COVID">COVID
+                    <input type="checkbox" name="condicionesPrevias[]" value="Bulimia">Bulimia/Anorexia
+                    <input type="checkbox" name="condicionesPrevias[]" value="Fiebre">Fiebre del mono
+                    <input type="checkbox" name="condicionesPrevias[]" value="Ninguna">Ninguna
                 </div>
 
                 <div class="mb-3">

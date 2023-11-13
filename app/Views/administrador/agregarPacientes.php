@@ -4,11 +4,11 @@
         <div class="col-2"></div>
 
         <div class="col-8">
-            <form action="<?= base_url('/administrador/agregarPacientes2');?>" method="GET">
+            <form action="<?= base_url('/administrador/agregarPacientes2');?>" method="post">
             <?= csrf_field()?>
             
-            <h1 align="center">Agregar Medicamento</h1>
-            <h4 align="center">Información Personal</h4>
+            <h1 align="center">Agregar Paciente</h1>
+            <h4 align="center">-Información Personal-</h4>
 
 
                 <div class="mab-3">
@@ -31,6 +31,14 @@
                     <input type="text" class="form-control" name="apellidoPaterno" id="apellidoPaterno" >
                 </div>
 
+                <div class="mb-3">
+                    <label for="genero">Sexo:</label>
+                    <select name="genero" id="genero" class="form-control">
+                        <option value="M" >Masculino</option>
+                        <option value="F" >Femenino</option>
+                    </select>
+                </div>
+
                 <div class="mab-3">
                     <label for="telefono" class="form-label">Número de contacto:</label>
                     <input type="number" class="form-control" name="telefono" id="telefono" >
@@ -41,41 +49,24 @@
                     <input type="text" class="form-control" name="CURP" id="CURP" >
                 </div>
 
-                <div class="mb-3">
-                    <label for="seguro">Tipo de seguro:</label>
-                    <select name="seguro" id="seguro" class="form-control">
-                        <option value="" ></option>
-                        <option value="estudiantil" >Estudiantil</option>
-                        <option value="laboral">Laboral</option>
-                        <option value="adquirido">Adquirido</option>
-                        <option value="heredado">Heredado</option>
-                        <option value="ninguno">Ninguno</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="statusSeguro">Estatus del seguro:</label>
-                    <select name="statusSeguro" id="statusSeguro" class="form-control">
-                        <option value="" ></option>
-                        <option value="activo" >Activo</option>
-                        <option value="baja" >Baja</option>
-                        <option value="pausa" >En pauso</option>
-                    </select>
+                <div class="mab-3">
+                    <label for="correo" class="form-label">Correo electrónico:</label>
+                    <input type="email" class="form-control" name="correo" id="correo">
                 </div>
 
                 <div class="mab-3">
-                    <label for="correo" class="form-label">Correo electrónico:</label>
-                    <input type="text" class="form-control" name="correo" id="correo">
+                    <label for="username" class="form-label">Nombre de usuario:</label>
+                    <input type="text" class="form-control" name="username" id="usernma">
                 </div>
 
                 <div class="mab-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="text" class="form-control" name="contraseña" id="contraseña">
+                    <input type="password" class="form-control" name="contraseña" id="contraseña">
                 </div>
 
                 <div class="mab-3">
                         <label for="foto" class="form-label">Foto de frente:</label>
-                        <input type="image" >
+                        <input type="url" class="form-control" name="foto" id="foto">
                 </div>
 
                 <div class="mb-3">

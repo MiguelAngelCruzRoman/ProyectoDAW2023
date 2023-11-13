@@ -7,16 +7,29 @@
                 <h1 align="center">Editar Paciente</h1>
                 <h4 align="center">Historial Médico</h4>
                 
-                <input type="hidden" name="id" value=<?=$id?>>
                 <input type="hidden" name="primerNombre" value=<?=$primerNombre?>>
                 <input type="hidden" name="segundoNombre" value=<?=$segundoNombre?>>
                 <input type="hidden" name="apellidoPaterno" value=<?=$apellidoPaterno?>>
                 <input type="hidden" name="apellidoMaterno" value=<?=$apellidoMaterno?>>
+                <input type="hidden" name="genero" value=<?=$genero?>>
                 <input type="hidden" name="telefono" value=<?=$telefono?>>
                 <input type="hidden" name="CURP" value=<?=$CURP?>>
-                <input type="hidden" name="seguro" value=<?=$seguro?>>
                 <input type="hidden" name="correo" value=<?=$correo?>>
+                <input type="hidden" name="username" value=<?=$username?>>
                 <input type="hidden" name="contraseña" value=<?=$contraseña?>>
+                <input type="hidden" name="foto" value=<?=$foto?>>
+
+                <div class="mb-3">
+                    <label for="seguro">Tipo de seguro:</label>
+                    <select name="seguro" id="seguro" class="form-control">
+                        <option value="<?=$paciente->statusSeguro?>" selected><?=$paciente->statusSeguro?></option>
+                        <option value="estudiantil" >Estudiantil</option>
+                        <option value="laboral">Laboral</option>
+                        <option value="adquirido">Adquirido</option>
+                        <option value="heredado">Heredado</option>
+                        <option value="ninguno">Ninguno</option>
+                    </select>
+                </div>
                 
                 <div class="mb-3">
                     <label for="sangre">Tipo de sangre:</label>
@@ -60,26 +73,25 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="habitosToxicos">Habítos tóxicos:</label>
-                    <input type="checkbox" name="fumar">Fumar
-                    <input type="checkbox" name="malaAlimentación">Mala alimentación
-                    <input type="checkbox" name="beber">Beber
-                    <input type="checkbox" name="faltaEjercicio">Falta de ejercicio
-                    <input type="checkbox" name="drogas">Drogas
-                    <input type="checkbox" name="dormirPoco">Dormir poco
-                    <input type="checkbox" name="grasas">Grasas
+                    <label for="#">Habítos tóxicos:</label>
+                    <input type="checkbox" name="habitosToxicos[]" value="Fumador" <?php if ($paciente->habitoToxico == 'Fumador') echo "checked"; ?>>Fumar
+                    <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación" <?php if ($paciente->habitoToxico == 'Mala alimentación') echo "checked"; ?>>Mala alimentación
+                    <input type="checkbox" name="habitosToxicos[]" value="Alcohol" <?php if ($paciente->habitoToxico == 'Alcohol') echo "checked"; ?>>Alcohol
+                    <input type="checkbox" name="habitosToxicos[]" value="Drogas" <?php if ($paciente->habitoToxico == 'Drogas') echo "checked"; ?>>Drogas
+                    <input type="checkbox" name="habitosToxicos[]" value="Ninguno" <?php if ($paciente->habitoToxico == 'Ninguno') echo "checked"; ?>>Ninguno
                 </div>
 
                 <div class="mb-3">
-                    <label for="condicionesPrevias">Condiciones previas:</label>
-                    <input type="checkbox" name="diabetes">Diabetes
-                    <input type="checkbox" name="embarazo">Embarazo
-                    <input type="checkbox" name="cancer">Cancer
-                    <input type="checkbox" name="hipertension">Hipertensión
-                    <input type="checkbox" name="sobrepeso">Sobrepeso/Obesidad
-                    <input type="checkbox" name="COVID">COVID
-                    <input type="checkbox" name="bulimia">Bulimia/Anorexia
-                    <input type="checkbox" name="fiebre">Fiebre del mono
+                    <label for="#">Condiciones previas:</label>
+                    <input type="checkbox" name="condicionesPrevias[]" value="Diabetes" <?php if ($paciente->condicionesPrevias == 'Diabetes') echo "checked"; ?> >Diabetes
+                    <input type="checkbox" name="condicionesPrevias[]" value="Embarazo" <?php if ($paciente->condicionesPrevias == 'Embarazo') echo "checked"; ?>>Embarazo
+                    <input type="checkbox" name="condicionesPrevias[]" value="Cancer" <?php if ($paciente->condicionesPrevias == 'Cancer') echo "checked"; ?>>Cancer
+                    <input type="checkbox" name="condicionesPrevias[]" value="Hipertension" <?php if ($paciente->condicionesPrevias == 'Hipertension') echo "checked"; ?>>Hipertensión
+                    <input type="checkbox" name="condicionesPrevias[]" value="Sobrepeso" <?php if ($paciente->condicionesPrevias == 'Sobrepeso') echo "checked"; ?>>Sobrepeso/Obesidad
+                    <input type="checkbox" name="condicionesPrevias[]" value="COVID" <?php if ($paciente->condicionesPrevias == 'COVID') echo "checked"; ?>>COVID
+                    <input type="checkbox" name="condicionesPrevias[]" value="Bulimia" <?php if ($paciente->condicionesPrevias == 'Bulimia') echo "checked"; ?>>Bulimia/Anorexia
+                    <input type="checkbox" name="condicionesPrevias[]" value="Fiebre" <?php if ($paciente->condicionesPrevias == 'Fiebre') echo "checked"; ?>>Fiebre del mono
+                    <input type="checkbox" name="condicionesPrevias[]" value="Ninguna" <?php if ($paciente->condicionesPrevias == 'Ninguna') echo "checked"; ?>>Ninguna
                 </div>
 
                 <div class="mb-3">

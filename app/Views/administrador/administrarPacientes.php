@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR PACIENTES</h1>
-        <div class="col-12">
-        <form action="<?= base_url('index.php/administrador/buscarPacientes');?>" method="GET">
+        <div class="col-6">
+            <form action="<?= base_url('index.php/administrador/buscarPacientes');?>" method="GET">
                 <div class="col-5">
                     <label for="columnaBusquedaPaciente">Buscar paciente por:</label>
                     <select name="columnaBusquedaPaciente" class="form-control">
@@ -19,9 +19,13 @@
                     <input type="text" class="form-control" name="valIngresado" >
                 </div>
 
-                <input type="image" class="btn btn-success mt-4" value="Realizar Consulta" src="">
+                <input type="image" class="btn btn-primary mt-4" value="Realizar Consulta" src="">
             </form>
-
+        </div>
+        
+        <div class="col-4">
+            <input type="image" class="btn btn-success mt-4" value="Agregar Paciente" src="" onclick="window.location='/administrador/agregarPacientes'">
+            <input type="image" class="btn btn-secondary mt-4" value="Página Principal" src="" onclick="window.location='/administrador/opciones'">
         </div>
     </div>
     <br>
@@ -73,10 +77,5 @@
         </div>
     </div>
     <br>
-
-    <div class="col-md-4">
-            <input type="image" class="btn btn-primary mt-4" value="Agregar Paciente" src="" onclick="window.location='/administrador/agregarPacientes'">
-            <input type="image" class="btn btn-primary mt-4" value="Página Principal" src="" onclick="window.location='/administrador/opciones'">
-	</div>
 </div>
 

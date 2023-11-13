@@ -1,0 +1,232 @@
+CRITICAL - 2023-11-12 23:24:05 --> Undefined variable $id
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:25:34 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:27:23 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:28:10 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:29:19 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:30:39 --> Undefined variable $segundoNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $segundoNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:31:04 --> Undefined variable $data
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:31:29 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:31:48 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:31:51 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:32:23 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:32:26 --> Undefined variable $primerNombre
+in APPPATH\Views\administrador\agregarPacientes2.php on line 10.
+ 1 APPPATH\Views\administrador\agregarPacientes2.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $primerNombre', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\agregarPacientes2.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/agregarPacientes2', [], true)
+ 5 APPPATH\Controllers\Administrador.php(286): view('administrador/agregarPacientes2')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes2()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:33:11 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:33:12 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:33:36 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:34:06 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:34:15 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:34:19 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes2()
+in APPPATH\Controllers\Administrador.php on line 283.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:34:29 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:34:57 --> Cannot redeclare App\Controllers\Administrador::agregarPacientes()
+in APPPATH\Controllers\Administrador.php on line 276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-12 23:53:38 --> Undefined array key "primerNombre"
+in APPPATH\Controllers\Administrador.php on line 123.
+ 1 APPPATH\Controllers\Administrador.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "primerNombre"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 123)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:55:40 --> Undefined array key "primerNombre"
+in APPPATH\Controllers\Administrador.php on line 123.
+ 1 APPPATH\Controllers\Administrador.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "primerNombre"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 123)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:56:27 --> Undefined array key "primerNombre"
+in APPPATH\Controllers\Administrador.php on line 123.
+ 1 APPPATH\Controllers\Administrador.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "primerNombre"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 123)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:57:47 --> Undefined array key "motivoConsulta"
+in APPPATH\Controllers\Administrador.php on line 138.
+ 1 APPPATH\Controllers\Administrador.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "motivoConsulta"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 138)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:58:06 --> Undefined array key "motivoConsulta"
+in APPPATH\Controllers\Administrador.php on line 138.
+ 1 APPPATH\Controllers\Administrador.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "motivoConsulta"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 138)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:58:08 --> Undefined array key "motivoConsulta"
+in APPPATH\Controllers\Administrador.php on line 138.
+ 1 APPPATH\Controllers\Administrador.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "motivoConsulta"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 138)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:59:16 --> Undefined array key "motivoConsulta"
+in APPPATH\Controllers\Administrador.php on line 138.
+ 1 APPPATH\Controllers\Administrador.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "motivoConsulta"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 138)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-12 23:59:19 --> Undefined array key "motivoConsulta"
+in APPPATH\Controllers\Administrador.php on line 138.
+ 1 APPPATH\Controllers\Administrador.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "motivoConsulta"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 138)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientes3()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')

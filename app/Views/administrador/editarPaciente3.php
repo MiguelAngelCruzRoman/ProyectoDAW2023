@@ -22,6 +22,16 @@
                 <input type="hidden" name="fechaRevision" value=<?=$fechaRevision?>>
                 <input type="hidden" name="motivoRevision" value=<?=$motivoRevision?>>
                 <input type="hidden" name="idDireccion" value=<?=$direccion[0]->id?>>
+                <input type="hidden" name="genero" value=<?=$genero?>>
+                <input type="hidden" name="username" value=<?=$username?>>
+                <input type="hidden" name="foto" value=<?=$foto?>>
+                <?php foreach($habitosToxicos as $ht): ?>
+                    <input type="hidden" name="habitosToxicos[]" value=<?=$ht?>>
+                <?php endforeach; ?>
+                <?php foreach($condicionesPrevias as $cp): ?>
+                    <input type="hidden" name="condicionesPrevias[]" value=<?=$cp?>>
+                <?php endforeach; ?>
+
 
                 <div class="mab-3">
                     <label for="estado" class="form-label">Estado:</label>
@@ -62,9 +72,9 @@
                     <label for="tipo">Tipo de vivienda:</label>
                     <select name="tipo" id="tipo" class="form-control">
                         <option value="<?=$direccion[0]->tipo?>" selected><?=$direccion[0]->tipo?></option>
-                        <option value="casaFirme" >Casa firme</option>
-                        <option value="viviendaMovil" >Vivienda móvil</option>
-                        <option value="departamento" >Departamento</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Departamento" >Departamento</option>
+                        <option value="Oficina" >Oficina</option>
                     </select>
                 </div>
 

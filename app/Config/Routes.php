@@ -23,11 +23,14 @@ $routes->get('/administrador/editarPaciente3/(:num)', 'Administrador::editarPaci
 $routes->post('/administrador/editarPaciente3/(:num)', 'Administrador::editarPaciente3/$1');
 $routes->post('/administrador/editarPaciente/update','Administrador::pacienteUpdate');
 
-$routes->get('/administrador/eliminarPaciente', 'Administrador::eliminarPaciente');
+$routes->get('/administrador/eliminarPaciente/(:num)', 'Administrador::eliminarPaciente/$1');
 
 $routes->get('/administrador/agregarPacientes', 'Administrador::agregarPacientes');
 $routes->get('/administrador/agregarPacientes2', 'Administrador::agregarPacientes2');
+$routes->post('/administrador/agregarPacientes2', 'Administrador::agregarPacientes2');
 $routes->get('/administrador/agregarPacientes3', 'Administrador::agregarPacientes3');
+$routes->post('/administrador/agregarPacientes3', 'Administrador::agregarPacientes3');
+$routes->post('/administrador/agregarPacientes/insert', 'Administrador::insertPacientes');
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarMedicos', 'Administrador::administrarMedicos');
 $routes->get('/administrador/buscarMedicos', 'Administrador::buscarMedicos');

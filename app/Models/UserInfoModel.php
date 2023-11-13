@@ -14,7 +14,7 @@ class UserInfoModel extends Model
     protected $useSoftDeletes   = true;
     protected $protectFields    = false;
     protected $allowedFields    = ['primerNombre','segundoNombre','apellidoPaterno',
-                                    'apellidoMaterno','genero','telefono', 'direccion','status'];
+                                    'apellidoMaterno','genero','telefono', 'foto','status'];
 
     // Dates
     protected $useTimestamps = false;
