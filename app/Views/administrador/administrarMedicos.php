@@ -5,17 +5,18 @@
         <form action="<?= base_url('index.php/administrador/buscarMedicos');?>" method="GET">
                 <div class="col-5">
                     <label for="columnaBusquedaMedicos">Buscar médico por:</label>
-                    <select name="columnaBusquedaMedico" class="form-control">
-                            <option value="todo">todos los campos</option>
-                            <option value="nombre">nombre</option>
-                            <option value="especialidad">especialidad</option>
-                            <option value="lugarTrabajo">lugar de trabajo</option>
+                    <select name="columnaBusquedaMedicos" class="form-control">
+                            <option value="todo">Todos los campos</option>
+                            <option value="nombre">Nombre</option>
+                            <option value="especialidad">Especialidad</option>
+                            <option value="turno">Turno</option>
+                            <option value="diasLaborales">Dias Laborales</option>
                     </select>
                 </div>
             
                 <div class="col-5">
-                    <label for="elementoBusquedaMedico">Parecido a:</label>
-                    <input type="text" class="form-control" name="valorCompararBusqueda" value="cualquiera">
+                    <label for="valIngresado">Parecido a:</label>
+                    <input type="text" class="form-control" name="valIngresado">
                 </div>
 
                 <input type="image" class="btn btn-success mt-4" value="Realizar Consulta" src="">
@@ -41,7 +42,7 @@
                 <tbody>
                 <?php foreach ($users as $user):if($user->medico != null):?>
                         <tr>
-                            <?php foreach ($usersInfo as $ui): if ($ui->id == $user ->id):?> 
+                            <?php foreach ($usersInfo as $ui): if (($ui->id == $user ->id) && (count($medicos)> $user->medico-1)):?> 
                                 <td><?=$ui->id?></td>
                                 <td><?=$ui->primerNombre.' '.$ui->segundoNombre.' '.$ui->apellidoPaterno.' '.$ui->apellidoMaterno?></td>
                                 <td><?=$medicos[($user->medico)-1]->especialidad?></td>

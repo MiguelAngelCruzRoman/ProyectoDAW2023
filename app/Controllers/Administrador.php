@@ -370,9 +370,66 @@ class Administrador extends BaseController
     }
 
     public function buscarMedicos(){
+        $userInfoModel = model('UserInfoModel');
+
+        $usersModel = model('UsersModel');
+
+        $medicoModel = model('MedicoModel');
+
+        if(isset($_GET['columnaBusquedaMedicos']) && isset($_GET['valIngresado'])){
+            $columnaBusquedaMedicos = $_GET['columnaBusquedaMedicos'];
+            $valIngresado = $_GET['valIngresado'];
+
+            if($columnaBusquedaMedicos=='nombre'){
+                $data['usersInfo']=$userInfoModel->like('primerNombre',$valIngresado)
+                            ->orlike('segundoNombre',$valIngresado)
+                            ->orlike('apellidoPaterno',$valIngresado)
+                            ->orlike('apellidoMaterno',$valIngresado)
+                            ->findAll();
+                $data['users'] = $usersModel->findAll();
+                $data['medicos'] = $medicoModel->findAll();
+            }
+
+            if($columnaBusquedaMedicos=='especialidad'){
+                $data['medicos']=$medicoModel->like('especialidad',$valIngresado)
+                            ->findAll();
+                $data['users'] = $usersModel->findAll();
+                $data['usersInfo'] = $userInfoModel->findAll();
+            }
+
+            if($columnaBusquedaMedicos=='turno'){
+                $data['medicos']=$medicoModel->like('turno',$valIngresado)
+                            ->findAll();
+                $data['users'] = $usersModel->findAll();
+                $data['usersInfo'] = $userInfoModel->findAll();
+            }
+
+            if($columnaBusquedaMedicos=='diasLaborales'){
+                $data['medicos']=$medicoModel->like('diasLaborales',$valIngresado)
+                            ->findAll();
+                $data['users'] = $usersModel->findAll();
+                $data['usersInfo'] = $userInfoModel->findAll();
+            }
+
+            if($columnaBusquedaMedicos=='todo'){
+                $data['medicos']=$medicoModel->findAll();
+                $data['users'] = $usersModel->findAll();
+                $data['usersInfo'] = $userInfoModel->findAll();
+            }
+
+            
+        }
+        else {
+            $columnaBusquedaMedicos ="";
+            $valIngresado="";
+            $data['usersInfo']=$userInfoModel->findAll();
+            $data['users'] = $usersModel->findAll();
+            $data['medicos'] = $medicoModel->findAll();
+        }
+
         return view('common/head').
             view('common/menu').
-            view('administrador/administrarMedicos').
+            view('administrador/administrarMedicos',$data).
             view('common/footer');
     }
 
@@ -424,31 +481,117 @@ class Administrador extends BaseController
     }
 
     public function buscarMedicamentos(){
+
+        $medicamentosModel = model('MedicamentosModel');
+
+
+        if(isset($_GET['columnaBusquedaMedicamento']) && isset($_GET['valIngresado'])){
+            $columnaBusquedaMedicamento = $_GET['columnaBusquedaMedicamento'];
+            $valIngresado = $_GET['valIngresado'];
+
+            if($columnaBusquedaMedicamento=='nombreComercial'){
+                $data['medicamentos']=$medicamentosModel->like('nombreComercial',$valIngresado)
+                            ->findAll();
+            }
+
+            if($columnaBusquedaMedicamento=='nombreCientifico'){
+                $data['medicamentos']=$medicamentosModel->like('nombreCinetifico',$valIngresado)
+                            ->findAll();
+            }
+
+            if($columnaBusquedaMedicamento=='forma'){
+                $data['medicamentos']=$medicamentosModel->like('formaFarmaceutica',$valIngresado)
+                            ->findAll();
+            }
+
+
+            if($columnaBusquedaMedicamento=='todo'){
+                $data['medicamentos']=$medicamentosModel->findAll();
+            }
+
+            
+        }
+        else {
+            $columnaBusquedaMedicamento ="";
+            $valIngresado="";
+            $data['medicamentos']=$medicamentosModel->findAll();
+        }
+
         return view('common/head').
             view('common/menu').
-            view('administrador/administrarMedicamentos').
+            view('administrador/administrarMedicamentos',$data).
             view('common/footer');
     }
 
-    public function editarMedicamento(){
+    public function editarMedicamento($id){
+        $medicamentosModel = model('MedicamentosModel');
+        $data['medicamento'] = $medicamentosModel->find($id);
+
         return view('common/head').
             view('common/menu').
-            view('administrador/editarMedicamento').
+            view('administrador/editarMedicamento',$data).
             view('common/footer');
     }
 
-    public function eliminarMedicamento(){
-        return view('common/head').
-            view('common/menu').
-            view('administrador/eliminarMedicamento').
-            view('common/footer');
+    public function updateMedicamento(){
+        $medicamentosModel = model('MedicamentosModel');
+
+        $data = [
+            "nombreComercial"=>$_POST['nombreComercial'],
+            "nombreCinetifico"=>$_POST['nombreCinetifico'],
+            "formaFarmaceutica"=>$_POST['formaFarmaceutica'],
+            "dosis"=>$_POST['dosis'],
+            "fechaCaducidad"=>$_POST['fechaCaducidad'],
+            "loteFabricacion"=>$_POST['loteFabricacion'],
+            "version"=>$_POST['version'],
+            "simbolo"=>$_POST['simbolo'],
+            "imagenEmpaque"=>$_POST['imagenEmpaque'],
+            "stock"=>$_POST['stock'],
+            "updated_at"=>time()
+        ];
+
+        $medicamentosModel->update($_POST['id'],$data);
+
+
+        return redirect('administrador/administrarMedicamentos','refresh');
+    }
+
+    public function eliminarMedicamento($id){
+        $medicamentosModel = model('MedicamentosModel');
+        $medicamentosModel->delete($id);
+
+        return redirect('administrador/administrarMedicamentos','refresh');
     }
 
     public function agregarMedicamentos(){
+        
         return view('common/head').
             view('common/menu').
             view('administrador/agregarMedicamentos').
             view('common/footer');
+    }
+
+    public function insertMedicamentos(){
+        $medicamentosModel = model('MedicamentosModel');
+
+        $data = [
+            "nombreComercial"=>$_POST['nombreComercial'],
+            "nombreCinetifico"=>$_POST['nombreCinetifico'],
+            "formaFarmaceutica"=>$_POST['formaFarmaceutica'],
+            "dosis"=>$_POST['dosis'],
+            "fechaCaducidad"=>$_POST['fechaCaducidad'],
+            "loteFabricacion"=>$_POST['loteFabricacion'],
+            "version"=>$_POST['version'],
+            "simbolo"=>$_POST['simbolo'],
+            "imagenEmpaque"=>$_POST['imagenEmpaque'],
+            "stock"=>$_POST['stock'],
+            "created_at"=>time()
+        ];
+
+
+        $medicamentosModel->insert($data,false);
+
+        return redirect('administrador/administrarPacientes','refresh');
     }
 }
 

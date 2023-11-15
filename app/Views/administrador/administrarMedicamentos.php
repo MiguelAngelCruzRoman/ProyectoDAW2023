@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR MEDICAMENTOS</h1>
-        <div class="col-12">
+        <div class="col-6">
         <form action="<?= base_url('index.php/administrador/buscarMedicamentos');?>" method="GET">
             <div class="col-5">
                 <label for="columnaBusquedaMedicamento">Buscar medicamento por:</label>
@@ -13,12 +13,17 @@
                 </select>
             </div>
            <div class="col-5">
-                <label for="elementoBusquedaMedicamento">Parecido a:</label>
-                <input type="text" class="form-control" name="valorCompararBusqueda" value="cualquiera">
+                <label for="valIngresado">Parecido a:</label>
+                <input type="text" class="form-control" name="valIngresado" >
             </div>
 
             <input type="image" class="btn btn-success mt-4" value="Realizar Consulta" src="">
         </form>
+        </div>
+
+        <div class="col-4">
+            <input type="image" class="btn btn-success mt-4" value="Agregar Medicamentos" src="" onclick="window.location='/administrador/agregarMedicamentos'">
+            <input type="image" class="btn btn-secondary mt-4" value="Página Principal" src="" onclick="window.location='/administrador/opciones'">
         </div>
     </div>
     <br>
@@ -45,7 +50,7 @@
                             <td><?=$medicamento->nombreComercial?></td>
                             <td><?=$medicamento->nombreCinetifico?></td>
                             <td><?=$medicamento->formaFarmaceutica?></td>
-                            <td><?=$medicamento->dosis?> gm (<?=$medicamento->version?>)</td>
+                            <td><?=$medicamento->dosis?> mg (<?=$medicamento->version?>)</td>
                             <td><?=$medicamento->simbolo?></td>
                             <td><?=$medicamento->fechaCaducidad?></td>
                             <td><?=$medicamento->stock?></td>

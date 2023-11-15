@@ -1,0 +1,91 @@
+CRITICAL - 2023-11-15 02:52:51 --> Undefined array key "nombreCinetifico"
+in APPPATH\Controllers\Administrador.php on line 554.
+ 1 APPPATH\Controllers\Administrador.php(554): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombreCinetifico"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 554)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-15 02:53:29 --> Undefined array key "fechaCaducidad"
+in APPPATH\Controllers\Administrador.php on line 557.
+ 1 APPPATH\Controllers\Administrador.php(557): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fechaCaducidad"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 557)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-15 02:53:56 --> Undefined array key "imagenEmpaque"
+in APPPATH\Controllers\Administrador.php on line 561.
+ 1 APPPATH\Controllers\Administrador.php(561): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "imagenEmpaque"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 561)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-15 02:54:24 --> Undefined array key "imagenEmpaque"
+in APPPATH\Controllers\Administrador.php on line 561.
+ 1 APPPATH\Controllers\Administrador.php(561): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "imagenEmpaque"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 561)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-15 02:54:43 --> Undefined array key "imagenEmpaque"
+in APPPATH\Controllers\Administrador.php on line 561.
+ 1 APPPATH\Controllers\Administrador.php(561): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "imagenEmpaque"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 561)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-15 02:55:44 --> Undefined variable $medicamentos
+in APPPATH\Views\administrador\administrarMedicamentos.php on line 47.
+ 1 APPPATH\Views\administrador\administrarMedicamentos.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicamentos', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarMedicamentos.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarMedicamentos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarMedicamentos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(571): view('administrador/administrarMedicamentos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-15 02:56:12 --> mysqli_sql_exception: Duplicate entry 'Butamol' for key 'nombreComercial' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(567): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#10 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-11-15 02:56:12 --> Duplicate entry 'Butamol' for key 'nombreComercial'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `medicamentos` (`nombreComercial`, `nombreCinetifico`, `formaFarmaceutica`, `dosis`, `fechaCaducidad`, `loteFabricacion`, `version`, `simbolo`, `imagenEmpaque`, `stock`, `created_at`) VALUES (:nombreComercial:, :nombreCinetifico:, :formaFarmaceutica:, :dosis:, :fechaCaducidad:, :loteFabricacion:, :version:, :simbolo:, :imagenEmpaque:, :stock:, :created_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 APPPATH\Controllers\Administrador.php(567): CodeIgniter\Model->insert([...], false)
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-15 03:10:20 --> Cannot use object of type stdClass as array
+in APPPATH\Views\administrador\editarMedicamento.php on line 17.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/editarMedicamento', [], true)
+ 4 APPPATH\Controllers\Administrador.php(532): view('administrador/editarMedicamento', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarMedicamento('49')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
