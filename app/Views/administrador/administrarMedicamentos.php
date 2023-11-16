@@ -72,10 +72,5 @@
         </div>
     </div>
     <br>
-
-    <div class="col-md-4">
-        <input type="image" class="btn btn-success mt-4" value="Agregar Medicamentos" src="" onclick="window.location='/administrador/agregarMedicamentos'">
-        <input type="image" class="btn btn-primary mt-4" value="Página Principal" src="" onclick="window.location='/administrador/opciones'">
-	</div>
 </div>
 

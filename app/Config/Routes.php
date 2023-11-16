@@ -34,11 +34,19 @@ $routes->post('/administrador/agregarPacientes/insert', 'Administrador::insertPa
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarMedicos', 'Administrador::administrarMedicos');
 $routes->get('/administrador/buscarMedicos', 'Administrador::buscarMedicos');
-$routes->get('/administrador/editarMedico', 'Administrador::editarMedico');
-$routes->get('/administrador/editarMedico2', 'Administrador::editarMedico2');
-$routes->get('/administrador/eliminarMedico', 'Administrador::eliminarMedico');
+
+$routes->get('/administrador/editarMedico/(:num)', 'Administrador::editarMedico/$1');
+$routes->get('/administrador/editarMedico2/(:num)', 'Administrador::editarMedico2/$1');
+$routes->post('/administrador/editarMedico2/(:num)', 'Administrador::editarMedico2/$1');
+$routes->post('/administrador/editarMedico/update', 'Administrador::medicoUpdate');
+
+$routes->get('/administrador/eliminarMedico/(:num)', 'Administrador::eliminarMedico/$1');
+
 $routes->get('/administrador/agregarMedicos', 'Administrador::agregarMedicos');
 $routes->get('/administrador/agregarMedicos2', 'Administrador::agregarMedicos2');
+$routes->post('/administrador/agregarMedicos2', 'Administrador::agregarMedicos2');
+$routes->post('/administrador/agregarMedicos/insert', 'Administrador::insertMedicos');
+
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarMedicamentos', 'Administrador::administrarMedicamentos');
 $routes->get('/administrador/buscarMedicamentos', 'Administrador::buscarMedicamentos');

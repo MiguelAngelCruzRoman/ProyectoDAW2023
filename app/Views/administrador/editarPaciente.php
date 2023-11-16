@@ -9,10 +9,11 @@
                 
                 <input type="hidden" name="id" value="<?= $usersInfo->id ?>">
 
-                <div class="mab-3">
-                        <label for="foto" class="form-label">Foto de frente:</label>
-                        <input type="url" class="form-control" name="foto" id="foto" value="<?=$usersInfo->foto?>">
-                </div>
+                <div class="mab-3" align="center">
+                        <img src="<?= $usersInfo->foto ?>" alt="" class="service-img"  width="300" height="300">
+                        <input type="url" class="form-control" name="foto" id="foto" value="<?= $usersInfo->imagenEmpaque ?>">
+                </div>	
+                
 
                 <div class="mab-3">
                     <label for="primerNombre" class="form-label">Primer nombre:</label>

@@ -433,28 +433,119 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
-    public function editarMedico(){
+    public function editarMedico($id){
+        $userInfoModel = model('UserInfoModel');
+        $data['usersInfo'] = $userInfoModel->find($id);
+
+        $usersModel = model('UsersModel');
+        $data['users'] = $usersModel->find($id);
+
+        $idM= $usersModel->select('medico')->find($id)->medico;
+        $medicosModel = model('MedicoModel');
+        $data['medico'] = $medicosModel->find($idM);
+
         return view('common/head').
             view('common/menu').
-            view('administrador/editarMedico').
+            view('administrador/editarMedico',$data).
             view('common/footer');
     }
 
-    public function editarMedico2(){
+    public function editarMedico2($id){
+        $direccionModel = model ('DireccionModel');
+        $data = [
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "password"=>$_POST['password'],
+            "foto"=>$_POST['foto'],
+            "especialidad"=>$_POST['especialidad'],
+            "diasLaborales"=>$_POST['diasLaborales'],
+            "turno"=>$_POST['turno'],
+            "id"=>$id,
+            "direccion"=>$direccionModel->where('userinfo',$id)->findAll(),
+        ];
+
         return view('common/head').
             view('common/menu').
-            view('administrador/editarMedico2').
+            view('administrador/editarMedico2',$data).
             view('common/footer');
     }
 
-    public function eliminarMedico(){
-        return view('common/head').
-            view('common/menu').
-            view('administrador/eliminarMedico').
-            view('common/footer');
+    public function medicoUpdate(){
+        $medicosModel = model('MedicoModel');
+        $dataM = [
+            "especialidad"=>$_POST['especialidad'],
+            "diasLaborales"=>$_POST['diasLaborales'],
+            "turno"=>$_POST['turno'],
+            "created_at"=>date('d-m-Y')
+        ];
+        $medicosModel->insert($dataM);
+
+        $usersModel = model('UsersModel');
+        $dataU = [
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "password"=>$_POST['password'],
+            "medico"=>$medicosModel->getInsertID(),
+            "created_at"=>date('d-m-Y')
+        ];
+        $usersModel->insert($dataU);
+
+        $userInfoModel = model('UserInfoModel');
+        $dataUI = [
+            "id"=>$usersModel->getInsertID(),
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "foto"=>$_POST['foto'],
+            "created_at"=>date('d-m-Y')
+        ];
+        $userInfoModel->update($_POST['id'],$dataUI);
+
+        $direccionModel = model ('DireccionModel');
+        $dataD= [
+            "estado"=>$_POST['estado'],
+            "municipio"=>$_POST['municipio'],
+            "colonia"=>$_POST['colonia'],
+            "calle"=>$_POST['calle'],
+            "noInt"=>$_POST['noInt'],
+            "noExt"=>$_POST['noExt'],
+            "CP"=>$_POST['CP'],
+            "tipo"=>$_POST['tipo'],
+            "userinfo"=>$usersModel->getInsertID(),
+            "created_at"=>date('d-m-Y')
+        ];
+        $direccionModel->insert($dataD);
+
+        return redirect('administrador/administrarMedicos','refresh');
+    }
+
+    public function eliminarMedico($id){
+        $direccionModel = model('DireccionModel');
+        $direccionModel->delete(['userinfo'=>$id]);
+
+        $userInfoModel = model('UserInfoModel');
+        $userInfoModel->delete($id);
+
+        $usersModel = model('UsersModel');
+        $usersModel->delete($id);
+
+        $medicoModel = model('MedicoModel');
+        $medicoModel->delete(['medico'=>$id]);
+
+        return redirect('administrador/administrarMedicos','refresh');
     }
 
     public function agregarMedicos(){
+
         return view('common/head').
             view('common/menu').
             view('administrador/agregarMedicos').
@@ -462,10 +553,78 @@ class Administrador extends BaseController
     }
 
     public function agregarMedicos2(){
+        $data = [
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "password"=>$_POST['password'],
+            "foto"=>$_POST['foto'],
+            "especialidad"=>$_POST['especialidad'],
+            "diasLaborales"=>$_POST['diasLaborales'],
+            "turno"=>$_POST['turno'],
+        ];
+
         return view('common/head').
             view('common/menu').
-            view('administrador/agregarMedicos2').
+            view('administrador/agregarMedicos2',$data).
             view('common/footer');
+    }
+
+    public function insertMedicos(){
+        $medicosModel = model('MedicoModel');
+        $dataM = [
+            "especialidad"=>$_POST['especialidad'],
+            "diasLaborales"=>$_POST['diasLaborales'],
+            "turno"=>$_POST['turno'],
+            "created_at"=>date('d-m-Y')
+        ];
+        $medicosModel->insert($dataM);
+
+        $usersModel = model('UsersModel');
+        $dataU = [
+            "correo"=>$_POST['correo'],
+            "username"=>$_POST['username'],
+            "password"=>$_POST['password'],
+            "medico"=>$medicosModel->getInsertID(),
+            "created_at"=>date('d-m-Y')
+        ];
+        $usersModel->insert($dataU);
+
+        $userInfoModel = model('UserInfoModel');
+        $dataUI = [
+            "id"=>$usersModel->getInsertID(),
+            "primerNombre"=>$_POST['primerNombre'],
+            "segundoNombre"=>$_POST['segundoNombre'],
+            "apellidoPaterno"=>$_POST['apellidoPaterno'],
+            "apellidoMaterno"=>$_POST['apellidoMaterno'],
+            "genero"=>$_POST['genero'],
+            "telefono"=>$_POST['telefono'],
+            "foto"=>$_POST['foto'],
+            "created_at"=>date('d-m-Y')
+        ];
+        $userInfoModel->insert($dataUI);
+
+        $direccionModel = model ('DireccionModel');
+        $dataD= [
+            "estado"=>$_POST['estado'],
+            "municipio"=>$_POST['municipio'],
+            "colonia"=>$_POST['colonia'],
+            "calle"=>$_POST['calle'],
+            "noInt"=>$_POST['noInt'],
+            "noExt"=>$_POST['noExt'],
+            "CP"=>$_POST['CP'],
+            "tipo"=>$_POST['tipo'],
+            "userinfo"=>$usersModel->getInsertID(),
+            "created_at"=>date('d-m-Y')
+        ];
+        $direccionModel->insert($dataD);
+
+        return redirect('administrador/administrarMedicos','refresh');
     }
 
 

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="<?= base_url('/administrador/agregarMedicos2');?>" method="GET">
+            <form action="<?= base_url('/administrador/agregarMedicos2');?>" method="POST">
             <?= csrf_field()?>
                 <h1 align="center">Agregar Médico</h1>
                 <h4 align="center">Información Personal</h4>
@@ -31,28 +31,50 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="genero">Sexo:</label>
+                    <select name="genero" id="genero" class="form-control">
+                        <option value="M" >Masculino</option>
+                        <option value="F" >Femenino</option>
+                    </select>
+                </div>
+
+                <div class="mab-3">
+                    <label for="telefono" class="form-label">Número de contacto:</label>
+                    <input type="number" class="form-control" name="telefono" id="telefono" >
+                </div>
+
+
+                <div class="mb-3">
                     <label for="especialidad">Especialidad:</label>
                     <select name="especialidad" id="especialidad" class="form-control">
                         <option value="" selected></option>
-                        <option value="general" >Médico general</option>
-                        <option value="cardiologia" >Cardiología</option>
-                        <option value="dermatologia" >Dermatología</option>
-                        <option value="ginecologia" >Ginecología</option>
-                        <option value="rehabilitacion" >Rehabilitación</option>
-                        <option value="oftalmologia" >Oftalmología</option>
-                        <option value="ortopedia" >Ortopedia</option>
-                        <option value="pediatria" >Pediatría</option>
-                        <option value="radiologia" >Radiología</option>
+                        <option value="General" >Médico general</option>
+                        <option value="Cardiología" >Cardiología</option>
+                        <option value="Dermatología" >Dermatología</option>
+                        <option value="Ginecología" >Ginecología</option>
+                        <option value="Rehabilitación" >Rehabilitación</option>
+                        <option value="Oftalmología" >Oftalmología</option>
+                        <option value="Ortopedia" >Ortopedia</option>
+                        <option value="Pediatría" >Pediatría</option>
+                        <option value="Radiología" >Radiología</option>
+                        <option value="Neurología" >Neurología</option>
+                        <option value="Urología" >Urología</option>
+                        <option value="Oncología" >Oncología</option>
+                        <option value="Endocrinología" >Endocrinología</option>
+                        <option value="Psiquiatría" >Psiquiatría</option>
+                        <option value="Nutrición" >Nutrición</option>
+                        <option value="Dentista" >Dentista</option>
                     </select>
                 </div>
 
                 <div class="mb-3">
-                    <label for="dias">Días de trabajo:</label>
-                    <select name="dias" id="dias" class="form-control">
+                    <label for="diasLaborales">Días de trabajo:</label>
+                    <select name="diasLaborales" id="diasLaborales" class="form-control">
                         <option value="" selected></option>
-                        <option value="LMiV" >Lunes, Miércoles y Viernes</option>
-                        <option value="MJ" >Martes y Jueves</option>
-                        <option value="SD" >Sábado y Domingo</option>
+                        <option value="Lunes a Jueves" >Lunes a Jueves</option>
+                        <option value="Lunes a Viernes" >Lunes a Viernes</option>
+                        <option value="Lunes, Miércoles, Viernes" >Lunes, Miércoles, Viernes</option>
+                        <option value="Sábado y Domingo" >Sábado y Domingo</option>
                     </select>
                 </div>
                 
@@ -72,14 +94,19 @@
                 </div>
 
                 <div class="mab-3">
+                    <label for="username" class="form-label">Nombre de usuario:</label>
+                    <input type="text" class="form-control" name="username" id="usernma">
+                </div>
+
+                <div class="mab-3">
                     <label for="password" class="form-label">Contraseña:</label>
-                    <input type="text" class="form-control" name="password" id="password" >
+                    <input type="password" class="form-control" name="password" id="password" >
                 </div>
 
 
                 <div class="mab-3">
-                        <label for="foto" class="form-label">Imagen de frente:</label>
-                        <input type="image" >
+                        <label for="foto" class="form-label">Foto de frente:</label>
+                        <input type="url" class="form-control" name="foto" id="foto">
                 </div>
 
                 <div class="mb-3">
