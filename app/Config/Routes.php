@@ -12,8 +12,8 @@ $routes->post('/', 'Home::index');
 $routes->get('/administrador', 'Administrador::opciones');
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarPacientes', 'Administrador::administrarPacientes');
-
 $routes->get('/administrador/buscarPacientes', 'Administrador::buscarPacientes');
+$routes->get('/administrador/sabermasPaciente/(:num)', 'Administrador::pacienteSaberMas/$1');
 
 $routes->get('/administrador/editarPaciente/(:num)', 'Administrador::editarPaciente/$1');
 $routes->post('/administrador/editarPaciente2/(:num)', 'Administrador::editarPaciente2/$1');
@@ -34,6 +34,7 @@ $routes->post('/administrador/agregarPacientes/insert', 'Administrador::insertPa
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarMedicos', 'Administrador::administrarMedicos');
 $routes->get('/administrador/buscarMedicos', 'Administrador::buscarMedicos');
+$routes->get('/administrador/sabermasMedico/(:num)', 'Administrador::medicoSaberMas/$1');
 
 $routes->get('/administrador/editarMedico/(:num)', 'Administrador::editarMedico/$1');
 $routes->get('/administrador/editarMedico2/(:num)', 'Administrador::editarMedico2/$1');
@@ -50,10 +51,14 @@ $routes->post('/administrador/agregarMedicos/insert', 'Administrador::insertMedi
 //-----------------------------------------------------------------------------------------
 $routes->get('/administrador/administrarMedicamentos', 'Administrador::administrarMedicamentos');
 $routes->get('/administrador/buscarMedicamentos', 'Administrador::buscarMedicamentos');
+$routes->get('/administrador/sabermasMedicamento/(:num)', 'Administrador::medicamentoSaberMas/$1');
+
 $routes->get('/administrador/editarMedicamento/(:num)', 'Administrador::editarMedicamento/$1');
 $routes->post('/administrador/editarMedicamento/(:num)', 'Administrador::editarMedicamento/$1');
 $routes->post('/administrador/editarMedicamento/update', 'Administrador::updateMedicamento');
+
 $routes->get('/administrador/eliminarMedicamento/(:num)', 'Administrador::eliminarMedicamento/$1');
+
 $routes->get('/administrador/agregarMedicamentos', 'Administrador::agregarMedicamentos');
 $routes->post('/administrador/agregarMedicamentos', 'Administrador::agregarMedicamentos');
 $routes->post('/administrador/agregarMedicamentos/insert', 'Administrador::insertMedicamentos');

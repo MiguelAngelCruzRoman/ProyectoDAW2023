@@ -2,16 +2,16 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="<?= base_url('/administrador/administrarMedicos');?>" method="GET">
-            <?= csrf_field()?>
+            <form action="<?= base_url('/administrador/administrarMedicos'); ?>" method="GET">
+                <?= csrf_field() ?>
                 <h1 align="center">Eliminar Medicamento</h1>
-                
+
                 <input type="hidden" name="" value="">
 
                 <div class="mab-3" align="center">
-                        <img src="" alt="medicamento" class="service-img">
-                </div>	
-                
+                    <img src="" alt="medicamento" class="service-img">
+                </div>
+
                 <div class="mab-3">
                     <label for="primerNombre" class="form-label">Primer nombre:</label>
                     <input type="text" class="form-control" name="primerNombre" id="primerNombre">
@@ -19,7 +19,7 @@
 
                 <div class="mab-3">
                     <label for="segundoNombre" class="form-label">Segundo nombre:</label>
-                    <input type="text" class="form-control" name="segundoNombre" id="segundoNombre" >
+                    <input type="text" class="form-control" name="segundoNombre" id="segundoNombre">
                 </div>
 
                 <div class="mab-3">
@@ -29,7 +29,7 @@
 
                 <div class="mab-3">
                     <label for="apellidoMaterno" class="form-label">Apellido materno:</label>
-                    <input type="text" class="form-control" name="apellidoMaterno" id="apellidoMaterno" >
+                    <input type="text" class="form-control" name="apellidoMaterno" id="apellidoMaterno">
                 </div>
 
                 <div class="mb-3">
@@ -44,12 +44,12 @@
 
                 <div class="mab-3">
                     <label for="password" class="form-label">Contraseña de administrador:</label>
-                    <input type="text" class="form-control" name="password" id="password" >
+                    <input type="text" class="form-control" name="password" id="password">
                 </div>
 
                 <div class="mab-3">
                     <label for="comentarios" class="form-label">Comentarios extra:</label>
-                    <input type="text" class="form-control" name="comentarios" id="comentarios" >
+                    <input type="text" class="form-control" name="comentarios" id="comentarios">
                 </div>
 
                 <div class="mb-3">
@@ -58,7 +58,8 @@
             </form>
 
             <div class="mb-3">
-                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src="" onclick="window.location.href='/administrador/administrarMedicos'">
+                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
+                    onclick="window.location.href='/administrador/administrarMedicos'">
             </div>
 
         </div>

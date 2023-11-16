@@ -2,16 +2,16 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-        <form action="<?= base_url('/administrador/administrarPacientes');?>" method="GET" >
-            <?= csrf_field()?>
+            <form action="<?= base_url('/administrador/administrarPacientes'); ?>" method="GET">
+                <?= csrf_field() ?>
                 <h1 align="center">Editar Paciente</h1>
                 <h4 align="center">Información Personal</h4>
-                
+
                 <input type="hidden" name="" value="">
 
                 <div class="mab-3" align="center">
-                        <img src="" alt="paciente" class="service-img">
-                </div>	
+                    <img src="" alt="paciente" class="service-img">
+                </div>
 
                 <div class="mab-3">
                     <label for="primerNombre" class="form-label">Primer nombre:</label>
@@ -45,12 +45,12 @@
 
                 <div class="mab-3">
                     <label for="password" class="form-label">Contraseña del administrador:</label>
-                    <input type="text" class="form-control" name="password" id="password" >
+                    <input type="text" class="form-control" name="password" id="password">
                 </div>
 
                 <div class="mab-3">
                     <label for="comentarios" class="form-label">Comentarios extra:</label>
-                    <input type="text" class="form-control" name="comentarios" id="comentarios" >
+                    <input type="text" class="form-control" name="comentarios" id="comentarios">
                 </div>
 
                 <div class="col-2">

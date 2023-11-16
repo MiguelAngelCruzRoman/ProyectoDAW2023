@@ -2,24 +2,26 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="<?= base_url('/administrador/administrarMedicamentos');?>" method="GET">
-            <?= csrf_field()?>
+            <form action="<?= base_url('/administrador/administrarMedicamentos'); ?>" method="GET">
+                <?= csrf_field() ?>
                 <h1 align="center">Eliminar Medicamento</h1>
-                
+
                 <input type="hidden" name="" value="">
 
                 <div class="mab-3" align="center">
-                        <img src="" alt="medicamento" class="service-img">
-                </div>	
-                
+                    <img src="" alt="medicamento" class="service-img">
+                </div>
+
                 <div class="mab-3">
                     <label for="nombreComercial" class="form-label">Nombre comercial:</label>
-                    <input type="text" class="form-control" name="nombreComercial" id="nombreComercial" value="Aspirina">
+                    <input type="text" class="form-control" name="nombreComercial" id="nombreComercial"
+                        value="Aspirina">
                 </div>
 
                 <div class="mab-3">
                     <label for="nombreCientifico" class="form-label">Nombre científico:</label>
-                    <input type="text" class="form-control" name="nombreCientifico" id="nombreCientifico" value="Ácido acetilsalicilico">
+                    <input type="text" class="form-control" name="nombreCientifico" id="nombreCientifico"
+                        value="Ácido acetilsalicilico">
                 </div>
 
                 <div class="mab-3">
@@ -46,8 +48,8 @@
                     <label for="version">Versión:</label>
                     <select name="version" id="version" class="form-control">
                         <option value="adulto" selected>Adulto</option>
-                        <option value="infantil" >Infantil</option>
-                        <option value="indistinto" >Indistinto</option>
+                        <option value="infantil">Infantil</option>
+                        <option value="indistinto">Indistinto</option>
                     </select>
                 </div>
 
@@ -57,7 +59,8 @@
             </form>
 
             <div class="mb-3">
-                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src="" onclick="window.location.href='/administrador/administrarMedicamentos'">
+                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
+                    onclick="window.location.href='/administrador/administrarMedicamentos'">
             </div>
 
         </div>
