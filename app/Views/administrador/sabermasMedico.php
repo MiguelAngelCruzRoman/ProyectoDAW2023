@@ -9,15 +9,15 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title" align="center">
-                            <?php if ($ui[0]->genero == 'F'): ?>
+                            <?php if ($userinfo[0]->genero == 'F'): ?>
                                 Dra.
                             <?php else: ?>
                                 Dr.
                             <?php endif; ?>
-                            <?= $ui[0]->primerNombre . ' ' . $ui[0]->segundoNombre . ' ' . $ui[0]->apellidoPaterno . ' ' . $ui[0]->apellidoMaterno ?>
+                            <?= $userinfo[0]->primerNombre . ' ' . $userinfo[0]->segundoNombre . ' ' . $userinfo[0]->apellidoPaterno . ' ' . $userinfo[0]->apellidoMaterno ?>
                         </h2>
 
-                        <img src="<?= $ui[0]->foto ?>" class="card-img-top" alt="Imagen del medico">
+                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del medico">
 
                         <h4> Información del médico</h4>
                         <p><strong>Especialidad:</strong>
@@ -30,37 +30,37 @@
                             <?= $medico->diasLaborales ?>
                         </p>
                         <p><strong>Número de contacto:</strong>
-                            <?= $ui[0]->telefono ?>
+                            <?= $userinfo[0]->telefono ?>
                         </p>
                         <br>
 
                         <h4> Información de usuario</h4>
                         <p><strong>Nombre de usuario:</strong>
-                            <?= $u[0]->username ?>
+                            <?= $user[0]->username ?>
                         </p>
                         <p><strong>Correo:</strong>
-                            <?= $u[0]->correo ?>
+                            <?= $user[0]->correo ?>
                         </p>
                         <p><strong>Contraseña:</strong>
-                            <?= $u[0]->password ?>
+                            <?= $user[0]->password ?>
                         </p>
                         <br>
 
                         <h4>Dirección</h4>
                         <p><strong>Tipo:</strong>
-                            <?= $d[0]->tipo ?>
+                            <?= $direccion[0]->tipo ?>
                         </p>
                         <p><strong>Ubicada en:</strong>
-                            <?= $d[0]->municipio . ' ' . $d[0]->estado ?>
+                            <?= $direccion[0]->municipio . ' ' . $direccion[0]->estado ?>
                         </p>
                         <p><strong>Colonia:</strong>
-                            <?= $d[0]->colonia . '(C.P.' . $d[0]->CP . ')' ?>
+                            <?= $direccion[0]->colonia . '(C.P.' . $direccion[0]->CP . ')' ?>
                         </p>
                         <p><strong>Calle:</strong>
-                            <?= $d[0]->calle ?>
+                            <?= $direccion[0]->calle ?>
                         </p>
                         <p><strong>Número:</strong> #
-                            <?= $d[0]->noExt . ' (interior:' . $d[0]->noInt . ')' ?>
+                            <?= $direccion[0]->noExt . ' (interior:' . $direccion[0]->noInt . ')' ?>
                         </p>
                         <br>
 

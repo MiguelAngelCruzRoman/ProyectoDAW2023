@@ -18,11 +18,12 @@
                 </div>
 
                 <div class="col-5">
-                    <button type="button" class="btn btn-secondary">
-                        <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25"
-                            height="25">
-                        Realizar Búsqueda
-                    </button>
+                    <form action="buscar">
+                        <button type="submit" class="btn btn-secondary">
+                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25" height="25">
+                            Realizar Búsqueda
+                        </button>
+                    </form>
                 </div>
             </form>
         </div>
@@ -43,8 +44,19 @@
     </div>
     <br>
 
+
+    
+
     <div class="row">
         <div class="col-12">
+
+            <?php $registrosPorPagina = 10;
+            $totalRegistros = count($medicamentos);
+            $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
+            $paginaActual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+            $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
+            $medicamentosPagina = array_slice($medicamentos, $indiceInicio, $registrosPorPagina); ?>
+
             <table class="table">
 
                 <thead>
@@ -61,7 +73,7 @@
                 </thead>
 
                 <tbody>
-                    <?php foreach ($medicamentos as $medicamento): ?>
+                <?php foreach ($medicamentosPagina as $medicamento): ?>
                         <tr>
                             <td><?= $medicamento->id ?></td>
                             <td><?= $medicamento->nombreComercial ?></td>
@@ -97,9 +109,29 @@
                             </td>
                         </tr>
                     <?php endforeach ?>
+
                 </tbody>
 
             </table>
+
+            <div class="col-5 mx-auto text-center">
+                <ul class="pagination">
+                    <li class="page-item <?php echo ($paginaActual <= 1) ? 'disabled' : ''; ?>">
+                        <a class="page-link text-black" href="?pagina=<?php echo $paginaActual - 1; ?>">Anterior</a>
+                    </li>
+
+                    <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
+                        <li class="page-item <?php echo ($paginaActual == $i) ? 'active' : ''; ?>">
+                            <a class="page-link text-black" href="?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor ?>
+
+                    <li class="page-item <?php echo ($paginaActual >= $totalPaginas) ? 'disabled' : ''; ?>">
+                        <a class="page-link text-black" href="?pagina=<?php echo $paginaActual + 1; ?>">Siguiente</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
     <br>

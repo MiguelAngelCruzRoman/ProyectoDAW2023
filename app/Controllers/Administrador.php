@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
+
+// Controlador diseñado para hacer las funcionalidades del rol del Administrador
+// Se apoya de las rutas del apartado "Sección de rutas destinada para las funcionalidades del Administrador"
 class Administrador extends BaseController
 {
     public function index()
@@ -11,6 +14,10 @@ class Administrador extends BaseController
 
     }
 
+    /* 
+        Función que redirige a la pantalla principal de las opciones que puede hacer el 
+        administrador en el sistem
+    */
     public function opciones()
     {
         return view('common/head') .
@@ -20,8 +27,14 @@ class Administrador extends BaseController
     }
 
 
+    //---------------------------------------------------------------------------------------------
+    //                                     Sección para pacientes
+    //---------------------------------------------------------------------------------------------
 
-    //Sección para pacientes
+    /* 
+        Función que redirige los datos de usuario, que se encuentran almacenados en los respectivos 
+        modelos, que contienen la información de todos los pacientes
+    */
     public function administrarPacientes()
     {
         $userInfoModel = model('UserInfoModel');
@@ -36,9 +49,14 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+
+    /* 
+        Función para buscar entre todos los pacientes datos en específico.
+        Al terminar de hacer la búsqueda en los respectivos modelos, se redirige
+        a la vista de la función "administrarPaciente" 
+    */
     public function buscarPacientes()
     {
-
         $userInfoModel = model('UserInfoModel');
         $usersModel = model('UsersModel');
 
@@ -91,6 +109,12 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /* 
+        Función para ver toda la información referente a cada usuario paciente.
+        Esta función manda a traer un id en específico, mismo que es parte
+        de los id que se utilizan para identificar a los usuarios en 
+        la función "administrarPaciente"
+    */
     public function pacienteSaberMas($id)
     {
         $userInfoModel = model('UserInfoModel');
@@ -98,11 +122,11 @@ class Administrador extends BaseController
         $direccionModel = model('DireccionModel');
         $pacienteModel = model('PacienteModel');
 
-        $data['u'] = $userModel->where('paciente', $id)->findAll();
+        $data['user'] = $userModel->where('paciente', $id)->findAll();
 
-        $data['ui'] = $userInfoModel->where('id', ($data['u'][0]->id))->findAll();
+        $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
 
-        $data['d'] = $direccionModel->where('userinfo', $id)->findAll();
+        $data['direccion'] = $direccionModel->where('userinfo', $id)->findAll();
 
         $data['paciente'] = $pacienteModel->find($id);
 
@@ -114,6 +138,11 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /* 
+        Función que redirige al primer formulario para agregar un paciente 
+        a la respectiva tabla de la base de datos. 
+        El formulario requiere datos del usuario
+    */
     public function agregarPacientes()
     {
         return view('common/head') .
@@ -122,6 +151,13 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función que redirige al segundo formulario para agregar un paciente a la
+        respectiva tabla de la base de datos. El formulario requiere datos médicos
+        del paciente.
+        Se recuperan los valores del formulario "agregarPacientes" para incluirlos 
+        en un arreglo que servirá en la función "insertPacientes"
+    */
     public function agregarPacientes2()
     {
 
@@ -145,6 +181,11 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para redirigir al último formulario para agregar a un paciente,
+        mismo que hace referencia a la dirección del paciente.
+        Se añaden elementos al arreglo "data" de la función "agregarPacientes2" 
+    */
     public function agregarPacientes3()
     {
         $data = [
@@ -174,10 +215,17 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /* 
+        Función que recupera datos de los formularios de las funciones 
+        "agregarPacientes", "agregarPacientes2" y "agregarPacientes3"
+        para hacer las inserciones a las tablas del paciente, users,
+        userinfo y direccion en la base de datos.
+        Al terminar re actualiza y redirige a la vista de "administrarPacientes"
+    */
     public function insertPacientes()
     {
         $pacienteModel = model('PacienteModel');
-        $dataP = [
+        $dataPaciente = [
             "CURP" => $_POST['CURP'],
             "statusSeguro" => $_POST['statusSeguro'],
             "tipoSangre" => $_POST['sangre'],
@@ -188,20 +236,20 @@ class Administrador extends BaseController
             "condicionesPrevias" => $_POST['condicionesPrevias'],
             "created_at" => date('d-m-Y')
         ];
-        $pacienteModel->insert($dataP);
+        $pacienteModel->insert($dataPaciente);
 
         $usersModel = model('UsersModel');
-        $dataU = [
+        $dataUser = [
             "correo" => $_POST['correo'],
             "username" => $_POST['username'],
             "password" => $_POST['contraseña'],
             "paciente" => $pacienteModel->getInsertID(),
             "created_at" => date('d-m-Y')
         ];
-        $usersModel->insert($dataU);
+        $usersModel->insert($dataUser);
 
         $userInfoModel = model('UserInfoModel');
-        $dataUI = [
+        $dataUserInfo = [
             "id" => $usersModel->getInsertID(),
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
@@ -212,10 +260,10 @@ class Administrador extends BaseController
             "foto" => $_POST['foto'],
             "created_at" => date('d-m-Y')
         ];
-        $userInfoModel->insert($dataUI);
+        $userInfoModel->insert($dataUserInfo);
 
         $direccionModel = model('DireccionModel');
-        $dataD = [
+        $dataDireccion = [
             "estado" => $_POST['estado'],
             "municipio" => $_POST['municipio'],
             "colonia" => $_POST['colonia'],
@@ -227,11 +275,18 @@ class Administrador extends BaseController
             "userinfo" => $usersModel->getInsertID(),
             "created_at" => date('d-m-Y')
         ];
-        $direccionModel->insert($dataD);
+        $direccionModel->insert($dataDireccion);
 
         return redirect('administrador/administrarPacientes', 'refresh');
     }
 
+    /*
+        Función para recuperar el id del paciente que se desea editar. 
+        Los datos de dicho paciente se mandan a un formulario para que se
+        puedan actualizar los campos que se requieran.
+        Este primer formulario hace referencia a la información de usuario
+        del paciente
+    */
     public function editarPaciente($id)
     {
         $userInfoModel = model('UserInfoModel');
@@ -250,6 +305,12 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para recuperar los datos del formulario de la función 
+        "editarPaciente", mismos que se envían en un arreglo ("data").
+        Se redirige la información a un segundo formulario "editarPaciente2"
+        que hace referencia a los datos médicos del paciente
+    */
     public function editarPaciente2($id)
     {
         $pacienteModel = model('PacienteModel');
@@ -277,6 +338,12 @@ class Administrador extends BaseController
     }
 
 
+    /*
+        Función para recuperar los datos del formulario de la función 
+        "editarPaciente2", mismos que se envían en un arreglo ("data").
+        Se redirige la información a un último formulario "editarPaciente3"
+        que hace referencia a la dirección del paciente
+    */
     public function editarPaciente3($id)
     {
         $pacienteModel = model('PacienteModel');
@@ -311,6 +378,13 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para recuperar los datos de los formularios que se usaron en las
+        funciones "editarPaciente", "editarPaciente2" y "editarPaciente3".
+        Los datos usan para actualizar un registro en específico, relacionado al
+        id del paciente que se trata desde el primer formulario de editar pacientes.
+        Al finalizar se redirige y actualiza la vista de "administrarPacientes"
+    */
     public function pacienteUpdate()
     {
         $userInfoModel = model('UserInfoModel');
@@ -321,7 +395,6 @@ class Administrador extends BaseController
 
         $direccionModel = model('DireccionModel');
 
-        //print($direccionModel->select('userInfo')->find($_POST['id'])->userInfo);
         $data = array(
             "CURP" => $_POST['CURP'],
             "statusSeguro" => $_POST['seguro'],
@@ -365,6 +438,11 @@ class Administrador extends BaseController
     }
 
 
+    /*
+        Función para eliminar un registro del paciente que se desea, a partir
+        del id que se seleccione. También se eliminan los registros relacionados a 
+        dicho paciente, incluyendo la información de usuario, su dirección y su usuario
+    */
     public function eliminarPaciente($id)
     {
         $direccionModel = model('DireccionModel');
@@ -386,7 +464,14 @@ class Administrador extends BaseController
 
 
 
-    //Sección para médicos
+    //---------------------------------------------------------------------------------------------
+    //                                     Sección para médicos
+    //---------------------------------------------------------------------------------------------
+
+    /* 
+        Función que redirige los datos de usuario, que se encuentran almacenados en los respectivos 
+        modelos, que contienen la información de todos los médicos
+    */
     public function administrarMedicos()
     {
         $userInfoModel = model('UserInfoModel');
@@ -404,6 +489,12 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+
+    /* 
+        Función para buscar entre todos los médicos datos en específico.
+        Al terminar de hacer la búsqueda en los respectivos modelos, se redirige
+        a la vista de la función "administrarMedicos" 
+    */
     public function buscarMedicos()
     {
         $userInfoModel = model('UserInfoModel');
@@ -469,6 +560,12 @@ class Administrador extends BaseController
     }
 
 
+    /* 
+        Función para ver toda la información referente a cada usuario médico.
+        Esta función manda a traer un id en específico, mismo que es parte
+        de los id que se utilizan para identificar a los usuarios en 
+        la función "administrarMedicos"
+    */
     public function medicoSaberMas($id)
     {
         $userInfoModel = model('UserInfoModel');
@@ -476,11 +573,11 @@ class Administrador extends BaseController
         $direccionModel = model('DireccionModel');
         $medicoModel = model('MedicoModel');
 
-        $data['u'] = $userModel->where('medico', $id)->findAll();
+        $data['user'] = $userModel->where('medico', $id)->findAll();
 
-        $data['ui'] = $userInfoModel->where('id', ($data['u'][0]->id))->findAll();
+        $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
 
-        $data['d'] = $direccionModel->where('userinfo', $id)->findAll();
+        $data['direccion'] = $direccionModel->where('userinfo', $id)->findAll();
 
         $data['medico'] = $medicoModel->find($id);
 
@@ -493,7 +590,13 @@ class Administrador extends BaseController
     }
 
 
-
+    /*
+        Función para recuperar el id del médico que se desea editar. 
+        Los datos de dicho médico se mandan a un formulario para que se
+        puedan actualizar los campos que se requieran.
+        Este primer formulario hace referencia a la información de usuario
+        del médico
+    */
     public function editarMedico($id)
     {
         $userInfoModel = model('UserInfoModel');
@@ -512,6 +615,12 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para recuperar los datos del formulario de la función 
+        "editarMedico", mismos que se envían en un arreglo ("data").
+        Se redirige la información a un segundo formulario "editarMedico2"
+        que hace referencia a los datos dek perfil laboral del médico
+    */
     public function editarMedico2($id)
     {
         $direccionModel = model('DireccionModel');
@@ -539,6 +648,13 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para recuperar los datos de los formularios que se usaron en las
+        funciones "editarMedico", "editarMedico2" 
+        Los datos usan para actualizar un registro en específico, relacionado al
+        id del médico que se trata desde el primer formulario de editar médico.
+        Al finalizar se redirige y actualiza la vista de "administrarMedicos"
+    */
     public function medicoUpdate()
     {
         $medicosModel = model('MedicoModel');
@@ -546,24 +662,24 @@ class Administrador extends BaseController
         $userInfoModel = model('UserInfoModel');
         $direccionModel = model('DireccionModel');
 
-        $dataM = [
+        $dataMedico = [
             "especialidad" => $_POST['especialidad'],
             "diasLaborales" => $_POST['diasLaborales'],
             "turno" => $_POST['turno'],
             "created_at" => date('d-m-Y')
         ];
-        $medicosModel->update(($usersModel->select('medico')->find($_POST['id'])->medico), $dataM);
+        $medicosModel->update(($usersModel->select('medico')->find($_POST['id'])->medico), $dataMedico);
 
-        $dataU = [
+        $dataUser = [
             "correo" => $_POST['correo'],
             "username" => $_POST['username'],
             "password" => $_POST['password'],
             "medico" => $medicosModel->getInsertID(),
             "created_at" => date('d-m-Y')
         ];
-        $usersModel->update($_POST['id'], $dataU);
+        $usersModel->update($_POST['id'], $dataUser);
 
-        $dataUI = [
+        $dataUserInfo = [
             "id" => $usersModel->getInsertID(),
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
@@ -574,9 +690,9 @@ class Administrador extends BaseController
             "foto" => $_POST['foto'],
             "created_at" => date('d-m-Y')
         ];
-        $userInfoModel->update($_POST['id'], $dataUI);
+        $userInfoModel->update($_POST['id'], $dataUserInfo);
 
-        $dataD = [
+        $dataDireccion = [
             "estado" => $_POST['estado'],
             "municipio" => $_POST['municipio'],
             "colonia" => $_POST['colonia'],
@@ -588,11 +704,17 @@ class Administrador extends BaseController
             "userinfo" => $usersModel->getInsertID(),
             "created_at" => date('d-m-Y')
         ];
-        $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataD);
+        $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
 
         return redirect('administrador/administrarMedicos', 'refresh');
     }
 
+
+    /*
+        Función para eliminar un registro del médico que se desea, a partir
+        del id que se seleccione. También se eliminan los registros relacionados a 
+        dicho médico, incluyendo la información de usuario, su dirección y su usuario
+    */
     public function eliminarMedico($id)
     {
         $direccionModel = model('DireccionModel');
@@ -610,15 +732,27 @@ class Administrador extends BaseController
         return redirect('administrador/administrarMedicos', 'refresh');
     }
 
+    /* 
+        Función que redirige al primer formulario para agregar un médico 
+        a la respectiva tabla de la base de datos. 
+        El formulario requiere datos del usuario
+    */
     public function agregarMedicos()
     {
-
         return view('common/head') .
             view('common/menu') .
             view('administrador/agregarMedicos') .
             view('common/footer');
     }
 
+
+    /*
+        Función que redirige al segundo formulario para agregar un médico a la
+        respectiva tabla de la base de datos. El formulario requiere datos del 
+        perfil laboral del médico.
+        Se recuperan los valores del formulario "agregarMedicos" para incluirlos 
+        en un arreglo que servirá en la función "insertMedicos"
+    */
     public function agregarMedicos2()
     {
         $data = [
@@ -643,29 +777,35 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /* 
+        Función que recupera datos de los formularios de las funciones 
+        "agregarMedicos" y "agregarMedicos2" para hacer las inserciones a 
+        las tablas del médico, users, userinfo y direccion, en la base de datos.
+        Al terminar re actualiza y redirige a la vista de "administrarMedicos"
+    */
     public function insertMedicos()
     {
         $medicosModel = model('MedicoModel');
-        $dataM = [
+        $dataMedicos = [
             "especialidad" => $_POST['especialidad'],
             "diasLaborales" => $_POST['diasLaborales'],
             "turno" => $_POST['turno'],
             "created_at" => date('d-m-Y')
         ];
-        $medicosModel->insert($dataM);
+        $medicosModel->insert($dataMedicos);
 
         $usersModel = model('UsersModel');
-        $dataU = [
+        $dataUser = [
             "correo" => $_POST['correo'],
             "username" => $_POST['username'],
             "password" => $_POST['password'],
             "medico" => $medicosModel->getInsertID(),
             "created_at" => date('d-m-Y')
         ];
-        $usersModel->insert($dataU);
+        $usersModel->insert($dataUser);
 
         $userInfoModel = model('UserInfoModel');
-        $dataUI = [
+        $dataUserInfo = [
             "id" => $usersModel->getInsertID(),
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
@@ -676,10 +816,10 @@ class Administrador extends BaseController
             "foto" => $_POST['foto'],
             "created_at" => date('d-m-Y')
         ];
-        $userInfoModel->insert($dataUI);
+        $userInfoModel->insert($dataUserInfo);
 
         $direccionModel = model('DireccionModel');
-        $dataD = [
+        $dataDireccion = [
             "estado" => $_POST['estado'],
             "municipio" => $_POST['municipio'],
             "colonia" => $_POST['colonia'],
@@ -691,13 +831,21 @@ class Administrador extends BaseController
             "userinfo" => $usersModel->getInsertID(),
             "created_at" => date('d-m-Y')
         ];
-        $direccionModel->insert($dataD);
+        $direccionModel->insert($dataDireccion);
 
         return redirect('administrador/administrarMedicos', 'refresh');
     }
 
 
-    //Sección para medicamentos
+
+    //---------------------------------------------------------------------------------------------
+    //                                     Sección para medicamentos
+    //---------------------------------------------------------------------------------------------
+
+    /* 
+        Función que redirige los datos de los medicamentos, que se encuentran almacenados en el 
+        respectivo modelo
+    */
     public function administrarMedicamentos()
     {
         $medicamentosModel = model('MedicamentosModel');
@@ -709,9 +857,13 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+     /* 
+        Función para buscar entre todos los medicamentos datos en específico.
+        Al terminar de hacer la búsqueda en los respectivos modelos, se redirige
+        a la vista de la función "administrarMedicamentos" 
+    */
     public function buscarMedicamentos()
     {
-
         $medicamentosModel = model('MedicamentosModel');
 
 
@@ -752,6 +904,12 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /* 
+        Función para ver toda la información referente a cada medicamento.
+        Esta función manda a traer un id en específico, mismo que es parte
+        de los id que se utilizan para identificar a los medicamentos en 
+        la función "administrarMedicamentos"
+    */
     public function medicamentoSaberMas($id)
     {
         $medicamentosModel = model('MedicamentosModel');
@@ -763,6 +921,11 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para recuperar el id del medicamento que se desea editar. 
+        Los datos de dicho medicamento se mandan a un formulario para que se
+        puedan actualizar los campos que se requieran.
+    */
     public function editarMedicamento($id)
     {
         $medicamentosModel = model('MedicamentosModel');
@@ -774,6 +937,13 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
+    /*
+        Función para recuperar los datos de los formularios que se usaron en la
+        función "editarMedicamento". 
+        Los datos usan para actualizar un registro en específico, relacionado al
+        id del medicamento. 
+        Al finalizar se redirige y actualiza la vista de "administrarMedicamento"
+    */
     public function updateMedicamento()
     {
         $medicamentosModel = model('MedicamentosModel');
@@ -798,6 +968,10 @@ class Administrador extends BaseController
         return redirect('administrador/administrarMedicamentos', 'refresh');
     }
 
+    /*
+        Función para eliminar un registro del medicamento que se desea, a partir
+        del id que se seleccione.
+    */
     public function eliminarMedicamento($id)
     {
         $medicamentosModel = model('MedicamentosModel');
@@ -806,15 +980,23 @@ class Administrador extends BaseController
         return redirect('administrador/administrarMedicamentos', 'refresh');
     }
 
+     /* 
+        Función que redirige al formulario para agregar un medicamento 
+        a la respectiva tabla de la base de datos. 
+    */
     public function agregarMedicamentos()
     {
-
         return view('common/head') .
             view('common/menu') .
             view('administrador/agregarMedicamentos') .
             view('common/footer');
     }
 
+    /* 
+        Función que recupera datos de los formularios de la función "agregarMedicamentos" 
+        para hacer las inserciones a la tabla del medicamento, en la base de datos.
+        Al terminar re actualiza y redirige a la vista de "administrarMedicamentoss"
+    */
     public function insertMedicamentos()
     {
         $medicamentosModel = model('MedicamentosModel');
@@ -832,7 +1014,6 @@ class Administrador extends BaseController
             "stock" => $_POST['stock'],
             "created_at" => time()
         ];
-
 
         $medicamentosModel->insert($data, false);
 

@@ -20,11 +20,12 @@
                 </div>
 
                 <div class="col-5">
-                    <button type="button" class="btn btn-secondary">
-                        <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25"
-                            height="25">
-                        Realizar Búsqueda
-                    </button>
+                    <form action="buscar">
+                        <button type="submit" class="btn btn-secondary">
+                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25" height="25">
+                            Realizar Búsqueda
+                        </button>
+                    </form>
                 </div>
             </form>
         </div>
@@ -47,8 +48,14 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table">
+        <?php $registrosPorPaginaUsuarios = 10;
+            $totalRegistrosUsuarios = count($users);
+            $totalPaginasUsuarios = ceil($totalRegistrosUsuarios / $registrosPorPaginaUsuarios);
+            $paginaActualUsuarios = isset($_GET['paginaUsuarios']) ? $_GET['paginaUsuarios'] : 1;
+            $indiceInicioUsuarios = ($paginaActualUsuarios - 1) * $registrosPorPaginaUsuarios;
+            $usersPagina = array_slice($users, $indiceInicioUsuarios, $registrosPorPaginaUsuarios);?>
 
+            <table class="table">
                 <thead>
                     <th>ID</th>
                     <th>Nombre del paciente</th>
@@ -60,7 +67,7 @@
                 </thead>
 
                 <tbody>
-                    <?php foreach ($users as $user):
+                    <?php foreach ($usersPagina as $user):
                         if ($user->paciente != null): ?>
                             <tr>
                                 <?php foreach ($usersInfo as $ui):
@@ -104,6 +111,24 @@
                         <?php endif; endforeach ?>
                 </tbody>
             </table>
+
+            <div class="col-5 mx-auto text-center">
+                <ul class="pagination">
+                    <li class="page-item <?php echo ($paginaActualUsuarios <= 1) ? 'disabled' : ''; ?>">
+                        <a class="page-link text-black" href="?paginaUsuarios=<?php echo $paginaActualUsuarios - 1; ?>">Anterior</a>
+                    </li>
+
+                    <?php for ($i = 1; $i <= $totalPaginasUsuarios; $i++): ?>
+                        <li class="page-item <?php echo ($paginaActualUsuarios == $i) ? 'active' : ''; ?>">
+                            <a class="page-link text-black" href="?paginaUsuarios=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor ?>
+
+                    <li class="page-item <?php echo ($paginaActualUsuarios >= $totalPaginasUsuarios) ? 'disabled' : ''; ?>">
+                        <a class="page-link text-black" href="?paginaUsuarios=<?php echo $paginaActualUsuarios + 1; ?>">Siguiente</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <br>
