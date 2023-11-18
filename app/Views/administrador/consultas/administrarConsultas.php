@@ -1,17 +1,18 @@
 <div class="container">
     <div class="row">
-        <h1 align="center">ADMINISTRAR MEDICAMENTOS</h1>
+        <h1 align="center">ADMINISTRAR CONSULTAS</h1>
         <div class="col-6">
-            <form action="<?= base_url('index.php/administrador/medicamentos/buscarMedicamentos'); ?>" method="GET">
+            <form action="<?= base_url('index.php/administrador/consultas/buscarConsultas'); ?>" method="GET">
                 <div class="col-5">
-                    <label for="columnaBusquedaMedicamento">Buscar medicamento por:</label>
-                    <select name="columnaBusquedaMedicamento" class="form-control">
-                        <option value="todo">todos los campos</option>
-                        <option value="nombreComercial">nombre comercial</option>
-                        <option value="nombreCientifico">nombre científico</option>
-                        <option value="forma">forma farmaceutica</option>
+                    <label for="columnaBusquedaConsulta">Buscar consulta por:</label>
+                    <select name="columnaBusquedaConsulta" class="form-control">
+                        <option value="todo">Cualquier campo</option>
+                        <option value="lugar">Lugar en el que se realizó</option>
+                        <option value="fecha">Fecha de consulta</option>
+                        <option value="motivo">Motivo de consulta</option>
                     </select>
                 </div>
+
                 <div class="col-5">
                     <label for="valIngresado">Parecido a:</label>
                     <input type="text" class="form-control" name="valIngresado">
@@ -30,11 +31,11 @@
 
         <div class="col-2"></div>
 
+
         <div class="col-4">
-            <button type="button" class="btn btn-success mt-4"
-                onclick="window.location='/administrador/medicamentos/agregarMedicamentos'">
-                <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Icono" width="25" height="25">
-                Agregar Medicamentos
+            <button type="button" class="btn btn-secondary mt-4" onclick="history.back()">
+                <img src="https://cdn-icons-png.flaticon.com/128/8591/8591477.png" alt="regresar" class="service-img" width="25" height="25">                
+                Regresar
             </button>
             <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/administrador'">
                 <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="Icono" width="25" height="25">
@@ -51,63 +52,100 @@
         <div class="col-12">
 
             <?php $registrosPorPagina = 10;
-            $totalRegistros = count($medicamentos);
+            $totalRegistros = count($consultas);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
             $paginaActual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
-            $medicamentosPagina = array_slice($medicamentos, $indiceInicio, $registrosPorPagina); ?>
+            $consultasPagina = array_slice($consultas, $indiceInicio, $registrosPorPagina); ?>
 
             <table class="table">
 
                 <thead>
                     <th style="text-align: center">ID</th>
-                    <th style="text-align: center">Nombre comercial</th>
-                    <th style="text-align: center">Nombre científico</th>
-                    <th style="text-align: center">Forma farmacéutica</th>
-                    <th style="text-align: center">Dosis</th>
-                    <th style="text-align: center">Símbolos</th>
-                    <th style="text-align: center">Caducidad</th>
-                    <th style="text-align: center">Stock</th>
+                    <th style="text-align: center">Lugar de consulta </th>
+                    <th style="text-align: center">Motivo de consulta </th>
+                    <th style="text-align: center">Fecha de consulta </th>
+                    <th style="text-align: center">Status de consulta </th>
+                    <th style="text-align: center">Receta</th>
                     <th style="text-align: center" colspan="3">Opciones</th>
 
                 </thead>
 
                 <tbody>
-                <?php foreach ($medicamentosPagina as $medicamento): ?>
+                <?php foreach ($consultasPagina as $consulta): ?>
                         <tr>
-                            <td><?= $medicamento->id ?></td>
-                            <td><?= $medicamento->nombreComercial ?></td>
-                            <td><?= $medicamento->nombreCinetifico ?></td>
-                            <td><?= $medicamento->formaFarmaceutica ?></td>
-                            <td><?= $medicamento->dosis ?> mg (<?= $medicamento->version ?>)</td>
-                            <td><?= $medicamento->simbolo ?></td>
-                            <td><?= $medicamento->fechaCaducidad ?></td>
-                            <td style="text-align: center"><?= $medicamento->stock ?></td>
-                            <td>
-                                <a href="<?= base_url('/administrador/medicamentos/editarMedicamento/' . $medicamento->id); ?>"
-                                    style="color:rgba(0,0,0,0.6)">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/705/705120.png" alt="editar"
-                                        class="service-img" width="60" height="60">
-                                    <figcaption>Editar</figcaption>
-                                </a>
+                        <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
+                            
+                            <td style="text-align: center"><?= $consulta->id ?></td>
+                            
+                            <td style="text-align: center"><?= $consulta->lugar ?></td>
+
+                            <td style="text-align: center"><?= $consulta->motivo ?></td>
+
+                            <td style="text-align: center"><?= $consulta->fecha ?></td>
+                            
+                            
+                                <?php if($consulta->updated_at == NULL): ?>
+                                    <?php if($consulta->fecha >= date('Y-m-d')):?>
+                                        <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
+                                    <?php else:?>
+                                        <td style="text-align: center; background-color:rgb(255,0,0)">No se realizó <br>en la fecha <br>establecida</td>
+                                    <?php endif;?>
+                                <?php else:?>
+                                    <td style="text-align: center; background-color:rgb(0,255,0)">Realizada</td>
+                                <?php endif;?>
+
+                        
+                            <td style="text-align: center">
+                                    <a href="<?= base_url('/administrador/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
+                                    <?='Receta '.$receta->id.' que vence en '.$receta->fechaVencimiento ?></a>
                             </td>
-                            <td>
-                                <a href="<?= base_url('/administrador/medicamentos/eliminarMedicamento/' . $medicamento->id); ?>"
-                                    style="color:rgba(0,0,0,0.6)">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/3541/3541990.png" alt="eliminar"
-                                        class="service-img" width="60" height="60">
-                                    <figcaption>Eliminar</figcaption>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="<?= base_url('/administrador/medicamentos/sabermasMedicamento/' . $medicamento->id); ?>"
-                                    style="color:rgba(0,0,0,0.6)">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
-                                        class="service-img" width="60" height="60">
-                                    <figcaption>Saber más</figcaption>
-                                </a>
-                            </td>
+
+                            <?php if($consulta->updated_at == NULL):?>
+                                <?php if($consulta->fecha >= date('Y-m-d')):?>
+                                    <td style="text-align: center">
+                                        <a href="<?= base_url('/administrador/consultas/realizarConsulta/' . $consulta->id); ?>"
+                                            style="color:rgba(0,0,0,0.6)">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
+                                                class="service-img" width="60" height="60">
+                                            <figcaption>Realizar</figcaption>
+                                        </a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="<?= base_url('/administrador/consultas/posponerConsulta/' . $consulta->id); ?>"
+                                            style="color:rgba(0,0,0,0.6)">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/2784/2784399.png" alt="posponer"
+                                                class="service-img" width="60" height="60">
+                                            <figcaption>Posponer</figcaption>
+                                        </a>
+                                    </td>
+                                <?php else:?>
+                                    <td></td>
+                                <?php endif;?>
+                                <td>
+                                    <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
+                                        style="color:rgba(0,0,0,0.6)">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
+                                            class="service-img" width="60" height="60">
+                                        <figcaption>Saber más</figcaption>
+                                    </a>
+                                </td>
+                            
+                            <?php else:?>
+                                <td></td>
+                                <td>
+                                    <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
+                                        style="color:rgba(0,0,0,0.6)">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
+                                            class="service-img" width="60" height="60">
+                                        <figcaption>Saber más</figcaption>
+                                    </a>
+                                </td>
+                            <?php endif;?>
                         </tr>
+                        <?php else: ?>
+                            
+                            <?php endif;endforeach; ?>
                     <?php endforeach ?>
 
                 </tbody>

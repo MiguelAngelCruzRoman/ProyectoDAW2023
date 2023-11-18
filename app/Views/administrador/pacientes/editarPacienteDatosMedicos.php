@@ -75,6 +75,7 @@
 
                 <div class="mb-3">
                     <label for="#">Habítos tóxicos:</label>
+                    <br>
                     <input type="checkbox" name="habitosToxicos[]" value="Fumador" <?php if ($paciente->habitoToxico == 'Fumador')
                         echo "checked"; ?>>Fumar
                     <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación" <?php if ($paciente->habitoToxico == 'Mala alimentación')
@@ -89,6 +90,7 @@
 
                 <div class="mb-3">
                     <label for="#">Condiciones previas:</label>
+                    <br>
                     <input type="checkbox" name="condicionesPrevias[]" value="Diabetes" <?php if ($paciente->condicionesPrevias == 'Diabetes')
                         echo "checked"; ?>>Diabetes
                     <input type="checkbox" name="condicionesPrevias[]" value="Embarazo" <?php if ($paciente->condicionesPrevias == 'Embarazo')

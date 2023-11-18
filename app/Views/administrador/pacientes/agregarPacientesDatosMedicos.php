@@ -71,6 +71,7 @@
 
                 <div class="mb-3">
                     <label for="#">Habítos tóxicos:</label>
+                    <br>
                     <input type="checkbox" name="habitosToxicos[]" value="Fumador">Fumar
                     <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación">Mala alimentación
                     <input type="checkbox" name="habitosToxicos[]" value="Alcohol">Alcohol
@@ -80,6 +81,7 @@
 
                 <div class="mb-3">
                     <label for="#">Condiciones previas:</label>
+                    <br>
                     <input type="checkbox" name="condicionesPrevias[]" value="Diabetes">Diabetes
                     <input type="checkbox" name="condicionesPrevias[]" value="Embarazo">Embarazo
                     <input type="checkbox" name="condicionesPrevias[]" value="Cancer">Cancer

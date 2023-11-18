@@ -85,11 +85,30 @@ $routes->post('/administrador/medicamentos/agregarMedicamentos/insert', 'Adminis
 
 
 //---------------------------------------------------------------------------------------------------------
-//                             Rutas para manejar medicamentos como administrador
+//                             Rutas para manejar recetas como administrador
 //---------------------------------------------------------------------------------------------------------
 $routes->get('/administrador/recetas/administrarRecetas', 'Administrador::administrarRecetas');
 
-$routes->get('/administrador/recetas/buscarRecetas', 'Administrador::buscarRecetas');
+$routes->get('/administrador/recetas/cancelarReceta/(:num)', 'Administrador::cancelarReceta/$1');
+$routes->get('/administrador/recetas/renovarReceta/(:num)', 'Administrador::renovarReceta/$1');
+
+$routes->get('/administrador/recetas/sabermasReceta/(:num)', 'Administrador::recetaSaberMas/$1');
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------
+//                             Rutas para manejar consultas como administrador
+//---------------------------------------------------------------------------------------------------------
+$routes->get('/administrador/consultas/administrarConsultas', 'Administrador::administrarConsultas');
+$routes->get('/administrador/consultas/buscarConsultas', 'Administrador::buscarConsultas');
+
+$routes->get('/administrador/consultas/realizarConsulta/(:num)', 'Administrador::realizarConsulta/$1');
+
+$routes->get('/administrador/consultas/posponerConsulta/(:num)', 'Administrador::posponerConsulta/$1');
+
+$routes->get('/administrador/consultas/sabermasConsulta/(:num)', 'Administrador::consultaSaberMas/$1');
 
 //---------------------------------------------------------------------------------------------------------
 

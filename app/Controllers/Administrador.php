@@ -267,7 +267,7 @@ class Administrador extends BaseController
             "motivoRevision" => $_POST['motivoConsulta'],
             "habitoToxico" => $_POST['habitosToxicos'],
             "condicionesPrevias" => $_POST['condicionesPrevias'],
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $pacienteModel->insert($dataPaciente);
 
@@ -277,7 +277,7 @@ class Administrador extends BaseController
             "username" => $_POST['username'],
             "password" => $_POST['contraseña'],
             "paciente" => $pacienteModel->getInsertID(),
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $usersModel->insert($dataUser);
 
@@ -291,7 +291,7 @@ class Administrador extends BaseController
             "genero" => $_POST['genero'],
             "telefono" => $_POST['telefono'],
             "foto" => $_POST['foto'],
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $userInfoModel->insert($dataUserInfo);
 
@@ -306,7 +306,7 @@ class Administrador extends BaseController
             "CP" => $_POST['CP'],
             "tipo" => $_POST['tipo'],
             "userinfo" => $usersModel->getInsertID(),
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $direccionModel->insert($dataDireccion);
 
@@ -733,7 +733,7 @@ class Administrador extends BaseController
             "especialidad" => $_POST['especialidad'],
             "diasLaborales" => $_POST['diasLaborales'],
             "turno" => $_POST['turno'],
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $medicosModel->update(($usersModel->select('medico')->find($_POST['id'])->medico), $dataMedico);
 
@@ -742,7 +742,7 @@ class Administrador extends BaseController
             "username" => $_POST['username'],
             "password" => $_POST['password'],
             "medico" => $medicosModel->getInsertID(),
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $usersModel->update($_POST['id'], $dataUser);
 
@@ -755,7 +755,7 @@ class Administrador extends BaseController
             "genero" => $_POST['genero'],
             "telefono" => $_POST['telefono'],
             "foto" => $_POST['foto'],
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $userInfoModel->update($_POST['id'], $dataUserInfo);
 
@@ -769,7 +769,7 @@ class Administrador extends BaseController
             "CP" => $_POST['CP'],
             "tipo" => $_POST['tipo'],
             "userinfo" => $usersModel->getInsertID(),
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
 
@@ -857,7 +857,7 @@ class Administrador extends BaseController
             "especialidad" => $_POST['especialidad'],
             "diasLaborales" => $_POST['diasLaborales'],
             "turno" => $_POST['turno'],
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $medicosModel->insert($dataMedicos);
 
@@ -867,7 +867,7 @@ class Administrador extends BaseController
             "username" => $_POST['username'],
             "password" => $_POST['password'],
             "medico" => $medicosModel->getInsertID(),
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $usersModel->insert($dataUser);
 
@@ -881,7 +881,7 @@ class Administrador extends BaseController
             "genero" => $_POST['genero'],
             "telefono" => $_POST['telefono'],
             "foto" => $_POST['foto'],
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $userInfoModel->insert($dataUserInfo);
 
@@ -896,7 +896,7 @@ class Administrador extends BaseController
             "CP" => $_POST['CP'],
             "tipo" => $_POST['tipo'],
             "userinfo" => $usersModel->getInsertID(),
-            "created_at" => date('d-m-Y')
+            "created_at" => date('Y-m-d')
         ];
         $direccionModel->insert($dataDireccion);
 
@@ -1086,5 +1086,267 @@ class Administrador extends BaseController
 
         return redirect('administrador/medicamentos/administrarPacientes', 'refresh');
     }
+
+
+    //---------------------------------------------------------------------------------------------
+    //                                     Sección para consulatas
+    //---------------------------------------------------------------------------------------------
+
+    /* 
+        Función que redirige los datos de las consultas, que se encuentran almacenados en el 
+        respectivo modelo
+    */
+    public function administrarConsultas()
+    {
+        $consultasModel = model('ConsultasModel');
+        $data['consultas'] = $consultasModel->findAll();
+
+        $recetaModel = model('RecetaModel');
+        $data['recetas'] = $recetaModel->findAll();
+
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/consultas/administrarConsultas', $data) .
+            view('common/footer');
+    }
+
+
+    /* 
+        Función para buscar entre todas las consultas datos en específico.
+        Al terminar de hacer la búsqueda en los respectivos modelos, se redirige
+        a la vista de la función "administrarConsultas" 
+    */
+    public function buscarConsultas()
+    {
+        $consultasModel = model('ConsultasModel');
+        $recetaModel = model('RecetaModel');
+
+        if (isset($_GET['columnaBusquedaConsulta']) && isset($_GET['valIngresado'])) {
+            $columnaBusquedaConsulta = $_GET['columnaBusquedaConsulta'];
+            $valIngresado = $_GET['valIngresado'];
+
+            if ($columnaBusquedaConsulta == 'todo') {
+                $data['consultas'] = $consultasModel->findAll();
+            }
+
+            if ($columnaBusquedaConsulta == 'lugar') {
+                $data['consultas'] = $consultasModel->like('lugar', $valIngresado)
+                    ->findAll();
+            }
+
+            if ($columnaBusquedaConsulta == 'fecha') {
+                $data['consultas'] = $consultasModel->like('fecha', $valIngresado)
+                    ->findAll();
+            }
+
+            if ($columnaBusquedaConsulta == 'motivo') {
+                $data['consultas'] = $consultasModel->like('motivo', $valIngresado)
+                    ->findAll();
+            }
+
+             
+            $data['recetas'] = $recetaModel->findAll();
+        } else {
+            $columnaBusquedaConsulta = "";
+            $valIngresado = "";
+            $data['consultas'] = $consultasModel->findAll();
+            $data['recetas'] = $recetaModel->findAll();
+        }
+
+
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/consultas/administrarConsultas', $data) .
+            view('common/footer');
+    }
+
+    /*
+        Función para marcar como "Realizada" el status de la consulta 
+        específica que se requiera, actualizando la fecha de modiciación
+        de dicho registro en la base de datos
+    */
+    public function realizarConsulta($id){
+        $consultasModel = model('ConsultasModel');
+        $data = array(
+            "updated_at" => date('Y-m-d'),
+        );
+
+        $consultasModel->update($id, $data);
+
+        return redirect('administrador/consultas/administrarConsultas', 'refresh');
+   }
+
+   public function posponerConsulta($id){
+    $consultasModel = model('ConsultasModel');
+    $consulta = $consultasModel->find($id);
+    $nuevaFecha=date("Y-m-d",strtotime($consulta->fecha."+ 7 days"));
+
+    $data = array(
+        "fecha" =>$nuevaFecha,
+    );
+   
+
+    $consultasModel->update($id, $data);
+
+    return redirect('administrador/consultas/administrarConsultas', 'refresh');
 }
 
+ /*
+        Función para mostrar información más específica de cada consulta,
+        conectándola con la información de los usuarios "paciente" y 
+        "médico" de los cuales surgió la consulta (y posteriormente, la receta)
+    */
+    public function consultaSaberMas($id)
+    {
+        $consultasModel = model('ConsultasModel');
+        $data['consulta'] = $consultasModel->find($id);
+
+        $recetaModel = model('RecetaModel');
+        $data['recetas'] = $recetaModel->findAll();
+
+        $medicamentoModel = model('MedicamentosModel');
+        $data['medicamentos'] = $medicamentoModel->findAll();
+
+        $recetaMedicamentoModel = model('RecetaMedicamentoModel');
+        $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
+        
+        
+
+        /*
+            Los siguientes modelos son para recuperar la información de los pacientes que son
+            atendidos por cada médico en cada consulta
+        */
+            $userInfoModel = model('UserInfoModel');
+            $userModel = model('UsersModel');
+            $medicoPacienteModel = model ('MedicoPacienteModel');
+            $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+
+            $pacienteModel = model ('PacienteModel');
+            $data['pacientes'] = $pacienteModel->findAll();
+            $data['userInfoPacientes'] = $userInfoModel->findAll();
+            $data['userPacientes'] = $userModel->findAll();
+
+            
+            $medicoModel = model ('MedicoModel');
+            $data['medicos'] = $medicoModel->findAll();
+            $data['userInfoMedicos'] = $userInfoModel->findAll();
+            $data['userMedicos'] = $userModel->findAll();
+
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/consultas/sabermasConsulta', $data) .
+            view('common/footer');
+    }
+
+
+
+    
+    //---------------------------------------------------------------------------------------------
+    //                                     Sección para recetas
+    //---------------------------------------------------------------------------------------------
+
+    /* 
+        Función que redirige los datos de las recetas, que se encuentran almacenados en el 
+        respectivo modelo
+    */
+    public function administrarRecetas()
+    {
+        $recetaModel = model('RecetaModel');
+        $data['recetas'] = $recetaModel->findAll();
+
+        $medicamentoModel = model('MedicamentosModel');
+        $data['medicamentos'] = $medicamentoModel->findAll();
+
+        $recetaMedicamentoModel = model('RecetaMedicamentoModel');
+        $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
+
+        $consultasModel = model('ConsultasModel');
+        $data['consultas'] = $consultasModel->findAll();
+        
+      
+
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/recetas/administrarRecetas', $data) .
+            view('common/footer');
+    }
+
+    /*
+        Función para dar de baja una receta, cambiando su status, para
+        que no sea válida en caso de que quiera usarse en otros procesos
+    */
+   public function cancelarReceta($id){
+        $recetaModel = model('RecetaModel');
+        $data = array(
+            "status" => 0,
+            "updated_at" => date('Y-m-d'),
+        );
+
+        $recetaModel->update($id, $data);
+
+        return redirect('administrador/recetas/administrarRecetas', 'refresh');
+   }
+
+   /*
+    Función para reactivar el status de la receta, agregando más tiempo a
+    la fecha de vencimiento (hasta el año 2048)
+   */
+   public function renovarReceta($id){
+    $recetaModel = model('RecetaModel');
+    $data = array(
+        "status" => 1,
+        "updated_at" => date('Y-m-d'),
+        "fechaVencimiento" => date('2048-m-d'),
+    );
+
+    $recetaModel->update($id, $data);
+
+    return redirect('administrador/recetas/administrarRecetas', 'refresh');
+    }
+
+    /*
+        Función para mostrar información más específica de cada receta,
+        conectándola con la información de los usuarios "paciente" y 
+        "médico" de los cuales surgió la consulta (y posteriormente, la receta)
+    */
+    public function recetaSaberMas($id)
+    {
+        $recetaModel = model('RecetaModel');
+        $data['receta'] = $recetaModel->find($id);
+
+        $medicamentoModel = model('MedicamentosModel');
+        $data['medicamentos'] = $medicamentoModel->findAll();
+
+        $recetaMedicamentoModel = model('RecetaMedicamentoModel');
+        $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
+        
+        $consultasModel = model('ConsultasModel');
+        $data['consultas'] = $consultasModel->findAll();
+
+
+        /*
+            Los siguientes modelos son para recuperar la información de los pacientes que son
+            atendidos por cada médico
+        */
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+
+        $pacienteModel = model ('PacienteModel');
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
+
+        
+        $medicoModel = model ('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $userModel->findAll();
+
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/recetas/sabermasReceta', $data) .
+            view('common/footer');
+    }
+}

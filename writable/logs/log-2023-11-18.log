@@ -50,3 +50,420 @@ in APPPATH\Views\administrador\administrarPacientes.php on line 82.
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-18 01:48:39 --> mysqli_sql_exception: Unknown column 'receta_medicamento.deleted_at' in 'where clause' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(1110): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2023-11-18 01:48:39 --> Unknown column 'receta_medicamento.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `receta_medicamento`
+WHERE `receta_medicamento`.`deleted_at` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Administrador.php(1110): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-18 01:49:50 --> mysqli_sql_exception: Unknown column 'receta_medicamento.deleted_at' in 'where clause' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(1110): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2023-11-18 01:49:50 --> Unknown column 'receta_medicamento.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `receta_medicamento`
+WHERE `receta_medicamento`.`deleted_at` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Administrador.php(1110): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+ERROR - 2023-11-18 01:49:54 --> mysqli_sql_exception: Unknown column 'receta_medicamento.deleted_at' in 'where clause' in C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoDAW2023\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ProyectoDAW2023\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ProyectoDAW2023\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ProyectoDAW2023\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ProyectoDAW2023\app\Controllers\Administrador.php(1110): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+#8 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+#9 C:\xampp\htdocs\ProyectoDAW2023\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ProyectoDAW2023\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ProyectoDAW2023\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2023-11-18 01:49:54 --> Unknown column 'receta_medicamento.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `receta_medicamento`
+WHERE `receta_medicamento`.`deleted_at` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Administrador.php(1110): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 01:52:58 --> Undefined variable $medicamento
+in APPPATH\Views\administrador\recetas\administrarRecetas.php on line 82.
+ 1 APPPATH\Views\administrador\recetas\administrarRecetas.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicamento', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php', 82)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/administrarRecetas', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1114): view('administrador/recetas/administrarRecetas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 01:53:10 --> Undefined variable $medicamento
+in APPPATH\Views\administrador\recetas\administrarRecetas.php on line 83.
+ 1 APPPATH\Views\administrador\recetas\administrarRecetas.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicamento', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php', 83)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/administrarRecetas', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1114): view('administrador/recetas/administrarRecetas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 02:04:55 --> Undefined property: stdClass::$receta
+in APPPATH\Views\administrador\recetas\administrarRecetas.php on line 80.
+ 1 APPPATH\Views\administrador\recetas\administrarRecetas.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$receta', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/administrarRecetas', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1117): view('administrador/recetas/administrarRecetas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarRecetas()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 02:56:52 --> Attempt to read property "receta" on array
+in APPPATH\Controllers\Administrador.php on line 1149.
+ 1 APPPATH\Controllers\Administrador.php(1149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "receta" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1149)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarRecetas()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:00:43 --> Undefined variable $receta
+in APPPATH\Views\administrador\recetas\administrarRecetas.php on line 66.
+ 1 APPPATH\Views\administrador\recetas\administrarRecetas.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $receta', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php', 66)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\administrarRecetas.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/administrarRecetas', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1165): view('administrador/recetas/administrarRecetas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarRecetas()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:22:00 --> Undefined variable $id
+in APPPATH\Views\administrador\recetas\editarReceta.php on line 9.
+ 1 APPPATH\Views\administrador\recetas\editarReceta.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\editarReceta.php', 9)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\editarReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/editarReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1161): view('administrador/recetas/editarReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarReceta('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:22:13 --> Undefined variable $receta
+in APPPATH\Views\administrador\recetas\editarReceta.php on line 9.
+ 1 APPPATH\Views\administrador\recetas\editarReceta.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $receta', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\editarReceta.php', 9)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\editarReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/editarReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1161): view('administrador/recetas/editarReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarReceta('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:22:29 --> Undefined variable $direccion
+in APPPATH\Views\administrador\recetas\editarReceta.php on line 14.
+ 1 APPPATH\Views\administrador\recetas\editarReceta.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $direccion', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\editarReceta.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\editarReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/editarReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1161): view('administrador/recetas/editarReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarReceta('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:22:47 --> syntax error, unexpected token ";"
+in APPPATH\Views\administrador\recetas\editarReceta.php on line 14.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/editarReceta', [], true)
+ 3 APPPATH\Controllers\Administrador.php(1161): view('administrador/recetas/editarReceta', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarReceta('1')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:38:55 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Administrador.php on line 1159.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('1')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:43:28 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Administrador.php on line 1159.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('1')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:43:42 --> Invalid file: "administrador/recetas/editarReceta.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('administrador/recetas/editarReceta.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/editarReceta', [], true)
+ 3 APPPATH\Controllers\Administrador.php(1166): view('administrador/recetas/editarReceta', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('1')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 03:43:58 --> Undefined variable $id
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 29.
+ 1 APPPATH\Views\administrador\recetas\sabermasReceta.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/sabermasReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1166): view('administrador/recetas/sabermasReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 04:26:18 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 130.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/sabermasReceta', [], true)
+ 3 APPPATH\Controllers\Administrador.php(1184): view('administrador/recetas/sabermasReceta', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('5')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 04:26:27 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 130.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/sabermasReceta', [], true)
+ 3 APPPATH\Controllers\Administrador.php(1184): view('administrador/recetas/sabermasReceta', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('5')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 04:26:39 --> Undefined property: stdClass::$paciente
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 31.
+ 1 APPPATH\Views\administrador\recetas\sabermasReceta.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$paciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php', 31)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/sabermasReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1184): view('administrador/recetas/sabermasReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('5')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 04:43:08 --> Undefined variable $paciente
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 33.
+ 1 APPPATH\Views\administrador\recetas\sabermasReceta.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $paciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/sabermasReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1184): view('administrador/recetas/sabermasReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('6')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 04:45:38 --> Undefined array key 0
+in APPPATH\Controllers\Administrador.php on line 149.
+ 1 APPPATH\Controllers\Administrador.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 149)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteSaberMas('19')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 04:48:54 --> Cannot use [] for reading
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 17:09:24 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 1102.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarConsultas()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 17:09:29 --> Call to a member function orderBy() on array
+in APPPATH\Controllers\Administrador.php on line 1102.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarConsultas()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:21:28 --> A non-numeric value encountered
+in APPPATH\Controllers\Administrador.php on line 1132.
+ 1 APPPATH\Controllers\Administrador.php(1132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1132)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->posponerConsulta('2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:39:19 --> Invalid file: "administrador/consultas/sabermasConsultas.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('administrador/consultas/sabermasConsultas.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsultas', [], true)
+ 3 APPPATH\Controllers\Administrador.php(1236): view('administrador/consultas/sabermasConsultas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('2')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:41:29 --> Undefined variable $consulta
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $consulta', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1236): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('2')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:41:35 --> Undefined variable $consultas
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 21.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $consultas', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1236): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('2')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:41:53 --> Undefined variable $idMedicoPaciente
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 19.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idMedicoPaciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1236): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('2')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:47:29 --> Undefined variable $rceta
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 67.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rceta', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 67)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1237): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:52:28 --> Attempt to read property "medico_paciente" on null
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "medico_paciente" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1237): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('60')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:52:32 --> Attempt to read property "medico_paciente" on null
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "medico_paciente" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1237): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('59')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:52:35 --> Attempt to read property "medico_paciente" on null
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "medico_paciente" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1237): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('57')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:52:37 --> Attempt to read property "medico_paciente" on null
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "medico_paciente" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1237): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('56')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 18:52:40 --> Attempt to read property "medico_paciente" on null
+in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
+ 1 APPPATH\Views\administrador\consultas\sabermasConsulta.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "medico_paciente" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\sabermasConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/sabermasConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1237): view('administrador/consultas/sabermasConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->consultaSaberMas('55')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
