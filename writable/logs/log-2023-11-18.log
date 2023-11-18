@@ -1,0 +1,52 @@
+CRITICAL - 2023-11-18 00:16:02 --> Undefined variable $userInfoMedico
+in APPPATH\Views\administrador\sabermasPaciente.php on line 78.
+ 1 APPPATH\Views\administrador\sabermasPaciente.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userInfoMedico', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\sabermasPaciente.php', 78)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\sabermasPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/sabermasPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(159): view('administrador/sabermasPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteSaberMas('2')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 00:19:33 --> Undefined array key 0
+in APPPATH\Controllers\Administrador.php on line 600.
+ 1 APPPATH\Controllers\Administrador.php(600): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 600)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->medicoSaberMas('23')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 00:22:12 --> Undefined array key 0
+in APPPATH\Controllers\Administrador.php on line 600.
+ 1 APPPATH\Controllers\Administrador.php(600): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 600)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->medicoSaberMas('23')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 00:24:00 --> Undefined variable $paciente
+in APPPATH\Views\administrador\administrarPacientes.php on line 82.
+ 1 APPPATH\Views\administrador\administrarPacientes.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $paciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php', 82)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarPacientes', [], true)
+ 5 APPPATH\Controllers\Administrador.php(60): view('administrador/administrarPacientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 00:26:22 --> Undefined variable $medicosPaciente
+in APPPATH\Views\administrador\administrarPacientes.php on line 82.
+ 1 APPPATH\Views\administrador\administrarPacientes.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicosPaciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php', 82)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\administrarPacientes.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/administrarPacientes', [], true)
+ 5 APPPATH\Controllers\Administrador.php(120): view('administrador/administrarPacientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->buscarPacientes()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')

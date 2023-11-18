@@ -43,9 +43,21 @@ class Administrador extends BaseController
         $usersModel = model('UsersModel');
         $data['users'] = $usersModel->findAll();
 
+
+         /*
+            Los siguientes modelos son para recuperar la información de los médicos que atienden
+            a cada paciente
+        */
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $medicoModel = model ('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $usersModel->findAll();
+        
         return view('common/head') .
             view('common/menu') .
-            view('administrador/administrarPacientes', $data) .
+            view('administrador/pacientes/administrarPacientes', $data) .
             view('common/footer');
     }
 
@@ -102,10 +114,20 @@ class Administrador extends BaseController
             $data['users'] = $usersModel->findAll();
         }
 
+         /*
+            Los siguientes modelos son para recuperar la información de los médicos que atienden
+            a cada paciente
+        */
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $medicoModel = model ('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $usersModel->findAll();
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/administrarPacientes', $data) .
+            view('administrador/pacientes/administrarPacientes', $data) .
             view('common/footer');
     }
 
@@ -132,9 +154,20 @@ class Administrador extends BaseController
 
         $data['id'] = $id;
 
+        /*
+            Los siguientes modelos son para recuperar la información de los médicos que atienden
+            a cada paciente
+        */
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $medicoModel = model ('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $userModel->findAll();
+        
         return view('common/head') .
             view('common/menu') .
-            view('administrador/sabermasPaciente', $data) .
+            view('administrador/pacientes/sabermasPaciente', $data) .
             view('common/footer');
     }
 
@@ -147,7 +180,7 @@ class Administrador extends BaseController
     {
         return view('common/head') .
             view('common/menu') .
-            view('administrador/agregarPacientes') .
+            view('administrador/pacientes/agregarPacientes') .
             view('common/footer');
     }
 
@@ -158,7 +191,7 @@ class Administrador extends BaseController
         Se recuperan los valores del formulario "agregarPacientes" para incluirlos 
         en un arreglo que servirá en la función "insertPacientes"
     */
-    public function agregarPacientes2()
+    public function agregarPacientesDatosMedicos()
     {
 
         $data = [
@@ -177,16 +210,16 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/agregarPacientes2', $data) .
+            view('administrador/pacientes/agregarPacientesDatosMedicos', $data) .
             view('common/footer');
     }
 
     /*
         Función para redirigir al último formulario para agregar a un paciente,
         mismo que hace referencia a la dirección del paciente.
-        Se añaden elementos al arreglo "data" de la función "agregarPacientes2" 
+        Se añaden elementos al arreglo "data" de la función "agregarPacientesDatosMedicos" 
     */
-    public function agregarPacientes3()
+    public function agregarPacientesDireccion()
     {
         $data = [
             "primerNombre" => $_POST['primerNombre'],
@@ -211,13 +244,13 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/agregarPacientes3', $data) .
+            view('administrador/pacientes/agregarPacientesDireccion', $data) .
             view('common/footer');
     }
 
     /* 
         Función que recupera datos de los formularios de las funciones 
-        "agregarPacientes", "agregarPacientes2" y "agregarPacientes3"
+        "agregarPacientes", "agregarPacientesDatosMedicos" y "agregarPacientesDireccion"
         para hacer las inserciones a las tablas del paciente, users,
         userinfo y direccion en la base de datos.
         Al terminar re actualiza y redirige a la vista de "administrarPacientes"
@@ -277,7 +310,7 @@ class Administrador extends BaseController
         ];
         $direccionModel->insert($dataDireccion);
 
-        return redirect('administrador/administrarPacientes', 'refresh');
+        return redirect('administrador/pacientes/administrarPacientes', 'refresh');
     }
 
     /*
@@ -301,17 +334,17 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/editarPaciente', $data) .
+            view('administrador/pacientes/editarPaciente', $data) .
             view('common/footer');
     }
 
     /*
         Función para recuperar los datos del formulario de la función 
         "editarPaciente", mismos que se envían en un arreglo ("data").
-        Se redirige la información a un segundo formulario "editarPaciente2"
+        Se redirige la información a un segundo formulario "editarPacienteDatosMedicos"
         que hace referencia a los datos médicos del paciente
     */
-    public function editarPaciente2($id)
+    public function editarPacienteDatosMedicos($id)
     {
         $pacienteModel = model('PacienteModel');
 
@@ -333,18 +366,18 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/editarPaciente2', $data) .
+            view('administrador/pacientes/editarPacienteDatosMedicos', $data) .
             view('common/footer');
     }
 
 
     /*
         Función para recuperar los datos del formulario de la función 
-        "editarPaciente2", mismos que se envían en un arreglo ("data").
-        Se redirige la información a un último formulario "editarPaciente3"
+        "editarPacienteDatosMedicos", mismos que se envían en un arreglo ("data").
+        Se redirige la información a un último formulario "editarPacienteDireccion"
         que hace referencia a la dirección del paciente
     */
-    public function editarPaciente3($id)
+    public function editarPacienteDireccion($id)
     {
         $pacienteModel = model('PacienteModel');
         $direccionModel = model('DireccionModel');
@@ -374,13 +407,13 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/editarPaciente3', $data) .
+            view('administrador/pacientes/editarPacienteDireccion', $data) .
             view('common/footer');
     }
 
     /*
         Función para recuperar los datos de los formularios que se usaron en las
-        funciones "editarPaciente", "editarPaciente2" y "editarPaciente3".
+        funciones "editarPaciente", "editarPacienteDatosMedicos" y "editarPacienteDireccion".
         Los datos usan para actualizar un registro en específico, relacionado al
         id del paciente que se trata desde el primer formulario de editar pacientes.
         Al finalizar se redirige y actualiza la vista de "administrarPacientes"
@@ -434,7 +467,7 @@ class Administrador extends BaseController
         );
         $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $data);
 
-        return redirect('administrador/administrarPacientes', 'refresh');
+        return redirect('administrador/pacientes/administrarPacientes', 'refresh');
     }
 
 
@@ -458,7 +491,7 @@ class Administrador extends BaseController
         $pacienteModel->delete(['paciente' => $id]);
 
 
-        return redirect('administrador/administrarPacientes', 'refresh');
+        return redirect('administrador/pacientes/administrarPacientes', 'refresh');
     }
 
 
@@ -483,9 +516,21 @@ class Administrador extends BaseController
         $medicoModel = model('MedicoModel');
         $data['medicos'] = $medicoModel->findAll();
 
+
+        /*
+            Los siguientes modelos son para recuperar la información de los pacientes que son
+            atendidos por cada médico
+        */
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $pacienteModel = model ('PacienteModel');
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $usersModel->findAll();
+
         return view('common/head') .
             view('common/menu') .
-            view('administrador/administrarMedicos', $data) .
+            view('administrador/medicos/administrarMedicos', $data) .
             view('common/footer');
     }
 
@@ -553,9 +598,20 @@ class Administrador extends BaseController
             $data['medicos'] = $medicoModel->findAll();
         }
 
+        /*
+            Los siguientes modelos son para recuperar la información de los pacientes que son
+            atendidos por cada médico
+        */
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $pacienteModel = model ('PacienteModel');
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $usersModel->findAll();
+
         return view('common/head') .
             view('common/menu') .
-            view('administrador/administrarMedicos', $data) .
+            view('administrador/medicos/administrarMedicos', $data) .
             view('common/footer');
     }
 
@@ -583,9 +639,20 @@ class Administrador extends BaseController
 
         $data['id'] = $id;
 
+        /*
+            Los siguientes modelos son para recuperar la información de los pacientes que son
+            atendidos por cada médico
+        */
+        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $pacienteModel = model ('PacienteModel');
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
+
         return view('common/head') .
             view('common/menu') .
-            view('administrador/sabermasMedico', $data) .
+            view('administrador/medicos/sabermasMedico', $data) .
             view('common/footer');
     }
 
@@ -611,17 +678,17 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/editarMedico', $data) .
+            view('administrador/medicos/editarMedico', $data) .
             view('common/footer');
     }
 
     /*
         Función para recuperar los datos del formulario de la función 
         "editarMedico", mismos que se envían en un arreglo ("data").
-        Se redirige la información a un segundo formulario "editarMedico2"
+        Se redirige la información a un segundo formulario "editarMedicoDireccion"
         que hace referencia a los datos dek perfil laboral del médico
     */
-    public function editarMedico2($id)
+    public function editarMedicoDireccion($id)
     {
         $direccionModel = model('DireccionModel');
         $data = [
@@ -644,13 +711,13 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/editarMedico2', $data) .
+            view('administrador/medicos/editarMedicoDireccion', $data) .
             view('common/footer');
     }
 
     /*
         Función para recuperar los datos de los formularios que se usaron en las
-        funciones "editarMedico", "editarMedico2" 
+        funciones "editarMedico", "editarMedicoDireccion" 
         Los datos usan para actualizar un registro en específico, relacionado al
         id del médico que se trata desde el primer formulario de editar médico.
         Al finalizar se redirige y actualiza la vista de "administrarMedicos"
@@ -706,7 +773,7 @@ class Administrador extends BaseController
         ];
         $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
 
-        return redirect('administrador/administrarMedicos', 'refresh');
+        return redirect('administrador/medicos/administrarMedicos', 'refresh');
     }
 
 
@@ -729,7 +796,7 @@ class Administrador extends BaseController
         $medicoModel = model('MedicoModel');
         $medicoModel->delete(['medico' => $id]);
 
-        return redirect('administrador/administrarMedicos', 'refresh');
+        return redirect('administrador/medicos/administrarMedicos', 'refresh');
     }
 
     /* 
@@ -741,7 +808,7 @@ class Administrador extends BaseController
     {
         return view('common/head') .
             view('common/menu') .
-            view('administrador/agregarMedicos') .
+            view('administrador/medicos/agregarMedicos') .
             view('common/footer');
     }
 
@@ -753,7 +820,7 @@ class Administrador extends BaseController
         Se recuperan los valores del formulario "agregarMedicos" para incluirlos 
         en un arreglo que servirá en la función "insertMedicos"
     */
-    public function agregarMedicos2()
+    public function agregarMedicosDireccion()
     {
         $data = [
             "primerNombre" => $_POST['primerNombre'],
@@ -773,13 +840,13 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/agregarMedicos2', $data) .
+            view('administrador/medicos/agregarMedicosDireccion', $data) .
             view('common/footer');
     }
 
     /* 
         Función que recupera datos de los formularios de las funciones 
-        "agregarMedicos" y "agregarMedicos2" para hacer las inserciones a 
+        "agregarMedicos" y "agregarMedicosDireccion" para hacer las inserciones a 
         las tablas del médico, users, userinfo y direccion, en la base de datos.
         Al terminar re actualiza y redirige a la vista de "administrarMedicos"
     */
@@ -833,7 +900,7 @@ class Administrador extends BaseController
         ];
         $direccionModel->insert($dataDireccion);
 
-        return redirect('administrador/administrarMedicos', 'refresh');
+        return redirect('administrador/medicos/administrarMedicos', 'refresh');
     }
 
 
@@ -853,7 +920,7 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/administrarMedicamentos', $data) .
+            view('administrador/medicamentos/administrarMedicamentos', $data) .
             view('common/footer');
     }
 
@@ -900,7 +967,7 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/administrarMedicamentos', $data) .
+            view('administrador/medicamentos/administrarMedicamentos', $data) .
             view('common/footer');
     }
 
@@ -917,7 +984,7 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/sabermasMedicamento', $data) .
+            view('administrador/medicamentos/sabermasMedicamento', $data) .
             view('common/footer');
     }
 
@@ -933,7 +1000,7 @@ class Administrador extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('administrador/editarMedicamento', $data) .
+            view('administrador/medicamentos/editarMedicamento', $data) .
             view('common/footer');
     }
 
@@ -965,7 +1032,7 @@ class Administrador extends BaseController
         $medicamentosModel->update($_POST['id'], $data);
 
 
-        return redirect('administrador/administrarMedicamentos', 'refresh');
+        return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
     }
 
     /*
@@ -977,7 +1044,7 @@ class Administrador extends BaseController
         $medicamentosModel = model('MedicamentosModel');
         $medicamentosModel->delete($id);
 
-        return redirect('administrador/administrarMedicamentos', 'refresh');
+        return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
     }
 
      /* 
@@ -988,7 +1055,7 @@ class Administrador extends BaseController
     {
         return view('common/head') .
             view('common/menu') .
-            view('administrador/agregarMedicamentos') .
+            view('administrador/medicamentos/agregarMedicamentos') .
             view('common/footer');
     }
 
@@ -1017,7 +1084,7 @@ class Administrador extends BaseController
 
         $medicamentosModel->insert($data, false);
 
-        return redirect('administrador/administrarPacientes', 'refresh');
+        return redirect('administrador/medicamentos/administrarPacientes', 'refresh');
     }
 }
 
