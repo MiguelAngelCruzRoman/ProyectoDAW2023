@@ -110,7 +110,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <a href="<?= base_url('/administrador/pacientes/eliminarPaciente/' . $id); ?>" class="text-center"
+                                    <a href="<?= base_url('/administrador/pacientes/eliminarPaciente/' . $user[0]->id); ?>" class="text-center"
                                         style="color:rgba(0,0,0,1)">
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/3541/3541990.png"

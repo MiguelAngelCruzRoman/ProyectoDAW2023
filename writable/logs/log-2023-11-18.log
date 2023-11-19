@@ -467,3 +467,118 @@ in APPPATH\Views\administrador\consultas\sabermasConsulta.php on line 13.
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 22:00:57 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Views/common/logoPrincipal.png"
+in SYSTEMPATH\Router\Router.php on line 477.
+ 1 SYSTEMPATH\Router\Router.php(477): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Views/common/logoPrincipal.png')
+ 2 SYSTEMPATH\Router\Router.php(184): CodeIgniter\Router\Router->checkRoutes('logo')
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\Router->handle('logo')
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 22:28:14 --> Undefined variable $medio
+in APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php on line 14.
+ 1 APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medio', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarMedicoConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1259): view('administrador/consultas/agregarMedicoConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarMedicoConsulta()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 22:34:20 --> Undefined property: stdClass::$foto
+in APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php on line 28.
+ 1 APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$foto', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php', 28)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarMedicoConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1259): view('administrador/consultas/agregarMedicoConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarMedicoConsulta()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 22:41:08 --> Undefined property: stdClass::$especialida
+in APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php on line 35.
+ 1 APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$especialida', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarMedicoConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1259): view('administrador/consultas/agregarMedicoConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarMedicoConsulta()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:10:50 --> Undefined variable $userMedicos
+in APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php on line 45.
+ 1 APPPATH\Views\administrador\consultas\agregarMedicoConsulta.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userMedicos', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarMedicoConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarMedicoConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1326): view('administrador/consultas/agregarMedicoConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarMedicoConsultaBuscar()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:42:38 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Administrador.php on line 1429.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:55:01 --> Undefined array key "medicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1438.
+ 1 APPPATH\Controllers\Administrador.php(1438): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "medicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1438)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:55:31 --> Undefined array key "medicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1438.
+ 1 APPPATH\Controllers\Administrador.php(1438): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "medicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1438)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:55:41 --> Undefined array key "medicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1438.
+ 1 APPPATH\Controllers\Administrador.php(1438): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "medicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1438)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:55:49 --> Undefined array key "medicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1439.
+ 1 APPPATH\Controllers\Administrador.php(1439): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "medicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1439)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:56:20 --> Undefined array key "medicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1438.
+ 1 APPPATH\Controllers\Administrador.php(1438): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "medicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1438)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('3')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-18 23:57:07 --> Undefined array key "medicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1438.
+ 1 APPPATH\Controllers\Administrador.php(1438): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "medicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1438)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('5')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')

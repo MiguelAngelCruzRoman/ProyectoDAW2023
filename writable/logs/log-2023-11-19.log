@@ -1,0 +1,518 @@
+CRITICAL - 2023-11-19 00:02:02 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\Administrador.php on line 1440.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 00:09:15 --> Undefined variable $idMedico
+in APPPATH\Views\administrador\consultas\agregarInformacionConsulta.php on line 12.
+ 1 APPPATH\Views\administrador\consultas\agregarInformacionConsulta.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idMedico', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarInformacionConsulta.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarInformacionConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarInformacionConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1445): view('administrador/consultas/agregarInformacionConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 00:09:24 --> Undefined variable $idMedico
+in APPPATH\Views\administrador\consultas\agregarInformacionConsulta.php on line 12.
+ 1 APPPATH\Views\administrador\consultas\agregarInformacionConsulta.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idMedico', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarInformacionConsulta.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarInformacionConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarInformacionConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1445): view('administrador/consultas/agregarInformacionConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 00:11:09 --> Undefined variable $idMedico
+in APPPATH\Views\administrador\consultas\agregarInformacionConsulta.php on line 12.
+ 1 APPPATH\Views\administrador\consultas\agregarInformacionConsulta.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idMedico', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarInformacionConsulta.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\consultas\\agregarInformacionConsulta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/consultas/agregarInformacionConsulta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(1445): view('administrador/consultas/agregarInformacionConsulta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarConsulta('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 00:30:04 --> Undefined array key "idMedicoPaciente"
+in APPPATH\Controllers\Administrador.php on line 1465.
+ 1 APPPATH\Controllers\Administrador.php(1465): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idMedicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 1465)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertConsulta()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 00:55:38 --> Undefined array key "habitosToxicos"
+in APPPATH\Controllers\Administrador.php on line 241.
+ 1 APPPATH\Controllers\Administrador.php(241): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "habitosToxicos"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 241)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->agregarPacientesDireccion()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:23:04 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:23:35 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('46')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:24:01 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('46')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:24:34 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:26:03 --> Trying to access array offset on value of type null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:27:02 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:27:19 --> Attempt to read property "tipoSangre" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 37.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "tipoSangre" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 37)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:27:29 --> Attempt to read property "fechaRevision" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 60.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "fechaRevision" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 60)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:27:41 --> Attempt to read property "habitoToxico" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 74.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "habitoToxico" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 74)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:29:25 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 352.
+ 1 APPPATH\Controllers\Administrador.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 352)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('30')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:29:28 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 352.
+ 1 APPPATH\Controllers\Administrador.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 352)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('29')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:29:32 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 352.
+ 1 APPPATH\Controllers\Administrador.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 352)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('20')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:29:38 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 352.
+ 1 APPPATH\Controllers\Administrador.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 352)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('10')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:29:41 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 352.
+ 1 APPPATH\Controllers\Administrador.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 352)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('10')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:30:03 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('46')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:32:55 --> syntax error, unexpected token "(", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\Administrador.php on line 44.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Administrador')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Administrador', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:33:39 --> Call to undefined method App\Models\UsersMOdel::notwhere
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Administrador.php(44): CodeIgniter\Model->__call('notwhere', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->administrarPacientes()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:34:14 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('46')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:38:38 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('49')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:38:59 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('46')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:39:58 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 25.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('46')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:43:00 --> Undefined variable $usersInfo
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 21.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usersInfo', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:43:22 --> Undefined variable $usersInfo
+in APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php on line 21.
+ 1 APPPATH\Views\administrador\pacientes\editarPacienteDatosMedicos.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usersInfo', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPacienteDatosMedicos.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPacienteDatosMedicos', [], true)
+ 5 APPPATH\Controllers\Administrador.php(369): view('administrador/pacientes/editarPacienteDatosMedicos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:48:54 --> Undefined array key "PacienteID"
+in APPPATH\Controllers\Administrador.php on line 439.
+ 1 APPPATH\Controllers\Administrador.php(439): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PacienteID"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 439)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:50:12 --> Undefined array key "PacienteID"
+in APPPATH\Controllers\Administrador.php on line 439.
+ 1 APPPATH\Controllers\Administrador.php(439): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PacienteID"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 439)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 01:50:14 --> Undefined array key "PacienteID"
+in APPPATH\Controllers\Administrador.php on line 439.
+ 1 APPPATH\Controllers\Administrador.php(439): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PacienteID"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 439)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:00:09 --> Undefined array key "id"
+in APPPATH\Controllers\Administrador.php on line 352.
+ 1 APPPATH\Controllers\Administrador.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 352)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPacienteDatosMedicos('15')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:01:53 --> Attempt to read property "id" on array
+in APPPATH\Views\administrador\pacientes\editarPaciente.php on line 10.
+ 1 APPPATH\Views\administrador\pacientes\editarPaciente.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(338): view('administrador/pacientes/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:02:48 --> Attempt to read property "foto" on array
+in APPPATH\Views\administrador\pacientes\editarPaciente.php on line 13.
+ 1 APPPATH\Views\administrador\pacientes\editarPaciente.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "foto" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(338): view('administrador/pacientes/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:03:20 --> Attempt to read property "foto" on array
+in APPPATH\Views\administrador\pacientes\editarPaciente.php on line 13.
+ 1 APPPATH\Views\administrador\pacientes\editarPaciente.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "foto" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(338): view('administrador/pacientes/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:07:49 --> Attempt to read property "correo" on null
+in APPPATH\Views\administrador\pacientes\editarPaciente.php on line 64.
+ 1 APPPATH\Views\administrador\pacientes\editarPaciente.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "correo" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php', 64)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(338): view('administrador/pacientes/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:10:28 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Administrador.php on line 332.
+ 1 APPPATH\Controllers\Administrador.php(332): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 332)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:11:03 --> Attempt to read property "id" on array
+in APPPATH\Views\administrador\pacientes\editarPaciente.php on line 10.
+ 1 APPPATH\Views\administrador\pacientes\editarPaciente.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(337): view('administrador/pacientes/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:11:46 --> Attempt to read property "correo" on array
+in APPPATH\Views\administrador\pacientes\editarPaciente.php on line 64.
+ 1 APPPATH\Views\administrador\pacientes\editarPaciente.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "correo" on array', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php', 64)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\editarPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/editarPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(337): view('administrador/pacientes/editarPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:14:58 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('46')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:15:09 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('346')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:15:14 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('46')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:17:47 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('49')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:19:23 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('44')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:19:26 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('46')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:19:39 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('46')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:19:54 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('46')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:20:40 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Administrador.php on line 329.
+ 1 APPPATH\Controllers\Administrador.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Administrador.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->editarPaciente('46')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:24:10 --> Attempt to read property "statusSeguro" on null
+in APPPATH\Views\administrador\pacientes\sabermasPaciente.php on line 19.
+ 1 APPPATH\Views\administrador\pacientes\sabermasPaciente.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "statusSeguro" on null', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\sabermasPaciente.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\sabermasPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/sabermasPaciente', [], true)
+ 5 APPPATH\Controllers\Administrador.php(170): view('administrador/pacientes/sabermasPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->pacienteSaberMas('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 02:29:38 --> The route for "administrador/medicamentos/administrarPacientes" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('administrador/medicamentos/administrarPacientes')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Administrador.php(1088): redirect('administrador/medicamentos/administrarPacientes', 'refresh')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->insertMedicamentos()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')

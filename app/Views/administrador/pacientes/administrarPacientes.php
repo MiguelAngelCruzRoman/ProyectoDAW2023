@@ -36,7 +36,7 @@
             <button type="button" class="btn btn-success mt-4"
                 onclick="window.location='/administrador/pacientes/agregarPacientes'">
                 <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Icono" width="25" height="25">
-                Agregar Medicamentos
+                Agregar Paciente
             </button>
             <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/administrador'">
                 <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="Icono" width="25" height="25">
@@ -100,7 +100,7 @@
                                             <?php endif;endforeach;?>
                                         </td>
                                         <td>
-                                            <a href="<?= base_url('/administrador/pacientes/editarPaciente/' . $user->id); ?>"
+                                            <a href="<?= base_url('/administrador/pacientes/editarPaciente/' . $user->paciente); ?>"
                                                 style="color:rgba(0,0,0,0.6)">
                                                 <img src="https://cdn-icons-png.flaticon.com/128/705/705120.png" alt="editar"
                                                     class="service-img" width="60" height="60">

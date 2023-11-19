@@ -83,6 +83,7 @@
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 
+                            
                                 
                             <?php if($receta->status == 0):?>
                                 <div class="col-md-3">

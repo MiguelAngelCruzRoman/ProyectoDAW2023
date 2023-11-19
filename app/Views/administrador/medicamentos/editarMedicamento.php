@@ -116,14 +116,20 @@
                         echo "checked"; ?>>Evitar Sol
                 </div>
 
+                <br>
                 <div class="mb-3">
-                    <input type="image" class="btn btn-warning mt-4" value="Guardar" src="">
+                    <button type="submit" class="btn btn-warning">
+                        <img src="https://cdn-icons-png.flaticon.com/128/376/376218.png" alt="Guardar" width="25" height="25">
+                        Guardar
+                    </button>
                 </div>
             </form>
 
             <div class="mb-3">
-                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
-                    onclick="window.location.href='/administrador/medicamentos/administrarPacientes'">
+                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/medicamentos/administrarMedicamentos/'">
+                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
+                        Cancelar
+                    </button>
             </div>
 
         </div>

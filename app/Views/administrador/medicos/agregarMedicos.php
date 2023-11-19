@@ -109,16 +109,22 @@
                     <input type="url" class="form-control" name="foto" id="foto">
                 </div>
 
+                <br>
                 <div class="mb-3">
-                    <input type="image" class="btn btn-success mt-4" value="Siguiente" src="">
+                    <button type="submit" class="btn btn-success">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585717.png" alt="Siguiente" width="25" height="25">
+                        Siguiente
+                    </button>
                 </div>
             </form>
 
+            
             <div class="mb-3">
-                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
-                    onclick="window.location.href='/administrador/medicos/administrarMedicos/'">
+                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/medicos/administrarMedicos/'">
+                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
+                        Cancelar
+                    </button>
             </div>
-
         </div>
     </div>
 </div>

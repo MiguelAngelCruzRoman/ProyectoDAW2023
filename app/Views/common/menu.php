@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="https://o.remove.bg/downloads/eede4a61-f629-44b2-9dea-aa94b7bd9c54/_34319089-9a1a-497b-a538-ba605c3af6d2-removebg-preview.png" alt="" height="100" width="100"></a>
+    <a class="navbar-brand" ><img src="<?= base_url('logo.png') ?>" alt="" height="100" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,12 +19,6 @@
             Administrar <br>Médicos 🩺
           </a>
         </li>
-    
-        <li class="nav-item">
-          <a class="nav-link " href="<?= base_url('index.php/administrador/medicamentos/administrarMedicamentos') ?>" role="button">
-            Administrar <br>Medicamentos 💊
-          </a>
-        </li> 
      
         <li class="nav-item">
           <a class="nav-link " href="<?= base_url('index.php/administrador/consultas/administrarConsultas') ?>" role="button">
@@ -37,8 +31,15 @@
             Administrar <br>Recetas 📝
           </a>
         </li> 
+
+        <li class="nav-item">
+          <a class="nav-link " href="<?= base_url('index.php/administrador/medicamentos/administrarMedicamentos') ?>" role="button">
+            Administrar <br>Medicamentos 💊
+          </a>
+        </li> 
       </ul>
 
+      
       <form action="<?= base_url('index.php/');?>" method="GET">
         <button class="btn btn-outline-success" type="submit">Cerrar Sesión</button>
       </form>

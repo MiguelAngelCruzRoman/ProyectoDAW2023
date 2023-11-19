@@ -148,7 +148,7 @@ class Administrador extends BaseController
 
         $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
 
-        $data['direccion'] = $direccionModel->where('userinfo', $id)->findAll();
+        $data['direccion'] = $direccionModel->where('userinfo', ($data['userinfo'][0]->id))->findAll();
 
         $data['paciente'] = $pacienteModel->find($id);
 
@@ -322,15 +322,15 @@ class Administrador extends BaseController
     */
     public function editarPaciente($id)
     {
-        $userInfoModel = model('UserInfoModel');
-        $data['usersInfo'] = $userInfoModel->find($id);
+        $pacienteModel = model('PacienteModel');
+        $data['paciente'] = $pacienteModel->find($id);
 
         $usersModel = model('UsersModel');
-        $data['users'] = $usersModel->find($id);
+        $data['users'] = $usersModel->where('paciente',($data['paciente']->id))->find();
 
-        $idP = $usersModel->select('paciente')->find($id)->paciente;
-        $pacienteModel = model('PacienteModel');
-        $data['paciente'] = $pacienteModel->find($idP);
+        $userInfoModel = model('UserInfoModel');
+        $data['usersInfo'] = $userInfoModel->where('id',($data['users'][0]->id))->find();
+
 
         return view('common/head') .
             view('common/menu') .
@@ -382,7 +382,7 @@ class Administrador extends BaseController
         $pacienteModel = model('PacienteModel');
         $direccionModel = model('DireccionModel');
         $data = [
-            "id" => $id,
+            "id" => $_POST['id'],
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
             "apellidoPaterno" => $_POST['apellidoPaterno'],
@@ -399,7 +399,7 @@ class Administrador extends BaseController
             "alergia" => $_POST['alergia'],
             "fechaRevision" => $_POST['fechaRevision'],
             "motivoRevision" => $_POST['motivoRevision'],
-            "direccion" => $direccionModel->where('userinfo', $id)->findAll(),
+            "direccion" => $direccionModel->where('userinfo', $_POST['id'])->findAll(),
             "seguro" => $_POST['seguro'],
             "habitosToxicos" => $_POST['habitosToxicos'],
             "condicionesPrevias" => $_POST['condicionesPrevias'],
@@ -436,7 +436,7 @@ class Administrador extends BaseController
             "fechaRevision" => $_POST['fechaRevision'],
             "motivoRevision" => $_POST['motivoRevision'],
         );
-        $pacienteModel->update(($usersModel->select('paciente')->find($_POST['id'])->paciente), $data);
+        $pacienteModel->update(($_POST['PacienteID']), $data);
 
         $data = array(
             "correo" => $_POST['correo'],
@@ -451,6 +451,7 @@ class Administrador extends BaseController
             "apellidoPaterno" => $_POST['apellidoPaterno'],
             "apellidoMaterno" => $_POST['apellidoMaterno'],
             "telefono" => $_POST['telefono'],
+            "foto"=>$_POST['foto']
         );
         $userInfoModel->update($_POST['id'], $data);
 
@@ -1084,7 +1085,7 @@ class Administrador extends BaseController
 
         $medicamentosModel->insert($data, false);
 
-        return redirect('administrador/medicamentos/administrarPacientes', 'refresh');
+        return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
     }
 
 
@@ -1237,6 +1238,249 @@ class Administrador extends BaseController
             view('administrador/consultas/sabermasConsulta', $data) .
             view('common/footer');
     }
+
+
+    /*
+        Función que redirige al formulario que sirve para añadir una
+        nueva consulta a la base de datos, empezando por buscar
+        qué médico la realizará
+    */
+    public function agregarMedicoConsulta(){
+
+            $userInfoModel = model('UserInfoModel');
+            $userModel = model('UsersModel');
+            $medicoModel = model ('MedicoModel');
+
+            $data['medicos'] = $medicoModel->findAll();
+            $data['userInfoMedicos'] = $userInfoModel->findAll();
+            $data['userMedicos'] = $userModel->findAll();
+
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/consultas/agregarMedicoConsulta',$data) .
+            view('common/footer');
+    }
+
+
+    /*
+        Función que busca, entre todos los médicos, aquellos que 
+        cumplan con ciertos criterios.
+        Es un apoyo a la función "agregarMedicoConsulta" pues reenvía
+        al formulario con el mismo nombre, los datos actualizados
+    */
+    public function agregarMedicoConsultaBuscar(){
+
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $medicoModel = model ('MedicoModel');
+        
+        if (isset($_GET['columnaBusquedaMedicos']) && isset($_GET['valIngresado'])) {
+            $columnaBusquedaMedicos = $_GET['columnaBusquedaMedicos'];
+            $valIngresado = $_GET['valIngresado'];
+
+            if ($columnaBusquedaMedicos == 'nombre') {
+                $data['userInfoMedicos'] = $userInfoModel->like('primerNombre', $valIngresado)
+                    ->orlike('segundoNombre', $valIngresado)
+                    ->orlike('apellidoPaterno', $valIngresado)
+                    ->orlike('apellidoMaterno', $valIngresado)
+                    ->findAll();
+                $data['userMedicos'] = $userModel->findAll();
+                $data['medicos'] = $medicoModel->findAll();
+            }
+
+            if ($columnaBusquedaMedicos == 'especialidad') {
+                $data['medicos'] = $medicoModel->like('especialidad', $valIngresado)
+                    ->findAll();
+                $data['userMedicos'] = $userModel->findAll();
+                $data['userInfoMedicos'] = $userInfoModel->findAll();
+            }
+
+            if ($columnaBusquedaMedicos == 'turno') {
+                $data['medicos'] = $medicoModel->like('turno', $valIngresado)
+                    ->findAll();
+                $data['userMedicos'] = $userModel->findAll();
+                $data['userInfoMedicos'] = $userInfoModel->findAll();
+            }
+
+            if ($columnaBusquedaMedicos == 'diasLaborales') {
+                $data['medicos'] = $medicoModel->like('diasLaborales', $valIngresado)
+                    ->findAll();
+                $data['userMedicos'] = $userModel->findAll();
+                $data['userInfoMedicos'] = $userInfoModel->findAll();
+            }
+
+            if ($columnaBusquedaMedicos == 'todo') {
+                $data['medicos'] = $medicoModel->findAll();
+                $data['userMedicos'] = $userModel->findAll();
+                $data['userInfoMedicos'] = $userInfoModel->findAll();
+            }
+
+        } else {
+            $columnaBusquedaMedicos = "";
+            $valIngresado = "";
+            $data['medicos'] = $medicoModel->findAll();
+            $data['userInfoMedicos'] = $userInfoModel->findAll();
+            $data['userMedicos'] = $userModel->findAll();
+        }
+
+    return view('common/head') .
+        view('common/menu') .
+        view('administrador/consultas/agregarMedicoConsulta',$data) .
+        view('common/footer');
+}
+
+/*
+        Función que redirige al formulario que sirve para añadir una
+        nueva consulta a la base de datos, empezando por buscar
+        qué médico la realizará
+    */
+    public function agregarPacienteConsulta($idMedico){
+
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $pacienteModel = model ('PacienteModel');
+
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
+        $data['idMedico'] = $idMedico;
+
+    return view('common/head') .
+        view('common/menu') .
+        view('administrador/consultas/agregarPacienteConsulta',$data) .
+        view('common/footer');
+}
+
+
+    /*
+        Función que busca, entre todos los pacientes, aquellos que 
+        cumplan con ciertos criterios.
+        Es un apoyo a la función "agregarPacienteConsulta" pues reenvía
+        al formulario con el mismo nombre, los datos actualizados
+    */
+    public function agregarPacienteConsultaBuscar($idMedico){
+
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $pacienteModel = model ('PacienteModel');
+
+        if (isset($_GET['columnaBusquedaPaciente']) && isset($_GET['valIngresado'])) {
+            $columnaBusquedaPaciente = $_GET['columnaBusquedaPaciente'];
+            $valIngresado = $_GET['valIngresado'];
+
+            if ($columnaBusquedaPaciente == 'nombre') {
+                $data['userInfoPacientes'] = $userInfoModel->like('primerNombre', $valIngresado)
+                    ->orlike('segundoNombre', $valIngresado)
+                    ->orlike('apellidoPaterno', $valIngresado)
+                    ->orlike('apellidoMaterno', $valIngresado)
+                    ->findAll();
+                $data['userPacientes'] = $userModel->findAll();
+            }
+
+            if ($columnaBusquedaPaciente == 'telefono') {
+                $data['userInfoPacientes'] = $userInfoModel->like('telefono', $valIngresado)
+                    ->findAll();
+                $data['userPacientes'] = $userModel->findAll();
+            }
+
+            if ($columnaBusquedaPaciente == 'todo') {
+                $data['userInfoPacientes'] = $userInfoModel->findAll();
+                $data['userPacientes'] = $userModel->findAll();
+            }
+
+            $data['pacientes'] = $pacienteModel->findAll();
+
+        } else {
+            $columnaBusquedaPaciente = "";
+            $valIngresado = "";
+            $data['userInfoPacientes'] = $userInfoModel->findAll();
+            $data['userPacientes'] = $userModel->findAll();
+            $data['pacientes'] = $pacienteModel->findAll();
+        }
+        $data['idMedico'] = $idMedico;
+
+
+        return view('common/head') .
+        view('common/menu') .
+        view('administrador/consultas/agregarPacienteConsulta',$data) .
+        view('common/footer');
+    }
+
+
+
+    /*
+        Función que redirige al formulario que sirve para añadir la
+        información referente a una nueva consulta, en la base de datos
+    */
+    public function agregarConsulta($idPaciente){
+
+        $medicoPacienteModel = model('MedicoPacienteModel');
+
+
+        $data['medicoPaciente'] = $medicoPacienteModel->findAll();
+        $ExistenciaDeRelacion = 0;
+        $ultimoID = 0;
+        foreach($data['medicoPaciente'] as $medicoPaciente){
+            if(($medicoPaciente->medico == $_POST['idMedico']) && ($medicoPaciente->paciente == $idPaciente)){
+                $ExistenciaDeRelacion = $medicoPaciente->id;
+            }
+            $ultimoID = $ultimoID + 1;
+        }
+
+        if($ExistenciaDeRelacion != 0){
+        $data['medicoPaciente'] = $medicoPacienteModel->find($ExistenciaDeRelacion);
+        }else{
+            $data = [
+                "medico" => $_POST['idMedico'],
+                "paciente" => $idPaciente,
+                "created_at" => date('Y-m-d')
+            ];
+            $medicoPacienteModel->insert($data);
+            $data['medicoPaciente'] = $medicoPacienteModel->find($ultimoID);
+        }
+
+
+        
+    return view('common/head') .
+        view('common/menu') .
+        view('administrador/consultas/agregarInformacionConsulta',$data) .
+        view('common/footer');
+}
+
+
+
+    /* 
+        Función que recupera datos de los formularios de las funciones 
+        "agregarInformacionConsulta", "agregarMedicoConsulta" y "agregarPacienteConsulta"
+        para hacer las inserciones a las tablas de las consultas, recetas y medico_paciente
+        Al terminar re actualiza y redirige a la vista de "administrarConsultas"
+    */
+    public function insertConsulta()
+    {
+        $consultasModel = model('ConsultasModel');
+        $dataConsulta = [
+            "lugar" => $_POST['lugar'],
+            "hora" => $_POST['hora'],
+            "fecha" => $_POST['fecha'],
+            "motivo" => $_POST['motivo'],
+            "medico_paciente"=>$_POST['idMedicoPaciente'],
+            "created_at" => date('Y-m-d')
+        ];
+        $consultasModel->insert($dataConsulta);
+
+        $recetaModel = model('RecetaModel');
+        $dataReceta = [
+            "status" => 0,
+            "fechaVencimiento" => date('0000-00-00'),
+            "consulta" => $consultasModel->getInsertID(),
+            "created_at" => date('Y-m-d')
+        ];
+        $recetaModel->insert($dataReceta);
+
+        return redirect('administrador/consultas/administrarConsultas', 'refresh');
+    }
+
+
 
 
 

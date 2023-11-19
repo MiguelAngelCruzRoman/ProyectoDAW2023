@@ -104,6 +104,16 @@ $routes->get('/administrador/recetas/sabermasReceta/(:num)', 'Administrador::rec
 $routes->get('/administrador/consultas/administrarConsultas', 'Administrador::administrarConsultas');
 $routes->get('/administrador/consultas/buscarConsultas', 'Administrador::buscarConsultas');
 
+$routes->get('/administrador/consultas/agregarMedicoConsulta', 'Administrador::agregarMedicoConsulta');
+$routes->get('/administrador/consultas/agregarMedicoConsulta/buscar', 'Administrador::agregarMedicoConsultaBuscar');
+$routes->get('/administrador/consultas/agregarPacienteConsulta/(:num)', 'Administrador::agregarPacienteConsulta/$1');
+$routes->post('/administrador/consultas/agregarPacienteConsulta/(:num)', 'Administrador::agregarPacienteConsulta/$1');
+$routes->get('/administrador/consultas/agregarPacienteConsulta/buscar/(:num)', 'Administrador::agregarPacienteConsultaBuscar/$1');
+$routes->post('/administrador/consultas/agregarConsulta/(:num)', 'Administrador::agregarConsulta/$1');
+$routes->get('/administrador/consultas/agregarInformacionConsulta', 'Administrador::agregarInformaciónConsulta');
+$routes->post('/administrador/consultas/agregarConsulta/insert', 'Administrador::insertConsulta');
+
+
 $routes->get('/administrador/consultas/realizarConsulta/(:num)', 'Administrador::realizarConsulta/$1');
 
 $routes->get('/administrador/consultas/posponerConsulta/(:num)', 'Administrador::posponerConsulta/$1');

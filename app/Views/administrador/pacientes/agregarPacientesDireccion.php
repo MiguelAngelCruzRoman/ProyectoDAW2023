@@ -75,18 +75,25 @@
                     </select>
                 </div>
 
+                <br>
                 <div class="mb-3">
-                    <input type="image" class="btn btn-warning mt-4" value="Guardar" src="">
+                    <button type="submit" class="btn btn-success">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Agregar" width="25" height="25">
+                        Agregar
+                    </button>
                 </div>
             </form>
 
             <div class="mb-3">
-                <input type="image" class="btn btn-primary mt-4" value="Regresar" src=""
-                    onclick="window.history.back()">
-                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
-                    onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
+                    <button type="submit" class="btn btn-primary" onclick="window.history.back()">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25" height="25">
+                        Regresar
+                    </button>
+                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
+                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
+                        Cancelar
+                    </button>
             </div>
-
         </div>
     </div>
 </div>
