@@ -1,5 +1,10 @@
 <div class="container">
     <div class="row">
+    <?php
+    if(isset($validation)){
+        print $validation->listErrors();
+    }
+?>
         <div class="col-2"></div>
         <div class="col-8">
             <form action="<?= base_url('/administrador/pacientes/agregarPacientes/insert'); ?>" method="POST">
@@ -63,7 +68,7 @@
 
                 <div class="mab-3">
                     <label for="CP" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" name="CP" id="CP">
+                    <input type="number" class="form-control" name="CP" id="CP">
                 </div>
 
                 <div class="mb-3">

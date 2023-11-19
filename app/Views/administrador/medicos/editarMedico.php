@@ -1,10 +1,15 @@
 <div class="container">
     <div class="row">
+    <?php
+    if(isset($validation)){
+        print $validation->listErrors();
+    }
+?>
         <div class="col-2"></div>
         <div class="col-8">
             <form action="<?= base_url('/administrador/medicos/editarMedicoDireccion/' . $usersInfo->id); ?>" method="POST">
                 <?= csrf_field() ?>
-                <h1 align="center">Editar Medicamento</h1>
+                <h1 align="center">Editar Médico</h1>
                 <h4 align="center">Información Personal</h4>
                 <div class="mab-3" align="center">
                     <img src="" alt="medico" class="service-img">
@@ -56,7 +61,7 @@
 
                 <div class="mab-3">
                     <label for="telefono" class="form-label">Número de contacto:</label>
-                    <input type="number" class="form-control" name="telefono" id="telefono"
+                    <input type="text" class="form-control" name="telefono" id="telefono"
                         value="<?= $usersInfo->telefono ?>">
                 </div>
 

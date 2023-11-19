@@ -1,6 +1,10 @@
 <div class="container">
     <div class="row">
-
+    <?php
+    if(isset($validation)){
+        print $validation->listErrors();
+    }
+?>
         <div class="col-2"></div>
 
         <div class="col-8">
@@ -22,13 +26,13 @@
                 </div>
 
                 <div class="mab-3">
-                    <label for="apellidoMaterno" class="form-label">Apellido materno:</label>
-                    <input type="text" class="form-control" name="apellidoMaterno" id="apellidoMaterno">
+                    <label for="apellidoPaterno" class="form-label">Apellido paterno:</label>
+                    <input type="text" class="form-control" name="apellidoPaterno" id="apellidoPaterno">
                 </div>
 
                 <div class="mab-3">
-                    <label for="apellidoPaterno" class="form-label">Apellido paterno:</label>
-                    <input type="text" class="form-control" name="apellidoPaterno" id="apellidoPaterno">
+                    <label for="apellidoMaterno" class="form-label">Apellido materno:</label>
+                    <input type="text" class="form-control" name="apellidoMaterno" id="apellidoMaterno">
                 </div>
 
                 <div class="mb-3">

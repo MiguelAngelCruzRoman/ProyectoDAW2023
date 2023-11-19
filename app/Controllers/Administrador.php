@@ -177,11 +177,14 @@ class Administrador extends BaseController
         El formulario requiere datos del usuario
     */
     public function agregarPacientes()
-    {
-        return view('common/head') .
+    {        
+        if(strtolower($this->request->getMethod())==='get'){
+            return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/agregarPacientes') .
             view('common/footer');
+        }
+
     }
 
     /*
@@ -193,6 +196,21 @@ class Administrador extends BaseController
     */
     public function agregarPacientesDatosMedicos()
     {
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
+            'segundoNombre'=>'max_length[15]',
+            'apellidoPaterno'=>'required|max_length[15]|string',
+            'apellidoMaterno'=>'required|max_length[15]|string',
+            'genero'=>'required|max_length[1]|alpha_numeric_punct',
+            'telefono'=>'required|max_length[15]|min_length[10]',
+            'CURP'=>'required|max_length[18]|min_length[18]|alpha_numeric',
+            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
+            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
+            'contraseña'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'foto'=>'required|max_length[250]|valid_url',
+        ];
 
         $data = [
             "primerNombre" => $_POST['primerNombre'],
@@ -208,10 +226,19 @@ class Administrador extends BaseController
             "foto" => $_POST['foto'],
         ];
 
-        return view('common/head') .
+        if(!$this->validate($rules)){
+            
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/pacientes/agregarPacientes', ['validation'=>$validation,$data]) .
+            view('common/footer');
+
+        }else{
+            return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/agregarPacientesDatosMedicos', $data) .
             view('common/footer');
+        }        
     }
 
     /*
@@ -221,6 +248,18 @@ class Administrador extends BaseController
     */
     public function agregarPacientesDireccion()
     {
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'statusSeguro'=>'required|max_length[50]|min_length[7]|alpha_space',
+            'sangre'=>'required|max_length[3]|min_length[2]|alpha_numeric_punct',
+            'alergia'=>'required|max_length[250]|min_length[7]',
+            'fechaChequeo'=>'required|valid_date',
+            'motivoConsulta'=>'required|max_length[250]|alpha_numeric_punct',
+            'habitosToxicos'=>'required',
+            'condicionesPrevias'=>'required',
+        ];
+
         $data = [
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
@@ -240,12 +279,24 @@ class Administrador extends BaseController
             "motivoConsulta" => $_POST['motivoConsulta'],
             "habitosToxicos" => $_POST['habitosToxicos'],
             "condicionesPrevias" => $_POST['condicionesPrevias'],
+            'validation'=>$validation
         ];
 
-        return view('common/head') .
+
+        if(!$this->validate($rules)){
+            
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/pacientes/agregarPacientesDatosMedicos',$data) .
+            view('common/footer');
+
+        }else{
+            return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/agregarPacientesDireccion', $data) .
             view('common/footer');
+        }  
+        
     }
 
     /* 
@@ -257,7 +308,48 @@ class Administrador extends BaseController
     */
     public function insertPacientes()
     {
-        $pacienteModel = model('PacienteModel');
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'noExt'=>'required|max_length[11]|integer',
+            'noInt'=>'max_length[11]|',
+            'CP'=>'required|max_length[5]|integer',
+            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        ];
+
+        if(!$this->validate($rules)){     
+            $data = [
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "CURP" => $_POST['CURP'],
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "contraseña" => $_POST['contraseña'],
+                "foto" => $_POST['foto'],
+                "statusSeguro" => $_POST['statusSeguro'],
+                "sangre" => $_POST['sangre'],
+                "alergia" => $_POST['alergia'],
+                "fechaChequeo" => $_POST['fechaChequeo'],
+                "motivoConsulta" => $_POST['motivoConsulta'],
+                "habitosToxicos" => $_POST['habitosToxicos'],
+                "condicionesPrevias" => $_POST['condicionesPrevias'],
+                'validation'=>$validation
+            ];
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/pacientes/agregarPacientesDireccion',$data) .
+            view('common/footer');
+
+        }else{
+            $pacienteModel = model('PacienteModel');
         $dataPaciente = [
             "CURP" => $_POST['CURP'],
             "statusSeguro" => $_POST['statusSeguro'],
@@ -311,6 +403,8 @@ class Administrador extends BaseController
         $direccionModel->insert($dataDireccion);
 
         return redirect('administrador/pacientes/administrarPacientes', 'refresh');
+        }  
+        
     }
 
     /*
@@ -331,11 +425,11 @@ class Administrador extends BaseController
         $userInfoModel = model('UserInfoModel');
         $data['usersInfo'] = $userInfoModel->where('id',($data['users'][0]->id))->find();
 
-
-        return view('common/head') .
+            return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/editarPaciente', $data) .
             view('common/footer');
+        
     }
 
     /*
@@ -346,6 +440,22 @@ class Administrador extends BaseController
     */
     public function editarPacienteDatosMedicos($id)
     {
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
+            'segundoNombre'=>'max_length[15]',
+            'apellidoPaterno'=>'required|max_length[15]|string',
+            'apellidoMaterno'=>'required|max_length[15]|string',
+            'genero'=>'required|max_length[1]|alpha',
+            'telefono'=>'required|max_length[15]|min_length[10]',
+            'CURP'=>'required|max_length[18]|min_length[18]|alpha_numeric',
+            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
+            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
+            'contraseña'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'foto'=>'required|max_length[250]|valid_url',
+        ];
+
         $pacienteModel = model('PacienteModel');
 
         $data = [
@@ -361,13 +471,33 @@ class Administrador extends BaseController
             "username" => $_POST['username'],
             "contraseña" => $_POST['contraseña'],
             "foto" => $_POST['foto'],
-            "paciente" => $pacienteModel->find($id)
+            "paciente" => $pacienteModel->find($id),
+            'validation'=>$validation
         ];
 
-        return view('common/head') .
+        if(!$this->validate($rules)){
+            
+            $pacienteModel = model('PacienteModel');
+        $data['paciente'] = $pacienteModel->find($id);
+
+        $usersModel = model('UsersModel');
+        $data['users'] = $usersModel->where('paciente',($data['paciente']->id))->find();
+
+        $userInfoModel = model('UserInfoModel');
+        $data['usersInfo'] = $userInfoModel->where('id',($data['users'][0]->id))->find();
+
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/pacientes/editarPaciente', $data) .
+            view('common/footer');
+
+        }else{
+            return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/editarPacienteDatosMedicos', $data) .
             view('common/footer');
+        }   
+        
     }
 
 
@@ -381,6 +511,19 @@ class Administrador extends BaseController
     {
         $pacienteModel = model('PacienteModel');
         $direccionModel = model('DireccionModel');
+
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'seguro'=>'required|max_length[50]|min_length[3]|alpha_space',
+            'sangre'=>'required|max_length[3]|min_length[2]|alpha_numeric_punct',
+            'alergia'=>'required|max_length[250]|min_length[7]',
+            'fechaRevision'=>'required|valid_date',
+            'motivoRevision'=>'required|max_length[250]|alpha_numeric_punct',
+            'habitosToxicos'=>'required',
+            'condicionesPrevias'=>'required',
+        ];
+
         $data = [
             "id" => $_POST['id'],
             "primerNombre" => $_POST['primerNombre'],
@@ -403,12 +546,24 @@ class Administrador extends BaseController
             "seguro" => $_POST['seguro'],
             "habitosToxicos" => $_POST['habitosToxicos'],
             "condicionesPrevias" => $_POST['condicionesPrevias'],
+            'validation'=>$validation
         ];
 
-        return view('common/head') .
+        if(!$this->validate($rules)){
+            
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/pacientes/editarPacienteDatosMedicos',$data) .
+            view('common/footer');
+
+        }else{
+            return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/editarPacienteDireccion', $data) .
             view('common/footer');
+        } 
+
+        
     }
 
     /*
@@ -420,6 +575,19 @@ class Administrador extends BaseController
     */
     public function pacienteUpdate()
     {
+         $validation = \Config\Services::validation();
+
+        $rules =[
+            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'noExt'=>'required|max_length[11]|integer',
+            'noInt'=>'max_length[11]|',
+            'CP'=>'required|max_length[5]|integer',
+            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        ];
+
         $userInfoModel = model('UserInfoModel');
 
         $usersModel = model('UsersModel');
@@ -428,47 +596,83 @@ class Administrador extends BaseController
 
         $direccionModel = model('DireccionModel');
 
-        $data = array(
-            "CURP" => $_POST['CURP'],
-            "statusSeguro" => $_POST['seguro'],
-            "tipoSangre" => $_POST['sangre'],
-            "alergia" => $_POST['alergia'],
-            "fechaRevision" => $_POST['fechaRevision'],
-            "motivoRevision" => $_POST['motivoRevision'],
-        );
-        $pacienteModel->update(($_POST['PacienteID']), $data);
+        if(!$this->validate($rules)){
+            
+            $data = [
+                "id" => $_POST['id'],
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "CURP" => $_POST['CURP'],
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "contraseña" => $_POST['contraseña'],
+                "foto" => $_POST['foto'],
+                "paciente" => $pacienteModel->find(($_POST['PacienteID'])),
+                "sangre" => $_POST['sangre'],
+                "alergia" => $_POST['alergia'],
+                "fechaChequeo" => $_POST['fechaRevision'],
+                "motivoConsulta" => $_POST['motivoRevision'],
+                "direccion" => $direccionModel->where('userinfo', $_POST['id'])->findAll(),
+                "statusSeguro" => $_POST['seguro'],
+                "habitosToxicos" => $_POST['habitosToxicos'],
+                "condicionesPrevias" => $_POST['condicionesPrevias'],
+                'validation'=>$validation
+            ];
 
-        $data = array(
-            "correo" => $_POST['correo'],
-            "password" => $_POST['contraseña'],
-        );
-        $usersModel->update($_POST['id'], $data);
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/pacientes/agregarPacientesDireccion',$data) .
+            view('common/footer');
 
-
-        $data = array(
-            "primerNombre" => $_POST['primerNombre'],
-            "segundoNombre" => $_POST['segundoNombre'],
-            "apellidoPaterno" => $_POST['apellidoPaterno'],
-            "apellidoMaterno" => $_POST['apellidoMaterno'],
-            "telefono" => $_POST['telefono'],
-            "foto"=>$_POST['foto']
-        );
-        $userInfoModel->update($_POST['id'], $data);
-
-
-        $data = array(
-            "estado" => $_POST['estado'],
-            "municipio" => $_POST['municipio'],
-            "colonia" => $_POST['colonia'],
-            "calle" => $_POST['calle'],
-            "noExt" => $_POST['noExt'],
-            "noInt" => $_POST['noInt'],
-            "CP" => $_POST['CP'],
-            "tipo" => $_POST['tipo'],
-        );
-        $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $data);
-
-        return redirect('administrador/pacientes/administrarPacientes', 'refresh');
+        }else{
+          
+            $data = array(
+                "CURP" => $_POST['CURP'],
+                "statusSeguro" => $_POST['seguro'],
+                "tipoSangre" => $_POST['sangre'],
+                "alergia" => $_POST['alergia'],
+                "fechaRevision" => $_POST['fechaRevision'],
+                "motivoRevision" => $_POST['motivoRevision'],
+            );
+            $pacienteModel->update(($_POST['PacienteID']), $data);
+    
+            $data = array(
+                "correo" => $_POST['correo'],
+                "password" => $_POST['contraseña'],
+            );
+            $usersModel->update($_POST['id'], $data);
+    
+    
+            $data = array(
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "telefono" => $_POST['telefono'],
+                "foto"=>$_POST['foto']
+            );
+            $userInfoModel->update($_POST['id'], $data);
+    
+    
+            $data = array(
+                "estado" => $_POST['estado'],
+                "municipio" => $_POST['municipio'],
+                "colonia" => $_POST['colonia'],
+                "calle" => $_POST['calle'],
+                "noExt" => $_POST['noExt'],
+                "noInt" => $_POST['noInt'],
+                "CP" => $_POST['CP'],
+                "tipo" => $_POST['tipo'],
+            );
+            $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $data);
+    
+            return redirect('administrador/pacientes/administrarPacientes', 'refresh');
+        } 
+        
     }
 
 
@@ -634,7 +838,7 @@ class Administrador extends BaseController
 
         $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
 
-        $data['direccion'] = $direccionModel->where('userinfo', $id)->findAll();
+        $data['direccion'] = $direccionModel->where('userinfo', ($data['user'][0]->id))->findAll();
 
         $data['medico'] = $medicoModel->find($id);
 
@@ -691,6 +895,24 @@ class Administrador extends BaseController
     */
     public function editarMedicoDireccion($id)
     {
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
+            'segundoNombre'=>'max_length[15]',
+            'apellidoPaterno'=>'required|max_length[15]|string',
+            'apellidoMaterno'=>'required|max_length[15]|string',
+            'genero'=>'required|max_length[1]|alpha',
+            'telefono'=>'required|max_length[15]|min_length[10]',
+            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
+            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
+            'password'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'foto'=>'required|max_length[250]|valid_url',
+            'especialidad'=>'required|max_length[50]|min_length[3]',
+            'diasLaborales'=>'required|max_length[50]|min_length[3]',
+            'turno'=>'required|max_length[50]|min_length[3]|alpha_numeric_punct',
+        ];
+
         $direccionModel = model('DireccionModel');
         $data = [
             "primerNombre" => $_POST['primerNombre'],
@@ -708,12 +930,32 @@ class Administrador extends BaseController
             "turno" => $_POST['turno'],
             "id" => $id,
             "direccion" => $direccionModel->where('userinfo', $id)->findAll(),
+            'validation'=>$validation
         ];
 
-        return view('common/head') .
+        if(!$this->validate($rules)){
+
+            $userInfoModel = model('UserInfoModel');
+        $data['usersInfo'] = $userInfoModel->find($id);
+
+        $usersModel = model('UsersModel');
+        $data['users'] = $usersModel->find($id);
+
+        $idM = $usersModel->select('medico')->find($id)->medico;
+        $medicosModel = model('MedicoModel');
+        $data['medico'] = $medicosModel->find($idM);
+
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/medicos/editarMedico', $data) .
+            view('common/footer');
+
+        }else{
+            return view('common/head') .
             view('common/menu') .
             view('administrador/medicos/editarMedicoDireccion', $data) .
             view('common/footer');
+        }   
     }
 
     /*
@@ -725,7 +967,47 @@ class Administrador extends BaseController
     */
     public function medicoUpdate()
     {
-        $medicosModel = model('MedicoModel');
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'noExt'=>'required|max_length[11]|integer',
+            'noInt'=>'max_length[11]|',
+            'CP'=>'required|max_length[5]|integer',
+            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        ];
+
+        if(!$this->validate($rules)){
+            $direccionModel = model('DireccionModel');
+
+            $data = [
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "password" => $_POST['password'],
+                "foto" => $_POST['foto'],
+                "especialidad" => $_POST['especialidad'],
+                "diasLaborales" => $_POST['diasLaborales'],
+                "turno" => $_POST['turno'],
+                "id" => $_POST['id'],
+                "direccion" => $direccionModel->where('userinfo', $_POST['id'])->findAll(),
+                'validation'=>$validation
+            ];
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/medicos/editarMedicoDireccion',$data) .
+            view('common/footer');
+
+        }else{
+            $medicosModel = model('MedicoModel');
         $usersModel = model('UsersModel');
         $userInfoModel = model('UserInfoModel');
         $direccionModel = model('DireccionModel');
@@ -742,13 +1024,11 @@ class Administrador extends BaseController
             "correo" => $_POST['correo'],
             "username" => $_POST['username'],
             "password" => $_POST['password'],
-            "medico" => $medicosModel->getInsertID(),
             "created_at" => date('Y-m-d')
         ];
         $usersModel->update($_POST['id'], $dataUser);
 
         $dataUserInfo = [
-            "id" => $usersModel->getInsertID(),
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
             "apellidoPaterno" => $_POST['apellidoPaterno'],
@@ -769,12 +1049,13 @@ class Administrador extends BaseController
             "noExt" => $_POST['noExt'],
             "CP" => $_POST['CP'],
             "tipo" => $_POST['tipo'],
-            "userinfo" => $usersModel->getInsertID(),
             "created_at" => date('Y-m-d')
         ];
         $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
 
         return redirect('administrador/medicos/administrarMedicos', 'refresh');
+        }  
+        
     }
 
 
@@ -807,10 +1088,13 @@ class Administrador extends BaseController
     */
     public function agregarMedicos()
     {
+        if(strtolower($this->request->getMethod())==='get'){
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/medicos/agregarMedicos') .
             view('common/footer');
+        }
     }
 
 
@@ -823,6 +1107,24 @@ class Administrador extends BaseController
     */
     public function agregarMedicosDireccion()
     {
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
+            'segundoNombre'=>'max_length[15]',
+            'apellidoPaterno'=>'required|max_length[15]|string',
+            'apellidoMaterno'=>'required|max_length[15]|string',
+            'genero'=>'required|max_length[1]|alpha',
+            'telefono'=>'required|max_length[15]|min_length[10]',
+            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
+            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
+            'password'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'foto'=>'required|max_length[250]|valid_url',
+            'especialidad'=>'required|max_length[50]|min_length[3]',
+            'diasLaborales'=>'required|max_length[50]|min_length[3]',
+            'turno'=>'required|max_length[50]|min_length[3]|alpha_numeric_punct',
+        ];
+
         $data = [
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
@@ -837,12 +1139,23 @@ class Administrador extends BaseController
             "especialidad" => $_POST['especialidad'],
             "diasLaborales" => $_POST['diasLaborales'],
             "turno" => $_POST['turno'],
+            'validation'=>$validation
         ];
 
-        return view('common/head') .
+        if(!$this->validate($rules)){
+
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/medicos/agregarMedicos', $data) .
+            view('common/footer');
+
+        }else{
+            return view('common/head') .
             view('common/menu') .
             view('administrador/medicos/agregarMedicosDireccion', $data) .
             view('common/footer');
+        } 
+        
     }
 
     /* 
@@ -853,55 +1166,96 @@ class Administrador extends BaseController
     */
     public function insertMedicos()
     {
-        $medicosModel = model('MedicoModel');
-        $dataMedicos = [
-            "especialidad" => $_POST['especialidad'],
-            "diasLaborales" => $_POST['diasLaborales'],
-            "turno" => $_POST['turno'],
-            "created_at" => date('Y-m-d')
-        ];
-        $medicosModel->insert($dataMedicos);
+        $validation = \Config\Services::validation();
 
-        $usersModel = model('UsersModel');
-        $dataUser = [
-            "correo" => $_POST['correo'],
-            "username" => $_POST['username'],
-            "password" => $_POST['password'],
-            "medico" => $medicosModel->getInsertID(),
-            "created_at" => date('Y-m-d')
+        $rules =[
+            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'noExt'=>'required|max_length[11]|integer',
+            'noInt'=>'max_length[11]|',
+            'CP'=>'required|max_length[5]|integer',
+            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
-        $usersModel->insert($dataUser);
 
-        $userInfoModel = model('UserInfoModel');
-        $dataUserInfo = [
-            "id" => $usersModel->getInsertID(),
-            "primerNombre" => $_POST['primerNombre'],
-            "segundoNombre" => $_POST['segundoNombre'],
-            "apellidoPaterno" => $_POST['apellidoPaterno'],
-            "apellidoMaterno" => $_POST['apellidoMaterno'],
-            "genero" => $_POST['genero'],
-            "telefono" => $_POST['telefono'],
-            "foto" => $_POST['foto'],
-            "created_at" => date('Y-m-d')
-        ];
-        $userInfoModel->insert($dataUserInfo);
+        if(!$this->validate($rules)){
 
-        $direccionModel = model('DireccionModel');
-        $dataDireccion = [
-            "estado" => $_POST['estado'],
-            "municipio" => $_POST['municipio'],
-            "colonia" => $_POST['colonia'],
-            "calle" => $_POST['calle'],
-            "noInt" => $_POST['noInt'],
-            "noExt" => $_POST['noExt'],
-            "CP" => $_POST['CP'],
-            "tipo" => $_POST['tipo'],
-            "userinfo" => $usersModel->getInsertID(),
-            "created_at" => date('Y-m-d')
-        ];
-        $direccionModel->insert($dataDireccion);
+            $data = [
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "password" => $_POST['password'],
+                "foto" => $_POST['foto'],
+                "especialidad" => $_POST['especialidad'],
+                "diasLaborales" => $_POST['diasLaborales'],
+                "turno" => $_POST['turno'],
+                'validation'=>$validation
+            ];
 
-        return redirect('administrador/medicos/administrarMedicos', 'refresh');
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/medicos/agregarMedicosDireccion', $data) .
+            view('common/footer');
+
+        }else{
+            $medicosModel = model('MedicoModel');
+            $dataMedicos = [
+                "especialidad" => $_POST['especialidad'],
+                "diasLaborales" => $_POST['diasLaborales'],
+                "turno" => $_POST['turno'],
+                "created_at" => date('Y-m-d')
+            ];
+            $medicosModel->insert($dataMedicos);
+    
+            $usersModel = model('UsersModel');
+            $dataUser = [
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "password" => $_POST['password'],
+                "medico" => $medicosModel->getInsertID(),
+                "created_at" => date('Y-m-d')
+            ];
+            $usersModel->insert($dataUser);
+    
+            $userInfoModel = model('UserInfoModel');
+            $dataUserInfo = [
+                "id" => $usersModel->getInsertID(),
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "foto" => $_POST['foto'],
+                "created_at" => date('Y-m-d')
+            ];
+            $userInfoModel->insert($dataUserInfo);
+    
+            $direccionModel = model('DireccionModel');
+            $dataDireccion = [
+                "estado" => $_POST['estado'],
+                "municipio" => $_POST['municipio'],
+                "colonia" => $_POST['colonia'],
+                "calle" => $_POST['calle'],
+                "noInt" => $_POST['noInt'],
+                "noExt" => $_POST['noExt'],
+                "CP" => $_POST['CP'],
+                "tipo" => $_POST['tipo'],
+                "userinfo" => $usersModel->getInsertID(),
+                "created_at" => date('Y-m-d')
+            ];
+            $direccionModel->insert($dataDireccion);
+    
+            return redirect('administrador/medicos/administrarMedicos', 'refresh');
+        } 
+
+        
     }
 
 
@@ -999,10 +1353,13 @@ class Administrador extends BaseController
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamento'] = $medicamentosModel->find($id);
 
+        if(strtolower($this->request->getMethod())==='get'){
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/medicamentos/editarMedicamento', $data) .
             view('common/footer');
+        }
     }
 
     /*
@@ -1014,7 +1371,22 @@ class Administrador extends BaseController
     */
     public function updateMedicamento()
     {
+        $validation = \Config\Services::validation();
+
         $medicamentosModel = model('MedicamentosModel');
+
+        $rules =[
+            'nombreComercial'=>'required|max_length[50]|min_length[3]|string',
+            'nombreCinetifico'=>'required|max_length[80]|min_length[3]|string',
+            'formaFarmaceutica'=>'required|max_length[20]|string',
+            'dosis'=>'required|max_length[11]|integer',
+            'fechaCaducidad'=>'required|valid_date',
+            'loteFabricacion'=>'required|max_length[10]|string',
+            'version'=>'required|max_length[15]|string',
+            'simbolo'=>'required',
+            'imagenEmpaque'=>'required|max_length[150]|valid_url',
+            'stock'=>'required|max_length[11]|integer',
+        ];
 
         $data = [
             "nombreComercial" => $_POST['nombreComercial'],
@@ -1027,13 +1399,27 @@ class Administrador extends BaseController
             "simbolo" => $_POST['simbolo'],
             "imagenEmpaque" => $_POST['imagenEmpaque'],
             "stock" => $_POST['stock'],
-            "updated_at" => time()
+            "updated_at" => time(),
         ];
 
-        $medicamentosModel->update($_POST['id'], $data);
+
+        if(!$this->validate($rules)){
+            $data['validation']=$validation;
+
+            $data['medicamento'] = $medicamentosModel->find($_POST['id']);
+
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/medicamentos/editarMedicamento', $data) .
+            view('common/footer');
+
+        }else{
+            $medicamentosModel->update($_POST['id'], $data);
 
 
-        return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
+            return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
+        } 
+
     }
 
     /*
@@ -1054,10 +1440,13 @@ class Administrador extends BaseController
     */
     public function agregarMedicamentos()
     {
+        if(strtolower($this->request->getMethod())==='get'){
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/medicamentos/agregarMedicamentos') .
             view('common/footer');
+        }
     }
 
     /* 
@@ -1067,6 +1456,8 @@ class Administrador extends BaseController
     */
     public function insertMedicamentos()
     {
+        $validation = \Config\Services::validation();
+
         $medicamentosModel = model('MedicamentosModel');
 
         $data = [
@@ -1083,9 +1474,34 @@ class Administrador extends BaseController
             "created_at" => time()
         ];
 
-        $medicamentosModel->insert($data, false);
+        $rules =[
+            'nombreComercial'=>'required|max_length[50]|min_length[3]|string',
+            'nombreCinetifico'=>'required|max_length[80]|min_length[3]|string',
+            'formaFarmaceutica'=>'required|max_length[20]|string',
+            'dosis'=>'required|max_length[11]|integer',
+            'fechaCaducidad'=>'required|valid_date',
+            'loteFabricacion'=>'required|max_length[10]|string',
+            'version'=>'required|max_length[15]|string',
+            'simbolo'=>'required',
+            'imagenEmpaque'=>'required|max_length[150]|valid_url',
+            'stock'=>'required|max_length[11]|integer',
+        ];
+
+        if(!$this->validate($rules)){
+            $data['validation']=$validation;
+
+            return view('common/head') .
+            view('common/menu') .
+            view('administrador/medicamentos/agregarMedicamentos', $data) .
+            view('common/footer');
+
+        }else{
+            $medicamentosModel->insert($data, false);
 
         return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
+        } 
+
+        
     }
 
 
@@ -1255,10 +1671,13 @@ class Administrador extends BaseController
             $data['userInfoMedicos'] = $userInfoModel->findAll();
             $data['userMedicos'] = $userModel->findAll();
 
+            if(strtolower($this->request->getMethod())==='get'){
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/consultas/agregarMedicoConsulta',$data) .
             view('common/footer');
+            }
     }
 
 
@@ -1345,10 +1764,13 @@ class Administrador extends BaseController
         $data['userPacientes'] = $userModel->findAll();
         $data['idMedico'] = $idMedico;
 
+        if(strtolower($this->request->getMethod())==='post'){
+
     return view('common/head') .
         view('common/menu') .
         view('administrador/consultas/agregarPacienteConsulta',$data) .
         view('common/footer');
+        }
 }
 
 
@@ -1416,7 +1838,6 @@ class Administrador extends BaseController
 
         $medicoPacienteModel = model('MedicoPacienteModel');
 
-
         $data['medicoPaciente'] = $medicoPacienteModel->findAll();
         $ExistenciaDeRelacion = 0;
         $ultimoID = 0;
@@ -1438,13 +1859,14 @@ class Administrador extends BaseController
             $medicoPacienteModel->insert($data);
             $data['medicoPaciente'] = $medicoPacienteModel->find($ultimoID);
         }
+    
+        if(strtolower($this->request->getMethod())==='post'){
 
-
-        
     return view('common/head') .
         view('common/menu') .
         view('administrador/consultas/agregarInformacionConsulta',$data) .
         view('common/footer');
+        }
 }
 
 
@@ -1457,7 +1879,37 @@ class Administrador extends BaseController
     */
     public function insertConsulta()
     {
-        $consultasModel = model('ConsultasModel');
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'lugar'=>'required|max_length[15]|min_length[3]|string',
+            'hora'=>'max_length[15]',
+            'fecha'=>'required|max_length[15]|string',
+            'motivo'=>'required|max_length[250]|string',
+        ];
+
+        if(!$this->validate($rules)){
+            $data['medicoPaciente'] = $_POST['idMedicoPaciente'];
+
+            $medicoPacienteModel = model('MedicoPacienteModel');
+            $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $pacienteModel = model ('PacienteModel');
+
+        $data['medicoPaciente'] = $medicoPacienteModel->find($_POST['idMedicoPaciente']);
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
+        $data['idMedico'] = $data['medicoPaciente']->medico;
+        $data['validation']= $validation;
+
+            return view('common/head') .
+        view('common/menu') .
+        view('administrador/consultas/agregarInformacionConsulta',$data) .
+        view('common/footer');
+
+        }else{
+            $consultasModel = model('ConsultasModel');
         $dataConsulta = [
             "lugar" => $_POST['lugar'],
             "hora" => $_POST['hora'],
@@ -1478,6 +1930,9 @@ class Administrador extends BaseController
         $recetaModel->insert($dataReceta);
 
         return redirect('administrador/consultas/administrarConsultas', 'refresh');
+        } 
+
+        
     }
 
 

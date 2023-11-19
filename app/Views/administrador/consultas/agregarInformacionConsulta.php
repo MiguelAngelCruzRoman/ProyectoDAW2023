@@ -1,6 +1,10 @@
 <div class="container">
     <div class="row">
-
+    <?php
+    if(isset($validation)){
+        print $validation->listErrors();
+    }
+?>
         <div class="col-2"></div>
 
         <div class="col-8">
