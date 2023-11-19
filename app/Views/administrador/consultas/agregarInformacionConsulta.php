@@ -20,22 +20,22 @@
 
                 <div class="col-12">
                     <label for="lugar">Lugar de la consulta:</label>
-                    <input type="text" class="form-control" name="lugar">
+                    <input type="text" class="form-control" name="lugar" placeholder="Ejemplo: Consultorio A, Hospital J" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="15" min_length="3">
                 </div>
 
                 <div class="col-12">
                     <label for="hora">Hora de consulta:</label>
-                    <input type="time" class="form-control" name="hora">
+                    <input type="time" class="form-control" name="hora" required>
                 </div>
 
                 <div class="col-12">
                     <label for="fecha">Fecha de consulta:</label>
-                    <input type="date" class="form-control" name="fecha">
+                    <input type="date" class="form-control" name="fecha" required>
                 </div>
 
                 <div class="col-12">
                     <label for="motivo">Motivo:</label>
-                    <input type="text" class="form-control" name="motivo">
+                    <input type="text" class="form-control" name="motivo" placeholder="Ejemplo: Dolor de cabeza" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="250">
                 </div>
 
                 <div class="mb-3">

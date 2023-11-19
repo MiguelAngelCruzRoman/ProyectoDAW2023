@@ -28,42 +28,42 @@
 
                 <div class="mab-3">
                     <label for="estado" class="form-label">Estado:</label>
-                    <input type="text" class="form-control" name="estado" id="estado">
+                    <input type="text" class="form-control" name="estado" id="estado" placeholder="Ejemplo: Veracruz" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
                 </div>
 
                 <div class="mab-3">
                     <label for="municipio" class="form-label">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio">
+                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Ejemplo: Altotonga" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
                 </div>
 
                 <div class="mab-3">
                     <label for="colonia" class="form-label">Colonia:</label>
-                    <input type="text" class="form-control" name="colonia" id="colonia">
+                    <input type="text" class="form-control" name="colonia" id="colonia" placeholder="Ejemplo: La Cruz" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
                 </div>
 
                 <div class="mab-3">
                     <label for="calle" class="form-label">Calle:</label>
-                    <input type="text" class="form-control" name="calle" id="calle">
+                    <input type="text" class="form-control" name="calle" id="calle" placeholder="Ejemplo: Revolución" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
                 </div>
 
                 <div class="mab-3">
                     <label for="noExt" class="form-label">Número exterior:</label>
-                    <input type="number" class="form-control" name="noExt" id="noExt">
+                    <input type="number" class="form-control" name="noExt" id="noExt" laceholder="Ejemplo: 45" required pattern="[0-9]+" max_length="11" min_length="1">
                 </div>
 
                 <div class="mab-3">
                     <label for="noInt" class="form-label">Número interior:</label>
-                    <input type="text" class="form-control" name="noInt" id="noInt">
+                    <input type="text" class="form-control" name="noInt" id="noInt" laceholder="Ejemplo: 2"  pattern="[0-9]+" max_length="11" >
                 </div>
 
                 <div class="mab-3">
                     <label for="CP" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" name="CP" id="CP">
+                    <input type="text" class="form-control" name="CP" id="CP" placeholder="Ejemplo: 73950" required pattern="[0-9]+" max_length="5" >
                 </div>
 
                 <div class="mb-3">
                     <label for="tipo">Tipo de dirección:</label>
-                    <select name="tipo" id="tipo" class="form-control">
+                    <select name="tipo" id="tipo" class="form-control" required>
                         <option value="Casa">Casa</option>
                         <option value="Departamento">Departamento</option>
                         <option value="Oficina">Oficina</option>

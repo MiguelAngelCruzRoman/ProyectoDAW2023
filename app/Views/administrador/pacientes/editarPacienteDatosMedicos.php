@@ -27,7 +27,7 @@
 
                 <div class="mb-3">
                     <label for="seguro">Tipo de seguro:</label>
-                    <select name="seguro" id="seguro" class="form-control">
+                    <select name="seguro" id="seguro" class="form-control" required>
                         <option value="<?= $paciente->statusSeguro ?>" selected><?= $paciente->statusSeguro ?></option>
                         <option value="estudiantil">Estudiantil</option>
                         <option value="laboral">Laboral</option>
@@ -39,7 +39,7 @@
 
                 <div class="mb-3">
                     <label for="sangre">Tipo de sangre:</label>
-                    <select name="sangre" id="sangre" class="form-control">
+                    <select name="sangre" id="sangre" class="form-control" required>
                         <option value="<?= $paciente->tipoSangre ?>" selected><?= $paciente->tipoSangre ?></option>
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
@@ -52,7 +52,7 @@
 
                 <div class="mb-3">
                     <label for="alergia">Alergia:</label>
-                    <select name="alergia" id="alergia" class="form-control">
+                    <select name="alergia" id="alergia" class="form-control" required>
                         <option value="<?= $paciente->alergia ?>" selected><?= $paciente->alergia ?></option>
                         <option value="ninguna" selected>Ninguna</option>
                         <option value="poliester">poliester</option>
@@ -64,13 +64,13 @@
 
                 <div class="mab-3">
                     <label for="fechaRevision" class="form-label">Fecha de última revisión:</label>
-                    <input type="date" class="form-control" name="fechaRevision" id="fechaRevision"
+                    <input type="date" class="form-control" name="fechaRevision" id="fechaRevision" required
                         value="<?= $paciente->fechaRevision ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="motivoRevision">Motivo de última consulta:</label>
-                    <select name="motivoRevision" id="motivoRevision" class="form-control">
+                    <select name="motivoRevision" id="motivoRevision" class="form-control" required>
                         <option value="<?= $paciente->motivoRevision ?>" selected><?= $paciente->motivoRevision ?></option>
                         <option value="preventivo">Preventivo</option>
                         <option value="enfermedad">Enfermedad</option>

@@ -90,7 +90,12 @@
                                     <?php if($consulta->fecha >= date('Y-m-d')):?>
                                         <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
                                     <?php else:?>
-                                        <td style="text-align: center; background-color:rgb(255,0,0)">No se realizó <br>en la fecha <br>establecida</td>
+                                        <?php if($receta->fechaVencimiento == date('0000-00-00')):?>
+                                            <td style="text-align: center; background-color:rgb(255,128,0)">En espera para <br>revisión del médico</td>
+                                        <?php else:?>
+                                            <td style="text-align: center; background-color:rgb(255,0,0)">No se realizó <br>en la fecha <br>establecida</td>
+                                        <?php endif;?>
+
                                     <?php endif;?>
                                 <?php else:?>
                                     <td style="text-align: center; background-color:rgb(0,255,0)">Realizada</td>

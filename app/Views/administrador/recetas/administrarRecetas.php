@@ -48,6 +48,11 @@
 
                 <tbody>
                 <?php foreach ($recetasPagina as $receta): ?>
+                    <?php if($receta->fechaVencimiento == date('0000-00-00')):?>
+                    <tr>
+                    </tr>
+                        <?php else:?>
+                                    
                         <tr>
                             <td style="text-align: center"><?= $receta->id ?></td>
                             <td>
@@ -61,8 +66,7 @@
                             </td>
                             <td style="text-align: center">
                                 <?php foreach($consultas as $consulta): if($receta->consulta == $consulta->id):?>
-                                    <a href="<?= base_url('/administrador/consultas/sabermasConsultas/' . $consulta->id); ?>"style="color:rgba(0,0,0,1)">
-                                    <?='Consulta '.$consulta->id.', realizada en "'.$consulta->lugar.'"' ?></a>
+                                    <?='Consulta '.$consulta->id.', realizada en "'.$consulta->lugar.'"' ?>
                                <?php endif;endforeach;?>
                             </td>
                             <td style="text-align: center"><?= $receta->fechaVencimiento ?></td>
@@ -96,8 +100,9 @@
                                 </a>
                             </td>
                         </tr>
-                    <?php endforeach ?>
+                        <?php endif;?>
 
+                    <?php endforeach;?>
                 </tbody>
 
             </table>

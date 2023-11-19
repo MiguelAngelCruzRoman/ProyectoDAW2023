@@ -1441,3 +1441,15 @@ in APPPATH\Controllers\Administrador.php on line 1901.
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 16:13:56 --> Undefined variable $idMedicoPaciente
+in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 15.
+ 1 APPPATH\Views\administrador\recetas\sabermasReceta.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idMedicoPaciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\recetas\\sabermasReceta.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/recetas/sabermasReceta', [], true)
+ 5 APPPATH\Controllers\Administrador.php(2048): view('administrador/recetas/sabermasReceta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->recetaSaberMas('74')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')

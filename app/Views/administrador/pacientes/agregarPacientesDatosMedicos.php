@@ -27,7 +27,7 @@
 
                 <div class="mb-3">
                     <label for="statusSeguro">Tipo del seguro:</label>
-                    <select name="statusSeguro" id="statusSeguro" class="form-control">
+                    <select name="statusSeguro" id="statusSeguro" class="form-control" required>
                         <option value=""></option>
                         <option value="Ninguno" selected>Ninguno</option>
                         <option value="Seguro Privado">Seguro privado</option>
@@ -38,7 +38,7 @@
 
                 <div class="mb-3">
                     <label for="sangre">Tipo de sangre:</label>
-                    <select name="sangre" id="sangre" class="form-control">
+                    <select name="sangre" id="sangre" class="form-control" required>
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                         <option value="A+">A+</option>
@@ -50,7 +50,7 @@
 
                 <div class="mb-3">
                     <label for="alergia">Alergia:</label>
-                    <select name="alergia" id="alergia" class="form-control">
+                    <select name="alergia" id="alergia" class="form-control" required>
                         <option value="Ninguna" selected>Ninguna</option>
                         <option value="Poliester">Poliester</option>
                         <option value="Alcohol">Alcohol</option>
@@ -61,12 +61,12 @@
 
                 <div class="mab-3">
                     <label for="fechaChequeo" class="form-label">Fecha de última revisión:</label>
-                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo">
+                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" required >
                 </div>
 
                 <div class="mb-3">
                     <label for="motivoConsulta">Motivo de última consulta:</label>
-                    <select name="motivoConsulta" id="motivoConsulta" class="form-control">
+                    <select name="motivoConsulta" id="motivoConsulta" class="form-control" required>
                         <option value="Preventivo" selected>Preventivo</option>
                         <option value="Enfermedad">Enfermedad</option>
                         <option value="Rutinario">Rutinario</option>
@@ -81,7 +81,7 @@
                     <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación">Mala alimentación
                     <input type="checkbox" name="habitosToxicos[]" value="Alcohol">Alcohol
                     <input type="checkbox" name="habitosToxicos[]" value="Drogas">Drogas
-                    <input type="checkbox" name="habitosToxicos[]" value="Ninguno">Ninguno
+                    <input type="checkbox" name="habitosToxicos[]" value="Ninguno" checked>Ninguno
                 </div>
 
                 <div class="mb-3">
@@ -95,7 +95,7 @@
                     <input type="checkbox" name="condicionesPrevias[]" value="COVID">COVID
                     <input type="checkbox" name="condicionesPrevias[]" value="Bulimia">Bulimia/Anorexia
                     <input type="checkbox" name="condicionesPrevias[]" value="Fiebre">Fiebre del mono
-                    <input type="checkbox" name="condicionesPrevias[]" value="Ninguna">Ninguna
+                    <input type="checkbox" name="condicionesPrevias[]" value="Ninguna" checked>Ninguna
                 </div>
 
                 <br>

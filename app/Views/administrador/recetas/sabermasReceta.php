@@ -8,11 +8,42 @@
             <div class="container mt-4">
                 <div class="card">
                     <div class="card-body">
+                    <?php if($receta->fechaVencimiento == date('0000-00-00')):?>
+                        <h3> Aún no se realiza la consulta de esta receta. <br> Favor de contactar al médico responsable</h3>
+
+                        <?php foreach($consultas as $consulta): if($consulta->id == $receta->consulta):?>
+                            <p><strong>ID de Consulta:</strong>
+                            <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"style="color:rgba(0,0,0,1)">
+
+                                    <?= $consulta->id ?></a>
+                                </p>
+                                <?php $idMedicoPaciente = $consulta->medico_paciente?>
+                        <?php endif;endforeach; ?>
+                        <p><strong>Médico: </strong>
+                            <?php foreach($medicosPaciente as $medicoPaciente): if($medicoPaciente->id == $idMedicoPaciente):?>
+                                    <?php foreach($medicos as $medico): if($medico->id == $medicoPaciente->medico ):?>
+                                        <?php foreach($userMedicos as $userMedico): if($userMedico->medico == $medicoPaciente->medico ):?>
+                                            <?php foreach ($userInfoMedicos as $userInfoMedico): if($userInfoMedico->id == $userMedico->id):?>
+                                        <a href="<?= base_url('/administrador/medicos/sabermasMedico/' . $medicoPaciente->medico); ?>"style="color:rgba(0,0,0,1)">
+                                            <?php if($userInfoMedico->genero =='M'):?>
+                                                Dr.
+                                            <?php else: ?>
+                                                Dra.
+                                            <?php endif; ?>
+                                            <?= $userInfoMedico->primerNombre . ' ' . $userInfoMedico->segundoNombre .
+                                            ' ' . $userInfoMedico->apellidoPaterno . ' ' . $userInfoMedico->apellidoMaterno?></a>
+                                        <?php endif;endforeach; ?>
+                                    <?php endif;endforeach;?>
+                                <?php endif;endforeach;?>
+                            <?php endif;endforeach;?>
+                        </p>
+                    <?php else:?>
                         <h3> Información de la receta</h3>
                         <p><strong>Fecha de vencimiento:</strong>
                             <?= $receta->fechaVencimiento ?>
                         </p>
-
+                       
+                                
                         <?php foreach($consultas as $consulta): if($consulta->id == $receta->consulta):?>
                                 <p><strong>Realizada en:</strong>
                                     <?= $consulta->lugar ?>
@@ -122,6 +153,8 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>

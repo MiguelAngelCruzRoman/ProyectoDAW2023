@@ -201,14 +201,14 @@ class Administrador extends BaseController
         $rules =[
             'primerNombre'=>'required|max_length[15]|min_length[3]|string',
             'segundoNombre'=>'max_length[15]',
-            'apellidoPaterno'=>'required|max_length[15]|string',
-            'apellidoMaterno'=>'required|max_length[15]|string',
+            'apellidoPaterno'=>'required|max_length[15]|min_length[3]|string',
+            'apellidoMaterno'=>'required|max_length[15]|min_length[3]|string',
             'genero'=>'required|max_length[1]|alpha_numeric_punct',
             'telefono'=>'required|max_length[15]|min_length[10]',
             'CURP'=>'required|max_length[18]|min_length[18]|alpha_numeric',
             'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
-            'contraseña'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'username'=>'required|max_length[50]|min_length[1]|string',
+            'contraseña'=>'required|max_length[150]|min_length[1]|string',
             'foto'=>'required|max_length[250]|valid_url',
         ];
 
@@ -311,10 +311,10 @@ class Administrador extends BaseController
         $validation = \Config\Services::validation();
 
         $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'estado'=>'required|max_length[50]|min_length[2]|string',
+            'municipio'=>'required|max_length[50]|min_length[2]|string',
+            'colonia'=>'required|max_length[50]|min_length[2]|string',
+            'calle'=>'required|max_length[50]|min_length[2]|string',
             'noExt'=>'required|max_length[11]|integer',
             'noInt'=>'max_length[11]|',
             'CP'=>'required|max_length[5]|integer',
@@ -451,8 +451,8 @@ class Administrador extends BaseController
             'telefono'=>'required|max_length[15]|min_length[10]',
             'CURP'=>'required|max_length[18]|min_length[18]|alpha_numeric',
             'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
-            'contraseña'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'username'=>'required|max_length[50]|min_length[1]|string',
+            'contraseña'=>'required|max_length[150]|min_length[1]|string',
             'foto'=>'required|max_length[250]|valid_url',
         ];
 
@@ -578,10 +578,10 @@ class Administrador extends BaseController
          $validation = \Config\Services::validation();
 
         $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'estado'=>'required|max_length[50]|min_length[2]|string',
+            'municipio'=>'required|max_length[50]|min_length[2]|string',
+            'colonia'=>'required|max_length[50]|min_length[2]|string',
+            'calle'=>'required|max_length[50]|min_length[2]|string',
             'noExt'=>'required|max_length[11]|integer',
             'noInt'=>'max_length[11]|',
             'CP'=>'required|max_length[5]|integer',
@@ -902,11 +902,11 @@ class Administrador extends BaseController
             'segundoNombre'=>'max_length[15]',
             'apellidoPaterno'=>'required|max_length[15]|string',
             'apellidoMaterno'=>'required|max_length[15]|string',
-            'genero'=>'required|max_length[1]|alpha',
+            'genero'=>'required|max_length[1]|alpha_numeric_punct',
             'telefono'=>'required|max_length[15]|min_length[10]',
             'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
-            'password'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'username'=>'required|max_length[50]|min_length[1]|string',
+            'password'=>'required|max_length[150]|min_length[1]|string',
             'foto'=>'required|max_length[250]|valid_url',
             'especialidad'=>'required|max_length[50]|min_length[3]',
             'diasLaborales'=>'required|max_length[50]|min_length[3]',
@@ -970,10 +970,10 @@ class Administrador extends BaseController
         $validation = \Config\Services::validation();
 
         $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'estado'=>'required|max_length[50]|min_length[2]|string',
+            'municipio'=>'required|max_length[50]|min_length[2]|string',
+            'colonia'=>'required|max_length[50]|min_length[2]|string',
+            'calle'=>'required|max_length[50]|min_length[2]|string',
             'noExt'=>'required|max_length[11]|integer',
             'noInt'=>'max_length[11]|',
             'CP'=>'required|max_length[5]|integer',
@@ -1114,11 +1114,11 @@ class Administrador extends BaseController
             'segundoNombre'=>'max_length[15]',
             'apellidoPaterno'=>'required|max_length[15]|string',
             'apellidoMaterno'=>'required|max_length[15]|string',
-            'genero'=>'required|max_length[1]|alpha',
+            'genero'=>'required|max_length[1]|alpha_numeric_punct',
             'telefono'=>'required|max_length[15]|min_length[10]',
             'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|alpha_numeric',
-            'password'=>'required|max_length[150]|min_length[1]|alpha_numeric_punct',
+            'username'=>'required|max_length[50]|min_length[1]|string',
+            'password'=>'required|max_length[150]|min_length[1]|string',
             'foto'=>'required|max_length[250]|valid_url',
             'especialidad'=>'required|max_length[50]|min_length[3]',
             'diasLaborales'=>'required|max_length[50]|min_length[3]',
@@ -1169,10 +1169,10 @@ class Administrador extends BaseController
         $validation = \Config\Services::validation();
 
         $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'municipio'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'colonia'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
-            'calle'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+            'estado'=>'required|max_length[50]|min_length[2]|string',
+            'municipio'=>'required|max_length[50]|min_length[2]|string',
+            'colonia'=>'required|max_length[50]|min_length[2]|string',
+            'calle'=>'required|max_length[50]|min_length[2]|string',
             'noExt'=>'required|max_length[11]|integer',
             'noInt'=>'max_length[11]|',
             'CP'=>'required|max_length[5]|integer',

@@ -86,8 +86,10 @@
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 
-                                
+                           
+
                             <?php if($receta->status == 0):?>
+                                
                                 <div class="col-md-3">
                                     <a href="<?= base_url('/administrador/recetas/renovarReceta/' .$receta->id); ?>" class="text-center"
                                         style="color:rgba(0,0,0,1)">

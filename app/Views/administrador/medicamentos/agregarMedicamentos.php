@@ -11,27 +11,20 @@
                 <?= csrf_field() ?>
                 <h1 align="center">Agregar Medicamentos</h1>
 
-                <input type="hidden" name="" value="">
-
-                <div class="mab-3" align="center">
-                    <img src="" alt="medicamento" class="service-img">
-                </div>
-
                 <div class="mab-3">
                     <label for="nombreComercial" class="form-label">Nombre comercial:</label>
-                    <input type="text" class="form-control" name="nombreComercial" id="nombreComercial">
+                    <input type="text" class="form-control" name="nombreComercial" id="nombreComercial" placeholder="Ejemplo: Paracetamol" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="3">
                 </div>
 
                 <div class="mab-3">
                     <label for="nombreCinetifico" class="form-label">Nombre científico:</label>
-                    <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico">
+                    <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico" placeholder="Ejemplo: Acetaminofén" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="80" min_length="3">
                 </div>
 
                 <div class="mb-3">
                     <label for="formaFarmaceutica">Forma farmacéutica:</label>
-                    <select name="formaFarmaceutica" id="formaFarmaceutica" class="form-control">
-                        <option value="" selected></option>
-                        <option value="Tableta">Tableta</option>
+                    <select name="formaFarmaceutica" id="formaFarmaceutica" class="form-control" required>
+                        <option value="Tableta" selected>Tableta</option>
                         <option value="Cápsula">Cápsula</option>
                         <option value="Aerosol">Aerosol</option>
                         <option value="Solución">Solución</option>
@@ -44,9 +37,8 @@
 
                 <div class="mb-3">
                     <label for="dosis">Dosis recomendada:</label>
-                    <select name="dosis" id="dosis" class="form-control">
-                        <option value="" selected></option>
-                        <option value="5">5 mg</option>
+                    <select name="dosis" id="dosis" class="form-control" required>
+                        <option value="5" selected>5 mg</option>
                         <option value="10">10mg</option>
                         <option value="15">15 mg</option>
                         <option value="25">25 mg</option>
@@ -61,26 +53,25 @@
 
                 <div class="mab-3">
                     <label for="fechaCaducidad" class="form-label">Fecha de caducidad:</label>
-                    <input type="date" class="form-control" name="fechaCaducidad" id="fechaCaducidad">
+                    <input type="date" class="form-control" name="fechaCaducidad" id="fechaCaducidad" required>
                 </div>
 
                 <div class="mab-3">
                     <label for="loteFabricacion" class="form-label">Lote de fabricación:</label>
-                    <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion">
+                    <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion" placeholder="Ejemplo: ABC 78S" required pattern="[A-Z0-9\s]+" max_length="10" >
                 </div>
 
                 <div class="mab-3">
                     <label for="stock" class="form-label">Stock:</label>
-                    <input type="text" class="form-control" name="stock" id="stock">
+                    <input type="number" class="form-control" name="stock" id="stock" placeholder="Ejemplo: 15" required pattern="[0-9]+" max_length="11" >
                 </div>
 
                 <div class="mb-3">
                     <label for="version">Versión:</label>
-                    <select name="version" id="version" class="form-control">
-                        <option value="" selected></option>
+                    <select name="version" id="version" class="form-control" required>
                         <option value="Adultos">Adulto</option>
                         <option value="Niños">Infantil</option>
-                        <option value="Indistinto">Indistinto</option>
+                        <option value="Indistinto" selected>Indistinto</option>
                     </select>
                 </div>
 
@@ -96,11 +87,12 @@
                     <input type="checkbox" name="simbolo[]" value="Con comida">Con comida
                     <input type="checkbox" name="simbolo[]" value="No fumar">No fumar
                     <input type="checkbox" name="simbolo[]" value="Evitar Sol">Evitar Sol
+                    <input type="checkbox" name="simbolo[]" value="Ninguno" checked>Ninguno
                 </div>
 
                 <div class="mab-3">
                     <label for="imagenEmpaque" class="form-label">Imagen del empaque:</label>
-                    <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque">
+                    <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque" placeholder="Ejemplo: https://foto.png" required  max_length="150" >
                 </div>
 
                 <br>
