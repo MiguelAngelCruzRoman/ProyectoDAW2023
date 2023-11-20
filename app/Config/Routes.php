@@ -191,7 +191,7 @@ $routes->get('/paciente', 'Paciente::opciones');
 //                             Rutas para manejar médicos como paciente
 //---------------------------------------------------------------------------------------------------------
 $routes->get('/paciente/medicos/administrarMedicos', 'Paciente::administrarMedicos');
-$routes->get('/paciente/medcios/administrarMedicos/buscar', 'Paciente::buscarMedicos');
+$routes->get('/paciente/medicos/administrarMedicos/buscar', 'Paciente::buscarMedico');
 
 $routes->get('/paciente/medicos/sabermasMedico/(:num)', 'Paciente::medicoSaberMas/$1');
 
@@ -203,9 +203,10 @@ $routes->get('/paciente/consultas/administrarConsultas', 'Paciente::administrarC
 
 $routes->get('/paciente/consultas/posponerConsulta/(:num)', 'Paciente::posponerConsulta/$1');
 
-$routes->get('/paciente/consultas/realizarConsulta/formulario/(:num)', 'Paciente::realizarConsultaFormulario/$1');
-$routes->get('/paciente/consultas/completarConsulta/(:num)', 'Paciente::completarConsulta/$1');
-$routes->post('/paciente/consultas/realizarConsulta/(:num)', 'Paciente::realizarConsulta/$1');
+$routes->post('/paciente/consultas/agregarConsulta/(:num)', 'Paciente::agregarConsulta/$1');
+$routes->get('/paciente/consultas/agregarConsulta/(:num)', 'Paciente::agregarConsulta/$1');
+$routes->get('/paciente/consultas/agregarInformacionConsulta', 'Paciente::agregarInformaciónConsulta');
+$routes->post('/paciente/consultas/agregarConsulta/insert', 'Paciente::insertConsulta');
 
 $routes->get('/paciente/consultas/sabermasConsulta/(:num)', 'Paciente::consultaSaberMas/$1');
 
@@ -217,8 +218,5 @@ $routes->get('/paciente/medicamento/sabermasMedicamento/(:num)', 'Paciente::medi
 //                             Rutas para manejar recetas como paciente
 //---------------------------------------------------------------------------------------------------------
 $routes->get('/paciente/recetas/administrarRecetas', 'Paciente::administrarRecetas');
-
-$routes->get('/paciente/recetas/cancelarReceta/(:num)', 'Paciente::cancelarReceta/$1');
-$routes->get('/paciente/recetas/renovarReceta/(:num)', 'Paciente::renovarReceta/$1');
 
 $routes->get('/paciente/recetas/sabermasReceta/(:num)', 'Paciente::recetaSaberMas/$1');

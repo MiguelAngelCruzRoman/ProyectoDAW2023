@@ -33,11 +33,6 @@
 
 
         <div class="col-4">
-            <button type="button" class="btn btn-success mt-4"
-                onclick="window.location='/administrador/consultas/agregarMedicoConsulta'">
-                <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Icono" width="25" height="25">
-                Agregar Consulta
-            </button>
             <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/administrador'">
                 <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="Icono" width="25" height="25">
                 Página Principal

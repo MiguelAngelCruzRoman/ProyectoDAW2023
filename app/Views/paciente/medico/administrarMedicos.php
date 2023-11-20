@@ -6,13 +6,13 @@
         <div class="col-8">
                 <?= csrf_field() ?>
 
-                <h1 align="center">Administrar Mis Pacientes</h1>
-                <h4 align="center">-Seleccione un Paciente-</h4>
+                <h1 align="center">Administrar Mis Médicos</h1>
+                <h4 align="center">-Seleccione un Médico-</h4>
 
-                <form action="<?= base_url('/medico/pacientes/administrarPacientes/buscar'); ?>" method="GET">
+                <form action="<?= base_url('/paciente/medicos/administrarMedicos/buscar'); ?>" method="GET">
 
                 <div class="col-5">
-                    <label for="valIngresado">Nombre del Paciente Parecido a:</label>
+                    <label for="valIngresado">Nombre del Médico Parecido a:</label>
                     <input type="text" class="form-control" name="valIngresado">
                 </div>
 
@@ -33,26 +33,28 @@
         <?php $count = 0; ?>
         <?php foreach($medicoPacientes as $medicoPaciente): ?>
 
-        <?php foreach($pacientes as $paciente): if($medicoPaciente->paciente == $paciente->id): ?>
-            <?php foreach($userPacientes as $userPaciente): ?>
-                <?php if($userPaciente->paciente == $paciente->id): ?>
-                    <?php foreach($userInfoPacientes as $userInfoPaciente): ?>
-                        <?php if($userPaciente->id == $userInfoPaciente->id): ?>
+        <?php foreach($medicos as $medico): if($medicoPaciente->medico == $medico->id): ?>
+            <?php foreach($userMedicos as $userMedico): ?>
+                <?php if($userMedico->medico == $medico->id): ?>
+                    <?php foreach($userInfoMedicos as $userInfoMedico): ?>
+                        <?php if($userMedico->id == $userInfoMedico->id): ?>
                             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-2">
-                                <form action="<?= base_url('/medico/pacientes/sabermasPaciente/'.$paciente->id); ?>" method="get">
+                                <form action="<?= base_url('/paciente/medicos/sabermasMedico/'.$medico->id); ?>" method="get">
                                     <button class="btn" style="padding: 0; border: none; background: none;">
                                         <div class="card">
                                             <div class="card-body">
                                                 <h6 class="card-title">
-                                                    <?php if($userInfoPaciente->genero =='M'): ?>
+                                                    <?php if($userInfoMedico->genero =='M'): ?>
                                                         Sr.
                                                     <?php else: ?>
                                                         Sra.
                                                     <?php endif; ?>
-                                                    <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
-                                                    ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno?>
+                                                    <?= $userInfoMedico->primerNombre . ' ' . $userInfoMedico->segundoNombre .
+                                                    ' ' . $userInfoMedico->apellidoPaterno . ' ' . $userInfoMedico->apellidoMaterno?>
                                                 </h6>
-                                                <img src="<?= $userInfoPaciente->foto?>" alt="foto del paciente" class="img-fluid">
+                                                <img src="<?= $userInfoMedico->foto?>" alt="foto del médico" class="img-fluid">
+                                                <p><strong>Especialidad: </strong><?=$medico->especialidad?></p>
+                                                <p><strong>Días laborales: </strong><?=$medico->diasLaborales?></p>
                                                 <input type="hidden" name="IDmedicoPaciente" value=<?= $medicoPaciente->id?>>
                                             </div>
                                         </div>
@@ -71,20 +73,4 @@
         <?php endforeach; ?>
     </div>
 </div>
-
-
-
-
-            
-<div class="container">
-    <div class="row">
-        <div class="col-5"></div>
-
-        <div class="col-2">
-                    <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
-                        onclick="window.location.href='/administrador/consultas/administrarConsultas/'">
-                </div>
-
-        <div class="col-5"></div>
-    </div>
-</div>
+        

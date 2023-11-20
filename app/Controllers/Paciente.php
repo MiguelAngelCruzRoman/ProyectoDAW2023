@@ -33,57 +33,57 @@ class Paciente extends BaseController
     {
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $pacienteModel = model('PacienteModel');
+        $medicoMOdel = model('MedicoModel');
         $medicoPacientModel = model('MedicoPacienteModel');
         $session = \Config\Services::session();
 
-        $data['idMedico'] = $session->get('idMedico');
-        $data['pacientes'] = $pacienteModel->findAll();
-        $data['userInfoPacientes'] = $userInfoModel->findAll();
-        $data['userPacientes'] = $userModel->findAll();
-        $data['medicoPacientes'] = $medicoPacientModel->where('medico',$data['idMedico'])->findAll();
+        $data['idPaciente'] = $session->get('idPaciente');
+        $data['medicos'] = $medicoMOdel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $userModel->findAll();
+        $data['medicoPacientes'] = $medicoPacientModel->where('paciente',$data['idPaciente'])->findAll();
 
         if (strtolower($this->request->getMethod()) === 'get') {
 
             return view('common/head') .
                 view('common/menu') .
-                view('medico/paciente/administrarPacientes', $data) .
+                view('paciente/medico/administrarMedicos', $data) .
                 view('common/footer');
         }
     }
 
-    public function buscarPacientes()
+    public function buscarMedico()
     {
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $pacienteModel = model('PacienteModel');
+        $medicoModel = model('MedicoModel');
         $medicoPacientModel = model('MedicoPacienteModel');
         $session = \Config\Services::session();
 
         if (isset($_GET['valIngresado'])) {
             $valIngresado = $_GET['valIngresado'];
 
-                $data['userInfoPacientes'] = $userInfoModel->like('primerNombre', $valIngresado)
+                $data['userInfoMedicos'] = $userInfoModel->like('primerNombre', $valIngresado)
                     ->orlike('segundoNombre', $valIngresado)
                     ->orlike('apellidoPaterno', $valIngresado)
                     ->orlike('apellidoMaterno', $valIngresado)
                     ->findAll();
-                $data['userPacientes'] = $userModel->findAll();
+                $data['userMedicos'] = $userModel->findAll();
             
         } else {
             $valIngresado = "";
-            $data['userInfoPacientes'] = $userInfoModel->findAll();
-            $data['userPacientes'] = $userModel->findAll();
+            $data['userInfoMedicos'] = $userInfoModel->findAll();
+            $data['userMedicos'] = $userModel->findAll();
         }
 
-        $data['idMedico'] = $session->get('idMedico');
-        $data['pacientes'] = $pacienteModel->findAll();
-        $data['medicoPacientes'] = $medicoPacientModel->where('medico',$data['idMedico'])->findAll();
+        $data['idPaciente'] = $session->get('idPaciente');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['medicoPacientes'] = $medicoPacientModel->where('paciente',$data['idPaciente'])->findAll();
 
 
         return view('common/head') .
             view('common/menu') .
-            view('medico/paciente/administrarPacientes', $data) .
+            view('paciente/medico/administrarMedicos', $data) .
             view('common/footer');
     }
 
@@ -94,23 +94,23 @@ class Paciente extends BaseController
         de los id que se utilizan para identificar a los usuarios en 
         la función "administrarPacientes"
     */
-    public function pacienteSaberMas($id)
+    public function medicoSaberMas($id)
     {
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $pacienteModel = model('PacienteModel');
+        $medicoModel = model('MedicoModel');
         $consultasModel = model ('ConsultasModel');
          
         $data['user'] = $userModel->where('paciente', $id)->findAll();
         $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
-        $data['paciente'] = $pacienteModel->find($id);
+        $data['medico'] = $medicoModel->find($id);
         $data['consultas'] = $consultasModel->where('medico_paciente',($_GET['IDmedicoPaciente']))->findAll();
         $data['id'] = $id;
         $data['IDMedicoPaciente']= $_GET['IDmedicoPaciente'];
 
         return view('common/head') .
             view('common/menu') .
-            view('medico/paciente/sabermasPaciente', $data) .
+            view('paciente/medico/sabermasMedico', $data) .
             view('common/footer');
     }
 
@@ -128,7 +128,7 @@ class Paciente extends BaseController
         $session = \Config\Services::session();
 
         $medicoPacienteModel = model('MedicoPacienteModel');
-        $data['medicosPaciente'] = $medicoPacienteModel->where('medico',($session->get('idMedico')))->findAll();
+        $data['medicosPaciente'] = $medicoPacienteModel->where('paciente',($session->get('idPaciente')))->findAll();
 
         $consultasModel = model('ConsultasModel');
         $data['consultasPendientes'] = $consultasModel->where('fecha',NULL)->findAll();
@@ -140,7 +140,7 @@ class Paciente extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('medico/consultas/administrarConsultas', $data) .
+            view('paciente/consultas/administrarConsultas', $data) .
             view('common/footer');
     }
 
@@ -158,7 +158,7 @@ class Paciente extends BaseController
     
     $consultasModel->update($id, $data);
 
-    return redirect('medico/consultas/administrarConsultas', 'refresh');
+    return redirect('paciente/consultas/administrarConsultas', 'refresh');
 }
 
 /*
@@ -204,129 +204,118 @@ class Paciente extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('medico/consultas/sabermasConsulta', $data) .
+            view('paciente/consultas/sabermasConsulta', $data) .
             view('common/footer');
     }
 
 
 
     /*
-        Función para completar el formulario de la consulta nueva
-        que va a realizar el médico
+        Función que redirige al formulario que sirve para añadir la
+        información referente a una nueva consulta, en la base de datos
     */
-    public function realizarConsultaFormulario($id){
-        $medicamentosModel = model('MedicamentosModel');
-        $data['medicamentos'] = $medicamentosModel->findAll();
+    public function agregarConsulta($idMedico){
+        $session = \Config\Services::session();
 
-        $consultaModel = model ('ConsultasModel');
-        $dataConsulta = [
-            "lugar" => '',
-            "hora" => '',
-            "fecha" => '',
-            "motivo" => '',
-            "medico_paciente"=>$id,
-            "created_at" => date('Y-m-d')
-        ];
+        $medicoPacienteModel = model('MedicoPacienteModel');
 
-        
-        $consultaModel->insert($dataConsulta);
-        $data['medico_paciente']=$id;
-        $data['consulta'] = $consultaModel->where('fecha',null)->orderBy('id','desc')->findAll();
+        $data['medicoPaciente'] = $medicoPacienteModel->findAll();
+        $ExistenciaDeRelacion = 0;
+        $ultimoID = 0;
+        foreach($data['medicoPaciente'] as $medicoPaciente){
+            if(($medicoPaciente->paciente == ($session->get('idPaciente'))) && ($medicoPaciente->medico == $idMedico)){
+                $ExistenciaDeRelacion = $medicoPaciente->id;
+            }
+            $ultimoID = $ultimoID + 1;
+        }
+
+        if($ExistenciaDeRelacion != 0){
+        $data['medicoPaciente'] = $medicoPacienteModel->find($ExistenciaDeRelacion);
+        }else{
+            $data = [
+                "paciente" => $session->get('idPaciente'),
+                "medico" => $idMedico,
+                "created_at" => date('Y-m-d')
+            ];
+            $medicoPacienteModel->insert($data);
+            $data['medicoPaciente'] = $medicoPacienteModel->find($ultimoID);
+        }
+    
+        if(strtolower($this->request->getMethod())==='get'){
+
+    return view('common/head') .
+        view('common/menu') .
+        view('paciente/consultas/agregarInformacionConsulta',$data) .
+        view('common/footer');
+        }
+}
 
 
-        return view('common/head') .
-            view('common/menu') .
-            view('medico/consultas/realizarConsultaFormulario', $data) .
-            view('common/footer');
-   }
 
-   /*
-        Función para completar el formulario de la consulta pendiente
-        que tiene el médico
+    /* 
+        Función que recupera datos de los formularios de las funciones 
+        "agregarInformacionConsulta", "agregarMedicoConsulta" y "agregarPacienteConsulta"
+        para hacer las inserciones a las tablas de las consultas, recetas y medico_paciente
+        Al terminar re actualiza y redirige a la vista de "administrarConsultas"
     */
-    public function completarConsulta($id){
-        $medicamentosModel = model('MedicamentosModel');
-        $data['medicamentos'] = $medicamentosModel->findAll();
-
-        $consultaModel = model ('ConsultasModel');
-
-     
-        $data['consulta'] = $consultaModel->find($id);
-
-
-        $data['medico_paciente']=$data['consulta']->medico_paciente;
-
-        return view('common/head') .
-            view('common/menu') .
-            view('medico/consultas/completarConsulta', $data) .
-            view('common/footer');
-   }
-
-
-    /*
-        Función para marcar como completar el proceso de la consulta 
-        específica que se requiera, actualizando la fecha de modiciación
-        de dicho registro en la base de datos
-    */
-    public function realizarConsulta($id){
+    public function insertConsulta()
+    {
         $validation = \Config\Services::validation();
 
         $rules =[
             'lugar'=>'required|max_length[15]|min_length[3]|string',
+            'hora'=>'max_length[15]',
+            'fecha'=>'required|max_length[15]|string',
             'motivo'=>'required|max_length[250]|string',
         ];
 
-        if(!$this->validate($rules)){    
-            $medicamentosModel = model('MedicamentosModel');
-        $data['medicamentos'] = $medicamentosModel->findAll();
+        if(!$this->validate($rules)){
+            $data['medicoPaciente'] = $_POST['idMedicoPaciente'];
 
-            $consultaModel = model ('ConsultasModel');
-            $data['medico_paciente']=$_POST['medico_paciente'];
+            $medicoPacienteModel = model('MedicoPacienteModel');
+            $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $pacienteModel = model ('PacienteModel');
 
-            $data['consulta'] = $consultaModel->find($_POST['IDconsulta']);
-            
+        $data['medicoPaciente'] = $medicoPacienteModel->find($_POST['idMedicoPaciente']);
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
+        $data['idMedico'] = $data['medicoPaciente']->medico;
+        $data['validation']= $validation;
+
             return view('common/head') .
         view('common/menu') .
-        view('medico/consultas/realizarConsultaFormulario',$data) .
+        view('paciente/consultas/agregarInformacionConsulta',$data) .
         view('common/footer');
 
         }else{
             $consultasModel = model('ConsultasModel');
         $dataConsulta = [
             "lugar" => $_POST['lugar'],
-            "hora" => date('h:i:s'),
-            "fecha" => date("Y-m-d",strtotime(date('Y-m-d')."- 1 days")),
+            "hora" => '',
+            "fecha" => '',
             "motivo" => $_POST['motivo'],
-            "medico_paciente"=>$_POST['medico_paciente'],
-            "created_at" => date('Y-m-d'),
-            "updated_at" => date("Y-m-d",strtotime(date('Y-m-d')."- 1 days"))
+            "medico_paciente"=>$_POST['idMedicoPaciente'],
+            "created_at" => date('Y-m-d')
         ];
-        $consultasModel->delete($_POST['IDconsulta']);
         $consultasModel->insert($dataConsulta);
-
-        $nuevaFecha=date("Y-m-d",strtotime(date('Y-m-d')."+ 15 days"));
 
         $recetaModel = model('RecetaModel');
         $dataReceta = [
-            "status" => 1,
-            "fechaVencimiento" => $nuevaFecha,
+            "status" => 0,
+            "fechaVencimiento" => date('0000-00-00'),
             "consulta" => $consultasModel->getInsertID(),
             "created_at" => date('Y-m-d')
         ];
         $recetaModel->insert($dataReceta);
 
-        $recetaMedicamentoModel = model('RecetaMedicamentoModel');
-        foreach($_POST['medicamentos'] as $medicamento){
-            $dataRecetaMedicamento = [
-                "receta"=>$recetaModel->getInsertID(),
-                "medicamento"=>$medicamento
-            ];
-            $recetaMedicamentoModel->insert($dataRecetaMedicamento);
-        }
-        return redirect('medico/consultas/administrarConsultas', 'refresh');
+        return redirect('paciente/consultas/administrarConsultas', 'refresh');
         } 
 
-   }
+        
+    }
+
 
 
 
@@ -401,7 +390,7 @@ class Paciente extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('medico/recetas/sabermasReceta', $data) .
+            view('paciente/recetas/sabermasReceta', $data) .
             view('common/footer');
     }
 
@@ -415,7 +404,7 @@ class Paciente extends BaseController
         $session = \Config\Services::session();
 
         $medicoPacienteModel = model('MedicoPacienteModel');
-        $data['medicosPaciente'] = $medicoPacienteModel->where('medico',($session->get('idMedico')))->findAll();
+        $data['medicosPaciente'] = $medicoPacienteModel->where('paciente',($session->get('idPaciente')))->findAll();
 
         $recetaModel = model('RecetaModel');
         $data['recetas'] = $recetaModel->findAll();
@@ -432,42 +421,11 @@ class Paciente extends BaseController
 
         return view('common/head') .
             view('common/menu') .
-            view('medico/recetas/administrarRecetas', $data) .
+            view('paciente/recetas/administrarRecetas', $data) .
             view('common/footer');
     }
 
-    /*
-        Función para dar de baja una receta, cambiando su status, para
-        que no sea válida en caso de que quiera usarse en otros procesos
-    */
-   public function cancelarReceta($id){
-        $recetaModel = model('RecetaModel');
-        $data = array(
-            "status" => 0,
-            "updated_at" => date('Y-m-d'),
-        );
 
-        $recetaModel->update($id, $data);
-
-        return redirect('medico/recetas/administrarRecetas', 'refresh');
-   }
-
-   /*
-    Función para reactivar el status de la receta, agregando más tiempo a
-    la fecha de vencimiento (hasta el año 2048)
-   */
-   public function renovarReceta($id){
-    $recetaModel = model('RecetaModel');
-    $data = array(
-        "status" => 1,
-        "updated_at" => date('Y-m-d'),
-        "fechaVencimiento" => date('2048-m-d'),
-    );
-
-    $recetaModel->update($id, $data);
-
-    return redirect('medico/recetas/administrarRecetas', 'refresh');
-    }
     
 }
 

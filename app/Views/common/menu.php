@@ -23,15 +23,21 @@
         </li>
       
         <li class="nav-item">   
-        <?php if(($session->get('idPaciente')==NULL)):?>
+        <?php if(($session->get('idPaciente')== NULL)):?>
             <?php if(($session->get('idMedico')==NULL)):?>
               <a class="nav-link " href="<?= base_url('index.php/administrador/medicos/administrarMedicos') ?>" role="button">
                 Administrar <br>Médicos 🩺
               </a>
-            <?php else:?>
               
             <?php endif;?>
+           
           <?php endif;?>
+
+            <?php if(($session->get('idPaciente')> 0)):?>
+                <a class="nav-link " href="<?= base_url('index.php/paciente/medicos/administrarMedicos') ?>" role="button">
+                Administrar <br>Médicos 🩺
+              </a>
+            <?php endif;?>
           
         </li>
      
@@ -47,6 +53,12 @@
               </a>
             <?php endif;?>
           <?php endif;?>
+
+          <?php if(($session->get('idPaciente')> 0)):?>
+            <a class="nav-link " href="<?= base_url('index.php/paciente/consultas/administrarConsultas') ?>" role="button">
+                Administrar <br>Consultas 🏥
+              </a>
+            <?php endif;?>
           
         </li> 
 
@@ -62,6 +74,12 @@
           </a>
             <?php endif;?>
           <?php endif;?>
+
+          <?php if(($session->get('idPaciente')> 0)):?>
+            <a class="nav-link " href="<?= base_url('index.php/paciente/recetas/administrarRecetas') ?>" role="button">
+            Administrar <br>Recetas 📝
+          </a>
+            <?php endif;?>
         </li> 
 
         <li class="nav-item">
@@ -69,11 +87,11 @@
                 <?php if(($session->get('idMedico')==NULL)):?>
                   <a class="nav-link " href="<?= base_url('index.php/administrador/medicamentos/administrarMedicamentos') ?>" role="button">
             Administrar <br>Medicamentos 💊
-          </a>
-            <?php else:?>
-              
+          </a>              
             <?php endif;?>
           <?php endif;?>
+
+          
          
         </li> 
       </ul>

@@ -63,14 +63,14 @@
                         <h3>Recetas</h3>
                         <ol>
                         <?php foreach($recetas as $receta): if($receta->consulta == $consulta->id):?>
-                            <li><a href="<?= base_url('/medico/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">Receta #<?= $receta->id?></a></li>
+                            <li><a href="<?= base_url('/paciente/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">Receta #<?= $receta->id?></a></li>
                             <p><strong>Fecha de vencimiento: </strong><?=$receta->fechaVencimiento?></p>
 
                             <p><strong>Medicamentos</strong> </p>
                             <ul>
                             <?php foreach($recetaMedicamentos as $recetaMedicamento): if($recetaMedicamento->receta == $receta->id):?>
                                 <?php foreach($medicamentos as $medicamento): if($medicamento->id == $recetaMedicamento->medicamento):?>
-                                    <li><a href="<?= base_url('/medico/medicamento/sabermasMedicamento/' . $medicamento->id); ?>"style="color:rgba(0,0,0,1)">
+                                    <li><a href="<?= base_url('/paciente/medicamento/sabermasMedicamento/' . $medicamento->id); ?>"style="color:rgba(0,0,0,1)">
                                         <?= $medicamento->nombreComercial.' ('.$medicamento->dosis.' gm)' ?></a>
                                     </li>
                                 <?php endif;endforeach; ?>

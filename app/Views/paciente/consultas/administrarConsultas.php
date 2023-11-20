@@ -33,12 +33,7 @@
 
 
         <div class="col-4">
-            <button type="button" class="btn btn-success mt-4"
-                onclick="window.location='/administrador/consultas/agregarMedicoConsulta'">
-                <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Icono" width="25" height="25">
-                Agregar Consulta
-            </button>
-            <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/administrador'">
+            <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/paciente'">
                 <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="Icono" width="25" height="25">
                 Página Principal
             </button>
@@ -68,7 +63,6 @@
                     <th style="text-align: center">Fecha de consulta </th>
                     <th style="text-align: center">Status de consulta </th>
                     <th style="text-align: center">Receta</th>
-                    <th style="text-align: center" colspan="3">Opciones</th>
 
                 </thead>
 
@@ -108,23 +102,9 @@
 
                         
                                                 <td style="text-align: center">
-                                                        <a href="<?= base_url('/medico/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
+                                                        <a href="<?= base_url('/paciente/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
                                                         <?= 'Receta ' . $receta->id . ' que vence en ' . $receta->fechaVencimiento ?></a>
                                                 </td>
-
-                                               
-                                                                <td style="text-align: center">
-                                                                    <a href="<?= base_url('/medico/consultas/completarConsulta/'.$consulta->id); ?>"
-                                                                        style="color:rgba(0,0,0,0.6)">
-                                                                        <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
-                                                                            class="service-img" width="60" height="60">
-                                                                        <figcaption>Realizar</figcaption>
-                                                                    </a>
-                                                                </td>
-                                                                
-                            
-                                                
-                            
                                             <?php endif; endforeach; ?>
                                             <tr></tr>
                                     <?php endif; endforeach; ?>
@@ -183,12 +163,12 @@
 
                         
                                                 <td style="text-align: center">
-                                                        <a href="<?= base_url('/medico/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
+                                                        <a href="<?= base_url('/paciente/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
                                                         <?= 'Receta ' . $receta->id . ' que vence en ' . $receta->fechaVencimiento ?></a>
                                                 </td>
 
                                                         <td style="text-align: center">
-                                                            <a href="<?= base_url('/medico/consultas/sabermasConsulta/' . $consulta->id); ?>"
+                                                            <a href="<?= base_url('/paciente/consultas/sabermasConsulta/' . $consulta->id); ?>"
                                                                 style="color:rgba(0,0,0,0.6)">
                                                                 <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
                                                                     class="service-img" width="60" height="60">

@@ -71,20 +71,3 @@
         <?php endforeach; ?>
     </div>
 </div>
-
-
-
-
-            
-<div class="container">
-    <div class="row">
-        <div class="col-5"></div>
-
-        <div class="col-2">
-                    <input type="image" class="btn btn-danger mt-4" value="Cancelar" src=""
-                        onclick="window.location.href='/administrador/consultas/administrarConsultas/'">
-                </div>
-
-        <div class="col-5"></div>
-    </div>
-</div>

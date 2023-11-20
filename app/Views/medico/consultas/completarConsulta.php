@@ -3,7 +3,11 @@
         <div class="col-2"></div>
         <div class="col-8">
             <h1 align="center">Realizar Consulta</h1>
-
+            <?php
+    if(isset($validation)){
+        print $validation->listErrors();
+    }
+?>
 
         <form action="<?= base_url('/medico/consultas/realizarConsulta/'.$consulta->id);?>" method="POST" >
             <?= csrf_field()?>
@@ -32,20 +36,15 @@
                 </div>
 
 
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-success">
-                        <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Agregar" width="25" height="25">
-                        Agregar
-                    </button>
+                <div class="col-2">
+                    <input type="image" class="btn btn-success mt-4" value="Agregar" src="">
                 </div>
             </form>
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary" onclick="window.history.back()">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25" height="25">
-                        Regresar
-                    </button>
+            <div class="col-2">
+                <input type="image" class="btn btn-danger mt-4" value="Cancelar" src="" onclick="window.history.back()">
             </div>
+
         </div>
     </div>
 </div>
