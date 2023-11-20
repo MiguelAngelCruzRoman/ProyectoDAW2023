@@ -11,9 +11,9 @@
 
                 <form action="<?= base_url('index.php/administrador/consultas/agregarPacienteConsulta/buscar/'.$idMedico); ?>" method="GET">
                 <div class="col-12">
-                    <label for="columnaBusquedaPaciente">Buscar paciente por:</label>
+                    <label for="columnaBusquedaPaciente">Buscar Paciente Por:</label>
                     <select name="columnaBusquedaPaciente" class="form-control">
-                        <option value="todo">Cualquier paciente</option>
+                        <option value="todo">Cualquier Paciente</option>
                         <option value="nombre">Nombre</option>
                     </select>
                 </div>
@@ -35,6 +35,8 @@
         </div>
     </div>
 </div>
+<br>
+
                 <div class="container mt-2">
     <div class="row">
         <?php $count = 0; ?>
@@ -57,7 +59,7 @@
                                                     <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
                                                     ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno?>
                                                 </h6>
-                                                <img src="<?= $userInfoPaciente->foto?>" alt="foto del médico" class="img-fluid">
+                                                <img src="<?= $userInfoPaciente->foto?>" alt="foto del paciente" width="150" height="150">
                                                 <input type="hidden" name="idMedico" value=<?= $idMedico?>>
                                             </div>
                                         </div>

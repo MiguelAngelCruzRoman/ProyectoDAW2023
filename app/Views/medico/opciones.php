@@ -1,96 +1,32 @@
+<?php $session = \Config\Services::session(); ?>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-                <h2 align="center">¡HOLA, DOCTOR JUAN!</h2>
-                <h2 align="center">A QUIÉN ATENDERÁ HOY?</h2>
-        </div>
-    </div>
-<div>
-
-<div class="col-md-4">
-	<form action="<?= base_url('index.php/medico/buscarPacientes');?>" method="GET">
-        <div class="col-5">
-            <label for="columnaBusquedaPaciente">Buscar paciente por:</label>
-            <select name="columnaBusquedaPaciente" class="form-control">
-                <option value="todo">todos los campos</option>
-                <option value="nombre">nombre</option>
-                <option value="telefono">número telefónico</option>
-                <option value="correo">correo</option>
-            </select>
-        </div>
-            
-        <div class="col-5">
-            <label for="elementoBusquedaPaciente">Parecido a:</label>
-            <input type="text" class="form-control" name="valorCompararBusqueda" value="cualquiera">
-        </div>
-
-        <input type="image" class="btn btn-success mt-4" value="Realizar Consulta" src="">
-    </form>
-
-	<div class="mb-3">
-        <input type="image" class="btn btn-success mt-4" value="Agregar Paciente" src="" onclick="window.location.href='/medico/agregarPacientes'">
-        <input type="image" class="btn btn-danger mt-4" value="Eliminar Paciente" src="" onclick="window.location.href='/medico/eliminarPaciente'">
-    </div>
-</div>
-
 	<div class="row">
-		<div class="col-md-3">
-			<a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente1" class="service-img">
-				<h2 class="text-center">Miguel Angel Cruz Roman</h2>
-			</a>
-		</div>	
-
-        <div class="col-md-3">
-			<a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente2" class="service-img">
-				<h2 class="text-center">Benito Raul Saenz Mora</h2>
-			</a>
-		</div>	
-
-        <div class="col-md-3">
-			<a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente3" class="service-img">
-				<h2 class="text-center">Camila Cruz Martinez</h2>
-			</a>
-		</div>	
-
-        <div class="col-md-3">
-			<a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente4" class="service-img">
-				<h2 class="text-center">Ortencia Azul Cristobal de Oca</h2>
-			</a>
+		<div class="col-12">
+			<h2 align="center">¡HOLA, <?= strtoupper($session->get('username'))?>!</h2>
+			<h2 align="center">¿QUÉ QUIERE HACER HOY?</h2>
 		</div>
 	</div>
-
-    
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-3">
-            <a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente5" class="service-img">
-				<h2 class="text-center">Esteban Ronca Montañez</h2>
-			</a>
+        <div class="col-md-4 text-center mb-4">
+            <a href="<?= base_url('/medico/pacientes/administrarPacientes'); ?>" class="text-decoration-none text-dark">
+                <img src="https://cdn.icon-icons.com/icons2/2265/PNG/512/crowd_patient_patients_icon_140420.png" alt="administrarPacientes" class="img-fluid" width="250" height="250">
+                <h3 class="mt-3">Administrar Pacientes</h3>
+            </a>
         </div>
 
-        <div class="col-md-3">
-            <a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente6" class="service-img">
-				<h2 class="text-center">Isabela Gonzáles Grajales</h2>
-			</a>
+        <div class="col-md-4 text-center mb-4">
+            <a href="<?= base_url('/medico/consultas/administrarConsultas'); ?>" class="text-decoration-none text-dark">
+                <img src="https://cdn-icons-png.flaticon.com/512/4367/4367737.png" alt="administrarConsultas" class="img-fluid" width="250" height="250"> 
+                <h3 class="mt-3">Administrar Consultas</h3>
+            </a>
         </div>
 
-        <div class="col-md-3">
-            <a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente7" class="service-img">
-				<h2 class="text-center">Carlos Francisco Mota de la Rosa</h2>
-			</a>
-        </div>
-
-        <div class="col-md-3">
-            <a href="<?= base_url('index.php/medico/administrarPacientes/'); ?>">
-				<img src="" alt="paciente8" class="service-img">
-				<h2 class="text-center">ERculano Romero Hernández</h2>
-			</a>
+        <div class="col-md-4 text-center mb-4">
+            <a href="<?= base_url('/medico/recetas/administrarRecetas'); ?>" class="text-decoration-none text-dark">
+                <img src="https://images.vexels.com/media/users/3/144224/isolated/preview/589394662ba164058d2ac84b4a0643b2-notas-de-la-tabla-de-registros-medicos.png" alt="administrarRecetas" class="img-fluid" width="250" height="250">
+                <h3 class="mt-3">Administrar Recetas</h3>
+            </a>
         </div>
     </div>
 </div>

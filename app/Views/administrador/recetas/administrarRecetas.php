@@ -21,7 +21,6 @@
     </div>
     <br>
 
-
     
 
     <div class="row">
@@ -36,7 +35,7 @@
 
             <table class="table">
 
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Medicamentos recetados</th>
                     <th style="text-align: center">Consulta en la que se recetó</th>

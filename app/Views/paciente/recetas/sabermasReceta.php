@@ -13,7 +13,7 @@
 
                         <?php foreach($consultas as $consulta): if($consulta->id == $receta->consulta):?>
                             <p><strong>ID de Consulta:</strong>
-                            <a href="<?= base_url('/medico/consultas/sabermasConsulta/' . $consulta->id); ?>"style="color:rgba(0,0,0,1)">
+                            <a href="<?= base_url('/paciente/consultas/sabermasConsulta/' . $consulta->id); ?>"style="color:rgba(0,0,0,1)">
 
                                     <?= $consulta->id ?></a>
                                 </p>

@@ -13,7 +13,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/128/8591/8591477.png" alt="regresar" class="service-img" width="25" height="25">                
                 Regresar
             </button>
-            <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/administrador'">
+            <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/medico'">
                 <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="Icono" width="25" height="25">
                 Página Principal
             </button>
@@ -36,7 +36,7 @@
 
             <table class="table">
 
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Medicamentos recetados</th>
                     <th style="text-align: center">Consulta en la que se recetó</th>

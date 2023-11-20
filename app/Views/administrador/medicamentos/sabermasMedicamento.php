@@ -12,7 +12,7 @@
                             <?= $medicamento->nombreComercial ?>
                         </h2>
 
-                        <img src="<?= $medicamento->imagenEmpaque ?>" class="card-img-top" alt="Imagen del medicamento">
+                        <img src="<?= $medicamento->imagenEmpaque ?>" class="card-img-top" alt="Imagen del medicamento" width="300" height="300">
 
                         <h4>Información general</h4>
                         <p><strong>Nombre científico:</strong>

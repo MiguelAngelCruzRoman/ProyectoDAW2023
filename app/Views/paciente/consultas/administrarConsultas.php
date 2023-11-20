@@ -2,7 +2,7 @@
     <div class="row">
         <h1 align="center">ADMINISTRAR CONSULTAS</h1>
         <div class="col-6">
-            <form action="<?= base_url('index.php/administrador/consultas/buscarConsultas'); ?>" method="GET">
+            <form action="<?= base_url('index.php/paciente/consultas/buscarConsultas'); ?>" method="GET">
                 <div class="col-5">
                     <label for="columnaBusquedaConsulta">Buscar consulta por:</label>
                     <select name="columnaBusquedaConsulta" class="form-control">
@@ -56,7 +56,7 @@
 
 <h4>Consultas Pendientes</h4>
             <table class="table">
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
                     <th style="text-align: center">Motivo de consulta </th>
@@ -113,10 +113,10 @@
                 </tbody>
 
             </table>
-
+<br><br>
             <h4>Consultas Terminadas</h4>
             <table class="table">
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
                     <th style="text-align: center">Motivo de consulta </th>

@@ -12,7 +12,7 @@
                             <?= $userinfo[0]->primerNombre . ' ' . $userinfo[0]->segundoNombre . ' ' . $userinfo[0]->apellidoPaterno . ' ' . $userinfo[0]->apellidoMaterno ?>
                         </h2>
 
-                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del medico">
+                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del paciente" width="300" height="300">
 
                         <h4> Información del paciente</h4>
                         <p><strong>Tipo de seguro:</strong>

@@ -39,7 +39,7 @@
                     <label for="dosis">Dosis recomendada:</label>
                     <select name="dosis" id="dosis" class="form-control" required>
                         <option value="5" selected>5 mg</option>
-                        <option value="10">10mg</option>
+                        <option value="10">10 mg</option>
                         <option value="15">15 mg</option>
                         <option value="25">25 mg</option>
                         <option value="50">50 mg</option>

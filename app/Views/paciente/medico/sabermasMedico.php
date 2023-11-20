@@ -17,7 +17,7 @@
                             <?= $userinfo[0]->primerNombre . ' ' . $userinfo[0]->segundoNombre . ' ' . $userinfo[0]->apellidoPaterno . ' ' . $userinfo[0]->apellidoMaterno ?>
                         </h2>
 
-                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del medico">
+                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del médico" width="300" height="300">
 
                         <h4> Información del médico</h4>
                         <p><strong>Especialidad:</strong>

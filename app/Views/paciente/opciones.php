@@ -1,29 +1,32 @@
+<?php $session = \Config\Services::session(); ?>
 <div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h2 align="center">¡HOLA, <?= strtoupper($session->get('username'))?>!</h2>
+			<h2 align="center">¿QUÉ QUIERE HACER HOY?</h2>
+		</div>
+	</div>
+<div class="container mt-5">
     <div class="row">
-        <div class="col-12">
-                <h2 align="center">¡HOLA, MIGUEL!</h2>
-                <h2 align="center">¿QUÉ QUIERE HACER HOY?</h2>
+        <div class="col-md-4 text-center mb-4">
+            <a href="<?= base_url('/paciente/medicos/administrarMedicos'); ?>" class="text-decoration-none text-dark">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCzzAWsMkjHYEowOJJKF4WQyLKS4llayTDzg&usqp=CAU" alt="administrarMedicos" class="img-fluid" width="250" height="250">
+                <h3 class="mt-3">Administrar Médicos</h3>
+            </a>
+        </div>
+
+        <div class="col-md-4 text-center mb-4">
+            <a href="<?= base_url('/paciente/consultas/administrarConsultas'); ?>" class="text-decoration-none text-dark">
+                <img src="https://cdn-icons-png.flaticon.com/512/4367/4367737.png" alt="administrarConsultas" class="img-fluid" width="250" height="250"> 
+                <h3 class="mt-3">Administrar Consultas</h3>
+            </a>
+        </div>
+ 
+        <div class="col-md-4 text-center mb-4">
+            <a href="<?= base_url('/paciente/recetas/administrarRecetas'); ?>" class="text-decoration-none text-dark">
+                <img src="https://images.vexels.com/media/users/3/144224/isolated/preview/589394662ba164058d2ac84b4a0643b2-notas-de-la-tabla-de-registros-medicos.png" alt="administrarRecetas" class="img-fluid" width="250" height="250">
+                <h3 class="mt-3">Administrar Recetas</h3>
+            </a>
         </div>
     </div>
-
-	<div class="row">
-		<div class="col-md-4">
-			<a href="<?= base_url('index.php/paciente/administrarConsultas/'); ?>">
-				<img src="" alt="administrarConsultas" class="service-img">
-				<h2 class="text-center">Administrar Consultas</h2>
-			</a>
-		</div>	
-		<div class="col-md-4">
-			<a href="<?= base_url('index.php/paciente/administrarRecetas/'); ?>">
-				<img src="" alt="administrarRecetas" class="service-img">
-				<h2 class="text-center">Administrar Recetas</h2>
-			</a>
-		</div>	
-		<div class="col-md-4">
-			<a href="<?= base_url('index.php/paciente/administrarEstudios/'); ?>">
-				<img src="" alt="administrarEstudios" class="service-img">
-				<h2 class="text-center">Administrar Estudios Médicos</h2>
-			</a>
-		</div>	
-	</div>
 </div>

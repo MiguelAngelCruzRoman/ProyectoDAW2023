@@ -61,7 +61,7 @@
 
             <table class="table">
 
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
                     <th style="text-align: center">Motivo de consulta </th>

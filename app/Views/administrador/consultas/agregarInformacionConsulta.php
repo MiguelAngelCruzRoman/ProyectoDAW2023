@@ -9,7 +9,6 @@
 
         <div class="col-8">
                 <?= csrf_field() ?>
-
                 <h1 align="center">Agregar Consulta</h1>
                 <h4 align="center">-Información de la Consulta-</h4>
 

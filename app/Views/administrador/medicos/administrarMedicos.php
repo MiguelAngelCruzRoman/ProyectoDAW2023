@@ -57,7 +57,7 @@
             $usersPagina = array_slice($users, $indiceInicioUsuarios, $registrosPorPaginaUsuarios);?>
 
             <table class="table">
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre del médico</th>
                     <th style="text-align: center">Especialidad</th>

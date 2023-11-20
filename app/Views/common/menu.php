@@ -1,7 +1,8 @@
 <?php $session = \Config\Services::session(); ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar  bg-dark navbar navbar-expand-lg ">
+
   <div class="container-fluid">
-    <a class="navbar-brand" ><img src="<?= base_url('logo.png') ?>" alt="" height="100" width="100"></a>
+    <a class="navbar-brand" ><img src="<?= base_url('logo.jpg') ?>" alt="" height="100" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -90,16 +91,14 @@
           </a>              
             <?php endif;?>
           <?php endif;?>
-
-          
-         
         </li> 
       </ul>
 
       
       <form action="<?= base_url('/cerrarSesion');?>"  method="GET">
-        <button class="btn btn-outline-success" type="submit">Cerrar Sesión</button>
+        <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
       </form>
+      <ul></ul>
     </div>
   </div>
 </nav>

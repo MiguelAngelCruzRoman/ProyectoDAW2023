@@ -28,6 +28,8 @@
         </div>
     </div>
 </div>
+<br>
+
                 <div class="container mt-2">
     <div class="row">
         <?php $count = 0; ?>
@@ -52,7 +54,7 @@
                                                     <?= $userInfoMedico->primerNombre . ' ' . $userInfoMedico->segundoNombre .
                                                     ' ' . $userInfoMedico->apellidoPaterno . ' ' . $userInfoMedico->apellidoMaterno?>
                                                 </h6>
-                                                <img src="<?= $userInfoMedico->foto?>" alt="foto del médico" class="img-fluid">
+                                                <img src="<?= $userInfoMedico->foto?>" alt="foto del médico" width="150" height="150">
                                                 <p><strong>Especialidad: </strong><?=$medico->especialidad?></p>
                                                 <p><strong>Días laborales: </strong><?=$medico->diasLaborales?></p>
                                                 <input type="hidden" name="IDmedicoPaciente" value=<?= $medicoPaciente->id?>>

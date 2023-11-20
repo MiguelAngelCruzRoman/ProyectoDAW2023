@@ -21,6 +21,17 @@ class Medico extends BaseController
     */
     public function opciones()
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         return view('common/head') .
             view('common/menu') .
             view('medico/opciones') .
@@ -34,6 +45,17 @@ class Medico extends BaseController
     */
     public function administrarPacientes()
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
         $pacienteModel = model('PacienteModel');
@@ -57,6 +79,17 @@ class Medico extends BaseController
 
     public function buscarPacientes()
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
         $pacienteModel = model('PacienteModel');
@@ -99,6 +132,17 @@ class Medico extends BaseController
     */
     public function pacienteSaberMas($id)
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
         $pacienteModel = model('PacienteModel');
@@ -128,6 +172,17 @@ class Medico extends BaseController
     */
     public function administrarConsultas()
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $session = \Config\Services::session();
 
         $medicoPacienteModel = model('MedicoPacienteModel');
@@ -151,6 +206,17 @@ class Medico extends BaseController
         Función que añade 7 días a la fecha de consulta que se tiene registrada
     */
    public function posponerConsulta($id){
+    //Proteger la ruta para que no accedan personas sin iniciar sesión
+    $session = session();
+    if($session->get('logged_in')!=TRUE){
+        return redirect('/','refresh');
+    }
+
+    //Proteger la ruta para que no accedan usuarios que no sean médicos
+    if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+        return redirect('/','refresh');
+    }
+
     $consultasModel = model('ConsultasModel');
     $consulta = $consultasModel->find($id);
     $nuevaFecha=date("Y-m-d",strtotime($consulta->fecha."+ 7 days"));
@@ -171,6 +237,17 @@ class Medico extends BaseController
     */
     public function consultaSaberMas($id)
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $consultasModel = model('ConsultasModel');
         $data['consulta'] = $consultasModel->find($id);
 
@@ -218,6 +295,17 @@ class Medico extends BaseController
         que va a realizar el médico
     */
     public function realizarConsultaFormulario($id){
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamentos'] = $medicamentosModel->findAll();
 
@@ -248,6 +336,17 @@ class Medico extends BaseController
         que tiene el médico
     */
     public function completarConsulta($id){
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamentos'] = $medicamentosModel->findAll();
 
@@ -272,7 +371,16 @@ class Medico extends BaseController
         de dicho registro en la base de datos
     */
     public function realizarConsulta($id){
-        $validation = \Config\Services::validation();
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
 
         $rules =[
             'lugar'=>'required|max_length[15]|min_length[3]|string',
@@ -345,6 +453,17 @@ class Medico extends BaseController
     */
     public function medicamentoSaberMas($id)
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamento'] = $medicamentosModel->find($id);
 
@@ -369,6 +488,17 @@ class Medico extends BaseController
     */
     public function recetaSaberMas($id)
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $recetaModel = model('RecetaModel');
         $data['receta'] = $recetaModel->find($id);
 
@@ -415,6 +545,17 @@ class Medico extends BaseController
     */
     public function administrarRecetas()
     {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('/','refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+            return redirect('/','refresh');
+        }
+
         $session = \Config\Services::session();
 
         $medicoPacienteModel = model('MedicoPacienteModel');
@@ -444,6 +585,17 @@ class Medico extends BaseController
         que no sea válida en caso de que quiera usarse en otros procesos
     */
    public function cancelarReceta($id){
+    //Proteger la ruta para que no accedan personas sin iniciar sesión
+    $session = session();
+    if($session->get('logged_in')!=TRUE){
+        return redirect('/','refresh');
+    }
+
+    //Proteger la ruta para que no accedan usuarios que no sean médicos
+    if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+        return redirect('/','refresh');
+    }
+
         $recetaModel = model('RecetaModel');
         $data = array(
             "status" => 0,
@@ -460,6 +612,17 @@ class Medico extends BaseController
     la fecha de vencimiento (hasta el año 2048)
    */
    public function renovarReceta($id){
+    //Proteger la ruta para que no accedan personas sin iniciar sesión
+    $session = session();
+    if($session->get('logged_in')!=TRUE){
+        return redirect('/','refresh');
+    }
+
+    //Proteger la ruta para que no accedan usuarios que no sean médicos
+    if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
+        return redirect('/','refresh');
+    }
+    
     $recetaModel = model('RecetaModel');
     $data = array(
         "status" => 1,

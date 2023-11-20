@@ -59,7 +59,7 @@
 
             <table class="table">
 
-                <thead>
+            <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre comercial</th>
                     <th style="text-align: center">Nombre científico</th>

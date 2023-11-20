@@ -7,22 +7,43 @@ class Home extends BaseController
 {
     public function index()
     {
-        $validation =  \Config\Services::validation();
+        //Redireccionar en caso de que ya tenga una sesión iniciada
+        $session = session();
+        if($session->get('logged_in')==TRUE){
+            if($session->get('idMedico')==FALSE && $session->get('idPaciente')==FALSE){
+                return redirect('administrador','refresh');
+            }
+
+            if($session->get('idMedico')==TRUE && $session->get('idPaciente')==FALSE){
+                return redirect('medico','refresh');
+            }
+
+            if($session->get('idMedico')==FALSE && $session->get('idPaciente')==TRUE){
+                return redirect('paciente','refresh');
+            }
+        }
+
+        
+
+
         if (strtolower($this->request->getMethod()) === 'get'){
             return view('common/head') .
             view('common/inicioSesion') .
             view('common/footer');
         }
 
-        $rules = [
-            'username' => 'required',
-            'password'=>'required',
-            'tipo'=>'required'
+
+        $validation = \Config\Services::validation();
+
+        $rules =[
+            'tipo'=>'required|string',
+            'username'=>'required|max_length[50]|min_length[1]|string',
+            'password'=>'required|max_length[150]|min_length[1]|string',
         ];
 
         if (! $this->validate($rules)) {
             return view('common/head') .
-            view('common/inicioSesion') .
+            view('common/inicioSesion',['validation'=>$validation]) .
             view('common/footer');
         }
         else{
@@ -96,7 +117,11 @@ class Home extends BaseController
     }
 
     public function cerrarSesion(){
-        session_destroy();
-        return redirect('/','refresh');
+        //Redireccionar en caso de que ya tenga una sesión iniciada
+        $session = session();
+        if($session->get('logged_in')==TRUE){
+            session_destroy();
+            return redirect('/','refresh');
+        }   
     }
 }
