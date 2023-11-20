@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Controllers;
+$session = \Config\Services::session();
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $validation =  \Config\Services::validation();
         if (strtolower($this->request->getMethod()) === 'get'){
@@ -30,27 +31,72 @@ class Home extends BaseController
             $password = $_POST['password'];
             $tipo = $_POST['tipo'];
             $userModel = model('UsersModel');
-            $data['usuario']= $userModel->like('username',$username)
+
+            if($tipo == 'medico'){
+                $data['usuario']= $userModel->like('username',$username)
                             ->Like('password',$password)
+                            ->where('medico',!NULL)
                             ->findAll();
+            }
+
+            if($tipo == 'paciente'){
+                $data['usuario']= $userModel->like('username',$username)
+                            ->Like('password',$password)
+                            ->where('paciente',!NULL)
+                            ->findAll();
+            }
+
+            if($tipo == 'admin'){
+                $data['usuario']= $userModel->like('username',$username)
+                            ->Like('password',$password)
+                            ->where('paciente',NULL)
+                            ->where('medico',NULL)
+                            ->findAll();
+            }
+            
             print_r($data['usuario']);
             if(count($data['usuario'])>0){
-                print $data['usuario'][0]->idUsuario;
-                $session = session();
+                print $data['usuario'][0]->id;
+            
+                if($tipo == 'admin'){
+                    session()->set([
+                        'idUsuario' => $data['usuario'][0]->id,
+                        'username'     => $data['usuario'][0]->username,
+                        'logged_in' => true,
+                    ]);
+                    return redirect('administrador', 'refresh');
+                }
 
-                $newdata = [
-                    'idUsuario' => $data['usuario'][0]->id,
-                    'username'     => $data['usuario'][0]->username,
-                    'logged_in' => true,
-                ];
-                
-                $session->set($newdata);
+                if($tipo == 'medico'){
+                    session()->set([
+                        'idUsuario' => $data['usuario'][0]->id,
+                        'username'     => $data['usuario'][0]->username,
+                        'logged_in' => true,
+                        'idMedico' => $data['usuario'][0]->medico
+                    ]);
+                    
+                    return redirect('medico',);
+                }
 
+                if($tipo == 'paciente'){
+                    session()->set([
+                        'idUsuario' => $data['usuario'][0]->id,
+                        'username'     => $data['usuario'][0]->username,
+                        'logged_in' => true,
+                        'idPaciente' => $data['usuario'][0]->paciente
+                    ]);
+                    return redirect('paciente', 'refresh');
+                }
             }
             else{
                 return redirect('/','refresh');
             }
         }
 
+    }
+
+    public function cerrarSesion(){
+        session_destroy();
+        return redirect('/','refresh');
     }
 }

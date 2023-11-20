@@ -16,10 +16,9 @@
             <div class="mb-3">
                 <label for="tipo">Tipo de usuario:</label>
                 <select name="tipo" id="tipo" class="form-control">
-                    <option value="" selected></option>
                     <option value="medico">Médico</option>
                     <option value="paciente">Paciente</option>
-                    <option value="admin">Administrador</option>
+                    <option value="admin" selected>Administrador</option>
                 </select>
             </div>
             

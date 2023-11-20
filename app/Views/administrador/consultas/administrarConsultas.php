@@ -109,14 +109,7 @@
 
                             <?php if($consulta->updated_at == NULL):?>
                                 <?php if($consulta->fecha >= date('Y-m-d')):?>
-                                    <td style="text-align: center">
-                                        <a href="<?= base_url('/administrador/consultas/realizarConsulta/' . $consulta->id); ?>"
-                                            style="color:rgba(0,0,0,0.6)">
-                                            <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
-                                                class="service-img" width="60" height="60">
-                                            <figcaption>Realizar</figcaption>
-                                        </a>
-                                    </td>
+                                    
                                     <td style="text-align: center">
                                         <a href="<?= base_url('/administrador/consultas/posponerConsulta/' . $consulta->id); ?>"
                                             style="color:rgba(0,0,0,0.6)">
@@ -126,8 +119,15 @@
                                         </a>
                                     </td>
                                 <?php else:?>
-                                    <td></td>
-                                <?php endif;?>
+                                    <td style="text-align: center">
+                                        <a href="<?= base_url('/administrador/consultas/realizarConsulta/' . $consulta->id); ?>"
+                                            style="color:rgba(0,0,0,0.6)">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
+                                                class="service-img" width="60" height="60">
+                                            <figcaption>Realizar</figcaption>
+                                        </a>
+                                    </td>
+                                                                    <?php endif;?>
                                 <td>
                                     <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
                                         style="color:rgba(0,0,0,0.6)">

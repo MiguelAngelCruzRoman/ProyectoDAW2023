@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+$session = \Config\Services::session();
 
 
 // Controlador diseñado para hacer las funcionalidades del rol del Administrador
@@ -16,7 +17,7 @@ class Administrador extends BaseController
 
     /* 
         Función que redirige a la pantalla principal de las opciones que puede hacer el 
-        administrador en el sistem
+        administrador en el sistema
     */
     public function opciones()
     {
@@ -1506,7 +1507,7 @@ class Administrador extends BaseController
 
 
     //---------------------------------------------------------------------------------------------
-    //                                     Sección para consulatas
+    //                                     Sección para consultas
     //---------------------------------------------------------------------------------------------
 
     /* 
@@ -1593,6 +1594,10 @@ class Administrador extends BaseController
         return redirect('administrador/consultas/administrarConsultas', 'refresh');
    }
 
+
+    /*
+        Función que añade 7 días a la fecha de consulta que se tiene registrada
+    */
    public function posponerConsulta($id){
     $consultasModel = model('ConsultasModel');
     $consulta = $consultasModel->find($id);
@@ -1748,7 +1753,7 @@ class Administrador extends BaseController
         view('common/footer');
 }
 
-/*
+    /*
         Función que redirige al formulario que sirve para añadir una
         nueva consulta a la base de datos, empezando por buscar
         qué médico la realizará

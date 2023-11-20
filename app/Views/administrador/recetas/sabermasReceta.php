@@ -123,7 +123,7 @@
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/3247/3247396.png"
                                                 alt="renovar" class="service-img" width="60" height="60">
-                                            <figcaption>Renovar</figcaption>
+                                            <figcaption>Renovar Vencimiento de Receta</figcaption>
                                         </figure>
                                     </a>
                                 </div>
@@ -134,7 +134,7 @@
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/5978/5978540.png"
                                                 alt="cancelar" class="service-img" width="60" height="60">
-                                            <figcaption>Cancelar</figcaption>
+                                            <figcaption>Cancelar Validez de Receta</figcaption>
                                         </figure>
                                     </a>
                                 </div>

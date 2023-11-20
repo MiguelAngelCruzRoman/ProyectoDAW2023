@@ -1453,3 +1453,489 @@ in APPPATH\Views\administrador\recetas\sabermasReceta.php on line 15.
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 16:56:18 --> Undefined variable $data
+in APPPATH\Controllers\Home.php on line 41.
+ 1 APPPATH\Controllers\Home.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Home.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 16:58:03 --> Call to undefined method App\Models\UsersMOdel::notwhere
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Home.php(37): CodeIgniter\Model->__call('notwhere', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 16:58:21 --> Undefined property: stdClass::$idUsuario
+in APPPATH\Controllers\Home.php on line 43.
+ 1 APPPATH\Controllers\Home.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$idUsuario', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Home.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 16:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:00:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:01:28 --> The route for "/administrador" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/administrador')
+ 2 SYSTEMPATH\Common.php(878): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Home.php(68): redirect('/administrador')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:03:23 --> Invalid file: "common/menuBase.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('common/menuBase.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/menuBase', [], true)
+ 3 APPPATH\Controllers\Medico.php(24): view('common/menuBase')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->opciones()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:07:49 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\common\inicioSesion.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\inicioSesion.php', 1)
+ 2 APPPATH\Views\common\inicioSesion.php(1): session_destroy()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\inicioSesion.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/inicioSesion', [], true)
+ 6 APPPATH\Controllers\Home.php(12): view('common/inicioSesion')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:08:30 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\common\menu.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php', 43)
+ 2 APPPATH\Views\common\menu.php(43): session_destroy()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/menu', [], true)
+ 6 APPPATH\Controllers\Paciente.php(16): view('common/menu')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Paciente->opciones()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paciente))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:08:34 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\common\menu.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php', 43)
+ 2 APPPATH\Views\common\menu.php(43): session_destroy()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/menu', [], true)
+ 6 APPPATH\Controllers\Medico.php(24): view('common/menu')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->opciones()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:08:48 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\common\menu.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php', 43)
+ 2 APPPATH\Views\common\menu.php(43): session_destroy()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/menu', [], true)
+ 6 APPPATH\Controllers\Paciente.php(16): view('common/menu')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Paciente->opciones()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paciente))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:09:01 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\common\menu.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php', 43)
+ 2 APPPATH\Views\common\menu.php(43): session_destroy()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/menu', [], true)
+ 6 APPPATH\Controllers\Paciente.php(16): view('common/menu')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Paciente->opciones()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paciente))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:09:15 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\common\menu.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php', 44)
+ 2 APPPATH\Views\common\menu.php(44): session_destroy()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\common\\menu.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('common/menu', [], true)
+ 6 APPPATH\Controllers\Paciente.php(16): view('common/menu')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Paciente->opciones()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paciente))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:12:24 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Controllers\Home.php on line 92.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Home.php', 92)
+ 2 APPPATH\Controllers\Home.php(92): session_destroy()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->cerrarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:15:57 --> Undefined constant "App\Controllers\session"
+in APPPATH\Controllers\Home.php on line 92.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->cerrarSesion()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:18:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:22:31 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 4 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:22:43 --> Cannot use object of type CodeIgniter\Session\Session as array
+in SYSTEMPATH\CodeIgniter.php on line 1043.
+ 1 SYSTEMPATH\CodeIgniter.php(541): CodeIgniter\CodeIgniter->storePreviousURL(Object(CodeIgniter\HTTP\SiteURI))
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:22:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:22:54 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 4 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:23:22 --> Undefined global variable $_SESSION
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 APPPATH\Views\administrador\opciones.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 5 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:24:11 --> Undefined variable $session
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 APPPATH\Views\administrador\opciones.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 5 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:24:59 --> Undefined variable $session
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 APPPATH\Views\administrador\opciones.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 5 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+CRITICAL - 2023-11-19 17:25:11 --> Undefined variable $session
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 APPPATH\Views\administrador\opciones.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\opciones.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 5 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 17:26:09 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\administrador\opciones.php on line 8.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/opciones', [], true)
+ 4 APPPATH\Controllers\Administrador.php(25): view('administrador/opciones')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Administrador->opciones()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administrador))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 17:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:12:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 22:19:57 --> Undefined variable $config
+in APPPATH\Controllers\Home.php on line 4.
+ 1 APPPATH\Controllers\Home.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $config', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Home.php', 4)
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Home.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Home.php')
+ 4 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 5 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 6 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Home', true)
+ 7 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 22:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 22:35:31 --> Undefined variable $session
+in APPPATH\Controllers\Medico.php on line 46.
+ 1 APPPATH\Controllers\Medico.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Medico.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->agregarPacienteConsulta()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 22:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:49:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 22:49:15 --> Invalid file: "medico/paciente/administrarPacientes.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('medico/paciente/administrarPacientes.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/paciente/administrarPacientes', [], true)
+ 3 APPPATH\Controllers\Medico.php(50): view('medico/paciente/administrarPacientes', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->administrarPacientes()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 22:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 22:49:42 --> Undefined variable $idMedico
+in APPPATH\Views\medico\paciente\administrarPacientes.php on line 12.
+ 1 APPPATH\Views\medico\paciente\administrarPacientes.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idMedico', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\medico\\paciente\\administrarPacientes.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\medico\\paciente\\administrarPacientes.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/paciente/administrarPacientes', [], true)
+ 5 APPPATH\Controllers\Medico.php(50): view('medico/paciente/administrarPacientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->administrarPacientes()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 22:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 22:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:03:34 --> Undefined variable $medicosPaciente
+in APPPATH\Views\administrador\pacientes\sabermasPaciente.php on line 76.
+ 1 APPPATH\Views\administrador\pacientes\sabermasPaciente.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicosPaciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\sabermasPaciente.php', 76)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\sabermasPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/sabermasPaciente', [], true)
+ 5 APPPATH\Controllers\Medico.php(83): view('administrador/pacientes/sabermasPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->pacienteSaberMas('15')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:03:40 --> Undefined variable $medicosPaciente
+in APPPATH\Views\administrador\pacientes\sabermasPaciente.php on line 76.
+ 1 APPPATH\Views\administrador\pacientes\sabermasPaciente.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicosPaciente', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\sabermasPaciente.php', 76)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\administrador\\pacientes\\sabermasPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/sabermasPaciente', [], true)
+ 5 APPPATH\Controllers\Medico.php(83): view('administrador/pacientes/sabermasPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->pacienteSaberMas('15')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:04:07 --> Invalid file: "medico/pacientes/sabermasPaciente.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('medico/pacientes/sabermasPaciente.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/pacientes/sabermasPaciente', [], true)
+ 3 APPPATH\Controllers\Medico.php(83): view('medico/pacientes/sabermasPaciente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->pacienteSaberMas('15')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:04:13 --> Invalid file: "medico/pacientes/sabermasPaciente.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('medico/pacientes/sabermasPaciente.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/pacientes/sabermasPaciente', [], true)
+ 3 APPPATH\Controllers\Medico.php(83): view('medico/pacientes/sabermasPaciente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->pacienteSaberMas('13')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:05:10 --> Undefined variable $userinfo
+in APPPATH\Views\medico\paciente\sabermasPaciente.php on line 12.
+ 1 APPPATH\Views\medico\paciente\sabermasPaciente.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userinfo', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\medico\\paciente\\sabermasPaciente.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Views\\medico\\paciente\\sabermasPaciente.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/paciente/sabermasPaciente', [], true)
+ 5 APPPATH\Controllers\Medico.php(78): view('medico/paciente/sabermasPaciente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->pacienteSaberMas('15')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:30:41 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\administrador\pacientes\administrarPacientes.php on line 52.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('administrador/pacientes/administrarPacientes', [], true)
+ 4 APPPATH\Controllers\Medico.php(118): view('administrador/pacientes/administrarPacientes', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->buscarPacientes()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:31:12 --> Invalid file: "medico/pacientes/administrarPacientes.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('medico/pacientes/administrarPacientes.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/pacientes/administrarPacientes', [], true)
+ 3 APPPATH\Controllers\Medico.php(118): view('medico/pacientes/administrarPacientes', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->buscarPacientes()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:32:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:55:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:55:08 --> Undefined array key "IDmedicoPaciente"
+in APPPATH\Controllers\Medico.php on line 131.
+ 1 APPPATH\Controllers\Medico.php(131): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "IDmedicoPaciente"', 'C:\\xampp\\htdocs\\ProyectoDAW2023\\app\\Controllers\\Medico.php', 131)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->administrarConsultas()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 23:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 23:56:02 --> Invalid file: "medico/consultas/administrarConsultas.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('medico/consultas/administrarConsultas.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('medico/consultas/administrarConsultas', [], true)
+ 3 APPPATH\Controllers\Medico.php(138): view('medico/consultas/administrarConsultas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Medico->administrarConsultas()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Medico))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\ProyectoDAW2023\\public\\index.php')
+INFO - 2023-11-19 23:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

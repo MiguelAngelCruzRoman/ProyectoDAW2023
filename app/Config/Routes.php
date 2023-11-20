@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->post('/', 'Home::index');
+$routes->get('/cerrarSesion', 'Home::cerrarSesion');
 //---------------------------------------------------------------------------------------------------------
 //                                          Rutas para administrador
 //---------------------------------------------------------------------------------------------------------
@@ -134,63 +135,90 @@ $routes->get('/administrador/consultas/sabermasConsulta/(:num)', 'Administrador:
 //---------------------------------------------------------------------------------------------------------
 $routes->get('/medico', 'Medico::opciones');
 
-
 //---------------------------------------------------------------------------------------------------------
 //                             Rutas para manejar pacientes como médico
 //---------------------------------------------------------------------------------------------------------
-$routes->get('/medico/administrarPacientes', 'Medico::administrarPacientes');
+$routes->get('/medico/pacientes/administrarPacientes', 'Medico::administrarPacientes');
+$routes->get('/medico/pacientes/administrarPacientes/buscar', 'Medico::buscarPacientes');
 
-$routes->get('/medico/buscarPacientes', 'Medico::buscarPacientes');
-$routes->get('/medico/buscarPacientesAgregar', 'Medico::buscarPacientesAgregar');
-$routes->get('/medico/buscarPacientesEliminar', 'Medico::buscarPacientesEliminar');
-
-$routes->get('/medico/agregarPacientes', 'Medico::agregarPacientes');
-
-
-$routes->get('/medico/eliminarPaciente', 'Medico::eliminarPaciente');
-
+$routes->get('/medico/pacientes/sabermasPaciente/(:num)', 'Medico::pacienteSaberMas/$1');
 
 
 //---------------------------------------------------------------------------------------------------------
 //                             Rutas para manejar consultas como médico
 //---------------------------------------------------------------------------------------------------------
-$routes->get('/medico/administrarConsultas', 'Medico::administrarConsultas');
+$routes->get('/medico/consultas/administrarConsultas', 'Medico::administrarConsultas');
 
-$routes->get('/medico/agregarConsulta', 'Medico::agregarConsulta');
+$routes->get('/medico/consultas/posponerConsulta/(:num)', 'Medico::posponerConsulta/$1');
 
-$routes->get('/medico/buscarConsulta', 'Medico::buscarConsulta');
+$routes->get('/medico/consultas/realizarConsulta/formulario/(:num)', 'Medico::realizarConsultaFormulario/$1');
+$routes->get('/medico/consultas/completarConsulta/(:num)', 'Medico::completarConsulta/$1');
+$routes->post('/medico/consultas/realizarConsulta/(:num)', 'Medico::realizarConsulta/$1');
 
-$routes->get('/medico/editarConsulta', 'Medico::editarConsulta');
+$routes->get('/medico/consultas/sabermasConsulta/(:num)', 'Medico::consultaSaberMas/$1');
 
-$routes->get('/medico/agregarMedicamentoConsulta', 'Medico::agregarMedicamentoConsulta');
-
-$routes->get('/medico/eliminarMedicamentoConsulta', 'Medico::eliminarMedicamentoConsulta');
-
-$routes->get('/medico/agregarEstudiosConsulta', 'Medico::agregarEstudiosConsulta');
-
-$routes->get('/medico/eliminarEstudioConsulta', 'Medico::eliminarEstudioConsulta');
-
-
-
+//---------------------------------------------------------------------------------------------------------
+//                             Rutas para manejar medicamentos como médico
+//---------------------------------------------------------------------------------------------------------
+$routes->get('/medico/medicamento/sabermasMedicamento/(:num)', 'Medico::medicamentoSaberMas/$1');
 //---------------------------------------------------------------------------------------------------------
 //                             Rutas para manejar recetas como médico
 //---------------------------------------------------------------------------------------------------------
-$routes->get('/medico/administrarRecetas', 'Medico::administrarRecetas');
+$routes->get('/medico/recetas/administrarRecetas', 'Medico::administrarRecetas');
+
+$routes->get('/medico/recetas/cancelarReceta/(:num)', 'Medico::cancelarReceta/$1');
+$routes->get('/medico/recetas/renovarReceta/(:num)', 'Medico::renovarReceta/$1');
+
+$routes->get('/medico/recetas/sabermasReceta/(:num)', 'Medico::recetaSaberMas/$1');
+//---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 //---------------------------------------------------------------------------------------------------------
-//                        Rutas para manejar estudios médicos como médico
-//---------------------------------------------------------------------------------------------------------
-$routes->get('/medico/administrarEstudiosMedicos', 'Medico::administrarEstudiosMedicos');
-//-----------------------------------------------------------------------------------------
-
-
-
-
-//---------------------------------------------------------------------------------------------------------
-//                                       Rutas para Pacientes
+//                                          Rutas para Pacientes
 //---------------------------------------------------------------------------------------------------------
 $routes->get('/paciente', 'Paciente::opciones');
 //---------------------------------------------------------------------------------------------------------
+//                             Rutas para manejar médicos como paciente
+//---------------------------------------------------------------------------------------------------------
+$routes->get('/paciente/medicos/administrarMedicos', 'Paciente::administrarMedicos');
+$routes->get('/paciente/medcios/administrarMedicos/buscar', 'Paciente::buscarMedicos');
+
+$routes->get('/paciente/medicos/sabermasMedico/(:num)', 'Paciente::medicoSaberMas/$1');
+
+
+//---------------------------------------------------------------------------------------------------------
 //                             Rutas para manejar consultas como paciente
 //---------------------------------------------------------------------------------------------------------
-$routes->get('/paciente/administrarConsultas', 'Paciente::administrarConsultas');
+$routes->get('/paciente/consultas/administrarConsultas', 'Paciente::administrarConsultas');
+
+$routes->get('/paciente/consultas/posponerConsulta/(:num)', 'Paciente::posponerConsulta/$1');
+
+$routes->get('/paciente/consultas/realizarConsulta/formulario/(:num)', 'Paciente::realizarConsultaFormulario/$1');
+$routes->get('/paciente/consultas/completarConsulta/(:num)', 'Paciente::completarConsulta/$1');
+$routes->post('/paciente/consultas/realizarConsulta/(:num)', 'Paciente::realizarConsulta/$1');
+
+$routes->get('/paciente/consultas/sabermasConsulta/(:num)', 'Paciente::consultaSaberMas/$1');
+
+//---------------------------------------------------------------------------------------------------------
+//                             Rutas para manejar medicamentos como paciente
+//---------------------------------------------------------------------------------------------------------
+$routes->get('/paciente/medicamento/sabermasMedicamento/(:num)', 'Paciente::medicamentoSaberMas/$1');
+//---------------------------------------------------------------------------------------------------------
+//                             Rutas para manejar recetas como paciente
+//---------------------------------------------------------------------------------------------------------
+$routes->get('/paciente/recetas/administrarRecetas', 'Paciente::administrarRecetas');
+
+$routes->get('/paciente/recetas/cancelarReceta/(:num)', 'Paciente::cancelarReceta/$1');
+$routes->get('/paciente/recetas/renovarReceta/(:num)', 'Paciente::renovarReceta/$1');
+
+$routes->get('/paciente/recetas/sabermasReceta/(:num)', 'Paciente::recetaSaberMas/$1');

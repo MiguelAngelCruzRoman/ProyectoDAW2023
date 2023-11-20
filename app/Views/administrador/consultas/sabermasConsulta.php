@@ -85,35 +85,6 @@
 
                         <div class="container mt-4">
                             <div class="row justify-content-center">
-
-                           
-
-                            <?php if($receta->status == 0):?>
-                                
-                                <div class="col-md-3">
-                                    <a href="<?= base_url('/administrador/recetas/renovarReceta/' .$receta->id); ?>" class="text-center"
-                                        style="color:rgba(0,0,0,1)">
-                                        <figure>
-                                            <img src="https://cdn-icons-png.flaticon.com/128/3247/3247396.png"
-                                                alt="renovar" class="service-img" width="60" height="60">
-                                            <figcaption>Renovar Vencimiento de Receta</figcaption>
-                                        </figure>
-                                    </a>
-                                </div>
-                            <?php else:?>
-                                <div class="col-md-3">
-                                    <a href="<?= base_url('/administrador/recetas/cancelarReceta/' .$receta->id); ?>" class="text-center"
-                                        style="color:rgba(0,0,0,1)">
-                                        <figure>
-                                            <img src="https://cdn-icons-png.flaticon.com/128/5978/5978540.png"
-                                                alt="cancelar" class="service-img" width="60" height="60">
-                                            <figcaption>Cancelar Validez de Receta</figcaption>
-                                        </figure>
-                                    </a>
-                                </div>
-                            <?php endif;?>
-                                
-
                                 <div class="col-md-3">
                                     <a href="#" onclick="history.back()" class="text-center"
                                         style="color:rgba(0,0,0,1)">

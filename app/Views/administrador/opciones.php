@@ -5,7 +5,7 @@
 			<h2 align="center">¿QUÉ QUIERE HACER HOY?</h2>
 		</div>
 	</div>
-
+<?php $session = session();$session->get('username')?>
 	<div class="row">
 		<div class="col-md-4">
 			<a href="<?= base_url('/administrador/administrarPacientes/'); ?>">

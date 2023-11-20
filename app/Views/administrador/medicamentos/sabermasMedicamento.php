@@ -22,7 +22,7 @@
                             <?= $medicamento->formaFarmaceutica ?>
                         </p>
                         <p><strong>Dosis recomendada:</strong>
-                            <?= $medicamento->dosis ?>
+                            <?= $medicamento->dosis ?> gm
                         </p>
                         <p><strong>Fecha de caducidad:</strong>
                             <?= $medicamento->fechaCaducidad ?>
@@ -44,7 +44,6 @@
                         </ul>
                         </p><br>
 
-                        <h4>Recetas en las que se utiliza</h4>
 
                         <div class="container mt-4">
                             <div class="row justify-content-center">
