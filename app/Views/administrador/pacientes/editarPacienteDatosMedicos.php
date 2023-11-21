@@ -1,13 +1,14 @@
 <div class="container">
     <div class="row">
-    <?php
-    if(isset($validation)){
-        print $validation->listErrors();
-    }
-?>
+        <?php
+        if (isset($validation)) {
+            print $validation->listErrors();
+        }
+        ?>
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="<?= base_url('/administrador/pacientes/editarPacienteDireccion/' . $paciente->id); ?>" method="POST">
+            <form action="<?= base_url('/administrador/pacientes/editarPacienteDireccion/' . $paciente->id); ?>"
+                method="POST">
                 <?= csrf_field() ?>
                 <h1 align="center">Editar Paciente</h1>
                 <h4 align="center">Historial Médico</h4>
@@ -28,7 +29,9 @@
                 <div class="mb-3">
                     <label for="seguro">Tipo de seguro:</label>
                     <select name="seguro" id="seguro" class="form-control" required>
-                        <option value="<?= $paciente->statusSeguro ?>" selected><?= $paciente->statusSeguro ?></option>
+                        <option value="<?= $paciente->statusSeguro ?>" selected>
+                            <?= $paciente->statusSeguro ?>
+                        </option>
                         <option value="estudiantil">Estudiantil</option>
                         <option value="laboral">Laboral</option>
                         <option value="adquirido">Adquirido</option>
@@ -40,7 +43,9 @@
                 <div class="mb-3">
                     <label for="sangre">Tipo de sangre:</label>
                     <select name="sangre" id="sangre" class="form-control" required>
-                        <option value="<?= $paciente->tipoSangre ?>" selected><?= $paciente->tipoSangre ?></option>
+                        <option value="<?= $paciente->tipoSangre ?>" selected>
+                            <?= $paciente->tipoSangre ?>
+                        </option>
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                         <option value="A+">A+</option>
@@ -53,7 +58,9 @@
                 <div class="mb-3">
                     <label for="alergia">Alergia:</label>
                     <select name="alergia" id="alergia" class="form-control" required>
-                        <option value="<?= $paciente->alergia ?>" selected><?= $paciente->alergia ?></option>
+                        <option value="<?= $paciente->alergia ?>" selected>
+                            <?= $paciente->alergia ?>
+                        </option>
                         <option value="ninguna" selected>Ninguna</option>
                         <option value="poliester">poliester</option>
                         <option value="alcohol">alcohol</option>
@@ -71,7 +78,9 @@
                 <div class="mb-3">
                     <label for="motivoRevision">Motivo de última consulta:</label>
                     <select name="motivoRevision" id="motivoRevision" class="form-control" required>
-                        <option value="<?= $paciente->motivoRevision ?>" selected><?= $paciente->motivoRevision ?></option>
+                        <option value="<?= $paciente->motivoRevision ?>" selected>
+                            <?= $paciente->motivoRevision ?>
+                        </option>
                         <option value="preventivo">Preventivo</option>
                         <option value="enfermedad">Enfermedad</option>
                         <option value="rutinario">Rutinario</option>
@@ -120,7 +129,8 @@
                 <br>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585717.png" alt="Siguiente" width="25" height="25">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585717.png" alt="Siguiente" width="25"
+                            height="25">
                         Siguiente
                     </button>
                 </div>
@@ -128,15 +138,18 @@
 
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary" onclick="window.history.back()">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25" height="25">
-                        Regresar
-                    </button>
-                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
-                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
-                        Cancelar
-                    </button>
+                    <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25"
+                        height="25">
+                    Regresar
+                </button>
+                <button type="submit" class="btn btn-danger"
+                    onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
+                    <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25"
+                        height="25">
+                    Cancelar
+                </button>
             </div>
-    
+
         </div>
     </div>
 </div>

@@ -10,9 +10,11 @@
                     <div class="card-body">
                         <h2 class="card-title" align="center">
                             <?= $userinfo[0]->primerNombre . ' ' . $userinfo[0]->segundoNombre . ' ' . $userinfo[0]->apellidoPaterno . ' ' . $userinfo[0]->apellidoMaterno ?>
+                            <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del paciente"
+                                width="300" height="400">
+
                         </h2>
 
-                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del paciente" width="300" height="300">
 
                         <h4> Información del paciente</h4>
                         <p><strong>Tipo de seguro:</strong>
@@ -41,25 +43,29 @@
                         </p>
                         <br>
 
-                        <h4>Consultas</h4>    
-                        <?php foreach($consultas as $consulta):?>
+                        <h4>Consultas</h4>
+                        <?php foreach ($consultas as $consulta): ?>
                             <ol>
-                                <li><p><strong>Consulta #<?= $consulta->id?>:</strong>
-                                    <?=' realizada con motivo de ['.$consulta->motivo.']' ?></p>
+                                <li>
+                                    <p><strong>Consulta #
+                                            <?= $consulta->id ?>:
+                                        </strong>
+                                        <?= ' realizada con motivo de [' . $consulta->motivo . ']' ?>
+                                    </p>
                                 </li>
 
                             </ol>
-                            
-                        <?php endforeach;?>
 
-                
+                        <?php endforeach; ?>
+
+
 
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 
                                 <div class="col-md-3">
-                                    <a href="<?= base_url('/medico/consultas/realizarConsulta/formulario/' . $IDMedicoPaciente); ?>" class="text-center"
-                                        style="color:rgba(0,0,0,1)">
+                                    <a href="<?= base_url('/medico/consultas/realizarConsulta/formulario/' . $IDMedicoPaciente); ?>"
+                                        class="text-center" style="color:rgba(0,0,0,1)">
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/3022/3022342.png"
                                                 alt="editar" class="service-img" width="60" height="60">

@@ -28,7 +28,7 @@ $routes->post('/administrador/pacientes/editarPacienteDatosMedicos/(:num)', 'Adm
 $routes->get('/administrador/pacientes/editarPacienteDatosMedicos/(:num)', 'Administrador::editarPacienteDatosMedicos/$1');
 $routes->get('/administrador/pacientes/editarPacienteDireccion/(:num)', 'Administrador::editarPacienteDireccion/$1');
 $routes->post('/administrador/pacientes/editarPacienteDireccion/(:num)', 'Administrador::editarPacienteDireccion/$1');
-$routes->post('/administrador/pacientes/editarPaciente/update','Administrador::pacienteUpdate');
+$routes->post('/administrador/pacientes/editarPaciente/update', 'Administrador::pacienteUpdate');
 
 $routes->get('/administrador/pacientes/eliminarPaciente/(:num)', 'Administrador::eliminarPaciente/$1');
 

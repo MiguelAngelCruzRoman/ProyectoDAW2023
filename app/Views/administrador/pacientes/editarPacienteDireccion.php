@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-    <?php
-    if(isset($validation)){
-        print $validation->listErrors();
-    }
-?>
+        <?php
+        if (isset($validation)) {
+            print $validation->listErrors();
+        }
+        ?>
         <div class="col-2"></div>
         <div class="col-8">
             <form action="<?= base_url('/administrador/pacientes/editarPaciente/update'); ?>" method="post">
@@ -42,46 +42,57 @@
 
                 <div class="mab-3">
                     <label for="estado" class="form-label">Estado:</label>
-                    <input type="text" class="form-control" name="estado" id="estado" placeholder="Ejemplo: Puebla" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
+                    <input type="text" class="form-control" name="estado" id="estado" placeholder="Ejemplo: Puebla"
+                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
                         value="<?= $direccion[0]->estado ?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="municipio" class="form-label">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Ejemplo: Cholula" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
-                        value="<?= $direccion[0]->municipio ?>">
+                    <input type="text" class="form-control" name="municipio" id="municipio"
+                        placeholder="Ejemplo: Cholula" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
+                        min_length="2" value="<?= $direccion[0]->municipio ?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="colonia" class="form-label">Colonia:</label>
-                    <input type="text" class="form-control" name="colonia" id="colonia" placeholder="Ejemplo: Rosas" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
+                    <input type="text" class="form-control" name="colonia" id="colonia" placeholder="Ejemplo: Rosas"
+                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
                         value="<?= $direccion[0]->colonia ?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="calle" class="form-label">Calle:</label>
-                    <input type="text" class="form-control" name="calle" id="calle" value="<?= $direccion[0]->calle ?>" placeholder="Ejemplo: Revolución" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
+                    <input type="text" class="form-control" name="calle" id="calle" value="<?= $direccion[0]->calle ?>"
+                        placeholder="Ejemplo: Revolución" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
+                        min_length="2">
                 </div>
 
                 <div class="mab-3">
                     <label for="noExt" class="form-label">Número exterior:</label>
-                    <input type="number" class="form-control" name="noExt" id="noExt" value="<?= $direccion[0]->noExt ?>" placeholder="Ejemplo: 10" required pattern="[0-9]" max_length="1" min_length="1">
+                    <input type="number" class="form-control" name="noExt" id="noExt"
+                        value="<?= $direccion[0]->noExt ?>" placeholder="Ejemplo: 10" required pattern="[0-9]"
+                        max_length="1" min_length="1">
                 </div>
 
                 <div class="mab-3">
                     <label for="noInt" class="form-label">Número interior:</label>
-                    <input type="text" class="form-control" name="noInt" id="noInt" value="<?= $direccion[0]->noInt ?>" placeholder="Ejemplo: 10" pattern="[0-9]" max_length="1" min_length="1">
+                    <input type="text" class="form-control" name="noInt" id="noInt" value="<?= $direccion[0]->noInt ?>"
+                        placeholder="Ejemplo: 10" pattern="[0-9]" max_length="1" min_length="1">
                 </div>
 
                 <div class="mab-3">
                     <label for="CP" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" name="CP" id="CP" value="<?= $direccion[0]->CP ?>" placeholder="Ejemplo: 73950" required pattern="[0-9]" max_length="5" min_length="1">
+                    <input type="text" class="form-control" name="CP" id="CP" value="<?= $direccion[0]->CP ?>"
+                        placeholder="Ejemplo: 73950" required pattern="[0-9]" max_length="5" min_length="1">
                 </div>
 
                 <div class="mb-3">
                     <label for="tipo">Tipo de vivienda:</label>
                     <select name="tipo" id="tipo" class="form-control" required>
-                        <option value="<?= $direccion[0]->tipo ?>" selected><?= $direccion[0]->tipo ?></option>
+                        <option value="<?= $direccion[0]->tipo ?>" selected>
+                            <?= $direccion[0]->tipo ?>
+                        </option>
                         <option value="Casa">Casa</option>
                         <option value="Departamento">Departamento</option>
                         <option value="Oficina">Oficina</option>
@@ -91,7 +102,8 @@
                 <br>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-warning">
-                        <img src="https://cdn-icons-png.flaticon.com/128/376/376218.png" alt="Guardar" width="25" height="25">
+                        <img src="https://cdn-icons-png.flaticon.com/128/376/376218.png" alt="Guardar" width="25"
+                            height="25">
                         Guardar
                     </button>
                 </div>
@@ -99,13 +111,16 @@
 
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary" onclick="window.history.back()">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25" height="25">
-                        Regresar
-                    </button>
-                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
-                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
-                        Cancelar
-                    </button>
+                    <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25"
+                        height="25">
+                    Regresar
+                </button>
+                <button type="submit" class="btn btn-danger"
+                    onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
+                    <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25"
+                        height="25">
+                    Cancelar
+                </button>
             </div>
 
         </div>

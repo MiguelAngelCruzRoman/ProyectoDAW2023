@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-    <?php
-    if(isset($validation)){
-        print $validation->listErrors();
-    }
-?>
+        <?php
+        if (isset($validation)) {
+            print $validation->listErrors();
+        }
+        ?>
         <div class="col-2"></div>
         <div class="col-8">
             <form action="<?= base_url('/administrador/medicamentos/editarMedicamento/update'); ?>" method="POST">
@@ -16,20 +16,23 @@
                 <div class="mab-3" align="center">
                     <img src="<?= $medicamento->imagenEmpaque ?>" alt="medicamento" class="service-img" width="300"
                         height="300">
-                    <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque" placeholder="Ejemplo: https://foto.png" required  max_length="150"
+                    <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque"
+                        placeholder="Ejemplo: https://foto.png" required max_length="150"
                         value="<?= $medicamento->imagenEmpaque ?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="nombreComercial" class="form-label">Nombre comercial:</label>
                     <input type="text" class="form-control" name="nombreComercial" id="nombreComercial"
-                        value="<?= $medicamento->nombreComercial ?>" placeholder="Ejemplo: Paracetamol" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="3">
+                        value="<?= $medicamento->nombreComercial ?>" placeholder="Ejemplo: Paracetamol" required
+                        pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="3">
                 </div>
 
                 <div class="mab-3">
                     <label for="nombreCinetifico" class="form-label">Nombre científico:</label>
-                    <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico" placeholder="Ejemplo: Acetaminofén" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="80" min_length="3"
-                        value="<?= $medicamento->nombreCinetifico ?>">
+                    <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico"
+                        placeholder="Ejemplo: Acetaminofén" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="80"
+                        min_length="3" value="<?= $medicamento->nombreCinetifico ?>">
                 </div>
 
                 <div class="mb-3">
@@ -76,13 +79,15 @@
 
                 <div class="mab-3">
                     <label for="loteFabricacion" class="form-label">Lote de fabricación:</label>
-                    <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion" placeholder="Ejemplo: ABC 78S" required pattern="[A-Z0-9\s]+" max_length="10"
+                    <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion"
+                        placeholder="Ejemplo: ABC 78S" required pattern="[A-Z0-9\s]+" max_length="10"
                         value="<?= $medicamento->loteFabricacion ?>">
                 </div>
 
                 <div class="mab-3">
                     <label for="stock" class="form-label">Stock:</label>
-                    <input type="number" class="form-control" name="stock" id="stock" value="<?= $medicamento->stock ?>" placeholder="Ejemplo: 15" required pattern="[0-9]+" max_length="11"> 
+                    <input type="number" class="form-control" name="stock" id="stock" value="<?= $medicamento->stock ?>"
+                        placeholder="Ejemplo: 15" required pattern="[0-9]+" max_length="11">
                 </div>
 
                 <div class="mb-3">
@@ -126,17 +131,20 @@
                 <br>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-warning">
-                        <img src="https://cdn-icons-png.flaticon.com/128/376/376218.png" alt="Guardar" width="25" height="25">
+                        <img src="https://cdn-icons-png.flaticon.com/128/376/376218.png" alt="Guardar" width="25"
+                            height="25">
                         Guardar
                     </button>
                 </div>
             </form>
 
             <div class="mb-3">
-                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/medicamentos/administrarMedicamentos/'">
-                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
-                        Cancelar
-                    </button>
+                <button type="submit" class="btn btn-danger"
+                    onclick="window.location.href='/administrador/medicamentos/administrarMedicamentos/'">
+                    <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25"
+                        height="25">
+                    Cancelar
+                </button>
             </div>
 
         </div>

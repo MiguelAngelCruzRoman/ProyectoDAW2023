@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR RECETAS</h1>
-        <div class="col-4">
-            
+
+        <div class="col-4">    
         </div>
 
         <div class="col-4"></div>
@@ -36,7 +36,7 @@
 
             <table class="table">
 
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Medicamentos recetados</th>
                     <th style="text-align: center">Consulta en la que se recetó</th>
@@ -51,11 +51,11 @@
                             <?php foreach ($consultas as $consulta):
                                 if ($consulta->medico_paciente == $medicoPaciente->id): ?>
                             
-                                        <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
+                                <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
                                     <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
                                         <tr>
                                         </tr>
-                                        <?php else: ?>
+                                    <?php else: ?>
                                     
                                             <tr>
                                                 <td style="text-align: center"><?= $receta->id ?></td>
@@ -70,11 +70,12 @@
                                                                     <?php endif; endforeach; ?>
                                                         <?php endif; endforeach; ?>
                                                 </td>
-                                                <td style="text-align: center">
-                                                   
-                                                                <?= 'Consulta ' . $consulta->id . ', realizada en "' . $consulta->lugar . '"' ?>
+                                                <td style="text-align: center">   
+                                                <?= 'Consulta ' . $consulta->id . ', realizada en "' . $consulta->lugar . '"' ?>
                                                 </td>
+
                                                 <td style="text-align: center"><?= $receta->fechaVencimiento ?></td>
+
                                                 <?php if ($receta->status == 0): ?>
                                                         <td style="text-align: center; background-color:rgb(139,0,0)"><?= $receta->status ?></td>
                                                         <td style="text-align: center">
@@ -96,6 +97,7 @@
                                                             </a>
                                                         </td>
                                                 <?php endif; ?>
+
                                                 <td>
                                                     <a href="<?= base_url('/medico/recetas/sabermasReceta/' . $receta->id); ?>"
                                                         style="color:rgba(0,0,0,0.6)">
@@ -104,15 +106,14 @@
                                                         <figcaption>Saber más</figcaption>
                                                     </a>
                                                 </td>
+
                                             </tr>
-                                        <?php endif; ?>
+                                    <?php endif; ?>
 
                                 <?php endif; endforeach; ?>
-                                <?php endif; endforeach; ?>
+                            <?php endif; endforeach; ?>
                     <?php endforeach; ?>
-                
                 </tbody>
-
             </table>
 
             <div class="col-5 mx-auto text-center">
@@ -125,7 +126,7 @@
                             <li class="page-item <?php echo ($paginaActual == $i) ? 'active' : ''; ?>">
                                 <a class="page-link text-black" href="?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
                             </li>
-                    <?php endfor ?>
+                    <?php endfor; ?>
 
                     <li class="page-item <?php echo ($paginaActual >= $totalPaginas) ? 'disabled' : ''; ?>">
                         <a class="page-link text-black" href="?pagina=<?php echo $paginaActual + 1; ?>">Siguiente</a>

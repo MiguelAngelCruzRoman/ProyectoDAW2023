@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+
 $session = \Config\Services::session();
 
 
@@ -23,15 +24,15 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
-        
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/opciones') .
@@ -51,13 +52,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -67,17 +68,17 @@ class Administrador extends BaseController
         $data['users'] = $usersModel->findAll();
 
 
-         /*
-            Los siguientes modelos son para recuperar la información de los médicos que atienden
-            a cada paciente
-        */
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        /*
+           Los siguientes modelos son para recuperar la información de los médicos que atienden
+           a cada paciente
+       */
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
-        $medicoModel = model ('MedicoModel');
+        $medicoModel = model('MedicoModel');
         $data['medicos'] = $medicoModel->findAll();
         $data['userInfoMedicos'] = $userInfoModel->findAll();
         $data['userMedicos'] = $usersModel->findAll();
-        
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/administrarPacientes', $data) .
@@ -94,13 +95,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -148,13 +149,13 @@ class Administrador extends BaseController
             $data['users'] = $usersModel->findAll();
         }
 
-         /*
-            Los siguientes modelos son para recuperar la información de los médicos que atienden
-            a cada paciente
-        */
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        /*
+           Los siguientes modelos son para recuperar la información de los médicos que atienden
+           a cada paciente
+       */
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
-        $medicoModel = model ('MedicoModel');
+        $medicoModel = model('MedicoModel');
         $data['medicos'] = $medicoModel->findAll();
         $data['userInfoMedicos'] = $userInfoModel->findAll();
         $data['userMedicos'] = $usersModel->findAll();
@@ -175,13 +176,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -203,13 +204,13 @@ class Administrador extends BaseController
             Los siguientes modelos son para recuperar la información de los médicos que atienden
             a cada paciente
         */
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
-        $medicoModel = model ('MedicoModel');
+        $medicoModel = model('MedicoModel');
         $data['medicos'] = $medicoModel->findAll();
         $data['userInfoMedicos'] = $userInfoModel->findAll();
         $data['userMedicos'] = $userModel->findAll();
-        
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/sabermasPaciente', $data) .
@@ -222,23 +223,23 @@ class Administrador extends BaseController
         El formulario requiere datos del usuario
     */
     public function agregarPacientes()
-    {      
+    {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
-        if(strtolower($this->request->getMethod())==='get'){
+        if (strtolower($this->request->getMethod()) === 'get') {
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientes') .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientes') .
+                view('common/footer');
         }
 
     }
@@ -254,29 +255,29 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
-            'segundoNombre'=>'max_length[15]',
-            'apellidoPaterno'=>'required|max_length[15]|min_length[3]|string',
-            'apellidoMaterno'=>'required|max_length[15]|min_length[3]|string',
-            'genero'=>'required|max_length[1]|alpha_numeric_punct',
-            'telefono'=>'required|max_length[15]|min_length[10]',
-            'CURP'=>'required|max_length[18]|min_length[18]|alpha_numeric',
-            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|string',
-            'contraseña'=>'required|max_length[150]|min_length[1]|string',
-            'foto'=>'required|max_length[250]|valid_url',
+        $rules = [
+            'primerNombre' => 'required|max_length[15]|min_length[3]|string',
+            'segundoNombre' => 'max_length[15]',
+            'apellidoPaterno' => 'required|max_length[15]|min_length[3]|string',
+            'apellidoMaterno' => 'required|max_length[15]|min_length[3]|string',
+            'genero' => 'required|max_length[1]|alpha_numeric_punct',
+            'telefono' => 'required|max_length[15]|min_length[10]',
+            'CURP' => 'required|max_length[18]|min_length[18]|alpha_numeric',
+            'correo' => 'required|max_length[100]|min_length[7]|valid_email',
+            'username' => 'required|max_length[50]|min_length[1]|string',
+            'contraseña' => 'required|max_length[150]|min_length[1]|string',
+            'foto' => 'required|max_length[250]|valid_url',
         ];
 
         $data = [
@@ -293,19 +294,19 @@ class Administrador extends BaseController
             "foto" => $_POST['foto'],
         ];
 
-        if(!$this->validate($rules)){
-            
-            return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientes', ['validation'=>$validation,$data]) .
-            view('common/footer');
+        if (!$this->validate($rules)) {
 
-        }else{
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientesDatosMedicos', $data) .
-            view('common/footer');
-        }        
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientes', ['validation' => $validation, $data]) .
+                view('common/footer');
+
+        } else {
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientesDatosMedicos', $data) .
+                view('common/footer');
+        }
     }
 
     /*
@@ -317,25 +318,25 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'statusSeguro'=>'required|max_length[50]|min_length[7]|alpha_space',
-            'sangre'=>'required|max_length[3]|min_length[2]|alpha_numeric_punct',
-            'alergia'=>'required|max_length[250]|min_length[7]',
-            'fechaChequeo'=>'required|valid_date',
-            'motivoConsulta'=>'required|max_length[250]|alpha_numeric_punct',
-            'habitosToxicos'=>'required',
-            'condicionesPrevias'=>'required',
+        $rules = [
+            'statusSeguro' => 'required|max_length[50]|min_length[7]|alpha_space',
+            'sangre' => 'required|max_length[3]|min_length[2]|alpha_numeric_punct',
+            'alergia' => 'required|max_length[250]|min_length[7]',
+            'fechaChequeo' => 'required|valid_date',
+            'motivoConsulta' => 'required|max_length[250]|alpha_numeric_punct',
+            'habitosToxicos' => 'required',
+            'condicionesPrevias' => 'required',
         ];
 
         $data = [
@@ -357,24 +358,24 @@ class Administrador extends BaseController
             "motivoConsulta" => $_POST['motivoConsulta'],
             "habitosToxicos" => $_POST['habitosToxicos'],
             "condicionesPrevias" => $_POST['condicionesPrevias'],
-            'validation'=>$validation
+            'validation' => $validation
         ];
 
 
-        if(!$this->validate($rules)){
-            
-            return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientesDatosMedicos',$data) .
-            view('common/footer');
+        if (!$this->validate($rules)) {
 
-        }else{
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientesDireccion', $data) .
-            view('common/footer');
-        }  
-        
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientesDatosMedicos', $data) .
+                view('common/footer');
+
+        } else {
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientesDireccion', $data) .
+                view('common/footer');
+        }
+
     }
 
     /* 
@@ -388,29 +389,29 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|string',
-            'municipio'=>'required|max_length[50]|min_length[2]|string',
-            'colonia'=>'required|max_length[50]|min_length[2]|string',
-            'calle'=>'required|max_length[50]|min_length[2]|string',
-            'noExt'=>'required|max_length[11]|integer',
-            'noInt'=>'max_length[11]|',
-            'CP'=>'required|max_length[5]|integer',
-            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        $rules = [
+            'estado' => 'required|max_length[50]|min_length[2]|string',
+            'municipio' => 'required|max_length[50]|min_length[2]|string',
+            'colonia' => 'required|max_length[50]|min_length[2]|string',
+            'calle' => 'required|max_length[50]|min_length[2]|string',
+            'noExt' => 'required|max_length[11]|integer',
+            'noInt' => 'max_length[11]|',
+            'CP' => 'required|max_length[5]|integer',
+            'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
-        if(!$this->validate($rules)){     
+        if (!$this->validate($rules)) {
             $data = [
                 "primerNombre" => $_POST['primerNombre'],
                 "segundoNombre" => $_POST['segundoNombre'],
@@ -430,70 +431,70 @@ class Administrador extends BaseController
                 "motivoConsulta" => $_POST['motivoConsulta'],
                 "habitosToxicos" => $_POST['habitosToxicos'],
                 "condicionesPrevias" => $_POST['condicionesPrevias'],
-                'validation'=>$validation
+                'validation' => $validation
             ];
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientesDireccion',$data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientesDireccion', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $pacienteModel = model('PacienteModel');
-        $dataPaciente = [
-            "CURP" => $_POST['CURP'],
-            "statusSeguro" => $_POST['statusSeguro'],
-            "tipoSangre" => $_POST['sangre'],
-            "alergia" => $_POST['alergia'],
-            "fechaRevision" => $_POST['fechaChequeo'],
-            "motivoRevision" => $_POST['motivoConsulta'],
-            "habitoToxico" => $_POST['habitosToxicos'],
-            "condicionesPrevias" => $_POST['condicionesPrevias'],
-            "created_at" => date('Y-m-d')
-        ];
-        $pacienteModel->insert($dataPaciente);
+            $dataPaciente = [
+                "CURP" => $_POST['CURP'],
+                "statusSeguro" => $_POST['statusSeguro'],
+                "tipoSangre" => $_POST['sangre'],
+                "alergia" => $_POST['alergia'],
+                "fechaRevision" => $_POST['fechaChequeo'],
+                "motivoRevision" => $_POST['motivoConsulta'],
+                "habitoToxico" => $_POST['habitosToxicos'],
+                "condicionesPrevias" => $_POST['condicionesPrevias'],
+                "created_at" => date('Y-m-d')
+            ];
+            $pacienteModel->insert($dataPaciente);
 
-        $usersModel = model('UsersModel');
-        $dataUser = [
-            "correo" => $_POST['correo'],
-            "username" => $_POST['username'],
-            "password" => $_POST['contraseña'],
-            "paciente" => $pacienteModel->getInsertID(),
-            "created_at" => date('Y-m-d')
-        ];
-        $usersModel->insert($dataUser);
+            $usersModel = model('UsersModel');
+            $dataUser = [
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "password" => $_POST['contraseña'],
+                "paciente" => $pacienteModel->getInsertID(),
+                "created_at" => date('Y-m-d')
+            ];
+            $usersModel->insert($dataUser);
 
-        $userInfoModel = model('UserInfoModel');
-        $dataUserInfo = [
-            "id" => $usersModel->getInsertID(),
-            "primerNombre" => $_POST['primerNombre'],
-            "segundoNombre" => $_POST['segundoNombre'],
-            "apellidoPaterno" => $_POST['apellidoPaterno'],
-            "apellidoMaterno" => $_POST['apellidoMaterno'],
-            "genero" => $_POST['genero'],
-            "telefono" => $_POST['telefono'],
-            "foto" => $_POST['foto'],
-            "created_at" => date('Y-m-d')
-        ];
-        $userInfoModel->insert($dataUserInfo);
+            $userInfoModel = model('UserInfoModel');
+            $dataUserInfo = [
+                "id" => $usersModel->getInsertID(),
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "foto" => $_POST['foto'],
+                "created_at" => date('Y-m-d')
+            ];
+            $userInfoModel->insert($dataUserInfo);
 
-        $direccionModel = model('DireccionModel');
-        $dataDireccion = [
-            "estado" => $_POST['estado'],
-            "municipio" => $_POST['municipio'],
-            "colonia" => $_POST['colonia'],
-            "calle" => $_POST['calle'],
-            "noInt" => $_POST['noInt'],
-            "noExt" => $_POST['noExt'],
-            "CP" => $_POST['CP'],
-            "tipo" => $_POST['tipo'],
-            "userinfo" => $usersModel->getInsertID(),
-            "created_at" => date('Y-m-d')
-        ];
-        $direccionModel->insert($dataDireccion);
+            $direccionModel = model('DireccionModel');
+            $dataDireccion = [
+                "estado" => $_POST['estado'],
+                "municipio" => $_POST['municipio'],
+                "colonia" => $_POST['colonia'],
+                "calle" => $_POST['calle'],
+                "noInt" => $_POST['noInt'],
+                "noExt" => $_POST['noExt'],
+                "CP" => $_POST['CP'],
+                "tipo" => $_POST['tipo'],
+                "userinfo" => $usersModel->getInsertID(),
+                "created_at" => date('Y-m-d')
+            ];
+            $direccionModel->insert($dataDireccion);
 
-        return redirect('administrador/pacientes/administrarPacientes', 'refresh');
-        }  
-        
+            return redirect('administrador/pacientes/administrarPacientes', 'refresh');
+        }
+
     }
 
     /*
@@ -507,29 +508,29 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $pacienteModel = model('PacienteModel');
         $data['paciente'] = $pacienteModel->find($id);
 
         $usersModel = model('UsersModel');
-        $data['users'] = $usersModel->where('paciente',($data['paciente']->id))->find();
+        $data['users'] = $usersModel->where('paciente', ($data['paciente']->id))->find();
 
         $userInfoModel = model('UserInfoModel');
-        $data['usersInfo'] = $userInfoModel->where('id',($data['users'][0]->id))->find();
+        $data['usersInfo'] = $userInfoModel->where('id', ($data['users'][0]->id))->find();
 
-            return view('common/head') .
+        return view('common/head') .
             view('common/menu') .
             view('administrador/pacientes/editarPaciente', $data) .
             view('common/footer');
-        
+
     }
 
     /*
@@ -542,29 +543,29 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
-            'segundoNombre'=>'max_length[15]',
-            'apellidoPaterno'=>'required|max_length[15]|string',
-            'apellidoMaterno'=>'required|max_length[15]|string',
-            'genero'=>'required|max_length[1]|alpha',
-            'telefono'=>'required|max_length[15]|min_length[10]',
-            'CURP'=>'required|max_length[18]|min_length[18]|alpha_numeric',
-            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|string',
-            'contraseña'=>'required|max_length[150]|min_length[1]|string',
-            'foto'=>'required|max_length[250]|valid_url',
+        $rules = [
+            'primerNombre' => 'required|max_length[15]|min_length[3]|string',
+            'segundoNombre' => 'max_length[15]',
+            'apellidoPaterno' => 'required|max_length[15]|string',
+            'apellidoMaterno' => 'required|max_length[15]|string',
+            'genero' => 'required|max_length[1]|alpha',
+            'telefono' => 'required|max_length[15]|min_length[10]',
+            'CURP' => 'required|max_length[18]|min_length[18]|alpha_numeric',
+            'correo' => 'required|max_length[100]|min_length[7]|valid_email',
+            'username' => 'required|max_length[50]|min_length[1]|string',
+            'contraseña' => 'required|max_length[150]|min_length[1]|string',
+            'foto' => 'required|max_length[250]|valid_url',
         ];
 
         $pacienteModel = model('PacienteModel');
@@ -583,32 +584,32 @@ class Administrador extends BaseController
             "contraseña" => $_POST['contraseña'],
             "foto" => $_POST['foto'],
             "paciente" => $pacienteModel->find($id),
-            'validation'=>$validation
+            'validation' => $validation
         ];
 
-        if(!$this->validate($rules)){
-            
+        if (!$this->validate($rules)) {
+
             $pacienteModel = model('PacienteModel');
-        $data['paciente'] = $pacienteModel->find($id);
+            $data['paciente'] = $pacienteModel->find($id);
 
-        $usersModel = model('UsersModel');
-        $data['users'] = $usersModel->where('paciente',($data['paciente']->id))->find();
+            $usersModel = model('UsersModel');
+            $data['users'] = $usersModel->where('paciente', ($data['paciente']->id))->find();
 
-        $userInfoModel = model('UserInfoModel');
-        $data['usersInfo'] = $userInfoModel->where('id',($data['users'][0]->id))->find();
+            $userInfoModel = model('UserInfoModel');
+            $data['usersInfo'] = $userInfoModel->where('id', ($data['users'][0]->id))->find();
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/editarPaciente', $data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/pacientes/editarPaciente', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/editarPacienteDatosMedicos', $data) .
-            view('common/footer');
-        }   
-        
+                view('common/menu') .
+                view('administrador/pacientes/editarPacienteDatosMedicos', $data) .
+                view('common/footer');
+        }
+
     }
 
 
@@ -622,13 +623,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $pacienteModel = model('PacienteModel');
@@ -636,14 +637,14 @@ class Administrador extends BaseController
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'seguro'=>'required|max_length[50]|min_length[3]|alpha_space',
-            'sangre'=>'required|max_length[3]|min_length[2]|alpha_numeric_punct',
-            'alergia'=>'required|max_length[250]|min_length[7]',
-            'fechaRevision'=>'required|valid_date',
-            'motivoRevision'=>'required|max_length[250]|alpha_numeric_punct',
-            'habitosToxicos'=>'required',
-            'condicionesPrevias'=>'required',
+        $rules = [
+            'seguro' => 'required|max_length[50]|min_length[3]|alpha_space',
+            'sangre' => 'required|max_length[3]|min_length[2]|alpha_numeric_punct',
+            'alergia' => 'required|max_length[250]|min_length[7]',
+            'fechaRevision' => 'required|valid_date',
+            'motivoRevision' => 'required|max_length[250]|alpha_numeric_punct',
+            'habitosToxicos' => 'required',
+            'condicionesPrevias' => 'required',
         ];
 
         $data = [
@@ -668,24 +669,24 @@ class Administrador extends BaseController
             "seguro" => $_POST['seguro'],
             "habitosToxicos" => $_POST['habitosToxicos'],
             "condicionesPrevias" => $_POST['condicionesPrevias'],
-            'validation'=>$validation
+            'validation' => $validation
         ];
 
-        if(!$this->validate($rules)){
-            
-            return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/editarPacienteDatosMedicos',$data) .
-            view('common/footer');
+        if (!$this->validate($rules)) {
 
-        }else{
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/editarPacienteDireccion', $data) .
-            view('common/footer');
-        } 
+                view('common/menu') .
+                view('administrador/pacientes/editarPacienteDatosMedicos', $data) .
+                view('common/footer');
 
-        
+        } else {
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/pacientes/editarPacienteDireccion', $data) .
+                view('common/footer');
+        }
+
+
     }
 
     /*
@@ -699,26 +700,26 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
-         $validation = \Config\Services::validation();
+        $validation = \Config\Services::validation();
 
-        $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|string',
-            'municipio'=>'required|max_length[50]|min_length[2]|string',
-            'colonia'=>'required|max_length[50]|min_length[2]|string',
-            'calle'=>'required|max_length[50]|min_length[2]|string',
-            'noExt'=>'required|max_length[11]|integer',
-            'noInt'=>'max_length[11]|',
-            'CP'=>'required|max_length[5]|integer',
-            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        $rules = [
+            'estado' => 'required|max_length[50]|min_length[2]|string',
+            'municipio' => 'required|max_length[50]|min_length[2]|string',
+            'colonia' => 'required|max_length[50]|min_length[2]|string',
+            'calle' => 'required|max_length[50]|min_length[2]|string',
+            'noExt' => 'required|max_length[11]|integer',
+            'noInt' => 'max_length[11]|',
+            'CP' => 'required|max_length[5]|integer',
+            'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
         $userInfoModel = model('UserInfoModel');
@@ -729,8 +730,8 @@ class Administrador extends BaseController
 
         $direccionModel = model('DireccionModel');
 
-        if(!$this->validate($rules)){
-            
+        if (!$this->validate($rules)) {
+
             $data = [
                 "id" => $_POST['id'],
                 "primerNombre" => $_POST['primerNombre'],
@@ -753,16 +754,16 @@ class Administrador extends BaseController
                 "statusSeguro" => $_POST['seguro'],
                 "habitosToxicos" => $_POST['habitosToxicos'],
                 "condicionesPrevias" => $_POST['condicionesPrevias'],
-                'validation'=>$validation
+                'validation' => $validation
             ];
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/pacientes/agregarPacientesDireccion',$data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/pacientes/agregarPacientesDireccion', $data) .
+                view('common/footer');
 
-        }else{
-          
+        } else {
+
             $data = array(
                 "CURP" => $_POST['CURP'],
                 "statusSeguro" => $_POST['seguro'],
@@ -772,25 +773,25 @@ class Administrador extends BaseController
                 "motivoRevision" => $_POST['motivoRevision'],
             );
             $pacienteModel->update(($_POST['PacienteID']), $data);
-    
+
             $data = array(
                 "correo" => $_POST['correo'],
                 "password" => $_POST['contraseña'],
             );
             $usersModel->update($_POST['id'], $data);
-    
-    
+
+
             $data = array(
                 "primerNombre" => $_POST['primerNombre'],
                 "segundoNombre" => $_POST['segundoNombre'],
                 "apellidoPaterno" => $_POST['apellidoPaterno'],
                 "apellidoMaterno" => $_POST['apellidoMaterno'],
                 "telefono" => $_POST['telefono'],
-                "foto"=>$_POST['foto']
+                "foto" => $_POST['foto']
             );
             $userInfoModel->update($_POST['id'], $data);
-    
-    
+
+
             $data = array(
                 "estado" => $_POST['estado'],
                 "municipio" => $_POST['municipio'],
@@ -802,10 +803,10 @@ class Administrador extends BaseController
                 "tipo" => $_POST['tipo'],
             );
             $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $data);
-    
+
             return redirect('administrador/pacientes/administrarPacientes', 'refresh');
-        } 
-        
+        }
+
     }
 
 
@@ -818,13 +819,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $direccionModel = model('DireccionModel');
@@ -858,13 +859,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -881,9 +882,9 @@ class Administrador extends BaseController
             Los siguientes modelos son para recuperar la información de los pacientes que son
             atendidos por cada médico
         */
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $usersModel->findAll();
@@ -904,13 +905,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -973,9 +974,9 @@ class Administrador extends BaseController
             Los siguientes modelos son para recuperar la información de los pacientes que son
             atendidos por cada médico
         */
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $usersModel->findAll();
@@ -997,13 +998,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -1025,9 +1026,9 @@ class Administrador extends BaseController
             Los siguientes modelos son para recuperar la información de los pacientes que son
             atendidos por cada médico
         */
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $userModel->findAll();
@@ -1050,13 +1051,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -1085,31 +1086,31 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
-            'segundoNombre'=>'max_length[15]',
-            'apellidoPaterno'=>'required|max_length[15]|string',
-            'apellidoMaterno'=>'required|max_length[15]|string',
-            'genero'=>'required|max_length[1]|alpha_numeric_punct',
-            'telefono'=>'required|max_length[15]|min_length[10]',
-            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|string',
-            'password'=>'required|max_length[150]|min_length[1]|string',
-            'foto'=>'required|max_length[250]|valid_url',
-            'especialidad'=>'required|max_length[50]|min_length[3]',
-            'diasLaborales'=>'required|max_length[50]|min_length[3]',
-            'turno'=>'required|max_length[50]|min_length[3]|alpha_numeric_punct',
+        $rules = [
+            'primerNombre' => 'required|max_length[15]|min_length[3]|string',
+            'segundoNombre' => 'max_length[15]',
+            'apellidoPaterno' => 'required|max_length[15]|string',
+            'apellidoMaterno' => 'required|max_length[15]|string',
+            'genero' => 'required|max_length[1]|alpha_numeric_punct',
+            'telefono' => 'required|max_length[15]|min_length[10]',
+            'correo' => 'required|max_length[100]|min_length[7]|valid_email',
+            'username' => 'required|max_length[50]|min_length[1]|string',
+            'password' => 'required|max_length[150]|min_length[1]|string',
+            'foto' => 'required|max_length[250]|valid_url',
+            'especialidad' => 'required|max_length[50]|min_length[3]',
+            'diasLaborales' => 'required|max_length[50]|min_length[3]',
+            'turno' => 'required|max_length[50]|min_length[3]|alpha_numeric_punct',
         ];
 
         $direccionModel = model('DireccionModel');
@@ -1129,32 +1130,32 @@ class Administrador extends BaseController
             "turno" => $_POST['turno'],
             "id" => $id,
             "direccion" => $direccionModel->where('userinfo', $id)->findAll(),
-            'validation'=>$validation
+            'validation' => $validation
         ];
 
-        if(!$this->validate($rules)){
+        if (!$this->validate($rules)) {
 
             $userInfoModel = model('UserInfoModel');
-        $data['usersInfo'] = $userInfoModel->find($id);
+            $data['usersInfo'] = $userInfoModel->find($id);
 
-        $usersModel = model('UsersModel');
-        $data['users'] = $usersModel->find($id);
+            $usersModel = model('UsersModel');
+            $data['users'] = $usersModel->find($id);
 
-        $idM = $usersModel->select('medico')->find($id)->medico;
-        $medicosModel = model('MedicoModel');
-        $data['medico'] = $medicosModel->find($idM);
+            $idM = $usersModel->select('medico')->find($id)->medico;
+            $medicosModel = model('MedicoModel');
+            $data['medico'] = $medicosModel->find($idM);
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/editarMedico', $data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/medicos/editarMedico', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/editarMedicoDireccion', $data) .
-            view('common/footer');
-        }   
+                view('common/menu') .
+                view('administrador/medicos/editarMedicoDireccion', $data) .
+                view('common/footer');
+        }
     }
 
     /*
@@ -1168,29 +1169,29 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|string',
-            'municipio'=>'required|max_length[50]|min_length[2]|string',
-            'colonia'=>'required|max_length[50]|min_length[2]|string',
-            'calle'=>'required|max_length[50]|min_length[2]|string',
-            'noExt'=>'required|max_length[11]|integer',
-            'noInt'=>'max_length[11]|',
-            'CP'=>'required|max_length[5]|integer',
-            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        $rules = [
+            'estado' => 'required|max_length[50]|min_length[2]|string',
+            'municipio' => 'required|max_length[50]|min_length[2]|string',
+            'colonia' => 'required|max_length[50]|min_length[2]|string',
+            'calle' => 'required|max_length[50]|min_length[2]|string',
+            'noExt' => 'required|max_length[11]|integer',
+            'noInt' => 'max_length[11]|',
+            'CP' => 'required|max_length[5]|integer',
+            'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
-        if(!$this->validate($rules)){
+        if (!$this->validate($rules)) {
             $direccionModel = model('DireccionModel');
 
             $data = [
@@ -1209,63 +1210,63 @@ class Administrador extends BaseController
                 "turno" => $_POST['turno'],
                 "id" => $_POST['id'],
                 "direccion" => $direccionModel->where('userinfo', $_POST['id'])->findAll(),
-                'validation'=>$validation
+                'validation' => $validation
             ];
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/editarMedicoDireccion',$data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/medicos/editarMedicoDireccion', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $medicosModel = model('MedicoModel');
-        $usersModel = model('UsersModel');
-        $userInfoModel = model('UserInfoModel');
-        $direccionModel = model('DireccionModel');
+            $usersModel = model('UsersModel');
+            $userInfoModel = model('UserInfoModel');
+            $direccionModel = model('DireccionModel');
 
-        $dataMedico = [
-            "especialidad" => $_POST['especialidad'],
-            "diasLaborales" => $_POST['diasLaborales'],
-            "turno" => $_POST['turno'],
-            "created_at" => date('Y-m-d')
-        ];
-        $medicosModel->update(($usersModel->select('medico')->find($_POST['id'])->medico), $dataMedico);
+            $dataMedico = [
+                "especialidad" => $_POST['especialidad'],
+                "diasLaborales" => $_POST['diasLaborales'],
+                "turno" => $_POST['turno'],
+                "created_at" => date('Y-m-d')
+            ];
+            $medicosModel->update(($usersModel->select('medico')->find($_POST['id'])->medico), $dataMedico);
 
-        $dataUser = [
-            "correo" => $_POST['correo'],
-            "username" => $_POST['username'],
-            "password" => $_POST['password'],
-            "created_at" => date('Y-m-d')
-        ];
-        $usersModel->update($_POST['id'], $dataUser);
+            $dataUser = [
+                "correo" => $_POST['correo'],
+                "username" => $_POST['username'],
+                "password" => $_POST['password'],
+                "created_at" => date('Y-m-d')
+            ];
+            $usersModel->update($_POST['id'], $dataUser);
 
-        $dataUserInfo = [
-            "primerNombre" => $_POST['primerNombre'],
-            "segundoNombre" => $_POST['segundoNombre'],
-            "apellidoPaterno" => $_POST['apellidoPaterno'],
-            "apellidoMaterno" => $_POST['apellidoMaterno'],
-            "genero" => $_POST['genero'],
-            "telefono" => $_POST['telefono'],
-            "foto" => $_POST['foto'],
-            "created_at" => date('Y-m-d')
-        ];
-        $userInfoModel->update($_POST['id'], $dataUserInfo);
+            $dataUserInfo = [
+                "primerNombre" => $_POST['primerNombre'],
+                "segundoNombre" => $_POST['segundoNombre'],
+                "apellidoPaterno" => $_POST['apellidoPaterno'],
+                "apellidoMaterno" => $_POST['apellidoMaterno'],
+                "genero" => $_POST['genero'],
+                "telefono" => $_POST['telefono'],
+                "foto" => $_POST['foto'],
+                "created_at" => date('Y-m-d')
+            ];
+            $userInfoModel->update($_POST['id'], $dataUserInfo);
 
-        $dataDireccion = [
-            "estado" => $_POST['estado'],
-            "municipio" => $_POST['municipio'],
-            "colonia" => $_POST['colonia'],
-            "calle" => $_POST['calle'],
-            "noInt" => $_POST['noInt'],
-            "noExt" => $_POST['noExt'],
-            "CP" => $_POST['CP'],
-            "tipo" => $_POST['tipo'],
-            "created_at" => date('Y-m-d')
-        ];
-        $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
+            $dataDireccion = [
+                "estado" => $_POST['estado'],
+                "municipio" => $_POST['municipio'],
+                "colonia" => $_POST['colonia'],
+                "calle" => $_POST['calle'],
+                "noInt" => $_POST['noInt'],
+                "noExt" => $_POST['noExt'],
+                "CP" => $_POST['CP'],
+                "tipo" => $_POST['tipo'],
+                "created_at" => date('Y-m-d')
+            ];
+            $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
 
-        return redirect('administrador/medicos/administrarMedicos', 'refresh');
-        }  
-        
+            return redirect('administrador/medicos/administrarMedicos', 'refresh');
+        }
+
     }
 
 
@@ -1278,13 +1279,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $direccionModel = model('DireccionModel');
@@ -1311,21 +1312,21 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
-        if(strtolower($this->request->getMethod())==='get'){
+        if (strtolower($this->request->getMethod()) === 'get') {
 
-        return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/agregarMedicos') .
-            view('common/footer');
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/medicos/agregarMedicos') .
+                view('common/footer');
         }
     }
 
@@ -1341,31 +1342,31 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'primerNombre'=>'required|max_length[15]|min_length[3]|string',
-            'segundoNombre'=>'max_length[15]',
-            'apellidoPaterno'=>'required|max_length[15]|string',
-            'apellidoMaterno'=>'required|max_length[15]|string',
-            'genero'=>'required|max_length[1]|alpha_numeric_punct',
-            'telefono'=>'required|max_length[15]|min_length[10]',
-            'correo'=>'required|max_length[100]|min_length[7]|valid_email',
-            'username'=>'required|max_length[50]|min_length[1]|string',
-            'password'=>'required|max_length[150]|min_length[1]|string',
-            'foto'=>'required|max_length[250]|valid_url',
-            'especialidad'=>'required|max_length[50]|min_length[3]',
-            'diasLaborales'=>'required|max_length[50]|min_length[3]',
-            'turno'=>'required|max_length[50]|min_length[3]|alpha_numeric_punct',
+        $rules = [
+            'primerNombre' => 'required|max_length[15]|min_length[3]|string',
+            'segundoNombre' => 'max_length[15]',
+            'apellidoPaterno' => 'required|max_length[15]|string',
+            'apellidoMaterno' => 'required|max_length[15]|string',
+            'genero' => 'required|max_length[1]|alpha_numeric_punct',
+            'telefono' => 'required|max_length[15]|min_length[10]',
+            'correo' => 'required|max_length[100]|min_length[7]|valid_email',
+            'username' => 'required|max_length[50]|min_length[1]|string',
+            'password' => 'required|max_length[150]|min_length[1]|string',
+            'foto' => 'required|max_length[250]|valid_url',
+            'especialidad' => 'required|max_length[50]|min_length[3]',
+            'diasLaborales' => 'required|max_length[50]|min_length[3]',
+            'turno' => 'required|max_length[50]|min_length[3]|alpha_numeric_punct',
         ];
 
         $data = [
@@ -1382,23 +1383,23 @@ class Administrador extends BaseController
             "especialidad" => $_POST['especialidad'],
             "diasLaborales" => $_POST['diasLaborales'],
             "turno" => $_POST['turno'],
-            'validation'=>$validation
+            'validation' => $validation
         ];
 
-        if(!$this->validate($rules)){
+        if (!$this->validate($rules)) {
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/agregarMedicos', $data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/medicos/agregarMedicos', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/agregarMedicosDireccion', $data) .
-            view('common/footer');
-        } 
-        
+                view('common/menu') .
+                view('administrador/medicos/agregarMedicosDireccion', $data) .
+                view('common/footer');
+        }
+
     }
 
     /* 
@@ -1411,29 +1412,29 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'estado'=>'required|max_length[50]|min_length[2]|string',
-            'municipio'=>'required|max_length[50]|min_length[2]|string',
-            'colonia'=>'required|max_length[50]|min_length[2]|string',
-            'calle'=>'required|max_length[50]|min_length[2]|string',
-            'noExt'=>'required|max_length[11]|integer',
-            'noInt'=>'max_length[11]|',
-            'CP'=>'required|max_length[5]|integer',
-            'tipo'=>'required|max_length[50]|min_length[2]|alpha_numeric_punct',
+        $rules = [
+            'estado' => 'required|max_length[50]|min_length[2]|string',
+            'municipio' => 'required|max_length[50]|min_length[2]|string',
+            'colonia' => 'required|max_length[50]|min_length[2]|string',
+            'calle' => 'required|max_length[50]|min_length[2]|string',
+            'noExt' => 'required|max_length[11]|integer',
+            'noInt' => 'max_length[11]|',
+            'CP' => 'required|max_length[5]|integer',
+            'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
-        if(!$this->validate($rules)){
+        if (!$this->validate($rules)) {
 
             $data = [
                 "primerNombre" => $_POST['primerNombre'],
@@ -1449,15 +1450,15 @@ class Administrador extends BaseController
                 "especialidad" => $_POST['especialidad'],
                 "diasLaborales" => $_POST['diasLaborales'],
                 "turno" => $_POST['turno'],
-                'validation'=>$validation
+                'validation' => $validation
             ];
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicos/agregarMedicosDireccion', $data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/medicos/agregarMedicosDireccion', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $medicosModel = model('MedicoModel');
             $dataMedicos = [
                 "especialidad" => $_POST['especialidad'],
@@ -1466,7 +1467,7 @@ class Administrador extends BaseController
                 "created_at" => date('Y-m-d')
             ];
             $medicosModel->insert($dataMedicos);
-    
+
             $usersModel = model('UsersModel');
             $dataUser = [
                 "correo" => $_POST['correo'],
@@ -1476,7 +1477,7 @@ class Administrador extends BaseController
                 "created_at" => date('Y-m-d')
             ];
             $usersModel->insert($dataUser);
-    
+
             $userInfoModel = model('UserInfoModel');
             $dataUserInfo = [
                 "id" => $usersModel->getInsertID(),
@@ -1490,7 +1491,7 @@ class Administrador extends BaseController
                 "created_at" => date('Y-m-d')
             ];
             $userInfoModel->insert($dataUserInfo);
-    
+
             $direccionModel = model('DireccionModel');
             $dataDireccion = [
                 "estado" => $_POST['estado'],
@@ -1505,9 +1506,9 @@ class Administrador extends BaseController
                 "created_at" => date('Y-m-d')
             ];
             $direccionModel->insert($dataDireccion);
-    
+
             return redirect('administrador/medicos/administrarMedicos', 'refresh');
-        } 
+        }
     }
 
 
@@ -1524,13 +1525,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
@@ -1542,22 +1543,22 @@ class Administrador extends BaseController
             view('common/footer');
     }
 
-     /* 
-        Función para buscar entre todos los medicamentos datos en específico.
-        Al terminar de hacer la búsqueda en los respectivos modelos, se redirige
-        a la vista de la función "administrarMedicamentos" 
-    */
+    /* 
+       Función para buscar entre todos los medicamentos datos en específico.
+       Al terminar de hacer la búsqueda en los respectivos modelos, se redirige
+       a la vista de la función "administrarMedicamentos" 
+   */
     public function buscarMedicamentos()
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
@@ -1610,13 +1611,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
@@ -1638,23 +1639,23 @@ class Administrador extends BaseController
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamento'] = $medicamentosModel->find($id);
 
-        if(strtolower($this->request->getMethod())==='get'){
+        if (strtolower($this->request->getMethod()) === 'get') {
 
-        return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicamentos/editarMedicamento', $data) .
-            view('common/footer');
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/medicamentos/editarMedicamento', $data) .
+                view('common/footer');
         }
 
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
     }
 
@@ -1669,30 +1670,30 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
         $medicamentosModel = model('MedicamentosModel');
 
-        $rules =[
-            'nombreComercial'=>'required|max_length[50]|min_length[3]|string',
-            'nombreCinetifico'=>'required|max_length[80]|min_length[3]|string',
-            'formaFarmaceutica'=>'required|max_length[20]|string',
-            'dosis'=>'required|max_length[11]|integer',
-            'fechaCaducidad'=>'required|valid_date',
-            'loteFabricacion'=>'required|max_length[10]|string',
-            'version'=>'required|max_length[15]|string',
-            'simbolo'=>'required',
-            'imagenEmpaque'=>'required|max_length[150]|valid_url',
-            'stock'=>'required|max_length[11]|integer',
+        $rules = [
+            'nombreComercial' => 'required|max_length[50]|min_length[3]|string',
+            'nombreCinetifico' => 'required|max_length[80]|min_length[3]|string',
+            'formaFarmaceutica' => 'required|max_length[20]|string',
+            'dosis' => 'required|max_length[11]|integer',
+            'fechaCaducidad' => 'required|valid_date',
+            'loteFabricacion' => 'required|max_length[10]|string',
+            'version' => 'required|max_length[15]|string',
+            'simbolo' => 'required',
+            'imagenEmpaque' => 'required|max_length[150]|valid_url',
+            'stock' => 'required|max_length[11]|integer',
         ];
 
         $data = [
@@ -1710,22 +1711,22 @@ class Administrador extends BaseController
         ];
 
 
-        if(!$this->validate($rules)){
-            $data['validation']=$validation;
+        if (!$this->validate($rules)) {
+            $data['validation'] = $validation;
 
             $data['medicamento'] = $medicamentosModel->find($_POST['id']);
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicamentos/editarMedicamento', $data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/medicamentos/editarMedicamento', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $medicamentosModel->update($_POST['id'], $data);
 
 
             return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
-        } 
+        }
 
     }
 
@@ -1737,13 +1738,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
@@ -1752,29 +1753,29 @@ class Administrador extends BaseController
         return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
     }
 
-     /* 
-        Función que redirige al formulario para agregar un medicamento 
-        a la respectiva tabla de la base de datos. 
-    */
+    /* 
+       Función que redirige al formulario para agregar un medicamento 
+       a la respectiva tabla de la base de datos. 
+   */
     public function agregarMedicamentos()
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
-        if(strtolower($this->request->getMethod())==='get'){
+        if (strtolower($this->request->getMethod()) === 'get') {
 
-        return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicamentos/agregarMedicamentos') .
-            view('common/footer');
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/medicamentos/agregarMedicamentos') .
+                view('common/footer');
         }
     }
 
@@ -1787,13 +1788,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
@@ -1814,34 +1815,34 @@ class Administrador extends BaseController
             "created_at" => time()
         ];
 
-        $rules =[
-            'nombreComercial'=>'required|max_length[50]|min_length[3]|string',
-            'nombreCinetifico'=>'required|max_length[80]|min_length[3]|string',
-            'formaFarmaceutica'=>'required|max_length[20]|string',
-            'dosis'=>'required|max_length[11]|integer',
-            'fechaCaducidad'=>'required|valid_date',
-            'loteFabricacion'=>'required|max_length[10]|string',
-            'version'=>'required|max_length[15]|string',
-            'simbolo'=>'required',
-            'imagenEmpaque'=>'required|max_length[150]|valid_url',
-            'stock'=>'required|max_length[11]|integer',
+        $rules = [
+            'nombreComercial' => 'required|max_length[50]|min_length[3]|string',
+            'nombreCinetifico' => 'required|max_length[80]|min_length[3]|string',
+            'formaFarmaceutica' => 'required|max_length[20]|string',
+            'dosis' => 'required|max_length[11]|integer',
+            'fechaCaducidad' => 'required|valid_date',
+            'loteFabricacion' => 'required|max_length[10]|string',
+            'version' => 'required|max_length[15]|string',
+            'simbolo' => 'required',
+            'imagenEmpaque' => 'required|max_length[150]|valid_url',
+            'stock' => 'required|max_length[11]|integer',
         ];
 
-        if(!$this->validate($rules)){
-            $data['validation']=$validation;
+        if (!$this->validate($rules)) {
+            $data['validation'] = $validation;
 
             return view('common/head') .
-            view('common/menu') .
-            view('administrador/medicamentos/agregarMedicamentos', $data) .
-            view('common/footer');
+                view('common/menu') .
+                view('administrador/medicamentos/agregarMedicamentos', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $medicamentosModel->insert($data, false);
 
-        return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
-        } 
+            return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
+        }
 
-        
+
     }
 
 
@@ -1857,18 +1858,18 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $consultasModel = model('ConsultasModel');
@@ -1893,13 +1894,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $consultasModel = model('ConsultasModel');
@@ -1928,7 +1929,7 @@ class Administrador extends BaseController
                     ->findAll();
             }
 
-             
+
             $data['recetas'] = $recetaModel->findAll();
         } else {
             $columnaBusquedaConsulta = "";
@@ -1949,16 +1950,17 @@ class Administrador extends BaseController
         específica que se requiera, actualizando la fecha de modiciación
         de dicho registro en la base de datos
     */
-    public function realizarConsulta($id){
+    public function realizarConsulta($id)
+    {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $consultasModel = model('ConsultasModel');
@@ -1969,54 +1971,55 @@ class Administrador extends BaseController
         $consultasModel->update($id, $data);
 
         return redirect('administrador/consultas/administrarConsultas', 'refresh');
-   }
+    }
 
 
     /*
         Función que añade 7 días a la fecha de consulta que se tiene registrada
     */
-   public function posponerConsulta($id){
-    //Proteger la ruta para que no accedan personas sin iniciar sesión
-    $session = session();
-    if($session->get('logged_in')!=TRUE){
-        return redirect('/','refresh');
+    public function posponerConsulta($id)
+    {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean administradores
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
+        }
+
+        $consultasModel = model('ConsultasModel');
+        $consulta = $consultasModel->find($id);
+        $nuevaFecha = date("Y-m-d", strtotime($consulta->fecha . "+ 7 days"));
+
+        $data = array(
+            "fecha" => $nuevaFecha,
+        );
+
+
+        $consultasModel->update($id, $data);
+
+        return redirect('administrador/consultas/administrarConsultas', 'refresh');
     }
 
-    //Proteger la ruta para que no accedan usuarios que no sean administradores
-    if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-        return redirect('/','refresh');
-    }
-
-    $consultasModel = model('ConsultasModel');
-    $consulta = $consultasModel->find($id);
-    $nuevaFecha=date("Y-m-d",strtotime($consulta->fecha."+ 7 days"));
-
-    $data = array(
-        "fecha" =>$nuevaFecha,
-    );
-   
-
-    $consultasModel->update($id, $data);
-
-    return redirect('administrador/consultas/administrarConsultas', 'refresh');
-}
-
- /*
-        Función para mostrar información más específica de cada consulta,
-        conectándola con la información de los usuarios "paciente" y 
-        "médico" de los cuales surgió la consulta (y posteriormente, la receta)
-    */
+    /*
+           Función para mostrar información más específica de cada consulta,
+           conectándola con la información de los usuarios "paciente" y 
+           "médico" de los cuales surgió la consulta (y posteriormente, la receta)
+       */
     public function consultaSaberMas($id)
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $consultasModel = model('ConsultasModel');
@@ -2030,28 +2033,28 @@ class Administrador extends BaseController
 
         $recetaMedicamentoModel = model('RecetaMedicamentoModel');
         $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
-        
-        
+
+
 
         /*
             Los siguientes modelos son para recuperar la información de los pacientes que son
             atendidos por cada médico en cada consulta
         */
-            $userInfoModel = model('UserInfoModel');
-            $userModel = model('UsersModel');
-            $medicoPacienteModel = model ('MedicoPacienteModel');
-            $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
 
-            $pacienteModel = model ('PacienteModel');
-            $data['pacientes'] = $pacienteModel->findAll();
-            $data['userInfoPacientes'] = $userInfoModel->findAll();
-            $data['userPacientes'] = $userModel->findAll();
+        $pacienteModel = model('PacienteModel');
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
 
-            
-            $medicoModel = model ('MedicoModel');
-            $data['medicos'] = $medicoModel->findAll();
-            $data['userInfoMedicos'] = $userInfoModel->findAll();
-            $data['userMedicos'] = $userModel->findAll();
+
+        $medicoModel = model('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $userModel->findAll();
 
         return view('common/head') .
             view('common/menu') .
@@ -2065,34 +2068,35 @@ class Administrador extends BaseController
         nueva consulta a la base de datos, empezando por buscar
         qué médico la realizará
     */
-    public function agregarMedicoConsulta(){
+    public function agregarMedicoConsulta()
+    {
 
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
-            $userInfoModel = model('UserInfoModel');
-            $userModel = model('UsersModel');
-            $medicoModel = model ('MedicoModel');
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $medicoModel = model('MedicoModel');
 
-            $data['medicos'] = $medicoModel->findAll();
-            $data['userInfoMedicos'] = $userInfoModel->findAll();
-            $data['userMedicos'] = $userModel->findAll();
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $userModel->findAll();
 
-            if(strtolower($this->request->getMethod())==='get'){
+        if (strtolower($this->request->getMethod()) === 'get') {
 
-        return view('common/head') .
-            view('common/menu') .
-            view('administrador/consultas/agregarMedicoConsulta',$data) .
-            view('common/footer');
-            }
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/consultas/agregarMedicoConsulta', $data) .
+                view('common/footer');
+        }
     }
 
 
@@ -2102,23 +2106,24 @@ class Administrador extends BaseController
         Es un apoyo a la función "agregarMedicoConsulta" pues reenvía
         al formulario con el mismo nombre, los datos actualizados
     */
-    public function agregarMedicoConsultaBuscar(){
+    public function agregarMedicoConsultaBuscar()
+    {
 
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $medicoModel = model ('MedicoModel');
-        
+        $medicoModel = model('MedicoModel');
+
         if (isset($_GET['columnaBusquedaMedicos']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaMedicos = $_GET['columnaBusquedaMedicos'];
             $valIngresado = $_GET['valIngresado'];
@@ -2168,47 +2173,48 @@ class Administrador extends BaseController
             $data['userMedicos'] = $userModel->findAll();
         }
 
-    return view('common/head') .
-        view('common/menu') .
-        view('administrador/consultas/agregarMedicoConsulta',$data) .
-        view('common/footer');
-}
+        return view('common/head') .
+            view('common/menu') .
+            view('administrador/consultas/agregarMedicoConsulta', $data) .
+            view('common/footer');
+    }
 
     /*
         Función que redirige al formulario que sirve para añadir una
         nueva consulta a la base de datos, empezando por buscar
         qué médico la realizará
     */
-    public function agregarPacienteConsulta($idMedico){
+    public function agregarPacienteConsulta($idMedico)
+    {
 
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
 
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $userModel->findAll();
         $data['idMedico'] = $idMedico;
 
-        if(strtolower($this->request->getMethod())==='post'){
+        if (strtolower($this->request->getMethod()) === 'post') {
 
-    return view('common/head') .
-        view('common/menu') .
-        view('administrador/consultas/agregarPacienteConsulta',$data) .
-        view('common/footer');
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/consultas/agregarPacienteConsulta', $data) .
+                view('common/footer');
         }
-}
+    }
 
 
     /*
@@ -2217,22 +2223,23 @@ class Administrador extends BaseController
         Es un apoyo a la función "agregarPacienteConsulta" pues reenvía
         al formulario con el mismo nombre, los datos actualizados
     */
-    public function agregarPacienteConsultaBuscar($idMedico){
+    public function agregarPacienteConsultaBuscar($idMedico)
+    {
 
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
 
         if (isset($_GET['columnaBusquedaPaciente']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaPaciente = $_GET['columnaBusquedaPaciente'];
@@ -2271,9 +2278,9 @@ class Administrador extends BaseController
 
 
         return view('common/head') .
-        view('common/menu') .
-        view('administrador/consultas/agregarPacienteConsulta',$data) .
-        view('common/footer');
+            view('common/menu') .
+            view('administrador/consultas/agregarPacienteConsulta', $data) .
+            view('common/footer');
     }
 
 
@@ -2282,17 +2289,18 @@ class Administrador extends BaseController
         Función que redirige al formulario que sirve para añadir la
         información referente a una nueva consulta, en la base de datos
     */
-    public function agregarConsulta($idPaciente){
+    public function agregarConsulta($idPaciente)
+    {
 
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicoPacienteModel = model('MedicoPacienteModel');
@@ -2300,16 +2308,16 @@ class Administrador extends BaseController
         $data['medicoPaciente'] = $medicoPacienteModel->findAll();
         $ExistenciaDeRelacion = 0;
         $ultimoID = 0;
-        foreach($data['medicoPaciente'] as $medicoPaciente){
-            if(($medicoPaciente->medico == $_POST['idMedico']) && ($medicoPaciente->paciente == $idPaciente)){
+        foreach ($data['medicoPaciente'] as $medicoPaciente) {
+            if (($medicoPaciente->medico == $_POST['idMedico']) && ($medicoPaciente->paciente == $idPaciente)) {
                 $ExistenciaDeRelacion = $medicoPaciente->id;
             }
             $ultimoID = $ultimoID + 1;
         }
 
-        if($ExistenciaDeRelacion != 0){
-        $data['medicoPaciente'] = $medicoPacienteModel->find($ExistenciaDeRelacion);
-        }else{
+        if ($ExistenciaDeRelacion != 0) {
+            $data['medicoPaciente'] = $medicoPacienteModel->find($ExistenciaDeRelacion);
+        } else {
             $data = [
                 "medico" => $_POST['idMedico'],
                 "paciente" => $idPaciente,
@@ -2318,15 +2326,15 @@ class Administrador extends BaseController
             $medicoPacienteModel->insert($data);
             $data['medicoPaciente'] = $medicoPacienteModel->find($ultimoID);
         }
-    
-        if(strtolower($this->request->getMethod())==='post'){
 
-    return view('common/head') .
-        view('common/menu') .
-        view('administrador/consultas/agregarInformacionConsulta',$data) .
-        view('common/footer');
+        if (strtolower($this->request->getMethod()) === 'post') {
+
+            return view('common/head') .
+                view('common/menu') .
+                view('administrador/consultas/agregarInformacionConsulta', $data) .
+                view('common/footer');
         }
-}
+    }
 
 
 
@@ -2340,76 +2348,76 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $validation = \Config\Services::validation();
 
-        $rules =[
-            'lugar'=>'required|max_length[15]|min_length[3]|string',
-            'hora'=>'max_length[15]',
-            'fecha'=>'required|max_length[15]|string',
-            'motivo'=>'required|max_length[250]|string',
+        $rules = [
+            'lugar' => 'required|max_length[15]|min_length[3]|string',
+            'hora' => 'max_length[15]',
+            'fecha' => 'required|max_length[15]|string',
+            'motivo' => 'required|max_length[250]|string',
         ];
 
-        if(!$this->validate($rules)){
+        if (!$this->validate($rules)) {
             $data['medicoPaciente'] = $_POST['idMedicoPaciente'];
 
             $medicoPacienteModel = model('MedicoPacienteModel');
             $userInfoModel = model('UserInfoModel');
-        $userModel = model('UsersModel');
-        $pacienteModel = model ('PacienteModel');
+            $userModel = model('UsersModel');
+            $pacienteModel = model('PacienteModel');
 
-        $data['medicoPaciente'] = $medicoPacienteModel->find($_POST['idMedicoPaciente']);
-        $data['pacientes'] = $pacienteModel->findAll();
-        $data['userInfoPacientes'] = $userInfoModel->findAll();
-        $data['userPacientes'] = $userModel->findAll();
-        $data['idMedico'] = $data['medicoPaciente']->medico;
-        $data['validation']= $validation;
+            $data['medicoPaciente'] = $medicoPacienteModel->find($_POST['idMedicoPaciente']);
+            $data['pacientes'] = $pacienteModel->findAll();
+            $data['userInfoPacientes'] = $userInfoModel->findAll();
+            $data['userPacientes'] = $userModel->findAll();
+            $data['idMedico'] = $data['medicoPaciente']->medico;
+            $data['validation'] = $validation;
 
             return view('common/head') .
-        view('common/menu') .
-        view('administrador/consultas/agregarInformacionConsulta',$data) .
-        view('common/footer');
+                view('common/menu') .
+                view('administrador/consultas/agregarInformacionConsulta', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $consultasModel = model('ConsultasModel');
-        $dataConsulta = [
-            "lugar" => $_POST['lugar'],
-            "hora" => $_POST['hora'],
-            "fecha" => $_POST['fecha'],
-            "motivo" => $_POST['motivo'],
-            "medico_paciente"=>$_POST['idMedicoPaciente'],
-            "created_at" => date('Y-m-d')
-        ];
-        $consultasModel->insert($dataConsulta);
+            $dataConsulta = [
+                "lugar" => $_POST['lugar'],
+                "hora" => $_POST['hora'],
+                "fecha" => $_POST['fecha'],
+                "motivo" => $_POST['motivo'],
+                "medico_paciente" => $_POST['idMedicoPaciente'],
+                "created_at" => date('Y-m-d')
+            ];
+            $consultasModel->insert($dataConsulta);
 
-        $recetaModel = model('RecetaModel');
-        $dataReceta = [
-            "status" => 0,
-            "fechaVencimiento" => date('0000-00-00'),
-            "consulta" => $consultasModel->getInsertID(),
-            "created_at" => date('Y-m-d')
-        ];
-        $recetaModel->insert($dataReceta);
+            $recetaModel = model('RecetaModel');
+            $dataReceta = [
+                "status" => 0,
+                "fechaVencimiento" => date('0000-00-00'),
+                "consulta" => $consultasModel->getInsertID(),
+                "created_at" => date('Y-m-d')
+            ];
+            $recetaModel->insert($dataReceta);
 
-        return redirect('administrador/consultas/administrarConsultas', 'refresh');
-        } 
+            return redirect('administrador/consultas/administrarConsultas', 'refresh');
+        }
 
-        
+
     }
 
 
 
 
 
-    
+
     //---------------------------------------------------------------------------------------------
     //                                     Sección para recetas
     //---------------------------------------------------------------------------------------------
@@ -2422,13 +2430,13 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $recetaModel = model('RecetaModel');
@@ -2442,7 +2450,7 @@ class Administrador extends BaseController
 
         $consultasModel = model('ConsultasModel');
         $data['consultas'] = $consultasModel->findAll();
-        
+
         return view('common/head') .
             view('common/menu') .
             view('administrador/recetas/administrarRecetas', $data) .
@@ -2453,17 +2461,18 @@ class Administrador extends BaseController
         Función para dar de baja una receta, cambiando su status, para
         que no sea válida en caso de que quiera usarse en otros procesos
     */
-   public function cancelarReceta($id){
-    //Proteger la ruta para que no accedan personas sin iniciar sesión
-    $session = session();
-    if($session->get('logged_in')!=TRUE){
-        return redirect('/','refresh');
-    }
+    public function cancelarReceta($id)
+    {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
+        }
 
-    //Proteger la ruta para que no accedan usuarios que no sean administradores
-    if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-        return redirect('/','refresh');
-    }
+        //Proteger la ruta para que no accedan usuarios que no sean administradores
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
+        }
 
         $recetaModel = model('RecetaModel');
         $data = array(
@@ -2474,34 +2483,35 @@ class Administrador extends BaseController
         $recetaModel->update($id, $data);
 
         return redirect('administrador/recetas/administrarRecetas', 'refresh');
-   }
-
-   /*
-    Función para reactivar el status de la receta, agregando más tiempo a
-    la fecha de vencimiento (hasta el año 2048)
-   */
-   public function renovarReceta($id){
-    //Proteger la ruta para que no accedan personas sin iniciar sesión
-    $session = session();
-    if($session->get('logged_in')!=TRUE){
-        return redirect('/','refresh');
     }
 
-    //Proteger la ruta para que no accedan usuarios que no sean administradores
-    if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-        return redirect('/','refresh');
-    }
+    /*
+     Función para reactivar el status de la receta, agregando más tiempo a
+     la fecha de vencimiento (hasta el año 2048)
+    */
+    public function renovarReceta($id)
+    {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
+        }
 
-    $recetaModel = model('RecetaModel');
-    $data = array(
-        "status" => 1,
-        "updated_at" => date('Y-m-d'),
-        "fechaVencimiento" => date('2048-m-d'),
-    );
+        //Proteger la ruta para que no accedan usuarios que no sean administradores
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
+        }
 
-    $recetaModel->update($id, $data);
+        $recetaModel = model('RecetaModel');
+        $data = array(
+            "status" => 1,
+            "updated_at" => date('Y-m-d'),
+            "fechaVencimiento" => date('2048-m-d'),
+        );
 
-    return redirect('administrador/recetas/administrarRecetas', 'refresh');
+        $recetaModel->update($id, $data);
+
+        return redirect('administrador/recetas/administrarRecetas', 'refresh');
     }
 
     /*
@@ -2513,15 +2523,15 @@ class Administrador extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean administradores
-        if($session->get('idMedico')==TRUE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == TRUE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
-        
+
         $recetaModel = model('RecetaModel');
         $data['receta'] = $recetaModel->find($id);
 
@@ -2530,7 +2540,7 @@ class Administrador extends BaseController
 
         $recetaMedicamentoModel = model('RecetaMedicamentoModel');
         $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
-        
+
         $consultasModel = model('ConsultasModel');
         $data['consultas'] = $consultasModel->findAll();
 
@@ -2541,16 +2551,16 @@ class Administrador extends BaseController
         */
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
 
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $userModel->findAll();
 
-        
-        $medicoModel = model ('MedicoModel');
+
+        $medicoModel = model('MedicoModel');
         $data['medicos'] = $medicoModel->findAll();
         $data['userInfoMedicos'] = $userInfoModel->findAll();
         $data['userMedicos'] = $userModel->findAll();

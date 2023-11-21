@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR CONSULTAS</h1>
+
         <div class="col-6">
             <form action="<?= base_url('index.php/paciente/consultas/buscarConsultas'); ?>" method="GET">
                 <div class="col-5">
@@ -54,21 +55,19 @@
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
             $medicoPacientePagina = array_slice($medicosPaciente, $indiceInicio, $registrosPorPagina); ?>
 
-<h4>Consultas Pendientes</h4>
+            <h4>Consultas Pendientes</h4>
             <table class="table">
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
                     <th style="text-align: center">Motivo de consulta </th>
                     <th style="text-align: center">Fecha de consulta </th>
                     <th style="text-align: center">Status de consulta </th>
                     <th style="text-align: center">Receta</th>
-
                 </thead>
 
-                <tbody>
-                    
-                <?php foreach ($medicoPacientePagina as $medicoPaciente): ?>
+                <tbody>   
+                    <?php foreach ($medicoPacientePagina as $medicoPaciente): ?>
                         <?php foreach ($consultasPendientes as $consulta):
                             if ($medicoPaciente->id == $consulta->medico_paciente): ?>
 
@@ -105,18 +104,16 @@
                                                         <a href="<?= base_url('/paciente/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
                                                         <?= 'Receta ' . $receta->id . ' que vence en ' . $receta->fechaVencimiento ?></a>
                                                 </td>
-                                            <?php endif; endforeach; ?>
-                                            <tr></tr>
                                     <?php endif; endforeach; ?>
-                            <?php endforeach ?>
-
+                                    <tr></tr>
+                        <?php endif; endforeach; ?>
+                    <?php endforeach ?>
                 </tbody>
-
             </table>
 <br><br>
             <h4>Consultas Terminadas</h4>
             <table class="table">
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
                     <th style="text-align: center">Motivo de consulta </th>
@@ -124,11 +121,9 @@
                     <th style="text-align: center">Status de consulta </th>
                     <th style="text-align: center">Receta</th>
                     <th style="text-align: center" colspan="3">Opciones</th>
-
                 </thead>
 
-                <tbody>
-                    
+                <tbody>    
                 <?php foreach ($medicoPacientePagina as $medicoPaciente): ?>
                         <?php foreach ($consultas as $consulta):
                             if (($medicoPaciente->id == $consulta->medico_paciente) && ($consulta->fecha != '0000-00-00')): ?>
@@ -167,22 +162,19 @@
                                                         <?= 'Receta ' . $receta->id . ' que vence en ' . $receta->fechaVencimiento ?></a>
                                                 </td>
 
-                                                        <td style="text-align: center">
-                                                            <a href="<?= base_url('/paciente/consultas/sabermasConsulta/' . $consulta->id); ?>"
-                                                                style="color:rgba(0,0,0,0.6)">
-                                                                <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
-                                                                    class="service-img" width="60" height="60">
-                                                                <figcaption>Saber más</figcaption>
-                                                            </a>
-                                                        </td>
+                                                <td style="text-align: center">
+                                                    <a href="<?= base_url('/paciente/consultas/sabermasConsulta/' . $consulta->id); ?>"
+                                                        style="color:rgba(0,0,0,0.6)">
+                                                        <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
+                                                            class="service-img" width="60" height="60">
+                                                        <figcaption>Saber más</figcaption>
+                                                    </a>
+                                                </td>
                                             </tr>
-                            
                                             <?php endif; endforeach; ?>
                                     <?php endif; endforeach; ?>
                             <?php endforeach ?>
-
                 </tbody>
-
             </table>
 
             <div class="col-5 mx-auto text-center">

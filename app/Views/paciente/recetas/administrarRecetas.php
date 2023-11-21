@@ -1,9 +1,8 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR RECETAS</h1>
-        <div class="col-4">
-            
-        </div>
+
+        <div class="col-4"></div>
 
         <div class="col-4"></div>
 
@@ -36,14 +35,13 @@
 
             <table class="table">
 
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Medicamentos recetados</th>
                     <th style="text-align: center">Consulta en la que se recetó</th>
                     <th style="text-align: center">Fecha de vencimiento </th>
                     <th style="text-align: center">Status </th>
                     <th style="text-align: center">Opciones</th>
-
                 </thead>
 
                 <tbody>
@@ -96,9 +94,7 @@
                                 <?php endif; endforeach; ?>
                                 <?php endif; endforeach; ?>
                     <?php endforeach; ?>
-                
                 </tbody>
-
             </table>
 
             <div class="col-5 mx-auto text-center">

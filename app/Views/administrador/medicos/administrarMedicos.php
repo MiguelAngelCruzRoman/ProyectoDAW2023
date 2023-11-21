@@ -22,7 +22,8 @@
                 <div class="col-5">
                     <form action="buscar">
                         <button type="submit" class="btn btn-secondary">
-                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25" height="25">
+                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25"
+                                height="25">
                             Realizar Búsqueda
                         </button>
                     </form>
@@ -54,10 +55,10 @@
             $totalPaginasUsuarios = ceil($totalRegistrosUsuarios / $registrosPorPaginaUsuarios);
             $paginaActualUsuarios = isset($_GET['paginaUsuarios']) ? $_GET['paginaUsuarios'] : 1;
             $indiceInicioUsuarios = ($paginaActualUsuarios - 1) * $registrosPorPaginaUsuarios;
-            $usersPagina = array_slice($users, $indiceInicioUsuarios, $registrosPorPaginaUsuarios);?>
+            $usersPagina = array_slice($users, $indiceInicioUsuarios, $registrosPorPaginaUsuarios); ?>
 
             <table class="table">
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre del médico</th>
                     <th style="text-align: center">Especialidad</th>
@@ -68,7 +69,7 @@
                 </thead>
 
                 <tbody>
-                <?php foreach ($usersPagina as $user):
+                    <?php foreach ($usersPagina as $user):
                         if ($user->medico != null): ?>
                             <tr>
                                 <?php foreach ($usersInfo as $ui):
@@ -88,26 +89,32 @@
                                         <td>
                                             <?= $medicos[($user->medico) - 1]->diasLaborales ?>
                                         </td>
-                        
+
                                         <td>
-                                            <?php foreach($medicosPaciente as $medicoPaciente): if($medicoPaciente->medico == $user->medico ):?>
-                                                <?php foreach($pacientes as $paciente): if($paciente->id == $medicoPaciente->paciente ):?>
-                                                    <?php foreach($userPacientes as $userPaciente): if($userPaciente->paciente == $medicoPaciente->paciente ):?>
-                                                        <?php foreach ($userInfoPacientes as $userInfoPaciente): if($userInfoPaciente->id == $userPaciente->id):?>
-                                                    <li><a href="<?= base_url('/administrador/pacientes/sabermasPaciente/' . $paciente->id); ?>"style="color:rgba(0,0,0,1)">
-                                                        <?php if($userInfoPaciente->genero =='M'):?>
-                                                            Sr.
-                                                        <?php else: ?>
-                                                            Sra.
-                                                        <?php endif; ?>
-                                                        <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
-                                                        ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno 
-                                                        ?></a>
-                                                    </li>
-                                                    <?php endif;endforeach; ?>
-                                                <?php endif;endforeach;?>
-                                            <?php endif;endforeach;?>
-                                        <?php endif;endforeach;?>
+                                            <?php foreach ($medicosPaciente as $medicoPaciente):
+                                                if ($medicoPaciente->medico == $user->medico): ?>
+                                                    <?php foreach ($pacientes as $paciente):
+                                                        if ($paciente->id == $medicoPaciente->paciente): ?>
+                                                            <?php foreach ($userPacientes as $userPaciente):
+                                                                if ($userPaciente->paciente == $medicoPaciente->paciente): ?>
+                                                                    <?php foreach ($userInfoPacientes as $userInfoPaciente):
+                                                                        if ($userInfoPaciente->id == $userPaciente->id): ?>
+                                                                            <li><a href="<?= base_url('/administrador/pacientes/sabermasPaciente/' . $paciente->id); ?>"
+                                                                                    style="color:rgba(0,0,0,1)">
+                                                                                    <?php if ($userInfoPaciente->genero == 'M'): ?>
+                                                                                        Sr.
+                                                                                    <?php else: ?>
+                                                                                        Sra.
+                                                                                    <?php endif; ?>
+                                                                                    <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
+                                                                                        ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno
+                                                                                        ?>
+                                                                                </a>
+                                                                            </li>
+                                                                        <?php endif; endforeach; ?>
+                                                                <?php endif; endforeach; ?>
+                                                        <?php endif; endforeach; ?>
+                                                <?php endif; endforeach; ?>
                                         </td>
 
                                         <td>
@@ -143,17 +150,22 @@
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActualUsuarios <= 1) ? 'disabled' : ''; ?>">
-                        <a class="page-link text-black" href="?paginaUsuarios=<?php echo $paginaActualUsuarios - 1; ?>">Anterior</a>
+                        <a class="page-link text-black"
+                            href="?paginaUsuarios=<?php echo $paginaActualUsuarios - 1; ?>">Anterior</a>
                     </li>
 
                     <?php for ($i = 1; $i <= $totalPaginasUsuarios; $i++): ?>
                         <li class="page-item <?php echo ($paginaActualUsuarios == $i) ? 'active' : ''; ?>">
-                            <a class="page-link text-black" href="?paginaUsuarios=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            <a class="page-link text-black" href="?paginaUsuarios=<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </a>
                         </li>
                     <?php endfor ?>
 
-                    <li class="page-item <?php echo ($paginaActualUsuarios >= $totalPaginasUsuarios) ? 'disabled' : ''; ?>">
-                        <a class="page-link text-black" href="?paginaUsuarios=<?php echo $paginaActualUsuarios + 1; ?>">Siguiente</a>
+                    <li
+                        class="page-item <?php echo ($paginaActualUsuarios >= $totalPaginasUsuarios) ? 'disabled' : ''; ?>">
+                        <a class="page-link text-black"
+                            href="?paginaUsuarios=<?php echo $paginaActualUsuarios + 1; ?>">Siguiente</a>
                     </li>
                 </ul>
             </div>

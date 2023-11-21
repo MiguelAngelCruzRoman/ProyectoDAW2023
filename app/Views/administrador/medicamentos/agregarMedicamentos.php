@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-    <?php
-    if(isset($validation)){
-        print $validation->listErrors();
-    }
-?>
+        <?php
+        if (isset($validation)) {
+            print $validation->listErrors();
+        }
+        ?>
         <div class="col-2"></div>
         <div class="col-8">
             <form action="<?= base_url('/administrador/medicamentos/agregarMedicamentos/insert'); ?>" method="POST">
@@ -13,12 +13,16 @@
 
                 <div class="mab-3">
                     <label for="nombreComercial" class="form-label">Nombre comercial:</label>
-                    <input type="text" class="form-control" name="nombreComercial" id="nombreComercial" placeholder="Ejemplo: Paracetamol" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="3">
+                    <input type="text" class="form-control" name="nombreComercial" id="nombreComercial"
+                        placeholder="Ejemplo: Paracetamol" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
+                        min_length="3">
                 </div>
 
                 <div class="mab-3">
                     <label for="nombreCinetifico" class="form-label">Nombre científico:</label>
-                    <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico" placeholder="Ejemplo: Acetaminofén" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="80" min_length="3">
+                    <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico"
+                        placeholder="Ejemplo: Acetaminofén" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="80"
+                        min_length="3">
                 </div>
 
                 <div class="mb-3">
@@ -58,12 +62,14 @@
 
                 <div class="mab-3">
                     <label for="loteFabricacion" class="form-label">Lote de fabricación:</label>
-                    <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion" placeholder="Ejemplo: ABC 78S" required pattern="[A-Z0-9\s]+" max_length="10" >
+                    <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion"
+                        placeholder="Ejemplo: ABC 78S" required pattern="[A-Z0-9\s]+" max_length="10">
                 </div>
 
                 <div class="mab-3">
                     <label for="stock" class="form-label">Stock:</label>
-                    <input type="number" class="form-control" name="stock" id="stock" placeholder="Ejemplo: 15" required pattern="[0-9]+" max_length="11" >
+                    <input type="number" class="form-control" name="stock" id="stock" placeholder="Ejemplo: 15" required
+                        pattern="[0-9]+" max_length="11">
                 </div>
 
                 <div class="mb-3">
@@ -92,23 +98,27 @@
 
                 <div class="mab-3">
                     <label for="imagenEmpaque" class="form-label">Imagen del empaque:</label>
-                    <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque" placeholder="Ejemplo: https://foto.png" required  max_length="150" >
+                    <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque"
+                        placeholder="Ejemplo: https://foto.png" required max_length="150">
                 </div>
 
                 <br>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success">
-                        <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Agregar" width="25" height="25">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Agregar" width="25"
+                            height="25">
                         Agregar
                     </button>
                 </div>
             </form>
 
             <div class="mb-3">
-                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/medicamentos/administrarMedicamentos/'">
-                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
-                        Cancelar
-                    </button>
+                <button type="submit" class="btn btn-danger"
+                    onclick="window.location.href='/administrador/medicamentos/administrarMedicamentos/'">
+                    <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25"
+                        height="25">
+                    Cancelar
+                </button>
             </div>
         </div>
     </div>

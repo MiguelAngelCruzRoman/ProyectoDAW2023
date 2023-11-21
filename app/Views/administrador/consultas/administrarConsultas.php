@@ -127,7 +127,7 @@
                                             <figcaption>Realizar</figcaption>
                                         </a>
                                     </td>
-                                                                    <?php endif;?>
+                                <?php endif;?>
                                 <td>
                                     <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
                                         style="color:rgba(0,0,0,0.6)">
@@ -148,10 +148,8 @@
                                     </a>
                                 </td>
                             <?php endif;?>
-                        </tr>
-                        <?php else: ?>
-                            
-                            <?php endif;endforeach; ?>
+                        </tr>                            
+                        <?php endif;endforeach; ?>
                     <?php endforeach ?>
 
                 </tbody>

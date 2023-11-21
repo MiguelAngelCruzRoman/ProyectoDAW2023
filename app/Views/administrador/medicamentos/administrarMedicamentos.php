@@ -20,7 +20,8 @@
                 <div class="col-5">
                     <form action="buscar">
                         <button type="submit" class="btn btn-secondary">
-                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25" height="25">
+                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25"
+                                height="25">
                             Realizar Búsqueda
                         </button>
                     </form>
@@ -45,7 +46,7 @@
     <br>
 
 
-    
+
 
     <div class="row">
         <div class="col-12">
@@ -59,7 +60,7 @@
 
             <table class="table">
 
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre comercial</th>
                     <th style="text-align: center">Nombre científico</th>
@@ -73,16 +74,33 @@
                 </thead>
 
                 <tbody>
-                <?php foreach ($medicamentosPagina as $medicamento): ?>
+                    <?php foreach ($medicamentosPagina as $medicamento): ?>
                         <tr>
-                            <td><?= $medicamento->id ?></td>
-                            <td><?= $medicamento->nombreComercial ?></td>
-                            <td><?= $medicamento->nombreCinetifico ?></td>
-                            <td><?= $medicamento->formaFarmaceutica ?></td>
-                            <td><?= $medicamento->dosis ?> mg (<?= $medicamento->version ?>)</td>
-                            <td><?= $medicamento->simbolo ?></td>
-                            <td><?= $medicamento->fechaCaducidad ?></td>
-                            <td style="text-align: center"><?= $medicamento->stock ?></td>
+                            <td>
+                                <?= $medicamento->id ?>
+                            </td>
+                            <td>
+                                <?= $medicamento->nombreComercial ?>
+                            </td>
+                            <td>
+                                <?= $medicamento->nombreCinetifico ?>
+                            </td>
+                            <td>
+                                <?= $medicamento->formaFarmaceutica ?>
+                            </td>
+                            <td>
+                                <?= $medicamento->dosis ?> mg (
+                                <?= $medicamento->version ?>)
+                            </td>
+                            <td>
+                                <?= $medicamento->simbolo ?>
+                            </td>
+                            <td>
+                                <?= $medicamento->fechaCaducidad ?>
+                            </td>
+                            <td style="text-align: center">
+                                <?= $medicamento->stock ?>
+                            </td>
                             <td>
                                 <a href="<?= base_url('/administrador/medicamentos/editarMedicamento/' . $medicamento->id); ?>"
                                     style="color:rgba(0,0,0,0.6)">
@@ -122,7 +140,9 @@
 
                     <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
                         <li class="page-item <?php echo ($paginaActual == $i) ? 'active' : ''; ?>">
-                            <a class="page-link text-black" href="?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            <a class="page-link text-black" href="?pagina=<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </a>
                         </li>
                     <?php endfor ?>
 

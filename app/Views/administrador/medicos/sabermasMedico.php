@@ -15,9 +15,10 @@
                                 Dr.
                             <?php endif; ?>
                             <?= $userinfo[0]->primerNombre . ' ' . $userinfo[0]->segundoNombre . ' ' . $userinfo[0]->apellidoPaterno . ' ' . $userinfo[0]->apellidoMaterno ?>
+                            <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del médico"
+                                width="300" height="400">
                         </h2>
 
-                        <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del medico" width="300" height="300">
 
                         <h4> Información del médico</h4>
                         <p><strong>Especialidad:</strong>
@@ -66,32 +67,38 @@
 
                         <h4>Pacientes que atiende</h4>
                         <ul>
-                            <?php foreach($medicosPaciente as $medicoPaciente): if($medicoPaciente->medico == $medico->id ):?>
-                                    <?php foreach($pacientes as $paciente): if($paciente->id == $medicoPaciente->paciente ):?>
-                                        <?php foreach($userPacientes as $userPaciente): if($userPaciente->paciente == $medicoPaciente->paciente ):?>
-                                            <?php foreach ($userInfoPacientes as $userInfoPaciente): if($userInfoPaciente->id == $userPaciente->id):?>
-                                        <li><a href="<?= base_url('/administrador/pacientes/sabermasPaciente/' . $paciente->id); ?>"style="color:rgba(0,0,0,1)">
-                                            <?php if($userInfoPaciente->genero =='M'):?>
-                                                Sr.
-                                            <?php else: ?>
-                                                Sra.
-                                            <?php endif; ?>
-                                            <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
-                                            ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno 
-                                            ?></a>
-                                        </li>
-                                        <?php endif;endforeach; ?>
-                                    <?php endif;endforeach;?>
-                                <?php endif;endforeach;?>
-                            <?php endif;endforeach;?>
+                            <?php foreach ($medicosPaciente as $medicoPaciente):
+                                if ($medicoPaciente->medico == $medico->id): ?>
+                                    <?php foreach ($pacientes as $paciente):
+                                        if ($paciente->id == $medicoPaciente->paciente): ?>
+                                            <?php foreach ($userPacientes as $userPaciente):
+                                                if ($userPaciente->paciente == $medicoPaciente->paciente): ?>
+                                                    <?php foreach ($userInfoPacientes as $userInfoPaciente):
+                                                        if ($userInfoPaciente->id == $userPaciente->id): ?>
+                                                            <li><a href="<?= base_url('/administrador/pacientes/sabermasPaciente/' . $paciente->id); ?>"
+                                                                    style="color:rgba(0,0,0,1)">
+                                                                    <?php if ($userInfoPaciente->genero == 'M'): ?>
+                                                                        Sr.
+                                                                    <?php else: ?>
+                                                                        Sra.
+                                                                    <?php endif; ?>
+                                                                    <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
+                                                                        ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno
+                                                                        ?>
+                                                                </a>
+                                                            </li>
+                                                        <?php endif; endforeach; ?>
+                                                <?php endif; endforeach; ?>
+                                        <?php endif; endforeach; ?>
+                                <?php endif; endforeach; ?>
                         </ul>
 
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 
                                 <div class="col-md-3">
-                                    <a href="<?= base_url('/administrador/medicos/editarMedico/' . $id); ?>" class="text-center"
-                                        style="color:rgba(0,0,0,1)">
+                                    <a href="<?= base_url('/administrador/medicos/editarMedico/' . $id); ?>"
+                                        class="text-center" style="color:rgba(0,0,0,1)">
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/705/705120.png"
                                                 alt="editar" class="service-img" width="60" height="60">
@@ -101,8 +108,8 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <a href="<?= base_url('/administrador/medicos/eliminarMedico/' . $id); ?>" class="text-center"
-                                        style="color:rgba(0,0,0,1)">
+                                    <a href="<?= base_url('/administrador/medicos/eliminarMedico/' . $id); ?>"
+                                        class="text-center" style="color:rgba(0,0,0,1)">
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/3541/3541990.png"
                                                 alt="eliminar" class="service-img" width="60" height="60">

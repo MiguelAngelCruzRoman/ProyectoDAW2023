@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-    <?php
-    if(isset($validation)){
-        print $validation->listErrors();
-    }
-?>
+        <?php
+        if (isset($validation)) {
+            print $validation->listErrors();
+        }
+        ?>
         <div class="col-2"></div>
         <div class="col-8">
             <form action="<?= base_url('/administrador/pacientes/agregarPacientesDireccion'); ?>" method="POST">
@@ -61,7 +61,7 @@
 
                 <div class="mab-3">
                     <label for="fechaChequeo" class="form-label">Fecha de última revisión:</label>
-                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" required >
+                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" required>
                 </div>
 
                 <div class="mb-3">
@@ -101,21 +101,25 @@
                 <br>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585717.png" alt="Siguiente" width="25" height="25">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585717.png" alt="Siguiente" width="25"
+                            height="25">
                         Siguiente
                     </button>
                 </div>
             </form>
 
             <div class="mb-3">
-                    <button type="submit" class="btn btn-primary" onclick="window.history.back()">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25" height="25">
-                        Regresar
-                    </button>
-                    <button type="submit" class="btn btn-danger" onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
-                        <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25" height="25">
-                        Cancelar
-                    </button>
+                <button type="submit" class="btn btn-primary" onclick="window.history.back()">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25"
+                        height="25">
+                    Regresar
+                </button>
+                <button type="submit" class="btn btn-danger"
+                    onclick="window.location.href='/administrador/pacientes/administrarPacientes'">
+                    <img src="https://cdn-icons-png.flaticon.com/128/561/561189.png" alt="Cancelar" width="25"
+                        height="25">
+                    Cancelar
+                </button>
             </div>
 
         </div>

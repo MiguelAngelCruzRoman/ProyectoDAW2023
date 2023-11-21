@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+
 $session = \Config\Services::session();
 
 // Controlador diseñado para hacer las funcionalidades del rol del Médico
@@ -23,13 +24,13 @@ class Medico extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         return view('common/head') .
@@ -47,13 +48,13 @@ class Medico extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -66,7 +67,7 @@ class Medico extends BaseController
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $userModel->findAll();
-        $data['medicoPacientes'] = $medicoPacientModel->where('medico',$data['idMedico'])->findAll();
+        $data['medicoPacientes'] = $medicoPacientModel->where('medico', $data['idMedico'])->findAll();
 
         if (strtolower($this->request->getMethod()) === 'get') {
 
@@ -81,13 +82,13 @@ class Medico extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
@@ -99,13 +100,13 @@ class Medico extends BaseController
         if (isset($_GET['valIngresado'])) {
             $valIngresado = $_GET['valIngresado'];
 
-                $data['userInfoPacientes'] = $userInfoModel->like('primerNombre', $valIngresado)
-                    ->orlike('segundoNombre', $valIngresado)
-                    ->orlike('apellidoPaterno', $valIngresado)
-                    ->orlike('apellidoMaterno', $valIngresado)
-                    ->findAll();
-                $data['userPacientes'] = $userModel->findAll();
-            
+            $data['userInfoPacientes'] = $userInfoModel->like('primerNombre', $valIngresado)
+                ->orlike('segundoNombre', $valIngresado)
+                ->orlike('apellidoPaterno', $valIngresado)
+                ->orlike('apellidoMaterno', $valIngresado)
+                ->findAll();
+            $data['userPacientes'] = $userModel->findAll();
+
         } else {
             $valIngresado = "";
             $data['userInfoPacientes'] = $userInfoModel->findAll();
@@ -114,7 +115,7 @@ class Medico extends BaseController
 
         $data['idMedico'] = $session->get('idMedico');
         $data['pacientes'] = $pacienteModel->findAll();
-        $data['medicoPacientes'] = $medicoPacientModel->where('medico',$data['idMedico'])->findAll();
+        $data['medicoPacientes'] = $medicoPacientModel->where('medico', $data['idMedico'])->findAll();
 
 
         return view('common/head') .
@@ -124,36 +125,36 @@ class Medico extends BaseController
     }
 
 
-     /* 
-        Función para ver toda la información referente a cada usuario paciente.
-        Esta función manda a traer un id en específico, mismo que es parte
-        de los id que se utilizan para identificar a los usuarios en 
-        la función "administrarPacientes"
-    */
+    /* 
+       Función para ver toda la información referente a cada usuario paciente.
+       Esta función manda a traer un id en específico, mismo que es parte
+       de los id que se utilizan para identificar a los usuarios en 
+       la función "administrarPacientes"
+   */
     public function pacienteSaberMas($id)
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
         $pacienteModel = model('PacienteModel');
-        $consultasModel = model ('ConsultasModel');
-         
+        $consultasModel = model('ConsultasModel');
+
         $data['user'] = $userModel->where('paciente', $id)->findAll();
         $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
         $data['paciente'] = $pacienteModel->find($id);
-        $data['consultas'] = $consultasModel->where('medico_paciente',($_GET['IDmedicoPaciente']))->findAll();
+        $data['consultas'] = $consultasModel->where('medico_paciente', ($_GET['IDmedicoPaciente']))->findAll();
         $data['id'] = $id;
-        $data['IDMedicoPaciente']= $_GET['IDmedicoPaciente'];
+        $data['IDMedicoPaciente'] = $_GET['IDmedicoPaciente'];
 
         return view('common/head') .
             view('common/menu') .
@@ -174,22 +175,22 @@ class Medico extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $session = \Config\Services::session();
 
         $medicoPacienteModel = model('MedicoPacienteModel');
-        $data['medicosPaciente'] = $medicoPacienteModel->where('medico',($session->get('idMedico')))->findAll();
+        $data['medicosPaciente'] = $medicoPacienteModel->where('medico', ($session->get('idMedico')))->findAll();
 
         $consultasModel = model('ConsultasModel');
-        $data['consultasPendientes'] = $consultasModel->where('fecha',NULL)->findAll();
+        $data['consultasPendientes'] = $consultasModel->where('fecha', NULL)->findAll();
 
         $data['consultas'] = $consultasModel->findAll();
 
@@ -205,47 +206,48 @@ class Medico extends BaseController
     /*
         Función que añade 7 días a la fecha de consulta que se tiene registrada
     */
-   public function posponerConsulta($id){
-    //Proteger la ruta para que no accedan personas sin iniciar sesión
-    $session = session();
-    if($session->get('logged_in')!=TRUE){
-        return redirect('/','refresh');
+    public function posponerConsulta($id)
+    {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
+        }
+
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
+        }
+
+        $consultasModel = model('ConsultasModel');
+        $consulta = $consultasModel->find($id);
+        $nuevaFecha = date("Y-m-d", strtotime($consulta->fecha . "+ 7 days"));
+
+        $data = array(
+            "fecha" => $nuevaFecha,
+        );
+
+        $consultasModel->update($id, $data);
+
+        return redirect('medico/consultas/administrarConsultas', 'refresh');
     }
 
-    //Proteger la ruta para que no accedan usuarios que no sean médicos
-    if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-        return redirect('/','refresh');
-    }
-
-    $consultasModel = model('ConsultasModel');
-    $consulta = $consultasModel->find($id);
-    $nuevaFecha=date("Y-m-d",strtotime($consulta->fecha."+ 7 days"));
-
-    $data = array(
-        "fecha" =>$nuevaFecha,
-    );
-    
-    $consultasModel->update($id, $data);
-
-    return redirect('medico/consultas/administrarConsultas', 'refresh');
-}
-
-/*
-        Función para mostrar información más específica de cada consulta,
-        conectándola con la información de los usuarios "paciente" y 
-        "médico" de los cuales surgió la consulta (y posteriormente, la receta)
-    */
+    /*
+            Función para mostrar información más específica de cada consulta,
+            conectándola con la información de los usuarios "paciente" y 
+            "médico" de los cuales surgió la consulta (y posteriormente, la receta)
+        */
     public function consultaSaberMas($id)
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $consultasModel = model('ConsultasModel');
@@ -259,28 +261,28 @@ class Medico extends BaseController
 
         $recetaMedicamentoModel = model('RecetaMedicamentoModel');
         $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
-        
-        
+
+
 
         /*
             Los siguientes modelos son para recuperar la información de los pacientes que son
             atendidos por cada médico en cada consulta
         */
-            $userInfoModel = model('UserInfoModel');
-            $userModel = model('UsersModel');
-            $medicoPacienteModel = model ('MedicoPacienteModel');
-            $data['medicosPaciente'] = $medicoPacienteModel->findAll();
+        $userInfoModel = model('UserInfoModel');
+        $userModel = model('UsersModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
+        $data['medicosPaciente'] = $medicoPacienteModel->findAll();
 
-            $pacienteModel = model ('PacienteModel');
-            $data['pacientes'] = $pacienteModel->findAll();
-            $data['userInfoPacientes'] = $userInfoModel->findAll();
-            $data['userPacientes'] = $userModel->findAll();
+        $pacienteModel = model('PacienteModel');
+        $data['pacientes'] = $pacienteModel->findAll();
+        $data['userInfoPacientes'] = $userInfoModel->findAll();
+        $data['userPacientes'] = $userModel->findAll();
 
-            
-            $medicoModel = model ('MedicoModel');
-            $data['medicos'] = $medicoModel->findAll();
-            $data['userInfoMedicos'] = $userInfoModel->findAll();
-            $data['userMedicos'] = $userModel->findAll();
+
+        $medicoModel = model('MedicoModel');
+        $data['medicos'] = $medicoModel->findAll();
+        $data['userInfoMedicos'] = $userInfoModel->findAll();
+        $data['userMedicos'] = $userModel->findAll();
 
         return view('common/head') .
             view('common/menu') .
@@ -294,75 +296,77 @@ class Medico extends BaseController
         Función para completar el formulario de la consulta nueva
         que va a realizar el médico
     */
-    public function realizarConsultaFormulario($id){
+    public function realizarConsultaFormulario($id)
+    {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamentos'] = $medicamentosModel->findAll();
 
-        $consultaModel = model ('ConsultasModel');
+        $consultaModel = model('ConsultasModel');
         $dataConsulta = [
             "lugar" => '',
             "hora" => '',
             "fecha" => '',
             "motivo" => '',
-            "medico_paciente"=>$id,
+            "medico_paciente" => $id,
             "created_at" => date('Y-m-d')
         ];
 
-        
+
         $consultaModel->insert($dataConsulta);
-        $data['medico_paciente']=$id;
-        $data['consulta'] = $consultaModel->where('fecha',null)->orderBy('id','desc')->findAll();
+        $data['medico_paciente'] = $id;
+        $data['consulta'] = $consultaModel->where('fecha', null)->orderBy('id', 'desc')->findAll();
 
 
         return view('common/head') .
             view('common/menu') .
             view('medico/consultas/realizarConsultaFormulario', $data) .
             view('common/footer');
-   }
+    }
 
-   /*
-        Función para completar el formulario de la consulta pendiente
-        que tiene el médico
-    */
-    public function completarConsulta($id){
+    /*
+         Función para completar el formulario de la consulta pendiente
+         que tiene el médico
+     */
+    public function completarConsulta($id)
+    {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
         $data['medicamentos'] = $medicamentosModel->findAll();
 
-        $consultaModel = model ('ConsultasModel');
+        $consultaModel = model('ConsultasModel');
 
-     
+
         $data['consulta'] = $consultaModel->find($id);
 
 
-        $data['medico_paciente']=$data['consulta']->medico_paciente;
+        $data['medico_paciente'] = $data['consulta']->medico_paciente;
 
         return view('common/head') .
             view('common/menu') .
             view('medico/consultas/completarConsulta', $data) .
             view('common/footer');
-   }
+    }
 
 
     /*
@@ -370,74 +374,75 @@ class Medico extends BaseController
         específica que se requiera, actualizando la fecha de modiciación
         de dicho registro en la base de datos
     */
-    public function realizarConsulta($id){
+    public function realizarConsulta($id)
+    {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
-        $rules =[
-            'lugar'=>'required|max_length[15]|min_length[3]|string',
-            'motivo'=>'required|max_length[250]|string',
+        $rules = [
+            'lugar' => 'required|max_length[15]|min_length[3]|string',
+            'motivo' => 'required|max_length[250]|string',
         ];
 
-        if(!$this->validate($rules)){    
+        if (!$this->validate($rules)) {
             $medicamentosModel = model('MedicamentosModel');
-        $data['medicamentos'] = $medicamentosModel->findAll();
+            $data['medicamentos'] = $medicamentosModel->findAll();
 
-            $consultaModel = model ('ConsultasModel');
-            $data['medico_paciente']=$_POST['medico_paciente'];
+            $consultaModel = model('ConsultasModel');
+            $data['medico_paciente'] = $_POST['medico_paciente'];
 
             $data['consulta'] = $consultaModel->find($_POST['IDconsulta']);
-            
+
             return view('common/head') .
-        view('common/menu') .
-        view('medico/consultas/realizarConsultaFormulario',$data) .
-        view('common/footer');
+                view('common/menu') .
+                view('medico/consultas/realizarConsultaFormulario', $data) .
+                view('common/footer');
 
-        }else{
+        } else {
             $consultasModel = model('ConsultasModel');
-        $dataConsulta = [
-            "lugar" => $_POST['lugar'],
-            "hora" => date('h:i:s'),
-            "fecha" => date("Y-m-d",strtotime(date('Y-m-d')."- 1 days")),
-            "motivo" => $_POST['motivo'],
-            "medico_paciente"=>$_POST['medico_paciente'],
-            "created_at" => date('Y-m-d'),
-            "updated_at" => date("Y-m-d",strtotime(date('Y-m-d')."- 1 days"))
-        ];
-        $consultasModel->delete($_POST['IDconsulta']);
-        $consultasModel->insert($dataConsulta);
-
-        $nuevaFecha=date("Y-m-d",strtotime(date('Y-m-d')."+ 15 days"));
-
-        $recetaModel = model('RecetaModel');
-        $dataReceta = [
-            "status" => 1,
-            "fechaVencimiento" => $nuevaFecha,
-            "consulta" => $consultasModel->getInsertID(),
-            "created_at" => date('Y-m-d')
-        ];
-        $recetaModel->insert($dataReceta);
-
-        $recetaMedicamentoModel = model('RecetaMedicamentoModel');
-        foreach($_POST['medicamentos'] as $medicamento){
-            $dataRecetaMedicamento = [
-                "receta"=>$recetaModel->getInsertID(),
-                "medicamento"=>$medicamento
+            $dataConsulta = [
+                "lugar" => $_POST['lugar'],
+                "hora" => date('h:i:s'),
+                "fecha" => date("Y-m-d", strtotime(date('Y-m-d') . "- 1 days")),
+                "motivo" => $_POST['motivo'],
+                "medico_paciente" => $_POST['medico_paciente'],
+                "created_at" => date('Y-m-d'),
+                "updated_at" => date("Y-m-d", strtotime(date('Y-m-d') . "- 1 days"))
             ];
-            $recetaMedicamentoModel->insert($dataRecetaMedicamento);
-        }
-        return redirect('medico/consultas/administrarConsultas', 'refresh');
-        } 
+            $consultasModel->delete($_POST['IDconsulta']);
+            $consultasModel->insert($dataConsulta);
 
-   }
+            $nuevaFecha = date("Y-m-d", strtotime(date('Y-m-d') . "+ 15 days"));
+
+            $recetaModel = model('RecetaModel');
+            $dataReceta = [
+                "status" => 1,
+                "fechaVencimiento" => $nuevaFecha,
+                "consulta" => $consultasModel->getInsertID(),
+                "created_at" => date('Y-m-d')
+            ];
+            $recetaModel->insert($dataReceta);
+
+            $recetaMedicamentoModel = model('RecetaMedicamentoModel');
+            foreach ($_POST['medicamentos'] as $medicamento) {
+                $dataRecetaMedicamento = [
+                    "receta" => $recetaModel->getInsertID(),
+                    "medicamento" => $medicamento
+                ];
+                $recetaMedicamentoModel->insert($dataRecetaMedicamento);
+            }
+            return redirect('medico/consultas/administrarConsultas', 'refresh');
+        }
+
+    }
 
 
 
@@ -445,23 +450,23 @@ class Medico extends BaseController
     //---------------------------------------------------------------------------------------------
     //                                     Sección para medicamentos
     //---------------------------------------------------------------------------------------------
- /* 
-        Función para ver toda la información referente a cada medicamento.
-        Esta función manda a traer un id en específico, mismo que es parte
-        de los id que se utilizan para identificar a los medicamentos en 
-        la función "administrarMedicamentos"
-    */
+    /* 
+           Función para ver toda la información referente a cada medicamento.
+           Esta función manda a traer un id en específico, mismo que es parte
+           de los id que se utilizan para identificar a los medicamentos en 
+           la función "administrarMedicamentos"
+       */
     public function medicamentoSaberMas($id)
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $medicamentosModel = model('MedicamentosModel');
@@ -477,7 +482,7 @@ class Medico extends BaseController
 
 
 
-     //---------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
     //                                     Sección para recetas
     //---------------------------------------------------------------------------------------------
 
@@ -490,13 +495,13 @@ class Medico extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $recetaModel = model('RecetaModel');
@@ -507,7 +512,7 @@ class Medico extends BaseController
 
         $recetaMedicamentoModel = model('RecetaMedicamentoModel');
         $data['recetaMedicamentos'] = $recetaMedicamentoModel->findAll();
-        
+
         $consultasModel = model('ConsultasModel');
         $data['consultas'] = $consultasModel->findAll();
 
@@ -518,16 +523,16 @@ class Medico extends BaseController
         */
         $userInfoModel = model('UserInfoModel');
         $userModel = model('UsersModel');
-        $medicoPacienteModel = model ('MedicoPacienteModel');
+        $medicoPacienteModel = model('MedicoPacienteModel');
         $data['medicosPaciente'] = $medicoPacienteModel->findAll();
 
-        $pacienteModel = model ('PacienteModel');
+        $pacienteModel = model('PacienteModel');
         $data['pacientes'] = $pacienteModel->findAll();
         $data['userInfoPacientes'] = $userInfoModel->findAll();
         $data['userPacientes'] = $userModel->findAll();
 
-        
-        $medicoModel = model ('MedicoModel');
+
+        $medicoModel = model('MedicoModel');
         $data['medicos'] = $medicoModel->findAll();
         $data['userInfoMedicos'] = $userInfoModel->findAll();
         $data['userMedicos'] = $userModel->findAll();
@@ -547,19 +552,19 @@ class Medico extends BaseController
     {
         //Proteger la ruta para que no accedan personas sin iniciar sesión
         $session = session();
-        if($session->get('logged_in')!=TRUE){
-            return redirect('/','refresh');
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
         }
 
         //Proteger la ruta para que no accedan usuarios que no sean médicos
-        if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-            return redirect('/','refresh');
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
         }
 
         $session = \Config\Services::session();
 
         $medicoPacienteModel = model('MedicoPacienteModel');
-        $data['medicosPaciente'] = $medicoPacienteModel->where('medico',($session->get('idMedico')))->findAll();
+        $data['medicosPaciente'] = $medicoPacienteModel->where('medico', ($session->get('idMedico')))->findAll();
 
         $recetaModel = model('RecetaModel');
         $data['recetas'] = $recetaModel->findAll();
@@ -572,7 +577,7 @@ class Medico extends BaseController
 
         $consultasModel = model('ConsultasModel');
         $data['consultas'] = $consultasModel->findAll();
-        
+
 
         return view('common/head') .
             view('common/menu') .
@@ -584,17 +589,18 @@ class Medico extends BaseController
         Función para dar de baja una receta, cambiando su status, para
         que no sea válida en caso de que quiera usarse en otros procesos
     */
-   public function cancelarReceta($id){
-    //Proteger la ruta para que no accedan personas sin iniciar sesión
-    $session = session();
-    if($session->get('logged_in')!=TRUE){
-        return redirect('/','refresh');
-    }
+    public function cancelarReceta($id)
+    {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
+        }
 
-    //Proteger la ruta para que no accedan usuarios que no sean médicos
-    if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-        return redirect('/','refresh');
-    }
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
+        }
 
         $recetaModel = model('RecetaModel');
         $data = array(
@@ -605,34 +611,35 @@ class Medico extends BaseController
         $recetaModel->update($id, $data);
 
         return redirect('medico/recetas/administrarRecetas', 'refresh');
-   }
-
-   /*
-    Función para reactivar el status de la receta, agregando más tiempo a
-    la fecha de vencimiento (hasta el año 2048)
-   */
-   public function renovarReceta($id){
-    //Proteger la ruta para que no accedan personas sin iniciar sesión
-    $session = session();
-    if($session->get('logged_in')!=TRUE){
-        return redirect('/','refresh');
     }
 
-    //Proteger la ruta para que no accedan usuarios que no sean médicos
-    if($session->get('idMedico')==FALSE || $session->get('idPaciente')==TRUE){
-        return redirect('/','refresh');
-    }
-    
-    $recetaModel = model('RecetaModel');
-    $data = array(
-        "status" => 1,
-        "updated_at" => date('Y-m-d'),
-        "fechaVencimiento" => date('2048-m-d'),
-    );
+    /*
+     Función para reactivar el status de la receta, agregando más tiempo a
+     la fecha de vencimiento (hasta el año 2048)
+    */
+    public function renovarReceta($id)
+    {
+        //Proteger la ruta para que no accedan personas sin iniciar sesión
+        $session = session();
+        if ($session->get('logged_in') != TRUE) {
+            return redirect('/', 'refresh');
+        }
 
-    $recetaModel->update($id, $data);
+        //Proteger la ruta para que no accedan usuarios que no sean médicos
+        if ($session->get('idMedico') == FALSE || $session->get('idPaciente') == TRUE) {
+            return redirect('/', 'refresh');
+        }
 
-    return redirect('medico/recetas/administrarRecetas', 'refresh');
+        $recetaModel = model('RecetaModel');
+        $data = array(
+            "status" => 1,
+            "updated_at" => date('Y-m-d'),
+            "fechaVencimiento" => date('2048-m-d'),
+        );
+
+        $recetaModel->update($id, $data);
+
+        return redirect('medico/recetas/administrarRecetas', 'refresh');
     }
 }
 

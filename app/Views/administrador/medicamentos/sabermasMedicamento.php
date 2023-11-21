@@ -10,9 +10,10 @@
                     <div class="card-body">
                         <h2 class="card-title" align="center">
                             <?= $medicamento->nombreComercial ?>
+                            <img src="<?= $medicamento->imagenEmpaque ?>" class="card-img-top"
+                                alt="Imagen del medicamento" width="300" height="300">
                         </h2>
 
-                        <img src="<?= $medicamento->imagenEmpaque ?>" class="card-img-top" alt="Imagen del medicamento" width="300" height="300">
 
                         <h4>Información general</h4>
                         <p><strong>Nombre científico:</strong>
@@ -71,8 +72,8 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <a href="#" onclick="history.back()"
-                                        class="text-center" style="color:rgba(0,0,0,1)">
+                                    <a href="#" onclick="history.back()" class="text-center"
+                                        style="color:rgba(0,0,0,1)">
                                         <figure>
                                             <img src="https://cdn-icons-png.flaticon.com/128/892/892519.png"
                                                 alt="regresar" class="service-img" width="60" height="60">
