@@ -12,7 +12,6 @@
                             <?= $medicamento->nombreComercial ?>
                             <img src="<?= $medicamento->imagenEmpaque ?>" class="card-img-top"
                                 alt="Imagen del medicamento" width="300" height="300">
-
                         </h2>
 
 

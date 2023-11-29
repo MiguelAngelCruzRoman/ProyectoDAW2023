@@ -76,7 +76,9 @@
                                             style="color:rgba(0,0,0,1)">Receta #
                                             <?= $receta->id ?>
                                         </a></li>
-                                    <p><strong>Fecha de vencimiento: </strong><?= $receta->fechaVencimiento ?></p>
+                                    <p><strong>Fecha de vencimiento: </strong>
+                                        <?= $receta->fechaVencimiento ?>
+                                    </p>
 
                                     <p><strong>Medicamentos</strong> </p>
                                     <ul>

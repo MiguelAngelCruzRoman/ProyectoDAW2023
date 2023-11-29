@@ -9,6 +9,7 @@
             <h1 align="center">Administrar Mis Médicos</h1>
             <h4 align="center">-Seleccione un Médico-</h4>
 
+            <!-- Sección para el formulario de búsqueda de médicos-->
             <form action="<?= base_url('/paciente/medicos/administrarMedicos/buscar'); ?>" method="GET">
 
                 <div class="col-5">
@@ -34,8 +35,8 @@
 <div class="container mt-2">
     <div class="row">
         <?php $count = 0; ?>
+        <!-- Sección para mostrar a los médicos que atienden al paciente-->
         <?php foreach ($medicoPacientes as $medicoPaciente): ?>
-
             <?php foreach ($medicos as $medico):
                 if ($medicoPaciente->medico == $medico->id): ?>
                     <?php foreach ($userMedicos as $userMedico): ?>
@@ -58,8 +59,12 @@
                                                         </h6>
                                                         <img src="<?= $userInfoMedico->foto ?>" alt="foto del médico"
                                                             style="max-height: 150px; max-width: 100%;">
-                                                        <p><strong>Especialidad: </strong><?= $medico->especialidad ?></p>
-                                                        <p><strong>Días laborales: </strong><?= $medico->diasLaborales ?></p>
+                                                        <p><strong>Especialidad: </strong>
+                                                            <?= $medico->especialidad ?>
+                                                        </p>
+                                                        <p><strong>Días laborales: </strong>
+                                                            <?= $medico->diasLaborales ?>
+                                                        </p>
                                                         <input type="hidden" name="IDmedicoPaciente" value=<?= $medicoPaciente->id ?>>
                                                     </div>
                                                 </div>

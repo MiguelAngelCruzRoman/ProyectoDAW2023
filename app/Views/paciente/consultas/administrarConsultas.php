@@ -48,6 +48,7 @@
     <div class="row">
         <div class="col-12">
 
+            <!-- Sección para agrupas las consultas en grupos de 10 elementos-->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($medicosPaciente);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -55,6 +56,7 @@
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
             $medicoPacientePagina = array_slice($medicosPaciente, $indiceInicio, $registrosPorPagina); ?>
 
+            <!-- Sección para mostrar las consultas que ya se realizaron-->
             <h4>Consultas Pendientes</h4>
             <table class="table">
                 <thead class="thead-dark">
@@ -109,8 +111,9 @@
                         <?php endif; endforeach; ?>
                     <?php endforeach ?>
                 </tbody>
-            </table>
-<br><br>
+            </table><br><br>
+
+            <!-- Sección para mostrar las consultas terminadas-->
             <h4>Consultas Terminadas</h4>
             <table class="table">
                 <thead class="thead-dark">
@@ -177,6 +180,7 @@
                 </tbody>
             </table>
 
+            <!-- Sección para cambiar de grupo de consultas-->
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActual <= 1) ? 'disabled' : ''; ?>">

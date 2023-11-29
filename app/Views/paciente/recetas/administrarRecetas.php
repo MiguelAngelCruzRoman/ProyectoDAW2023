@@ -6,7 +6,7 @@
 
         <div class="col-4"></div>
 
-
+        <!-- Sección de botones para navegación entre vistas-->
         <div class="col-4">
             <button type="button" class="btn btn-secondary mt-4" onclick="history.back()">
                 <img src="https://cdn-icons-png.flaticon.com/128/8591/8591477.png" alt="regresar" class="service-img" width="25" height="25">                
@@ -26,6 +26,7 @@
     <div class="row">
         <div class="col-12">
 
+            <!-- Sección para agrupar las recetas en grupos de 10 elementos-->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($medicosPaciente);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -34,7 +35,6 @@
             $medicosPacientePagina = array_slice($medicosPaciente, $indiceInicio, $registrosPorPagina); ?>
 
             <table class="table">
-
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Medicamentos recetados</th>
@@ -44,19 +44,20 @@
                     <th style="text-align: center">Opciones</th>
                 </thead>
 
+                <!-- Sección para relacionar a un médico y paciente con la receta-->
                 <tbody>
                     <?php foreach ($medicosPacientePagina as $medicoPaciente): ?>
                             <?php foreach ($consultas as $consulta):
                                 if ($consulta->medico_paciente == $medicoPaciente->id): ?>
-                            
-                                        <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
+                                <!-- Sección prara relacionar la consulta con su respectiva receta-->
+                                <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
                                     <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
                                         <tr>
                                         </tr>
                                         <?php else: ?>
-                                    
                                             <tr>
                                                 <td style="text-align: center"><?= $receta->id ?></td>
+                                                <!-- Sección para relaionar la receta con los medicamentos-->
                                                 <td>
                                                     <?php foreach ($recetaMedicamentos as $recetaMedicamento):
                                                         if ($recetaMedicamento->receta == $receta->id): ?>
@@ -69,7 +70,6 @@
                                                         <?php endif; endforeach; ?>
                                                 </td>
                                                 <td style="text-align: center">
-                                                   
                                                                 <?= 'Consulta ' . $consulta->id . ', realizada en "' . $consulta->lugar . '"' ?>
                                                 </td>
                                                 <td style="text-align: center"><?= $receta->fechaVencimiento ?></td>
@@ -97,6 +97,7 @@
                 </tbody>
             </table>
 
+            <!-- Sección para cambiar de grupo de recetas-->
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActual <= 1) ? 'disabled' : ''; ?>">

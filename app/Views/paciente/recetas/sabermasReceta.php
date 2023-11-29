@@ -17,7 +17,6 @@
                                     <p><strong>ID de Consulta:</strong>
                                         <a href="<?= base_url('/paciente/consultas/sabermasConsulta/' . $consulta->id); ?>"
                                             style="color:rgba(0,0,0,1)">
-
                                             <?= $consulta->id ?>
                                         </a>
                                     </p>
