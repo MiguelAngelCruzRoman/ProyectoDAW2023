@@ -1436,7 +1436,7 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
-         //Reglas de validación del formulario anterior
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
         $rules = [
             'estado' => 'required|max_length[50]|min_length[2]|string',
@@ -1695,7 +1695,7 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
-                //Reglas de validación del formulario anterior
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
         $medicamentosModel = model('MedicamentosModel');
 
@@ -1812,7 +1812,7 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
-                //Reglas de validación del formulario anterior
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
         $medicamentosModel = model('MedicamentosModel');
 
@@ -2007,7 +2007,7 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
-         //Agregar 7 días a la fecha actual para aumentar la fecha actual de consulta 
+        //Agregar 7 días a la fecha actual para aumentar la fecha actual de consulta 
         $consultasModel = model('ConsultasModel');
         $consulta = $consultasModel->find($id);
         $nuevaFecha = date("Y-m-d", strtotime($consulta->fecha . "+ 7 days"));

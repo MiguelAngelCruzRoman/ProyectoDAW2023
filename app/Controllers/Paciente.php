@@ -95,6 +95,7 @@ class Paciente extends BaseController
         $medicoPacientModel = model('MedicoPacienteModel');
         $session = \Config\Services::session();
 
+        //Sección para buscar médicos, disponibles para realizar consultas para cada paciente
         if (isset($_GET['valIngresado'])) {
             $valIngresado = $_GET['valIngresado'];
 
@@ -218,7 +219,7 @@ class Paciente extends BaseController
             return redirect('/', 'refresh');
         }
 
-
+        //Agregar 7 días a la fecha de consulta, para que se pueda posponer
         $consultasModel = model('ConsultasModel');
         $consulta = $consultasModel->find($id);
         $nuevaFecha = date("Y-m-d", strtotime($consulta->fecha . "+ 7 days"));
@@ -317,6 +318,7 @@ class Paciente extends BaseController
         $data['medicoPaciente'] = $medicoPacienteModel->findAll();
         $ExistenciaDeRelacion = 0;
         $ultimoID = 0;
+        //Comprobar si existe relación entre el médico y el paciente
         foreach ($data['medicoPaciente'] as $medicoPaciente) {
             if (($medicoPaciente->paciente == ($session->get('idPaciente'))) && ($medicoPaciente->medico == $idMedico)) {
                 $ExistenciaDeRelacion = $medicoPaciente->id;
@@ -324,6 +326,7 @@ class Paciente extends BaseController
             $ultimoID = $ultimoID + 1;
         }
 
+        //Si no existe una relación médico-paciente, se crea una
         if ($ExistenciaDeRelacion != 0) {
             $data['medicoPaciente'] = $medicoPacienteModel->find($ExistenciaDeRelacion);
         } else {
@@ -366,8 +369,8 @@ class Paciente extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación para el respectivo formulario 
         $validation = \Config\Services::validation();
-
         $rules = [
             'lugar' => 'required|max_length[15]|min_length[3]|string',
             'hora' => 'max_length[15]',
@@ -375,6 +378,7 @@ class Paciente extends BaseController
             'motivo' => 'required|max_length[250]|string',
         ];
 
+        //Se redirecciona en caso de que sea validen las reglas del formulario
         if (!$this->validate($rules)) {
             $data['medicoPaciente'] = $_POST['idMedicoPaciente'];
 
@@ -396,6 +400,7 @@ class Paciente extends BaseController
                 view('common/footer');
 
         } else {
+            //Se insertan los datos en las tablas relacionadas con las consultas
             $consultasModel = model('ConsultasModel');
             $dataConsulta = [
                 "lugar" => $_POST['lugar'],

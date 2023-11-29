@@ -10,6 +10,7 @@ class Home extends BaseController
     {
         //Redireccionar en caso de que ya tenga una sesión iniciada
         $session = session();
+        //Se envía a la vista según el tipo de usuario que se tenga
         if ($session->get('logged_in') == TRUE) {
             if ($session->get('idMedico') == FALSE && $session->get('idPaciente') == FALSE) {
                 return redirect('administrador', 'refresh');
@@ -34,20 +35,22 @@ class Home extends BaseController
         }
 
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'tipo' => 'required|string',
             'username' => 'required|max_length[50]|min_length[1]|string',
             'password' => 'required|max_length[150]|min_length[1]|string',
         ];
 
+        //Se validan los datos del formulario
         if (!$this->validate($rules)) {
             return view('common/head') .
                 view('common/inicioSesion', ['validation' => $validation]) .
                 view('common/footer');
         } else {
-            //si pasa las reglas
+            //si pasa las reglas, se redirecciona a la respectiva vista principal, guardanfo
+            // el username y un id de referenci
             $username = $_POST['username'];
             $password = $_POST['password'];
             $tipo = $_POST['tipo'];
@@ -109,7 +112,7 @@ class Home extends BaseController
                     return redirect('paciente', 'refresh');
                 }
             } else {
-               
+
                 return redirect('/', 'refresh');
             }
         }

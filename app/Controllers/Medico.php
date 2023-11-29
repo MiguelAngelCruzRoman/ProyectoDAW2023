@@ -97,6 +97,7 @@ class Medico extends BaseController
         $medicoPacientModel = model('MedicoPacienteModel');
         $session = \Config\Services::session();
 
+        //sección para buscar un registro específico entre los pacientes
         if (isset($_GET['valIngresado'])) {
             $valIngresado = $_GET['valIngresado'];
 
@@ -219,6 +220,7 @@ class Medico extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Se agregan 7 días más a la fecha de consulta
         $consultasModel = model('ConsultasModel');
         $consulta = $consultasModel->find($id);
         $nuevaFecha = date("Y-m-d", strtotime($consulta->fecha . "+ 7 days"));
@@ -322,7 +324,7 @@ class Medico extends BaseController
             "created_at" => date('Y-m-d')
         ];
 
-
+        //Se inserta una nueva consulta
         $consultaModel->insert($dataConsulta);
         $data['medico_paciente'] = $id;
         $data['consulta'] = $consultaModel->where('fecha', null)->orderBy('id', 'desc')->findAll();
@@ -387,11 +389,13 @@ class Medico extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación
         $rules = [
             'lugar' => 'required|max_length[15]|min_length[3]|string',
             'motivo' => 'required|max_length[250]|string',
         ];
 
+        //Se redirige si se pasan las reglas de validación
         if (!$this->validate($rules)) {
             $medicamentosModel = model('MedicamentosModel');
             $data['medicamentos'] = $medicamentosModel->findAll();
@@ -407,6 +411,7 @@ class Medico extends BaseController
                 view('common/footer');
 
         } else {
+            //Se hacen las inserciones en las tablas relacionadas con las consultas
             $consultasModel = model('ConsultasModel');
             $dataConsulta = [
                 "lugar" => $_POST['lugar'],
@@ -420,6 +425,7 @@ class Medico extends BaseController
             $consultasModel->delete($_POST['IDconsulta']);
             $consultasModel->insert($dataConsulta);
 
+            //Se agregan 15 días a la fecha anterior de la consulta, para asignarla como límite para realizarla
             $nuevaFecha = date("Y-m-d", strtotime(date('Y-m-d') . "+ 15 days"));
 
             $recetaModel = model('RecetaModel');
@@ -432,15 +438,17 @@ class Medico extends BaseController
             $recetaModel->insert($dataReceta);
 
             $recetaMedicamentoModel = model('RecetaMedicamentoModel');
-            if(isset($_POST['medicamentos'])){
-            foreach ($_POST['medicamentos'] as $medicamento) {
-                $dataRecetaMedicamento = [
-                    "receta" => $recetaModel->getInsertID(),
-                    "medicamento" => $medicamento
-                ];
-                $recetaMedicamentoModel->insert($dataRecetaMedicamento);
+
+            // Se insertan todos los medicamentos para cada receta, en caso de que se utilizaran
+            if (isset($_POST['medicamentos'])) {
+                foreach ($_POST['medicamentos'] as $medicamento) {
+                    $dataRecetaMedicamento = [
+                        "receta" => $recetaModel->getInsertID(),
+                        "medicamento" => $medicamento
+                    ];
+                    $recetaMedicamentoModel->insert($dataRecetaMedicamento);
+                }
             }
-        }
             return redirect('medico/consultas/administrarConsultas', 'refresh');
         }
 
@@ -604,6 +612,7 @@ class Medico extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Se actuliza la información de la receta, para que no esté válida en las vistas
         $recetaModel = model('RecetaModel');
         $data = array(
             "status" => 0,
@@ -632,6 +641,7 @@ class Medico extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Se actualiza la información de la receta, para que esté disponible en las vistas
         $recetaModel = model('RecetaModel');
         $data = array(
             "status" => 1,
