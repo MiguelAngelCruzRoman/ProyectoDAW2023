@@ -1,6 +1,8 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR CONSULTAS</h1>
+        
+        <!-- Sección del formulario de búsqueda de consultas-->
         <div class="col-6">
             <form action="<?= base_url('index.php/medico/consultas/buscarConsultas'); ?>" method="GET">
                 <div class="col-5">
@@ -31,7 +33,7 @@
 
         <div class="col-2"></div>
 
-
+        <!-- Sección de botones de navegación entre vistas-->
         <div class="col-4">
             <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/administrador'">
                 <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="Icono" width="25" height="25">
@@ -47,6 +49,7 @@
     <div class="row">
         <div class="col-12">
 
+            <!-- Sección para agrupar los médicos/pacientes en grupos de 10 elementos-->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($medicosPaciente);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -54,6 +57,8 @@
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
             $medicoPacientePagina = array_slice($medicosPaciente, $indiceInicio, $registrosPorPagina); ?>
 
+
+            <!-- Sección para mostrar las consultas que aún no se realizan-->
             <h4>Consultas Pendientes</h4>
             <table class="table">
                 <thead class="thead-dark">
@@ -64,16 +69,13 @@
                     <th style="text-align: center">Status de consulta </th>
                     <th style="text-align: center">Receta</th>
                     <th style="text-align: center" colspan="3">Opciones</th>
-
                 </thead>
 
                 <tbody>
-                    
                 <?php foreach ($medicoPacientePagina as $medicoPaciente): ?>
                         <?php foreach ($consultasPendientes as $consulta):
                             if ($medicoPaciente->id == $consulta->medico_paciente): ?>
-
-                                    <tr>
+                                <tr>
                                     <?php foreach ($recetas as $receta):
                                         if ($receta->consulta == $consulta->id): ?>
                             
@@ -108,27 +110,23 @@
                                                 </td>
 
                                                
-                                                                <td style="text-align: center">
-                                                                    <a href="<?= base_url('/medico/consultas/completarConsulta/'.$consulta->id); ?>"
-                                                                        style="color:rgba(0,0,0,0.6)">
-                                                                        <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
-                                                                            class="service-img" width="60" height="60">
-                                                                        <figcaption>Realizar</figcaption>
-                                                                    </a>
-                                                                </td>
-                                                                
-                            
-                                                
-                            
-                                            <?php endif; endforeach; ?>
-                                            <tr></tr>
+                                                <td style="text-align: center">
+                                                    <a href="<?= base_url('/medico/consultas/completarConsulta/'.$consulta->id); ?>"
+                                                        style="color:rgba(0,0,0,0.6)">
+                                                        <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
+                                                            class="service-img" width="60" height="60">
+                                                        <figcaption>Realizar</figcaption>
+                                                    </a>
+                                                </td>
                                     <?php endif; endforeach; ?>
-                            <?php endforeach ?>
-
+                                </tr>
+                        <?php endif; endforeach; ?>
+                <?php endforeach ?>
                 </tbody>
+            </table><br><br>
+                
 
-            </table>
-<br><br>
+            <!-- Sección para mostrar las consultas que ya se completaron-->
             <h4>Consultas Terminadas</h4>
             <table class="table">
                 <thead class="thead-dark">
@@ -144,10 +142,10 @@
 
                 <tbody>
                     
+                <!-- Sección para recuperar los datos de la consulta, relacionándola con la relación entre un médico y paciente en específico-->
                     <?php foreach ($medicoPacientePagina as $medicoPaciente): ?>
                         <?php foreach ($consultas as $consulta):
                             if (($medicoPaciente->id == $consulta->medico_paciente) && ($consulta->fecha != '0000-00-00')): ?>
-
                                     <tr>
                                     <?php foreach ($recetas as $receta):
                                         if ($receta->consulta == $consulta->id): ?>
@@ -177,6 +175,7 @@
                                                     <?php endif; ?>
 
                         
+                                                    <!-- Sección para agregar operaciones a las consultas-->
                                                 <td style="text-align: center">
                                                         <a href="<?= base_url('/medico/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
                                                         <?= 'Receta ' . $receta->id . ' que vence en ' . $receta->fechaVencimiento ?></a>
@@ -190,14 +189,15 @@
                                                         <figcaption>Saber más</figcaption>
                                                     </a>
                                                 </td>
-                                            </tr>
                             
                                     <?php endif; endforeach; ?>
+                                    </tr>
                         <?php endif; endforeach; ?>
                     <?php endforeach ?>
                 </tbody>
             </table>
 
+            <!-- Sección para cambiar de grupo de consultas-->
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActual <= 1) ? 'disabled' : ''; ?>">

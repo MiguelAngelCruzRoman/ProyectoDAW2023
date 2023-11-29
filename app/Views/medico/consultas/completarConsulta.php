@@ -35,12 +35,12 @@
                         <br>
                         <div class="mb-3" style="background-color: #fff">
 
-                        <?php foreach ($medicamentos as $medicamento): ?>
-                            <input type="checkbox" name="medicamentos[]" value="<?= $medicamento->id ?>">
-                            <?= $medicamento->nombreComercial . ' (' . $medicamento->dosis . ' gm - ' . $medicamento->version . ' )' ?><br>
-                        <?php endforeach; ?>
+                            <?php foreach ($medicamentos as $medicamento): ?>
+                                <input type="checkbox" name="medicamentos[]" value="<?= $medicamento->id ?>">
+                                <?= $medicamento->nombreComercial . ' (' . $medicamento->dosis . ' gm - ' . $medicamento->version . ' )' ?><br>
+                            <?php endforeach; ?>
                         </div>
-                        </div>
+                    </div>
 
 
                     <div class="mb-3">

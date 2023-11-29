@@ -9,6 +9,7 @@
             <h1 align="center">Administrar Mis Pacientes</h1>
             <h4 align="center">-Seleccione un Paciente-</h4>
 
+            <!-- Sección para el formualario de búsqueda de pacientes-->
             <form action="<?= base_url('/medico/pacientes/administrarPacientes/buscar'); ?>" method="GET">
 
                 <div class="col-5">
@@ -31,11 +32,11 @@
 </div>
 <br>
 
+<!-- Sección para relacionar al paciente con el médico que lo atiende-->
 <div class="container mt-2">
     <div class="row">
         <?php $count = 0; ?>
         <?php foreach ($medicoPacientes as $medicoPaciente): ?>
-
             <?php foreach ($pacientes as $paciente):
                 if ($medicoPaciente->paciente == $paciente->id): ?>
                     <?php foreach ($userPacientes as $userPaciente): ?>
