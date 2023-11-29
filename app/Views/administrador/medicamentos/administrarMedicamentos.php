@@ -29,9 +29,9 @@
             </form>
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-1"></div>
 
-        <div class="col-4">
+        <div class="col-5">
             <button type="button" class="btn btn-success mt-4"
                 onclick="window.location='/administrador/medicamentos/agregarMedicamentos'">
                 <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Icono" width="25" height="25">

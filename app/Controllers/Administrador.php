@@ -802,7 +802,7 @@ class Administrador extends BaseController
                 "CP" => $_POST['CP'],
                 "tipo" => $_POST['tipo'],
             );
-            $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $data);
+            $direccionModel->update($_POST['direccionID'], $data);
 
             return redirect('administrador/pacientes/administrarPacientes', 'refresh');
         }
@@ -1262,7 +1262,7 @@ class Administrador extends BaseController
                 "tipo" => $_POST['tipo'],
                 "created_at" => date('Y-m-d')
             ];
-            $direccionModel->update($direccionModel->select('userInfo')->find($_POST['id'])->userInfo, $dataDireccion);
+            $direccionModel->update($_POST['direccionID'], $dataDireccion);
 
             return redirect('administrador/medicos/administrarMedicos', 'refresh');
         }

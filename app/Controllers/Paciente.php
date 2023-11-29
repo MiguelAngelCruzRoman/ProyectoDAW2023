@@ -147,7 +147,7 @@ class Paciente extends BaseController
         $medicoModel = model('MedicoModel');
         $consultasModel = model('ConsultasModel');
 
-        $data['user'] = $userModel->where('paciente', $id)->findAll();
+        $data['user'] = $userModel->where('medico', $id)->findAll();
         $data['userinfo'] = $userInfoModel->where('id', ($data['user'][0]->id))->findAll();
         $data['medico'] = $medicoModel->find($id);
         $data['consultas'] = $consultasModel->where('medico_paciente', ($_GET['IDmedicoPaciente']))->findAll();

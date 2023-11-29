@@ -432,6 +432,7 @@ class Medico extends BaseController
             $recetaModel->insert($dataReceta);
 
             $recetaMedicamentoModel = model('RecetaMedicamentoModel');
+            if(isset($_POST['medicamentos'])){
             foreach ($_POST['medicamentos'] as $medicamento) {
                 $dataRecetaMedicamento = [
                     "receta" => $recetaModel->getInsertID(),
@@ -439,6 +440,7 @@ class Medico extends BaseController
                 ];
                 $recetaMedicamentoModel->insert($dataRecetaMedicamento);
             }
+        }
             return redirect('medico/consultas/administrarConsultas', 'refresh');
         }
 

@@ -1,4 +1,5 @@
 <div class="container">
+    <!--Sección para el formulario de búsqueda de consultas-->
     <div class="row">
         <h1 align="center">ADMINISTRAR CONSULTAS</h1>
         <div class="col-6">
@@ -29,10 +30,10 @@
             </form>
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-1">        </div>
 
 
-        <div class="col-4">
+        <div class="col-5">
             <button type="button" class="btn btn-success mt-4"
                 onclick="window.location='/administrador/consultas/agregarMedicoConsulta'">
                 <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Icono" width="25" height="25">
@@ -49,9 +50,11 @@
 
     
 
+    <!--Sección para mostrar la tabla de los datos de las consultas-->
     <div class="row">
         <div class="col-12">
-
+    
+        <!--Operaciones para que se pueda dividir todos los registros de la tabla en grupos de 10 elementos-->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($consultas);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -59,8 +62,8 @@
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
             $consultasPagina = array_slice($consultas, $indiceInicio, $registrosPorPagina); ?>
 
-            <table class="table">
 
+            <table class="table">
             <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
@@ -85,7 +88,8 @@
 
                             <td style="text-align: center"><?= $consulta->fecha ?></td>
                             
-                            
+                                <!--Sección determinar el color del registro en base a la fecha de vencimiento-->
+
                                 <?php if($consulta->updated_at == NULL): ?>
                                     <?php if($consulta->fecha >= date('Y-m-d')):?>
                                         <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
@@ -101,7 +105,8 @@
                                     <td style="text-align: center; background-color:rgb(0,255,0)">Realizada</td>
                                 <?php endif;?>
 
-                        
+
+                            <!--SLas siguientes celdas hacen referencia a los "botones" que varían según el estado en el que se encuentre la consulta-->
                             <td style="text-align: center">
                                     <a href="<?= base_url('/administrador/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
                                     <?='Receta '.$receta->id.' que vence en '.$receta->fechaVencimiento ?></a>
@@ -155,6 +160,8 @@
                 </tbody>
 
             </table>
+
+                <!--Sección de navegación entre los elementos de la tabla-->
 
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">

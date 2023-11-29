@@ -1,17 +1,18 @@
 <div class="container">
-    <div class="row">
+<div class="row justify-content-center">
         <?php
         if (isset($validation)) {
             print $validation->listErrors();
         }
         ?>
-        <div class="col-2"></div>
-        <div class="col-8">
+         <div class="col-md-8">
+            <div id="login-container" class="row justify-content-center">
+            
             <form action="<?= base_url('/administrador/pacientes/editarPacienteDireccion/' . $paciente->id); ?>"
                 method="POST">
                 <?= csrf_field() ?>
-                <h1 align="center">Editar Paciente</h1>
-                <h4 align="center">Historial Médico</h4>
+                <h1 align="center" style="color: #fff">Editar Paciente</h1>
+                <h4 align="center" style="color: #fff">-Historial Médico-</h4>
 
                 <input type="hidden" name="primerNombre" value=<?= $primerNombre ?>>
                 <input type="hidden" name="segundoNombre" value=<?= $segundoNombre ?>>
@@ -27,8 +28,8 @@
                 <input type="hidden" name="id" value="<?= $id ?>">
 
                 <div class="mb-3">
-                    <label for="seguro">Tipo de seguro:</label>
-                    <select name="seguro" id="seguro" class="form-control" required>
+                    <label for="seguro" style="color: #fff">Tipo de seguro:</label>
+                    <select name="seguro" id="seguro" class="form-control" required style="color: #000000">
                         <option value="<?= $paciente->statusSeguro ?>" selected>
                             <?= $paciente->statusSeguro ?>
                         </option>
@@ -41,8 +42,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="sangre">Tipo de sangre:</label>
-                    <select name="sangre" id="sangre" class="form-control" required>
+                    <label for="sangre" style="color: #fff">Tipo de sangre:</label>
+                    <select name="sangre" id="sangre" class="form-control" required style="color: #000000">
                         <option value="<?= $paciente->tipoSangre ?>" selected>
                             <?= $paciente->tipoSangre ?>
                         </option>
@@ -56,8 +57,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="alergia">Alergia:</label>
-                    <select name="alergia" id="alergia" class="form-control" required>
+                    <label for="alergia" style="color: #fff">Alergia:</label>
+                    <select name="alergia" id="alergia" class="form-control" required style="color: #000000">
                         <option value="<?= $paciente->alergia ?>" selected>
                             <?= $paciente->alergia ?>
                         </option>
@@ -70,14 +71,14 @@
                 </div>
 
                 <div class="mab-3">
-                    <label for="fechaRevision" class="form-label">Fecha de última revisión:</label>
+                    <label for="fechaRevision" class="form-label" style="color: #fff">Fecha de última revisión:</label>
                     <input type="date" class="form-control" name="fechaRevision" id="fechaRevision" required
-                        value="<?= $paciente->fechaRevision ?>">
+                        value="<?= $paciente->fechaRevision ?>" style="color: #000000">
                 </div>
 
                 <div class="mb-3">
-                    <label for="motivoRevision">Motivo de última consulta:</label>
-                    <select name="motivoRevision" id="motivoRevision" class="form-control" required>
+                    <label for="motivoRevision" style="color: #fff">Motivo de última consulta:</label>
+                    <select name="motivoRevision" id="motivoRevision" class="form-control" required style="color: #000000">
                         <option value="<?= $paciente->motivoRevision ?>" selected>
                             <?= $paciente->motivoRevision ?>
                         </option>
@@ -89,8 +90,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="#">Habítos tóxicos:</label>
+                    <label for="#" style="color: #fff">Habítos tóxicos:</label>
                     <br>
+                    <div class="mb-3" style="background-color: #fff">
                     <input type="checkbox" name="habitosToxicos[]" value="Fumador" <?php if ($paciente->habitoToxico == 'Fumador')
                         echo "checked"; ?>>Fumar
                     <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación" <?php if ($paciente->habitoToxico == 'Mala alimentación')
@@ -102,10 +104,13 @@
                     <input type="checkbox" name="habitosToxicos[]" value="Ninguno" <?php if ($paciente->habitoToxico == 'Ninguno')
                         echo "checked"; ?>>Ninguno
                 </div>
+                </div>
 
                 <div class="mb-3">
-                    <label for="#">Condiciones previas:</label>
+                    <label for="#" style="color: #fff">Condiciones previas:</label>
                     <br>
+                    <div class="mb-3" style="background-color: #fff">
+
                     <input type="checkbox" name="condicionesPrevias[]" value="Diabetes" <?php if ($paciente->condicionesPrevias == 'Diabetes')
                         echo "checked"; ?>>Diabetes
                     <input type="checkbox" name="condicionesPrevias[]" value="Embarazo" <?php if ($paciente->condicionesPrevias == 'Embarazo')
@@ -124,6 +129,7 @@
                         echo "checked"; ?>>Fiebre del mono
                     <input type="checkbox" name="condicionesPrevias[]" value="Ninguna" <?php if ($paciente->condicionesPrevias == 'Ninguna')
                         echo "checked"; ?>>Ninguna
+                </div>
                 </div>
 
                 <br>
@@ -150,6 +156,7 @@
                 </button>
             </div>
 
-        </div>
+            </div>
+            </div>
     </div>
 </div>

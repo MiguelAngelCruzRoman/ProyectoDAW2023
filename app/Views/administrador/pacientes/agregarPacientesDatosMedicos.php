@@ -1,16 +1,17 @@
 <div class="container">
-    <div class="row">
+<div class="row justify-content-center">
         <?php
         if (isset($validation)) {
             print $validation->listErrors();
         }
         ?>
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-md-8">
+            <div id="login-container" class="row justify-content-center">
+            
             <form action="<?= base_url('/administrador/pacientes/agregarPacientesDireccion'); ?>" method="POST">
                 <?= csrf_field() ?>
-                <h1 align="center">Agregar Paciente</h1>
-                <h4 align="center">Historial Médico</h4>
+                <h1 align="center" style="color: #fff">Agregar Paciente</h1>
+                <h4 align="center" style="color: #fff">-Historial Médico-</h4>
 
                 <input type="hidden" name="primerNombre" value=<?= $primerNombre ?>>
                 <input type="hidden" name="segundoNombre" value=<?= $segundoNombre ?>>
@@ -26,9 +27,8 @@
 
 
                 <div class="mb-3">
-                    <label for="statusSeguro">Tipo del seguro:</label>
-                    <select name="statusSeguro" id="statusSeguro" class="form-control" required>
-                        <option value=""></option>
+                    <label for="statusSeguro" style="color: #fff">Tipo del seguro:</label>
+                    <select name="statusSeguro" id="statusSeguro" class="form-control" required style="color: #000000">
                         <option value="Ninguno" selected>Ninguno</option>
                         <option value="Seguro Privado">Seguro privado</option>
                         <option value="Seguro Social">Seguro social</option>
@@ -37,8 +37,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="sangre">Tipo de sangre:</label>
-                    <select name="sangre" id="sangre" class="form-control" required>
+                    <label for="sangre" style="color: #fff">Tipo de sangre:</label>
+                    <select name="sangre" id="sangre" class="form-control" required style="color: #000000">
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                         <option value="A+">A+</option>
@@ -49,8 +49,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="alergia">Alergia:</label>
-                    <select name="alergia" id="alergia" class="form-control" required>
+                    <label for="alergia" style="color: #fff">Alergia:</label>
+                    <select name="alergia" id="alergia" class="form-control" required style="color: #000000">
                         <option value="Ninguna" selected>Ninguna</option>
                         <option value="Poliester">Poliester</option>
                         <option value="Alcohol">Alcohol</option>
@@ -60,13 +60,13 @@
                 </div>
 
                 <div class="mab-3">
-                    <label for="fechaChequeo" class="form-label">Fecha de última revisión:</label>
-                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" required>
+                    <label for="fechaChequeo" class="form-label" style="color: #fff">Fecha de última revisión:</label>
+                    <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" required style="color: #000000">
                 </div>
 
                 <div class="mb-3">
-                    <label for="motivoConsulta">Motivo de última consulta:</label>
-                    <select name="motivoConsulta" id="motivoConsulta" class="form-control" required>
+                    <label for="motivoConsulta" style="color: #fff">Motivo de última consulta:</label>
+                    <select name="motivoConsulta" id="motivoConsulta" class="form-control" required style="color: #000000">
                         <option value="Preventivo" selected>Preventivo</option>
                         <option value="Enfermedad">Enfermedad</option>
                         <option value="Rutinario">Rutinario</option>
@@ -75,18 +75,21 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="#">Habítos tóxicos:</label>
+                    <label for="#" style="color: #fff">Habítos tóxicos:</label>
                     <br>
+                    <div class="mb-3" style="background-color: #fff">
                     <input type="checkbox" name="habitosToxicos[]" value="Fumador">Fumar
                     <input type="checkbox" name="habitosToxicos[]" value="Mala alimentación">Mala alimentación
                     <input type="checkbox" name="habitosToxicos[]" value="Alcohol">Alcohol
                     <input type="checkbox" name="habitosToxicos[]" value="Drogas">Drogas
                     <input type="checkbox" name="habitosToxicos[]" value="Ninguno" checked>Ninguno
-                </div>
+                    </div>
+                    </div>
 
                 <div class="mb-3">
-                    <label for="#">Condiciones previas:</label>
+                    <label for="#" style="color: #fff">Condiciones previas:</label>
                     <br>
+                    <div class="mb-3" style="background-color: #fff">
                     <input type="checkbox" name="condicionesPrevias[]" value="Diabetes">Diabetes
                     <input type="checkbox" name="condicionesPrevias[]" value="Embarazo">Embarazo
                     <input type="checkbox" name="condicionesPrevias[]" value="Cancer">Cancer
@@ -96,7 +99,8 @@
                     <input type="checkbox" name="condicionesPrevias[]" value="Bulimia">Bulimia/Anorexia
                     <input type="checkbox" name="condicionesPrevias[]" value="Fiebre">Fiebre del mono
                     <input type="checkbox" name="condicionesPrevias[]" value="Ninguna" checked>Ninguna
-                </div>
+                    </div>
+                    </div>
 
                 <br>
                 <div class="mb-3">
@@ -122,6 +126,7 @@
                 </button>
             </div>
 
-        </div>
+            </div>
+            </div>
     </div>
 </div>

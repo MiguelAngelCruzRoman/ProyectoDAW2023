@@ -49,7 +49,7 @@
                 <?php if ($userMedico->medico == $medico->id): ?>
                     <?php foreach ($userInfoMedicos as $userInfoMedico): ?>
                         <?php if ($userMedico->id == $userInfoMedico->id): ?>
-                            <div class="col-md-4  col-lg-3  mt-2 text-center">
+                            <div class="col-md-4 mt-4 text-center">
                                 <form action="<?= base_url('/administrador/consultas/agregarPacienteConsulta/' . $medico->id); ?>"
                                     method="post">
                                     <button class="btn" style="padding: 0; border: none; background: none;">
@@ -81,7 +81,7 @@
                                 </form>
                             </div>
                             <?php $count++; ?>
-                            <?php if ($count % 4 == 0): ?>
+                            <?php if ($count % 3 == 0): ?>
                             </div>
                             <div class="row">
                             <?php endif; ?>

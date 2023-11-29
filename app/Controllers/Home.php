@@ -56,14 +56,14 @@ class Home extends BaseController
             if ($tipo == 'medico') {
                 $data['usuario'] = $userModel->like('username', $username)
                     ->Like('password', $password)
-                    ->where('medico', !NULL)
+                    ->where('paciente', NULL)
                     ->findAll();
             }
 
             if ($tipo == 'paciente') {
                 $data['usuario'] = $userModel->like('username', $username)
                     ->Like('password', $password)
-                    ->where('paciente', !NULL)
+                    ->where('medico', NULL)
                     ->findAll();
             }
 
@@ -96,7 +96,7 @@ class Home extends BaseController
                         'idMedico' => $data['usuario'][0]->medico
                     ]);
 
-                    return redirect('medico', );
+                    return redirect('medico', 'refresh');
                 }
 
                 if ($tipo == 'paciente') {
@@ -109,6 +109,7 @@ class Home extends BaseController
                     return redirect('paciente', 'refresh');
                 }
             } else {
+               
                 return redirect('/', 'refresh');
             }
         }

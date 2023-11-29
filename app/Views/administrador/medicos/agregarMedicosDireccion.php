@@ -1,16 +1,16 @@
 <div class="container">
-    <div class="row">
+<div class="row justify-content-center">
         <?php
         if (isset($validation)) {
             print $validation->listErrors();
         }
         ?>
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-md-8">
+            <div id="login-container" class="row justify-content-center">
             <form action="<?= base_url('/administrador/medicos/agregarMedicos/insert'); ?>" method="POST">
                 <?= csrf_field() ?>
-                <h1 align="center">Agregar Médico</h1>
-                <h4 align="center">Lugar de trabajo</h4>
+                <h1 align="center" style="color: #fff">Agregar Médico</h1>
+                <h4 align="center" style="color: #fff">-Lugar de trabajo-</h4>
 
                 <input type="hidden" name="primerNombre" value=<?= $primerNombre ?>>
                 <input type="hidden" name="segundoNombre" value=<?= $segundoNombre ?>>
@@ -27,51 +27,51 @@
                 <input type="hidden" name="turno" value=<?= $turno ?>>
 
                 <div class="mab-3">
-                    <label for="estado" class="form-label">Estado:</label>
+                    <label for="estado" class="form-label" style="color: #fff">Estado:</label>
                     <input type="text" class="form-control" name="estado" id="estado" placeholder="Ejemplo: Veracruz"
-                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
+                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="municipio" class="form-label">Municipio:</label>
+                    <label for="municipio" class="form-label" style="color: #fff">Municipio:</label>
                     <input type="text" class="form-control" name="municipio" id="municipio"
                         placeholder="Ejemplo: Altotonga" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
-                        min_length="2">
+                        min_length="2" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="colonia" class="form-label">Colonia:</label>
+                    <label for="colonia" class="form-label" style="color: #fff">Colonia:</label>
                     <input type="text" class="form-control" name="colonia" id="colonia" placeholder="Ejemplo: La Cruz"
-                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
+                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="calle" class="form-label">Calle:</label>
+                    <label for="calle" class="form-label" style="color: #fff">Calle:</label>
                     <input type="text" class="form-control" name="calle" id="calle" placeholder="Ejemplo: Revolución"
-                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2">
+                        required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noExt" class="form-label">Número exterior:</label>
-                    <input type="number" class="form-control" name="noExt" id="noExt" laceholder="Ejemplo: 45" required
-                        pattern="[0-9]+" max_length="11" min_length="1">
+                    <label for="noExt" class="form-label" style="color: #fff">Número exterior:</label>
+                    <input type="number" class="form-control" name="noExt" id="noExt" placeholder="Ejemplo: 45" required
+                        pattern="[0-9]+" max_length="11" min_length="1" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noInt" class="form-label">Número interior:</label>
-                    <input type="text" class="form-control" name="noInt" id="noInt" laceholder="Ejemplo: 2"
-                        pattern="[0-9]+" max_length="11">
+                    <label for="noInt" class="form-label" style="color: #fff">Número interior:</label>
+                    <input type="text" class="form-control" name="noInt" id="noInt" placeholder="Ejemplo: 2"
+                        pattern="[0-9]+" max_length="11" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="CP" class="form-label">Código Postal:</label>
+                    <label for="CP" class="form-label" style="color: #fff">Código Postal:</label>
                     <input type="text" class="form-control" name="CP" id="CP" placeholder="Ejemplo: 73950" required
-                        pattern="[0-9]+" max_length="5">
+                        pattern="[0-9]+" max_length="5" style="color: #000000">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tipo">Tipo de dirección:</label>
-                    <select name="tipo" id="tipo" class="form-control" required>
+                    <label for="tipo" style="color: #fff">Tipo de dirección:</label>
+                    <select name="tipo" id="tipo" class="form-control" required style="color: #000000">
                         <option value="Casa">Casa</option>
                         <option value="Departamento">Departamento</option>
                         <option value="Oficina">Oficina</option>
@@ -101,6 +101,7 @@
                     Cancelar
                 </button>
             </div>
-        </div>
+            </div>
+            </div>
     </div>
 </div>

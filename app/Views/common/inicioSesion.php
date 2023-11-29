@@ -32,12 +32,12 @@ if (isset($validation)) {
                         <select name="tipo" id="tipo" class="form-control" style="color: #000000" required>
                             <option value="medico">Médico</option>
                             <option value="paciente">Paciente</option>
-                            <option value="admin" selected>Administrador</option>
+                            <option value="admin">Administrador</option>
                         </select>
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary col-md-12 ">Submit</button>
+                    <button type="submit" class="btn btn-primary col-md-12 ">Iniciar Sesión</button>
                 </form>
             </div>
         </div>

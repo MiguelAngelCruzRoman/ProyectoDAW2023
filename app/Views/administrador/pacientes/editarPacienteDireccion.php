@@ -1,16 +1,16 @@
 <div class="container">
-    <div class="row">
+<div class="row justify-content-center">
         <?php
         if (isset($validation)) {
             print $validation->listErrors();
         }
         ?>
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-md-8">
+            <div id="login-container" class="row justify-content-center">
             <form action="<?= base_url('/administrador/pacientes/editarPaciente/update'); ?>" method="post">
                 <?= csrf_field() ?>
-                <h1 align="center">Editar Paciente</h1>
-                <h4 align="center">Domicilio</h4>
+                <h1 align="center" style="color: #fff">Editar Paciente</h1>
+                <h4 align="center" style="color: #fff">-Domicilio-</h4>
 
                 <input type="hidden" name="id" value=<?= $id ?>>
                 <input type="hidden" name="primerNombre" value=<?= $primerNombre ?>>
@@ -31,6 +31,7 @@
                 <input type="hidden" name="username" value=<?= $username ?>>
                 <input type="hidden" name="foto" value=<?= $foto ?>>
                 <input type="hidden" name="PacienteID" value="<?= $paciente->id ?>">
+                <input type="hidden" name="direccionID" value=<?= $direccion[0]->id ?>>
 
                 <?php foreach ($habitosToxicos as $ht): ?>
                     <input type="hidden" name="habitosToxicos[]" value=<?= $ht ?>>
@@ -41,55 +42,55 @@
 
 
                 <div class="mab-3">
-                    <label for="estado" class="form-label">Estado:</label>
+                    <label for="estado" class="form-label" style="color: #fff">Estado:</label>
                     <input type="text" class="form-control" name="estado" id="estado" placeholder="Ejemplo: Puebla"
                         required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
-                        value="<?= $direccion[0]->estado ?>">
+                        value="<?= $direccion[0]->estado ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="municipio" class="form-label">Municipio:</label>
+                    <label for="municipio" class="form-label" style="color: #fff">Municipio:</label>
                     <input type="text" class="form-control" name="municipio" id="municipio"
                         placeholder="Ejemplo: Cholula" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
-                        min_length="2" value="<?= $direccion[0]->municipio ?>">
+                        min_length="2" value="<?= $direccion[0]->municipio ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="colonia" class="form-label">Colonia:</label>
+                    <label for="colonia" class="form-label" style="color: #fff">Colonia:</label>
                     <input type="text" class="form-control" name="colonia" id="colonia" placeholder="Ejemplo: Rosas"
                         required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
-                        value="<?= $direccion[0]->colonia ?>">
+                        value="<?= $direccion[0]->colonia ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="calle" class="form-label">Calle:</label>
+                    <label for="calle" class="form-label" style="color: #fff">Calle:</label>
                     <input type="text" class="form-control" name="calle" id="calle" value="<?= $direccion[0]->calle ?>"
                         placeholder="Ejemplo: Revolución" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
-                        min_length="2">
+                        min_length="2" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noExt" class="form-label">Número exterior:</label>
+                    <label for="noExt" class="form-label" style="color: #fff">Número exterior:</label>
                     <input type="number" class="form-control" name="noExt" id="noExt"
                         value="<?= $direccion[0]->noExt ?>" placeholder="Ejemplo: 10" required pattern="[0-9]"
-                        max_length="1" min_length="1">
+                        max_length="1" min_length="1" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noInt" class="form-label">Número interior:</label>
-                    <input type="text" class="form-control" name="noInt" id="noInt" value="<?= $direccion[0]->noInt ?>"
-                        placeholder="Ejemplo: 10" pattern="[0-9]" max_length="1" min_length="1">
+                    <label for="noInt" class="form-label" style="color: #fff">Número interior:</label>
+                    <input type="number" class="form-control" name="noInt" id="noInt" value="<?= $direccion[0]->noInt ?>"
+                        placeholder="Ejemplo: 10" pattern="[0-9]" max_length="1" min_length="1" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="CP" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" name="CP" id="CP" value="<?= $direccion[0]->CP ?>"
-                        placeholder="Ejemplo: 73950" required pattern="[0-9]" max_length="5" min_length="1">
+                    <label for="CP" class="form-label" style="color: #fff">Código Postal:</label>
+                    <input type="number" class="form-control" name="CP" id="CP" value="<?= $direccion[0]->CP ?>"
+                        placeholder="Ejemplo: 73950" required pattern="[0-9]" max_length="5" min_length="1" style="color: #000000">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tipo">Tipo de vivienda:</label>
-                    <select name="tipo" id="tipo" class="form-control" required>
+                    <label for="tipo" style="color: #fff">Tipo de vivienda:</label>
+                    <select name="tipo" id="tipo" class="form-control" required style="color: #000000">
                         <option value="<?= $direccion[0]->tipo ?>" selected>
                             <?= $direccion[0]->tipo ?>
                         </option>
@@ -123,6 +124,7 @@
                 </button>
             </div>
 
-        </div>
+            </div>
+            </div>
     </div>
 </div>

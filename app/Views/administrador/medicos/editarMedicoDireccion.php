@@ -1,16 +1,16 @@
 <div class="container">
-    <div class="row">
+<div class="row justify-content-center">
         <?php
         if (isset($validation)) {
             print $validation->listErrors();
         }
         ?>
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-md-8">
+            <div id="login-container" class="row justify-content-center">
             <form action="<?= base_url('/administrador/medicos/editarMedico/update'); ?>" method="POST">
                 <?= csrf_field() ?>
-                <h1 align="center">Editar Médicos</h1>
-                <h4 align="center">Lugar de trabajo</h4>
+                <h1 align="center" style="color: #fff">Editar Médicos</h1>
+                <h4 align="center" style="color: #fff">-Lugar de trabajo-</h4>
 
                 <input type="hidden" name="id" value=<?= $id ?>>
                 <input type="hidden" name="primerNombre" value=<?= $primerNombre ?>>
@@ -26,56 +26,57 @@
                 <input type="hidden" name="especialidad" value=<?= $especialidad ?>>
                 <input type="hidden" name="diasLaborales" value=<?= $diasLaborales ?>>
                 <input type="hidden" name="turno" value=<?= $turno ?>>
+                <input type="hidden" name="direccionID" value=<?= $direccion[0]->id ?>>
 
                 <div class="mab-3">
-                    <label for="estado" class="form-label">Estado:</label>
+                    <label for="estado" class="form-label" style="color: #fff">Estado:</label>
                     <input type="text" class="form-control" name="estado" id="estado" placeholder="Ejemplo: Veracruz"
                         required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50" min_length="2"
-                        value="<?= $direccion[0]->estado ?>">
+                        value="<?= $direccion[0]->estado ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="municipio" class="form-label">Municipio:</label>
+                    <label for="municipio" class="form-label" style="color: #fff">Municipio:</label>
                     <input type="text" class="form-control" name="municipio" id="municipio"
                         placeholder="Ejemplo: Altotonga" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
-                        min_length="2" value="<?= $direccion[0]->municipio ?>">
+                        min_length="2" value="<?= $direccion[0]->municipio ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="colonia" class="form-label">Colonia:</label>
+                    <label for="colonia" class="form-label" style="color: #fff">Colonia:</label>
                     <input type="text" class="form-control" name="colonia" id="colonia"
                         placeholder="Ejemplo: Las Flores" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
-                        min_length="2" value="<?= $direccion[0]->colonia ?>">
+                        min_length="2" value="<?= $direccion[0]->colonia ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="calle" class="form-label">Calle:</label>
+                    <label for="calle" class="form-label" style="color: #fff">Calle:</label>
                     <input type="text" class="form-control" name="calle" id="calle" value="<?= $direccion[0]->calle ?>"
                         placeholder="Ejemplo: Benito Juarez" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" max_length="50"
-                        min_length="2">
+                        min_length="2" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noExt" class="form-label">Número exterior:</label>
+                    <label for="noExt" class="form-label" style="color: #fff">Número exterior:</label>
                     <input type="number" class="form-control" name="noExt" id="noExt" placeholder="Ejemplo: 45" required
-                        pattern="[0-9]+" max_length="11" min_length="1" value="<?= $direccion[0]->noExt ?>">
+                        pattern="[0-9]+" max_length="11" min_length="1" value="<?= $direccion[0]->noExt ?>" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="noInt" class="form-label">Número interior:</label>
+                    <label for="noInt" class="form-label" style="color: #fff">Número interior:</label>
                     <input type="text" class="form-control" name="noInt" id="noInt" value="<?= $direccion[0]->noInt ?>"
-                        placeholder="Ejemplo: 45" pattern="[0-9]+" max_length="11">
+                        placeholder="Ejemplo: 45" pattern="[0-9]+" max_length="11" style="color: #000000">
                 </div>
 
                 <div class="mab-3">
-                    <label for="CP" class="form-label">Código Postal:</label>
+                    <label for="CP" class="form-label" style="color: #fff">Código Postal:</label>
                     <input type="text" class="form-control" name="CP" id="CP" value="<?= $direccion[0]->CP ?>"
-                        placeholder="Ejemplo: 73950" required pattern="[0-9]+" max_length="5">
+                        placeholder="Ejemplo: 73950" required pattern="[0-9]+" max_length="5" style="color: #000000">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tipo">Tipo de dirección:</label>
-                    <select name="tipo" id="tipo" class="form-control" required>
+                    <label for="tipo" style="color: #fff">Tipo de dirección:</label>
+                    <select name="tipo" id="tipo" class="form-control" required style="color: #000000">
                         <option value="<?= $direccion[0]->tipo ?>">
                             <?= $direccion[0]->tipo ?>
                         </option>
@@ -95,6 +96,8 @@
                 </div>
             </form>
 
+            <div class="mb-3">
+
             <button type="submit" class="btn btn-primary" onclick="window.history.back()">
                 <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25"
                     height="25">
@@ -106,6 +109,8 @@
                 Cancelar
             </button>
 
-        </div>
+            </div>
+            </div>
+            </div>
     </div>
 </div>

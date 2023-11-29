@@ -51,11 +51,11 @@
         <div class="col-12">
 
             <?php $registrosPorPaginaUsuarios = 10;
-            $totalRegistrosUsuarios = count($users);
+            $totalRegistrosUsuarios = count($medicos);
             $totalPaginasUsuarios = ceil($totalRegistrosUsuarios / $registrosPorPaginaUsuarios);
             $paginaActualUsuarios = isset($_GET['paginaUsuarios']) ? $_GET['paginaUsuarios'] : 1;
             $indiceInicioUsuarios = ($paginaActualUsuarios - 1) * $registrosPorPaginaUsuarios;
-            $usersPagina = array_slice($users, $indiceInicioUsuarios, $registrosPorPaginaUsuarios); ?>
+            $medicosPagina = array_slice($medicos, $indiceInicioUsuarios, $registrosPorPaginaUsuarios); ?>
 
             <table class="table">
                 <thead class="thead-dark">
@@ -67,13 +67,13 @@
                     <th style="text-align: center">Pacientes que atiende</th>
                     <th style="text-align: center" colspan="3">Opciones</th>
                 </thead>
-
                 <tbody>
-                    <?php foreach ($usersPagina as $user):
-                        if ($user->medico != null): ?>
+                    <?php foreach ($medicosPagina as $medico):foreach ($users as $user):
+                        if ($user->medico == $medico->id): ?>
                             <tr>
+
                                 <?php foreach ($usersInfo as $ui):
-                                    if (($ui->id == $user->id) && (count($medicos) > $user->medico - 1)): ?>
+                                    if (($ui->id == $user->id) ): ?>
                                         <td>
                                             <?= $ui->id ?>
                                         </td>
@@ -81,13 +81,13 @@
                                             <?= $ui->primerNombre . ' ' . $ui->segundoNombre . ' ' . $ui->apellidoPaterno . ' ' . $ui->apellidoMaterno ?>
                                         </td>
                                         <td>
-                                            <?= $medicos[($user->medico) - 1]->especialidad ?>
+                                            <?= $medico->especialidad ?>
                                         </td>
                                         <td>
-                                            <?= $medicos[($user->medico) - 1]->turno ?>
+                                            <?= $medico->turno ?>
                                         </td>
                                         <td>
-                                            <?= $medicos[($user->medico) - 1]->diasLaborales ?>
+                                            <?= $medico->diasLaborales ?>
                                         </td>
 
                                         <td>
@@ -143,7 +143,7 @@
                                         </td>
                                     <?php endif; endforeach ?>
                             </tr>
-                        <?php endif; endforeach ?>
+                        <?php endif; endforeach;endforeach; ?>
                 </tbody>
             </table>
 
