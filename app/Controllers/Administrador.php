@@ -107,6 +107,7 @@ class Administrador extends BaseController
         $userInfoModel = model('UserInfoModel');
         $usersModel = model('UsersModel');
 
+        //Realizar búsqueda de los registros específicos de cada uno de los modelos
         if (isset($_GET['columnaBusquedaPaciente']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaPaciente = $_GET['columnaBusquedaPaciente'];
             $valIngresado = $_GET['valIngresado'];
@@ -264,8 +265,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Validación de los campos de los datos del formulario
         $validation = \Config\Services::validation();
-
         $rules = [
             'primerNombre' => 'required|max_length[15]|min_length[3]|string',
             'segundoNombre' => 'max_length[15]',
@@ -280,6 +281,7 @@ class Administrador extends BaseController
             'foto' => 'required|max_length[250]|valid_url',
         ];
 
+        //guardar los datos en el arreglo principal
         $data = [
             "primerNombre" => $_POST['primerNombre'],
             "segundoNombre" => $_POST['segundoNombre'],
@@ -294,6 +296,7 @@ class Administrador extends BaseController
             "foto" => $_POST['foto'],
         ];
 
+        //Validad si se cumplen las reglas de los datos del formulario
         if (!$this->validate($rules)) {
 
             return view('common/head') .
@@ -327,8 +330,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación del formulario
         $validation = \Config\Services::validation();
-
         $rules = [
             'statusSeguro' => 'required|max_length[50]|min_length[7]|alpha_space',
             'sangre' => 'required|max_length[3]|min_length[2]|alpha_numeric_punct',
@@ -362,6 +365,7 @@ class Administrador extends BaseController
         ];
 
 
+        //Validación del cumplimiento de las reglas de validación
         if (!$this->validate($rules)) {
 
             return view('common/head') .
@@ -377,6 +381,7 @@ class Administrador extends BaseController
         }
 
     }
+
 
     /* 
         Función que recupera datos de los formularios de las funciones 
@@ -398,8 +403,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación
         $validation = \Config\Services::validation();
-
         $rules = [
             'estado' => 'required|max_length[50]|min_length[2]|string',
             'municipio' => 'required|max_length[50]|min_length[2]|string',
@@ -411,7 +416,9 @@ class Administrador extends BaseController
             'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
+        //Redireccionar dependiendo de la validez de los datos del formulario
         if (!$this->validate($rules)) {
+            //Se regresa la información enviada, en caso de que no sea válida
             $data = [
                 "primerNombre" => $_POST['primerNombre'],
                 "segundoNombre" => $_POST['segundoNombre'],
@@ -439,6 +446,7 @@ class Administrador extends BaseController
                 view('common/footer');
 
         } else {
+            //se hace la inserción de los datos en los respectivos modelos y se redirige a la vista principal
             $pacienteModel = model('PacienteModel');
             $dataPaciente = [
                 "CURP" => $_POST['CURP'],
@@ -552,8 +560,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación para el formulario
         $validation = \Config\Services::validation();
-
         $rules = [
             'primerNombre' => 'required|max_length[15]|min_length[3]|string',
             'segundoNombre' => 'max_length[15]',
@@ -587,6 +595,7 @@ class Administrador extends BaseController
             'validation' => $validation
         ];
 
+        //Verficar que se cumplan las reglas de validación
         if (!$this->validate($rules)) {
 
             $pacienteModel = model('PacienteModel');
@@ -635,8 +644,8 @@ class Administrador extends BaseController
         $pacienteModel = model('PacienteModel');
         $direccionModel = model('DireccionModel');
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'seguro' => 'required|max_length[50]|min_length[3]|alpha_space',
             'sangre' => 'required|max_length[3]|min_length[2]|alpha_numeric_punct',
@@ -673,7 +682,6 @@ class Administrador extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-
             return view('common/head') .
                 view('common/menu') .
                 view('administrador/pacientes/editarPacienteDatosMedicos', $data) .
@@ -709,8 +717,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'estado' => 'required|max_length[50]|min_length[2]|string',
             'municipio' => 'required|max_length[50]|min_length[2]|string',
@@ -730,8 +738,8 @@ class Administrador extends BaseController
 
         $direccionModel = model('DireccionModel');
 
+        //Redireccionar en caso de que se cumplan las reglas de de validación
         if (!$this->validate($rules)) {
-
             $data = [
                 "id" => $_POST['id'],
                 "primerNombre" => $_POST['primerNombre'],
@@ -764,6 +772,7 @@ class Administrador extends BaseController
 
         } else {
 
+            //Actualizar los registros de la tabla, cuando se validen los datos del formulario
             $data = array(
                 "CURP" => $_POST['CURP'],
                 "statusSeguro" => $_POST['seguro'],
@@ -920,6 +929,7 @@ class Administrador extends BaseController
 
         $medicoModel = model('MedicoModel');
 
+        //Sección para realizar la búsqueda de los registros en las tablas relacionadas con los médicos
         if (isset($_GET['columnaBusquedaMedicos']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaMedicos = $_GET['columnaBusquedaMedicos'];
             $valIngresado = $_GET['valIngresado'];
@@ -1095,8 +1105,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'primerNombre' => 'required|max_length[15]|min_length[3]|string',
             'segundoNombre' => 'max_length[15]',
@@ -1133,8 +1143,8 @@ class Administrador extends BaseController
             'validation' => $validation
         ];
 
+        //Redireccionamiento en caso de que se cumplan las reglas de validación 
         if (!$this->validate($rules)) {
-
             $userInfoModel = model('UserInfoModel');
             $data['usersInfo'] = $userInfoModel->find($id);
 
@@ -1178,8 +1188,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'estado' => 'required|max_length[50]|min_length[2]|string',
             'municipio' => 'required|max_length[50]|min_length[2]|string',
@@ -1191,6 +1201,8 @@ class Administrador extends BaseController
             'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
+
+        //Redireccionar en caso de que se cumplan las reglas de validación
         if (!$this->validate($rules)) {
             $direccionModel = model('DireccionModel');
 
@@ -1218,6 +1230,8 @@ class Administrador extends BaseController
                 view('common/footer');
 
         } else {
+            //Se actualizan los datos del médico en caso de que las reglas de validación sean "True"
+
             $medicosModel = model('MedicoModel');
             $usersModel = model('UsersModel');
             $userInfoModel = model('UserInfoModel');
@@ -1321,8 +1335,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
-        if (strtolower($this->request->getMethod()) === 'get') {
 
+        if (strtolower($this->request->getMethod()) === 'get') {
             return view('common/head') .
                 view('common/menu') .
                 view('administrador/medicos/agregarMedicos') .
@@ -1351,8 +1365,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'primerNombre' => 'required|max_length[15]|min_length[3]|string',
             'segundoNombre' => 'max_length[15]',
@@ -1386,6 +1400,7 @@ class Administrador extends BaseController
             'validation' => $validation
         ];
 
+        //Redireccionar en caso de que se compruebe la validación
         if (!$this->validate($rules)) {
 
             return view('common/head') .
@@ -1421,8 +1436,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+         //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'estado' => 'required|max_length[50]|min_length[2]|string',
             'municipio' => 'required|max_length[50]|min_length[2]|string',
@@ -1434,8 +1449,8 @@ class Administrador extends BaseController
             'tipo' => 'required|max_length[50]|min_length[2]|alpha_numeric_punct',
         ];
 
+        //Redireccionar en caso de que se comprueben las reglas de validación
         if (!$this->validate($rules)) {
-
             $data = [
                 "primerNombre" => $_POST['primerNombre'],
                 "segundoNombre" => $_POST['segundoNombre'],
@@ -1459,6 +1474,7 @@ class Administrador extends BaseController
                 view('common/footer');
 
         } else {
+            //Insertar datos en los modelos con relación al médico, en caso de que los datos sean válidos
             $medicosModel = model('MedicoModel');
             $dataMedicos = [
                 "especialidad" => $_POST['especialidad'],
@@ -1563,7 +1579,7 @@ class Administrador extends BaseController
 
         $medicamentosModel = model('MedicamentosModel');
 
-
+        //Sección para realizar la búsqueda de medicamentos. Se redirige a "administrarMedicamentos"
         if (isset($_GET['columnaBusquedaMedicamento']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaMedicamento = $_GET['columnaBusquedaMedicamento'];
             $valIngresado = $_GET['valIngresado'];
@@ -1679,8 +1695,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+                //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $medicamentosModel = model('MedicamentosModel');
 
         $rules = [
@@ -1711,6 +1727,7 @@ class Administrador extends BaseController
         ];
 
 
+        //Se redirecciona en caso de que se validen los datos del formulario
         if (!$this->validate($rules)) {
             $data['validation'] = $validation;
 
@@ -1723,7 +1740,6 @@ class Administrador extends BaseController
 
         } else {
             $medicamentosModel->update($_POST['id'], $data);
-
 
             return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
         }
@@ -1771,7 +1787,6 @@ class Administrador extends BaseController
         }
 
         if (strtolower($this->request->getMethod()) === 'get') {
-
             return view('common/head') .
                 view('common/menu') .
                 view('administrador/medicamentos/agregarMedicamentos') .
@@ -1797,8 +1812,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+                //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $medicamentosModel = model('MedicamentosModel');
 
         $data = [
@@ -1828,6 +1843,7 @@ class Administrador extends BaseController
             'stock' => 'required|max_length[11]|integer',
         ];
 
+        //Se redirecciona en caso de que los datos del formulario sean válidos
         if (!$this->validate($rules)) {
             $data['validation'] = $validation;
 
@@ -1906,6 +1922,7 @@ class Administrador extends BaseController
         $consultasModel = model('ConsultasModel');
         $recetaModel = model('RecetaModel');
 
+        //Sección de búsqueda de las consultas en los modelos relacionados
         if (isset($_GET['columnaBusquedaConsulta']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaConsulta = $_GET['columnaBusquedaConsulta'];
             $valIngresado = $_GET['valIngresado'];
@@ -1990,6 +2007,7 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+         //Agregar 7 días a la fecha actual para aumentar la fecha actual de consulta 
         $consultasModel = model('ConsultasModel');
         $consulta = $consultasModel->find($id);
         $nuevaFecha = date("Y-m-d", strtotime($consulta->fecha . "+ 7 days"));
@@ -2124,6 +2142,7 @@ class Administrador extends BaseController
         $userModel = model('UsersModel');
         $medicoModel = model('MedicoModel');
 
+        //Sección para buscar Médicos que estén disponibles para consultas
         if (isset($_GET['columnaBusquedaMedicos']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaMedicos = $_GET['columnaBusquedaMedicos'];
             $valIngresado = $_GET['valIngresado'];
@@ -2241,6 +2260,8 @@ class Administrador extends BaseController
         $userModel = model('UsersModel');
         $pacienteModel = model('PacienteModel');
 
+
+        //Sección para buscar pacientes disponibles para una consulta
         if (isset($_GET['columnaBusquedaPaciente']) && isset($_GET['valIngresado'])) {
             $columnaBusquedaPaciente = $_GET['columnaBusquedaPaciente'];
             $valIngresado = $_GET['valIngresado'];
@@ -2305,6 +2326,7 @@ class Administrador extends BaseController
 
         $medicoPacienteModel = model('MedicoPacienteModel');
 
+        //Se busca el id de la relación entre el médico y paciente
         $data['medicoPaciente'] = $medicoPacienteModel->findAll();
         $ExistenciaDeRelacion = 0;
         $ultimoID = 0;
@@ -2315,6 +2337,7 @@ class Administrador extends BaseController
             $ultimoID = $ultimoID + 1;
         }
 
+        //En caso de que no exista relación médico-paciente, se crea una
         if ($ExistenciaDeRelacion != 0) {
             $data['medicoPaciente'] = $medicoPacienteModel->find($ExistenciaDeRelacion);
         } else {
@@ -2357,8 +2380,8 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Reglas de validación del formulario anterior
         $validation = \Config\Services::validation();
-
         $rules = [
             'lugar' => 'required|max_length[15]|min_length[3]|string',
             'hora' => 'max_length[15]',
@@ -2366,6 +2389,7 @@ class Administrador extends BaseController
             'motivo' => 'required|max_length[250]|string',
         ];
 
+        //Se redirecciona en caso de que los datos de validación sean correctos
         if (!$this->validate($rules)) {
             $data['medicoPaciente'] = $_POST['idMedicoPaciente'];
 
@@ -2387,6 +2411,7 @@ class Administrador extends BaseController
                 view('common/footer');
 
         } else {
+            //Se insertan los datos en las tablas relacionadas a las consultas
             $consultasModel = model('ConsultasModel');
             $dataConsulta = [
                 "lugar" => $_POST['lugar'],
@@ -2502,6 +2527,7 @@ class Administrador extends BaseController
             return redirect('/', 'refresh');
         }
 
+        //Se actualiza la receta, para que sea válida por más tiempo
         $recetaModel = model('RecetaModel');
         $data = array(
             "status" => 1,
