@@ -1,4 +1,6 @@
 <div class="container">
+    <!--Sección para el formulario de busqueda de médicos-->
+
     <div class="row">
 
         <div class="col-2"></div>
@@ -40,6 +42,8 @@
         </div>
     </div>
 </div>
+
+<!--Sección para crear tarjetas con la información del médico, relacionándola con su información personal e información de usuario-->
 
 <div class="container mt-2">
     <div class="row">
@@ -96,6 +100,7 @@
 
 
 
+<!--Botones de navegación de vistas-->
 
 <div class="container">
     <div class="row">

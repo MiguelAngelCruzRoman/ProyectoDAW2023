@@ -8,6 +8,7 @@
             <div class="container mt-4">
                 <div class="card">
                     <div class="card-body">
+                        <!-- Sección para recuperar la información del paciente-->
                         <h2 class="card-title" align="center">
                             <?= $userinfo[0]->primerNombre . ' ' . $userinfo[0]->segundoNombre . ' ' . $userinfo[0]->apellidoPaterno . ' ' . $userinfo[0]->apellidoMaterno ?>
                             <img src="<?= $userinfo[0]->foto ?>" class="card-img-top" alt="Imagen del medico"
@@ -69,10 +70,12 @@
                             <?= $direccion[0]->calle ?>
                         </p>
                         <p><strong>Número:</strong>
-                            #<?= $direccion[0]->noExt . ' (interior: ' . $direccion[0]->noInt . ')' ?>
+                            #
+                            <?= $direccion[0]->noExt . ' (interior: ' . $direccion[0]->noInt . ')' ?>
                         </p>
                         <br>
 
+                        <!-- Sección para relacionar al paciente con el médico que lo atiende-->
                         <h4>Médicos que lo atienden</h4>
                         <ul>
                             <?php foreach ($medicosPaciente as $medicoPaciente):
@@ -102,7 +105,7 @@
                                 <?php endif; endforeach; ?>
                         </ul>
 
-
+                        <!-- Sección para agregar operaciones al paciente-->
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 

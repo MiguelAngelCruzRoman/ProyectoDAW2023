@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR MEDICAMENTOS</h1>
+        <!-- Sección para el formulario de búsqueda de medicamentos-->
         <div class="col-6">
             <form action="<?= base_url('index.php/administrador/medicamentos/buscarMedicamentos'); ?>" method="GET">
                 <div class="col-5">
@@ -31,6 +32,7 @@
 
         <div class="col-1"></div>
 
+        <!-- Sección de botones de navegación entre vistas-->
         <div class="col-5">
             <button type="button" class="btn btn-success mt-4"
                 onclick="window.location='/administrador/medicamentos/agregarMedicamentos'">
@@ -51,6 +53,7 @@
     <div class="row">
         <div class="col-12">
 
+            <!-- Sección para dividir los medicamnetos en grupos de 10 elementos -->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($medicamentos);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -59,7 +62,6 @@
             $medicamentosPagina = array_slice($medicamentos, $indiceInicio, $registrosPorPagina); ?>
 
             <table class="table">
-
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre comercial</th>
@@ -101,6 +103,7 @@
                             <td style="text-align: center">
                                 <?= $medicamento->stock ?>
                             </td>
+                            <!-- Sección para agregar operaciones a cada uno de los medicamentos -->
                             <td>
                                 <a href="<?= base_url('/administrador/medicamentos/editarMedicamento/' . $medicamento->id); ?>"
                                     style="color:rgba(0,0,0,0.6)">
@@ -127,11 +130,10 @@
                             </td>
                         </tr>
                     <?php endforeach ?>
-
                 </tbody>
-
             </table>
 
+            <!-- Sección de navegación entre los grupos de medicamentos -->
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActual <= 1) ? 'disabled' : ''; ?>">

@@ -8,6 +8,7 @@
             <div class="container mt-4">
                 <div class="card">
                     <div class="card-body">
+                        <!-- Recuperar la información del usuario con perfíl de médico-->
                         <h2 class="card-title" align="center">
                             <?php if ($userinfo[0]->genero == 'F'): ?>
                                 Dra.
@@ -65,6 +66,7 @@
                         </p>
                         <br>
 
+                        <!-- Sección para relacionar al médico con los pacientes que atiende-->
                         <h4>Pacientes que atiende</h4>
                         <ul>
                             <?php foreach ($medicosPaciente as $medicoPaciente):
@@ -93,6 +95,7 @@
                                 <?php endif; endforeach; ?>
                         </ul>
 
+                        <!-- Sección para agregar operaciones al médico-->
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 

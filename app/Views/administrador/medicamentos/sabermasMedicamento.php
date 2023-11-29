@@ -46,6 +46,7 @@
                         </p><br>
 
 
+                        <!-- Sección para agregar operaciones a cada uno de los medicamentos-->
                         <div class="container mt-4">
                             <div class="row justify-content-center">
 

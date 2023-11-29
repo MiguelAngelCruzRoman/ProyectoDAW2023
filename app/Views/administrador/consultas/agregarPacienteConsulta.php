@@ -8,6 +8,7 @@
 
             <h1 align="center">Agregar Consulta</h1>
             <h4 align="center">-Seleccione un Paciente-</h4>
+            <!--Sección para el formulario de búsqueda de pacientes-->
 
             <form
                 action="<?= base_url('index.php/administrador/consultas/agregarPacienteConsulta/buscar/' . $idMedico); ?>"
@@ -39,6 +40,7 @@
 </div>
 <br>
 
+<!-- Sección de tarjetas de los pacientes, relacionándolos con su información de usuario e información personal-->
 <div class="container mt-2">
     <div class="row">
         <?php $count = 0; ?>
@@ -85,7 +87,7 @@
 
 
 
-
+<!-- Sección de botones de navegación de vistas-->
 <div class="container">
     <div class="row">
         <div class="col-5"></div>

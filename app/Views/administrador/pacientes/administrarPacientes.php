@@ -1,6 +1,8 @@
 <div class="container">
     <div class="row">
         <h1 align="center">ADMINISTRAR PACIENTES</h1>
+
+        <!-- Sección para el formulario de búsqueda de pacientes-->
         <div class="col-6">
             <form action="<?= base_url('index.php/administrador/pacientes/buscarPacientes'); ?>" method="GET">
                 <div class="col-5">
@@ -33,6 +35,7 @@
 
         <div class="col-2"></div>
 
+        <!-- Sección de botones de navegación entre vistas-->
         <div class="col-4">
             <button type="button" class="btn btn-success mt-4"
                 onclick="window.location='/administrador/pacientes/agregarPacientes'">
@@ -49,6 +52,7 @@
 
     <div class="row">
         <div class="col-12">
+            <!-- Sección para agrupar los usuarios en grupos de 10 elementos-->
             <?php $registrosPorPaginaUsuarios = 10;
             $totalRegistrosUsuarios = count($users);
             $totalPaginasUsuarios = ceil($totalRegistrosUsuarios / $registrosPorPaginaUsuarios);
@@ -68,6 +72,7 @@
                 </thead>
 
                 <tbody>
+                    <!-- Sección para recuperar los datos de los usuarios que son pacientes-->
                     <?php foreach ($usersPagina as $user):
                         if ($user->paciente != null): ?>
                             <tr>
@@ -88,6 +93,8 @@
                                         <td>
                                             <?= $user->username ?>
                                         </td>
+
+                                        <!-- Sección para relacionar al paciente con los médicos que lo atienden-->
                                         <td>
                                             <?php foreach ($medicosPaciente as $medicoPaciente):
                                                 if ($medicoPaciente->paciente == $user->paciente): ?>
@@ -115,6 +122,8 @@
                                                         <?php endif; endforeach; ?>
                                                 <?php endif; endforeach; ?>
                                         </td>
+
+                                        <!-- Sección para agregar operaciones a cada paciente-->
                                         <td>
                                             <a href="<?= base_url('/administrador/pacientes/editarPaciente/' . $user->paciente); ?>"
                                                 style="color:rgba(0,0,0,0.6)">
@@ -145,6 +154,7 @@
                 </tbody>
             </table>
 
+            <!-- Sección para navegar entre los grupos de usuarios-->
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActualUsuarios <= 1) ? 'disabled' : ''; ?>">

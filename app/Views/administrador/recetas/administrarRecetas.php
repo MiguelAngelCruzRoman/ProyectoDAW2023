@@ -7,7 +7,7 @@
 
         <div class="col-4"></div>
 
-
+        <!-- Sección de botones para navegación entre vistas-->
         <div class="col-4">
             <button type="button" class="btn btn-secondary mt-4" onclick="history.back()">
                 <img src="https://cdn-icons-png.flaticon.com/128/8591/8591477.png" alt="regresar" class="service-img"
@@ -27,6 +27,7 @@
     <div class="row">
         <div class="col-12">
 
+            <!-- Sección para agrupar a las recetas en grupos de 10 elementos-->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($recetas);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -45,7 +46,7 @@
                     <th style="text-align: center" colspan="2">Opciones</th>
 
                 </thead>
-
+                <!-- Sección para recuperar la información de las recetas-->
                 <tbody>
                     <?php foreach ($recetasPagina as $receta): ?>
                         <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
@@ -57,6 +58,7 @@
                                 <td style="text-align: center">
                                     <?= $receta->id ?>
                                 </td>
+                                <!-- Sección para relacinar la receta con los medicamentos que contiene-->
                                 <td>
                                     <?php foreach ($recetaMedicamentos as $recetaMedicamento):
                                         if ($recetaMedicamento->receta == $receta->id): ?>
@@ -70,6 +72,8 @@
                                                 <?php endif; endforeach; ?>
                                         <?php endif; endforeach; ?>
                                 </td>
+
+                                <!-- Sección para relacionar la receta con su respectiva consulta -->
                                 <td style="text-align: center">
                                     <?php foreach ($consultas as $consulta):
                                         if ($receta->consulta == $consulta->id): ?>
@@ -95,6 +99,8 @@
                                     <td style="text-align: center">
                                         <?= $receta->status ?>
                                     </td>
+
+                                    <!-- Sección para agrgar operaciones a la receta -->
                                     <td style="text-align: center">
                                         <a href="<?= base_url('/administrador/recetas/cancelarReceta/' . $receta->id); ?>"
                                             style="color:rgba(0,0,0,0.6)">
@@ -120,6 +126,7 @@
 
             </table>
 
+            <!-- Sección para cambiar el grupo de recetas seleccionado-->
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
                     <li class="page-item <?php echo ($paginaActual <= 1) ? 'disabled' : ''; ?>">

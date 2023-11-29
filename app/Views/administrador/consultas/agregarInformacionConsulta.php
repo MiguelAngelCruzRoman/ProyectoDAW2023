@@ -52,6 +52,7 @@
 
                 </form>
 
+                <!--Botones de navegación de vistas-->
                 <div class="mab-3">
                     <button type="submit" class="btn btn-primary" onclick="window.history.back()">
                         <img src="https://cdn-icons-png.flaticon.com/128/3585/3585896.png" alt="Regresar" width="25"

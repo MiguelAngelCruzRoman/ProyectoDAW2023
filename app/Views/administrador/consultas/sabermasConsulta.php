@@ -10,6 +10,7 @@
                     <div class="card-body">
                         <h3> Información de la consulta</h3>
                         <p><strong>Paciente: </strong>
+                            <!--Sección para relacionar al paciente con su usuario e información de usuario -->
                             <?php foreach ($medicosPaciente as $medicoPaciente):
                                 if ($medicoPaciente->id == $consulta->medico_paciente): ?>
 
@@ -36,7 +37,7 @@
                                 <?php endif; endforeach; ?>
                         </p>
 
-
+                        <!--Sección para relacionar el médico que hizo la consulta -->
                         <p><strong>Médico: </strong>
                             <?php foreach ($medicosPaciente as $medicoPaciente):
                                 if ($medicoPaciente->id == $consulta->medico_paciente): ?>
@@ -62,6 +63,7 @@
                                 <?php endif; endforeach; ?>
                         </p>
 
+                        <!-- Sección para colocar los datos propios de la consulta-->
                         <p><strong>Lugar:</strong>
                             <?= $consulta->lugar ?>
                         </p>
@@ -74,6 +76,7 @@
                             <?= $consulta->motivo ?>
                         </p>
 
+                        <!-- Sección para relaionar la consulta con sus receta(s)-->
                         <h3>Recetas</h3>
                         <ol>
                             <?php foreach ($recetas as $receta):
@@ -82,8 +85,11 @@
                                             style="color:rgba(0,0,0,1)">Receta #
                                             <?= $receta->id ?>
                                         </a></li>
-                                    <p><strong>Fecha de vencimiento: </strong><?= $receta->fechaVencimiento ?></p>
+                                    <p><strong>Fecha de vencimiento: </strong>
+                                        <?= $receta->fechaVencimiento ?>
+                                    </p>
 
+                                    <!-- Sección para relacionar la receta con su(s) medicamento(s)-->
                                     <p><strong>Medicamentos</strong> </p>
                                     <ul>
                                         <?php foreach ($recetaMedicamentos as $recetaMedicamento):
@@ -102,7 +108,7 @@
                         </ol>
 
 
-
+                        <!--Sección de botones de navegación entre vistas -->
                         <div class="container mt-4">
                             <div class="row justify-content-center">
                                 <div class="col-md-3">

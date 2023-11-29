@@ -22,7 +22,8 @@
                 <div class="col-5">
                     <form action="buscar">
                         <button type="submit" class="btn btn-secondary">
-                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25" height="25">
+                            <img src="https://cdn-icons-png.flaticon.com/128/795/795724.png" alt="Icono" width="25"
+                                height="25">
                             Realizar Búsqueda
                         </button>
                     </form>
@@ -30,7 +31,7 @@
             </form>
         </div>
 
-        <div class="col-1">        </div>
+        <div class="col-1"> </div>
 
 
         <div class="col-5">
@@ -48,13 +49,13 @@
     <br>
 
 
-    
+
 
     <!--Sección para mostrar la tabla de los datos de las consultas-->
     <div class="row">
         <div class="col-12">
-    
-        <!--Operaciones para que se pueda dividir todos los registros de la tabla en grupos de 10 elementos-->
+
+            <!--Operaciones para que se pueda dividir todos los registros de la tabla en grupos de 10 elementos-->
             <?php $registrosPorPagina = 10;
             $totalRegistros = count($consultas);
             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -64,7 +65,7 @@
 
 
             <table class="table">
-            <thead class="thead-dark">
+                <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
                     <th style="text-align: center">Motivo de consulta </th>
@@ -76,92 +77,105 @@
                 </thead>
 
                 <tbody>
-                <?php foreach ($consultasPagina as $consulta): ?>
+                    <?php foreach ($consultasPagina as $consulta): ?>
                         <tr>
-                        <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
-                            
-                            <td style="text-align: center"><?= $consulta->id ?></td>
-                            
-                            <td style="text-align: center"><?= $consulta->lugar ?></td>
+                            <?php foreach ($recetas as $receta):
+                                if ($receta->consulta == $consulta->id): ?>
 
-                            <td style="text-align: center"><?= $consulta->motivo ?></td>
-
-                            <td style="text-align: center"><?= $consulta->fecha ?></td>
-                            
-                                <!--Sección determinar el color del registro en base a la fecha de vencimiento-->
-
-                                <?php if($consulta->updated_at == NULL): ?>
-                                    <?php if($consulta->fecha >= date('Y-m-d')):?>
-                                        <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
-                                    <?php else:?>
-                                        <?php if($receta->fechaVencimiento == date('0000-00-00')):?>
-                                            <td style="text-align: center; background-color:rgb(255,128,0)">En espera para <br>revisión del médico</td>
-                                        <?php else:?>
-                                            <td style="text-align: center; background-color:rgb(255,0,0)">No se realizó <br>en la fecha <br>establecida</td>
-                                        <?php endif;?>
-
-                                    <?php endif;?>
-                                <?php else:?>
-                                    <td style="text-align: center; background-color:rgb(0,255,0)">Realizada</td>
-                                <?php endif;?>
-
-
-                            <!--SLas siguientes celdas hacen referencia a los "botones" que varían según el estado en el que se encuentre la consulta-->
-                            <td style="text-align: center">
-                                    <a href="<?= base_url('/administrador/recetas/sabermasReceta/' . $receta->id); ?>"style="color:rgba(0,0,0,1)">
-                                    <?='Receta '.$receta->id.' que vence en '.$receta->fechaVencimiento ?></a>
-                            </td>
-
-                            <?php if($consulta->updated_at == NULL):?>
-                                <?php if($consulta->fecha >= date('Y-m-d')):?>
-                                    
                                     <td style="text-align: center">
-                                        <a href="<?= base_url('/administrador/consultas/posponerConsulta/' . $consulta->id); ?>"
-                                            style="color:rgba(0,0,0,0.6)">
-                                            <img src="https://cdn-icons-png.flaticon.com/128/2784/2784399.png" alt="posponer"
-                                                class="service-img" width="60" height="60">
-                                            <figcaption>Posponer</figcaption>
+                                        <?= $consulta->id ?>
+                                    </td>
+
+                                    <td style="text-align: center">
+                                        <?= $consulta->lugar ?>
+                                    </td>
+
+                                    <td style="text-align: center">
+                                        <?= $consulta->motivo ?>
+                                    </td>
+
+                                    <td style="text-align: center">
+                                        <?= $consulta->fecha ?>
+                                    </td>
+
+                                    <!--Sección determinar el color del registro en base a la fecha de vencimiento-->
+
+                                    <?php if ($consulta->updated_at == NULL): ?>
+                                        <?php if ($consulta->fecha >= date('Y-m-d')): ?>
+                                            <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
+                                        <?php else: ?>
+                                            <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
+                                                <td style="text-align: center; background-color:rgb(255,128,0)">En espera para <br>revisión del
+                                                    médico</td>
+                                            <?php else: ?>
+                                                <td style="text-align: center; background-color:rgb(255,0,0)">No se realizó <br>en la fecha
+                                                    <br>establecida</td>
+                                            <?php endif; ?>
+
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <td style="text-align: center; background-color:rgb(0,255,0)">Realizada</td>
+                                    <?php endif; ?>
+
+
+                                    <!--SLas siguientes celdas hacen referencia a los "botones" que varían según el estado en el que se encuentre la consulta-->
+                                    <td style="text-align: center">
+                                        <a href="<?= base_url('/administrador/recetas/sabermasReceta/' . $receta->id); ?>"
+                                            style="color:rgba(0,0,0,1)">
+                                            <?= 'Receta ' . $receta->id . ' que vence en ' . $receta->fechaVencimiento ?>
                                         </a>
                                     </td>
-                                <?php else:?>
-                                    <td style="text-align: center">
-                                        <a href="<?= base_url('/administrador/consultas/realizarConsulta/' . $consulta->id); ?>"
-                                            style="color:rgba(0,0,0,0.6)">
-                                            <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
-                                                class="service-img" width="60" height="60">
-                                            <figcaption>Realizar</figcaption>
-                                        </a>
-                                    </td>
-                                <?php endif;?>
-                                <td>
-                                    <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
-                                        style="color:rgba(0,0,0,0.6)">
-                                        <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
-                                            class="service-img" width="60" height="60">
-                                        <figcaption>Saber más</figcaption>
-                                    </a>
-                                </td>
-                            
-                            <?php else:?>
-                                <td></td>
-                                <td>
-                                    <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
-                                        style="color:rgba(0,0,0,0.6)">
-                                        <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
-                                            class="service-img" width="60" height="60">
-                                        <figcaption>Saber más</figcaption>
-                                    </a>
-                                </td>
-                            <?php endif;?>
-                        </tr>                            
-                        <?php endif;endforeach; ?>
+
+                                    <?php if ($consulta->updated_at == NULL): ?>
+                                        <?php if ($consulta->fecha >= date('Y-m-d')): ?>
+
+                                            <td style="text-align: center">
+                                                <a href="<?= base_url('/administrador/consultas/posponerConsulta/' . $consulta->id); ?>"
+                                                    style="color:rgba(0,0,0,0.6)">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/2784/2784399.png" alt="posponer"
+                                                        class="service-img" width="60" height="60">
+                                                    <figcaption>Posponer</figcaption>
+                                                </a>
+                                            </td>
+                                        <?php else: ?>
+                                            <td style="text-align: center">
+                                                <a href="<?= base_url('/administrador/consultas/realizarConsulta/' . $consulta->id); ?>"
+                                                    style="color:rgba(0,0,0,0.6)">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="realizar"
+                                                        class="service-img" width="60" height="60">
+                                                    <figcaption>Realizar</figcaption>
+                                                </a>
+                                            </td>
+                                        <?php endif; ?>
+                                        <td>
+                                            <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
+                                                style="color:rgba(0,0,0,0.6)">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
+                                                    class="service-img" width="60" height="60">
+                                                <figcaption>Saber más</figcaption>
+                                            </a>
+                                        </td>
+
+                                    <?php else: ?>
+                                        <td></td>
+                                        <td>
+                                            <a href="<?= base_url('/administrador/consultas/sabermasConsulta/' . $consulta->id); ?>"
+                                                style="color:rgba(0,0,0,0.6)">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/5828/5828566.png" alt="saberMas"
+                                                    class="service-img" width="60" height="60">
+                                                <figcaption>Saber más</figcaption>
+                                            </a>
+                                        </td>
+                                    <?php endif; ?>
+                                </tr>
+                            <?php endif; endforeach; ?>
                     <?php endforeach ?>
 
                 </tbody>
 
             </table>
 
-                <!--Sección de navegación entre los elementos de la tabla-->
+            <!--Sección de navegación entre los elementos de la tabla-->
 
             <div class="col-5 mx-auto text-center">
                 <ul class="pagination">
@@ -171,7 +185,9 @@
 
                     <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
                         <li class="page-item <?php echo ($paginaActual == $i) ? 'active' : ''; ?>">
-                            <a class="page-link text-black" href="?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            <a class="page-link text-black" href="?pagina=<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </a>
                         </li>
                     <?php endfor ?>
 
