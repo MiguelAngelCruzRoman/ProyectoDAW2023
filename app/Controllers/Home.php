@@ -57,22 +57,22 @@ class Home extends BaseController
             $userModel = model('UsersModel');
 
             if ($tipo == 'medico') {
-                $data['usuario'] = $userModel->like('username', $username)
-                    ->Like('password', $password)
+                $data['usuario'] = $userModel->where('username', $username)
+                    ->where('password', $password)
                     ->where('paciente', NULL)
                     ->findAll();
             }
 
             if ($tipo == 'paciente') {
-                $data['usuario'] = $userModel->like('username', $username)
-                    ->Like('password', $password)
+                $data['usuario'] = $userModel->where('username', $username)
+                    ->where('password', $password)
                     ->where('medico', NULL)
                     ->findAll();
             }
 
             if ($tipo == 'admin') {
-                $data['usuario'] = $userModel->like('username', $username)
-                    ->Like('password', $password)
+                $data['usuario'] = $userModel->where('username', $username)
+                    ->where('password', $password)
                     ->where('paciente', NULL)
                     ->where('medico', NULL)
                     ->findAll();
