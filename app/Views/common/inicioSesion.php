@@ -11,7 +11,7 @@ if (isset($validation)) {
                 <form action="<?php base_url('/administrador'); ?>" method="POST">
 
                     <h1 style="color: #fff" align="center">INICIO DE SESIÓN</h1>
-                    <center><img src="<?= base_url('logo.jpg') ?>" alt="Logo" width="200" height="200" align="center">
+                    <center><img src="<?= base_url('logo.png') ?>" alt="Logo" width="200" height="200" align="center" style="background-color:#FFFFFF;  border-radius: 50%;">
                     </center>
 
                     <?= csrf_field() ?>

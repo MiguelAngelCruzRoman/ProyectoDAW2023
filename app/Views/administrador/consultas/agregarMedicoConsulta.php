@@ -49,50 +49,50 @@
     <div class="row">
         <?php $count = 0; ?>
         <?php foreach ($medicos as $medico): ?>
-            <?php foreach ($userMedicos as $userMedico): ?>
-                <?php if ($userMedico->medico == $medico->id): ?>
-                    <?php foreach ($userInfoMedicos as $userInfoMedico): ?>
-                        <?php if ($userMedico->id == $userInfoMedico->id): ?>
-                            <div class="col-md-4 mt-4 text-center">
-                                <form action="<?= base_url('/administrador/consultas/agregarPacienteConsulta/' . $medico->id); ?>"
-                                    method="post">
-                                    <button class="btn" style="padding: 0; border: none; background: none;">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <h6 class="card-title">
-                                                    <?php if ($userInfoMedico->genero == 'M'): ?>
-                                                        Dr.
-                                                    <?php else: ?>
-                                                        Dra.
-                                                    <?php endif; ?>
-                                                    <?= $userInfoMedico->primerNombre . ' ' . $userInfoMedico->segundoNombre .
-                                                        ' ' . $userInfoMedico->apellidoPaterno . ' ' . $userInfoMedico->apellidoMaterno ?>
-                                                </h6>
-                                                <img src="<?= $userInfoMedico->foto ?>" alt="foto del médico" class="img-fluid"
-                                                    style="max-height: 150px; max-width: 100%;">
-                                                <p><strong>Especialidad: </strong>
-                                                    <?= $medico->especialidad ?>
-                                                </p>
-                                                <p><strong>Turno: </strong>
-                                                    <?= $medico->turno ?>
-                                                </p>
-                                                <p><strong>Días que labora:</strong> <br>
-                                                    <?= $medico->diasLaborales ?>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </form>
-                            </div>
-                            <?php $count++; ?>
-                            <?php if ($count % 3 == 0): ?>
-                            </div>
-                            <div class="row">
-                            <?php endif; ?>
+                <?php foreach ($userMedicos as $userMedico): ?>
+                        <?php if ($userMedico->medico == $medico->id): ?>
+                                <?php foreach ($userInfoMedicos as $userInfoMedico): ?>
+                                        <?php if ($userMedico->id == $userInfoMedico->id): ?>
+                                                <div class="col-md-4 mt-4 text-center">
+                                                    <form action="<?= base_url('/administrador/consultas/agregarPacienteConsulta/' . $medico->id); ?>"
+                                                        method="post">
+                                                        <button class="btn" style="padding: 0; border: none; background: none;">
+                                                        <div class="card text-white bg-dark mb-3 border-dark" style="height:400px ; width: 300px;">
+                                                                <div class="card-body text-center ">
+                                                                    <h6 class="card-title">
+                                                                        <?php if ($userInfoMedico->genero == 'M'): ?>
+                                                                                Dr.
+                                                                        <?php else: ?>
+                                                                                Dra.
+                                                                        <?php endif; ?>
+                                                                        <?= $userInfoMedico->primerNombre . ' ' . $userInfoMedico->segundoNombre .
+                                                                            ' ' . $userInfoMedico->apellidoPaterno . ' ' . $userInfoMedico->apellidoMaterno ?>
+                                                                    </h6>
+                                                                    <img src="<?= $userInfoMedico->foto ?>" alt="foto del médico" 
+                                                                    style="height:150px ; width: 200px;">
+                                                                    <p><strong>Especialidad: </strong>
+                                                                        <?= $medico->especialidad ?>
+                                                                    </p>
+                                                                    <p><strong>Turno: </strong>
+                                                                        <?= $medico->turno ?>
+                                                                    </p>
+                                                                    <p><strong>Días que labora:</strong> <br>
+                                                                        <?= $medico->diasLaborales ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                                <?php $count++; ?>
+                                                <?php if ($count % 3 == 0): ?>
+                                                    </div>
+                                                    <div class="row">
+                                                <?php endif; ?>
+                                        <?php endif; ?>
+                                <?php endforeach; ?>
                         <?php endif; ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
         <?php endforeach; ?>
     </div>
 </div>
