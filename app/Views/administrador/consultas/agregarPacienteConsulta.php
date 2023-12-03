@@ -45,41 +45,41 @@
     <div class="row">
         <?php $count = 0; ?>
         <?php foreach ($pacientes as $paciente): ?>
-                <?php foreach ($userPacientes as $userPaciente): ?>
-                        <?php if ($userPaciente->paciente == $paciente->id): ?>
-                                <?php foreach ($userInfoPacientes as $userInfoPaciente): ?>
-                                        <?php if ($userPaciente->id == $userInfoPaciente->id): ?>
-                                                <div class="col-md-4 mt-4 text-center">
-                                                    <form action="<?= base_url('/administrador/consultas/agregarConsulta/' . $paciente->id); ?>" method="post">
-                                                        <button class="btn" style="padding: 0; border: none; background: none;">
-                                                        <div class="card text-white bg-dark mb-3 border-dark" style="height:250px ; width: 300px;">
-                                                                <div class="card-body">
-                                                                    <h6 class="card-title">
-                                                                        <?php if ($userInfoPaciente->genero == 'M'): ?>
-                                                                                Sr.
-                                                                        <?php else: ?>
-                                                                                Sra.
-                                                                        <?php endif; ?>
-                                                                        <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
-                                                                            ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno ?>
-                                                                    </h6>
-                                                                    <img src="<?= $userInfoPaciente->foto ?>" alt="foto del paciente" 
-                                                                    style="height:150px ; width: 200px;">
-                                                                    <input type="hidden" name="idMedico" value=<?= $idMedico ?>>
-                                                                </div>
-                                                            </div>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                                <?php $count++; ?>
-                                                <?php if ($count % 3 == 0): ?>
-                                                    </div>
-                                                    <div class="row">
-                                                <?php endif; ?>
-                                        <?php endif; ?>
-                                <?php endforeach; ?>
+            <?php foreach ($userPacientes as $userPaciente): ?>
+                <?php if ($userPaciente->paciente == $paciente->id): ?>
+                    <?php foreach ($userInfoPacientes as $userInfoPaciente): ?>
+                        <?php if ($userPaciente->id == $userInfoPaciente->id): ?>
+                            <div class="col-md-4 mt-4 text-center">
+                                <form action="<?= base_url('/administrador/consultas/agregarConsulta/' . $paciente->id); ?>" method="post">
+                                    <button class="btn" style="padding: 0; border: none; background: none;">
+                                        <div class="card text-white bg-dark mb-3 border-dark" style="height:250px ; width: 300px;">
+                                            <div class="card-body">
+                                                <h6 class="card-title">
+                                                    <?php if ($userInfoPaciente->genero == 'M'): ?>
+                                                        Sr.
+                                                    <?php else: ?>
+                                                        Sra.
+                                                    <?php endif; ?>
+                                                    <?= $userInfoPaciente->primerNombre . ' ' . $userInfoPaciente->segundoNombre .
+                                                        ' ' . $userInfoPaciente->apellidoPaterno . ' ' . $userInfoPaciente->apellidoMaterno ?>
+                                                </h6>
+                                                <img src="<?= $userInfoPaciente->foto ?>" alt="foto del paciente"
+                                                    style="height:150px ; width: 200px;">
+                                                <input type="hidden" name="idMedico" value=<?= $idMedico ?>>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </form>
+                            </div>
+                            <?php $count++; ?>
+                            <?php if ($count % 3 == 0): ?>
+                            </div>
+                            <div class="row">
+                            <?php endif; ?>
                         <?php endif; ?>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
         <?php endforeach; ?>
     </div>
 </div>

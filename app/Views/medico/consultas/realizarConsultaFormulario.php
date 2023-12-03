@@ -2,14 +2,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div id="login-container" class="row justify-content-center">
-
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $validation->listErrors(); ?>
+                    </div>
+                <?php endif; ?>
                 <h1 align="center" style="color: #fff">Realizar Consulta</h1>
-
-                <?php
-                if (isset($validation)) {
-                    print $validation->listErrors();
-                }
-                ?>
 
                 <form action="<?= base_url('/medico/consultas/realizarConsulta/' . $consulta[0]->id); ?>" method="POST">
                     <?= csrf_field() ?>
@@ -22,14 +20,14 @@
                         <label for="lugar" class="form-label" style="color: #fff">Lugar:</label>
                         <input type="text" class="form-control" name="lugar" id="lugar"
                             placeholder="Ejemplo: Consultorio A" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
-                            max_length="15" min_length="3" style="color: #000000">
+                            max_length="15" min_length="3" style="color: #000000" value=<?= $consulta[0]->lugar ?>>
                     </div>
 
                     <div class="mb-3">
                         <label for="motivo" style="color: #fff">Motivo de consulta:</label>
                         <input type="text" class="form-control" name="motivo" id="motivo"
                             placeholder="Ejemplo: Dolor de cabeza" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
-                            max_length="250" style="color: #000000">
+                            max_length="250" style="color: #000000" value=<?= $consulta[0]->motivo ?>>
                     </div>
 
                     <div class="mb-3">

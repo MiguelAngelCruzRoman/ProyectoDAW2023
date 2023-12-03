@@ -1,13 +1,12 @@
 <div class="container">
     <div class="row justify-content-center">
-        <?php
-        if (isset($validation)) {
-            print $validation->listErrors();
-        }
-        ?>
         <div class="col-md-8">
             <div id="login-container" class="row justify-content-center">
-
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $validation->listErrors(); ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?= base_url('/administrador/pacientes/agregarPacientesDireccion'); ?>" method="POST">
                     <?= csrf_field() ?>
                     <h1 align="center" style="color: #fff">Agregar Paciente</h1>
@@ -30,7 +29,8 @@
                         <label for="statusSeguro" style="color: #fff">Tipo del seguro:</label>
                         <select name="statusSeguro" id="statusSeguro" class="form-control" required
                             style="color: #000000">
-                            <option value="Ninguno" selected>Ninguno</option>
+                            <?= isset($_POST['statusSeguro']) ? '<option value="' . $_POST["statusSeguro"] . '">' . $_POST["statusSeguro"] . '</option>' : '' ?>
+                            <option value="Ninguno">Ninguno</option>
                             <option value="Seguro Privado">Seguro privado</option>
                             <option value="Seguro Social">Seguro social</option>
                             <option value="Seguro Estudiantil">Seguro estudiantil</option>
@@ -40,6 +40,7 @@
                     <div class="mb-3">
                         <label for="sangre" style="color: #fff">Tipo de sangre:</label>
                         <select name="sangre" id="sangre" class="form-control" required style="color: #000000">
+                            <?= isset($_POST['sangre']) ? '<option value="' . $_POST["sangre"] . '">' . $_POST["sangre"] . '</option>' : '' ?>
                             <option value="O+">O+</option>
                             <option value="O-">O-</option>
                             <option value="A+">A+</option>
@@ -52,7 +53,8 @@
                     <div class="mb-3">
                         <label for="alergia" style="color: #fff">Alergia:</label>
                         <select name="alergia" id="alergia" class="form-control" required style="color: #000000">
-                            <option value="Ninguna" selected>Ninguna</option>
+                            <?= isset($_POST['alergia']) ? '<option value="' . $_POST["alergia"] . '">' . $_POST["alergia"] . '</option>' : '' ?>
+                            <option value="Ninguna">Ninguna</option>
                             <option value="Poliester">Poliester</option>
                             <option value="Alcohol">Alcohol</option>
                             <option value="Algodón">Algodón</option>
@@ -64,14 +66,16 @@
                         <label for="fechaChequeo" class="form-label" style="color: #fff">Fecha de última
                             revisión:</label>
                         <input type="date" class="form-control" name="fechaChequeo" id="fechaChequeo" required
-                            style="color: #000000">
+                            style="color: #000000"
+                            value="<?= isset($_POST['fechaChequeo']) ? $_POST['fechaChequeo'] : '' ?>">
                     </div>
 
                     <div class="mb-3">
                         <label for="motivoConsulta" style="color: #fff">Motivo de última consulta:</label>
                         <select name="motivoConsulta" id="motivoConsulta" class="form-control" required
                             style="color: #000000">
-                            <option value="Preventivo" selected>Preventivo</option>
+                            <?= isset($_POST['motivoConsulta']) ? '<option value="' . $_POST["motivoConsulta"] . '">' . $_POST["motivoConsulta"] . '</option>' : '' ?>
+                            <option value="Preventivo">Preventivo</option>
                             <option value="Enfermedad">Enfermedad</option>
                             <option value="Rutinario">Rutinario</option>
                             <option value="Seguimiento">Seguimiento</option>

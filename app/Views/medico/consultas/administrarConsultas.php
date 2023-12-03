@@ -89,7 +89,7 @@
                             
                             
                                                     <?php if ($consulta->updated_at == NULL): ?>
-                                                            <?php if ($consulta->fecha >= date('Y-m-d')): ?>
+                                                            <?php if ($consulta->fecha < date('Y-m-d')): ?>
                                                                     <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
                                                             <?php else: ?>
                                                                     <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
@@ -160,7 +160,7 @@
                             
                             
                                                     <?php if ($consulta->updated_at == NULL): ?>
-                                                            <?php if ($consulta->fecha >= date('Y-m-d')): ?>
+                                                            <?php if ($consulta->fecha < date('Y-m-d')): ?>
                                                                     <td style="text-align: center; background-color:rgb(255,128,0)">Sin realizar</td>
                                                             <?php else: ?>
                                                                     <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>

@@ -1,17 +1,17 @@
-<?php
-if (isset($validation)) {
-    print $validation->listErrors();
-}
-?>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div id="login-container" class="row justify-content-center">
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $validation->listErrors(); ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?php base_url('/administrador'); ?>" method="POST">
 
                     <h1 style="color: #fff" align="center">INICIO DE SESIÓN</h1>
-                    <center><img src="<?= base_url('logo.png') ?>" alt="Logo" width="200" height="200" align="center" style="background-color:#FFFFFF;  border-radius: 50%;">
+                    <center><img src="<?= base_url('logo.png') ?>" alt="Logo" width="200" height="200" align="center"
+                            style="background-color:#FFFFFF;  border-radius: 50%;">
                     </center>
 
                     <?= csrf_field() ?>

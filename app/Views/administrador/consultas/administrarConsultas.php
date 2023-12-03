@@ -109,7 +109,8 @@
                                                     médico</td>
                                             <?php else: ?>
                                                 <td style="text-align: center; background-color:rgb(255,0,0)">No se realizó <br>en la fecha
-                                                    <br>establecida</td>
+                                                    <br>establecida
+                                                </td>
                                             <?php endif; ?>
 
                                         <?php endif; ?>

@@ -190,9 +190,9 @@ class Paciente extends BaseController
         $data['medicosPaciente'] = $medicoPacienteModel->where('paciente', ($session->get('idPaciente')))->findAll();
 
         $consultasModel = model('ConsultasModel');
-        $data['consultasPendientes'] = $consultasModel->where('fecha', NULL)->findAll();
+        $data['consultasPendientes'] = $consultasModel->where('fecha >=', date('Y-m-d'))->findAll();
 
-        $data['consultas'] = $consultasModel->findAll();
+        $data['consultas'] = $consultasModel->where('fecha <', date('Y-m-d'))->findAll();
 
         $recetaModel = model('RecetaModel');
         $data['recetas'] = $recetaModel->findAll();
@@ -400,28 +400,50 @@ class Paciente extends BaseController
                 view('common/footer');
 
         } else {
-            //Se insertan los datos en las tablas relacionadas con las consultas
-            $consultasModel = model('ConsultasModel');
-            $dataConsulta = [
-                "lugar" => $_POST['lugar'],
-                "hora" => '',
-                "fecha" => '',
-                "motivo" => $_POST['motivo'],
-                "medico_paciente" => $_POST['idMedicoPaciente'],
-                "created_at" => date('Y-m-d')
-            ];
-            $consultasModel->insert($dataConsulta);
+            if ($_POST['fecha'] < date('Y-m-d')) {
+                $data['medicoPaciente'] = $_POST['idMedicoPaciente'];
 
-            $recetaModel = model('RecetaModel');
-            $dataReceta = [
-                "status" => 0,
-                "fechaVencimiento" => date('0000-00-00'),
-                "consulta" => $consultasModel->getInsertID(),
-                "created_at" => date('Y-m-d')
-            ];
-            $recetaModel->insert($dataReceta);
+                $medicoPacienteModel = model('MedicoPacienteModel');
+                $userInfoModel = model('UserInfoModel');
+                $userModel = model('UsersModel');
+                $pacienteModel = model('PacienteModel');
 
-            return redirect('paciente/consultas/administrarConsultas', 'refresh');
+                $data['medicoPaciente'] = $medicoPacienteModel->find($_POST['idMedicoPaciente']);
+                $data['pacientes'] = $pacienteModel->findAll();
+                $data['userInfoPacientes'] = $userInfoModel->findAll();
+                $data['userPacientes'] = $userModel->findAll();
+                $data['idMedico'] = $data['medicoPaciente']->medico;
+                $data['validation'] = $validation;
+
+                return view('common/head') .
+                    view('common/menu') .
+                    view('paciente/consultas/agregarInformacionConsulta', $data) .
+                    view('common/footer');
+            } else {
+                //Se insertan los datos en las tablas relacionadas con las consultas
+                $consultasModel = model('ConsultasModel');
+                $dataConsulta = [
+                    "lugar" => $_POST['lugar'],
+                    "hora" => '',
+                    "fecha" => '',
+                    "motivo" => $_POST['motivo'],
+                    "medico_paciente" => $_POST['idMedicoPaciente'],
+                    "created_at" => date('Y-m-d')
+                ];
+                $consultasModel->insert($dataConsulta);
+
+                $recetaModel = model('RecetaModel');
+                $dataReceta = [
+                    "status" => 0,
+                    "fechaVencimiento" => date('0000-00-00'),
+                    "consulta" => $consultasModel->getInsertID(),
+                    "created_at" => date('Y-m-d')
+                ];
+                $recetaModel->insert($dataReceta);
+
+                return redirect('paciente/consultas/administrarConsultas', 'refresh');
+            }
+
         }
 
 

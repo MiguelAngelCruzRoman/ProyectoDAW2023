@@ -191,9 +191,9 @@ class Medico extends BaseController
         $data['medicosPaciente'] = $medicoPacienteModel->where('medico', ($session->get('idMedico')))->findAll();
 
         $consultasModel = model('ConsultasModel');
-        $data['consultasPendientes'] = $consultasModel->where('fecha', NULL)->findAll();
+        $data['consultasPendientes'] = $consultasModel->where('fecha >=', date('Y-m-d'))->findAll();
 
-        $data['consultas'] = $consultasModel->findAll();
+        $data['consultas'] = $consultasModel->where('fecha <', date('Y-m-d'))->findAll();
 
         $recetaModel = model('RecetaModel');
         $data['recetas'] = $recetaModel->findAll();

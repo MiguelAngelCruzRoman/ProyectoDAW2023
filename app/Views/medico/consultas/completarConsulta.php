@@ -2,12 +2,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div id="login-container" class="row justify-content-center">
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $validation->listErrors(); ?>
+                    </div>
+                <?php endif; ?>
                 <h1 align="center" style="color: #fff">Completar Consulta</h1>
-                <?php
-                if (isset($validation)) {
-                    print $validation->listErrors();
-                }
-                ?>
 
                 <form action="<?= base_url('/medico/consultas/realizarConsulta/' . $consulta->id); ?>" method="POST">
                     <?= csrf_field() ?>

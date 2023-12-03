@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row justify-content-center">
-        <?php
-        if (isset($validation)) {
-            print $validation->listErrors();
-        }
-        ?>
         <div class="col-md-8">
             <div id="login-container" class="row justify-content-center">
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $validation->listErrors(); ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?= base_url('/administrador/medicamentos/agregarMedicamentos/insert'); ?>" method="POST">
                     <?= csrf_field() ?>
                     <h1 align="center" style="color: #fff">Agregar Medicamentos</h1>
@@ -15,21 +15,24 @@
                         <label for="nombreComercial" class="form-label" style="color: #fff">Nombre comercial:</label>
                         <input type="text" class="form-control" name="nombreComercial" id="nombreComercial"
                             placeholder="Ejemplo: Paracetamol" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
-                            max_length="50" min_length="3" style="color: #000000">
+                            max_length="50" min_length="3" style="color: #000000"
+                            value="<?= isset($_POST['nombreComercial']) ? $_POST['nombreComercial'] : '' ?>">
                     </div>
 
                     <div class="mab-3">
                         <label for="nombreCinetifico" class="form-label" style="color: #fff">Nombre científico:</label>
                         <input type="text" class="form-control" name="nombreCinetifico" id="nombreCinetifico"
                             placeholder="Ejemplo: Acetaminofén" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
-                            max_length="80" min_length="3" style="color: #000000">
+                            max_length="80" min_length="3" style="color: #000000"
+                            value="<?= isset($_POST['nombreCinetifico']) ? $_POST['nombreCinetifico'] : '' ?>">
                     </div>
 
                     <div class="mb-3">
                         <label for="formaFarmaceutica" style="color: #fff">Forma farmacéutica:</label>
                         <select name="formaFarmaceutica" id="formaFarmaceutica" class="form-control" required
                             style="color: #000000">
-                            <option value="Tableta" selected>Tableta</option>
+                            <?= isset($_POST['formaFarmaceutica']) ? '<option value="' . $_POST["formaFarmaceutica"] . '">' . $_POST["formaFarmaceutica"] . '</option>' : '' ?>
+                            <option value="Tableta">Tableta</option>
                             <option value="Cápsula">Cápsula</option>
                             <option value="Aerosol">Aerosol</option>
                             <option value="Solución">Solución</option>
@@ -43,7 +46,8 @@
                     <div class="mb-3">
                         <label for="dosis" style="color: #fff">Dosis recomendada:</label>
                         <select name="dosis" id="dosis" class="form-control" required style="color: #000000">
-                            <option value="5" selected>5 mg</option>
+                            <?= isset($_POST['dosis']) ? '<option value="' . $_POST["dosis"] . '">' . $_POST["dosis"] . '</option>' : '' ?>
+                            <option value="5">5 mg</option>
                             <option value="10">10 mg</option>
                             <option value="15">15 mg</option>
                             <option value="25">25 mg</option>
@@ -59,28 +63,32 @@
                     <div class="mab-3">
                         <label for="fechaCaducidad" class="form-label" style="color: #fff">Fecha de caducidad:</label>
                         <input type="date" class="form-control" name="fechaCaducidad" id="fechaCaducidad" required
-                            style="color: #000000">
+                            style="color: #000000"
+                            value="<?= isset($_POST['fechaCaducidad']) ? $_POST['fechaCaducidad'] : '' ?>">
                     </div>
 
                     <div class="mab-3">
                         <label for="loteFabricacion" class="form-label" style="color: #fff">Lote de fabricación:</label>
                         <input type="text" class="form-control" name="loteFabricacion" id="loteFabricacion"
                             placeholder="Ejemplo: ABC 78S" required pattern="[A-Z0-9\s]+" max_length="10"
-                            style="color: #000000">
+                            style="color: #000000"
+                            value="<?= isset($_POST['loteFabricacion']) ? $_POST['loteFabricacion'] : '' ?>">
                     </div>
 
                     <div class="mab-3">
                         <label for="stock" class="form-label" style="color: #fff">Stock:</label>
                         <input type="number" class="form-control" name="stock" id="stock" placeholder="Ejemplo: 15"
-                            required pattern="[0-9]+" max_length="11" style="color: #000000">
+                            required pattern="[0-9]+" max_length="11" style="color: #000000"
+                            value="<?= isset($_POST['stock']) ? $_POST['stock'] : '' ?>">
                     </div>
 
                     <div class="mb-3">
                         <label for="version" style="color: #fff">Versión:</label>
                         <select name="version" id="version" class="form-control" required style="color: #000000">
+                            <?= isset($_POST['version']) ? '<option value="' . $_POST["version"] . '">' . $_POST["version"] . '</option>' : '' ?>
                             <option value="Adultos">Adulto</option>
                             <option value="Niños">Infantil</option>
-                            <option value="Indistinto" selected>Indistinto</option>
+                            <option value="Indistinto">Indistinto</option>
                         </select>
                     </div>
 
@@ -111,7 +119,8 @@
                     <div class="mab-3">
                         <label for="imagenEmpaque" class="form-label" style="color: #fff">Imagen del empaque:</label>
                         <input type="url" class="form-control" name="imagenEmpaque" id="imagenEmpaque"
-                            placeholder="Ejemplo: https://foto.png" required max_length="150" style="color: #000000">
+                            placeholder="Ejemplo: https://foto.png" required max_length="150" style="color: #000000"
+                            value="<?= isset($_POST['imagenEmpaque']) ? $_POST['imagenEmpaque'] : '' ?>">
                     </div>
 
                     <br>

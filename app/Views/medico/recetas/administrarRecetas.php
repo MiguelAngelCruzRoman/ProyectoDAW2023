@@ -2,7 +2,7 @@
     <div class="row">
         <h1 align="center">ADMINISTRAR RECETAS</h1>
 
-        <div class="col-4">    
+        <div class="col-4">
         </div>
 
         <div class="col-4"></div>
@@ -10,7 +10,8 @@
         <!-- Sección de botones para la navegación entre vistas-->
         <div class="col-4">
             <button type="button" class="btn btn-secondary mt-4" onclick="history.back()">
-                <img src="https://cdn-icons-png.flaticon.com/128/8591/8591477.png" alt="regresar" class="service-img" width="25" height="25">                
+                <img src="https://cdn-icons-png.flaticon.com/128/8591/8591477.png" alt="regresar" class="service-img"
+                    width="25" height="25">
                 Regresar
             </button>
             <button type="button" class="btn btn-secondary mt-4" onclick="window.location='/medico'">
@@ -22,7 +23,7 @@
     <br>
 
 
-    
+
 
     <div class="row">
         <div class="col-12">
@@ -49,56 +50,67 @@
                 <tbody>
                     <!-- Sección para relacionar la consulta con un médico y un paciente-->
                     <?php foreach ($medicosPacientePagina as $medicoPaciente): ?>
-                            <?php foreach ($consultas as $consulta):
-                                if ($consulta->medico_paciente == $medicoPaciente->id): ?>
-                            
+                        <?php foreach ($consultas as $consulta):
+                            if ($consulta->medico_paciente == $medicoPaciente->id): ?>
+
                                 <!-- Sección para relacionar la consulta con su respectiva receta-->
-                                <?php foreach ($recetas as $receta): if($receta->consulta == $consulta->id):?>
-                                    <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
-                                        <tr>
-                                        </tr>
-                                    <?php else: ?>
+                                <?php foreach ($recetas as $receta):
+                                    if ($receta->consulta == $consulta->id): ?>
+                                        <?php if ($receta->fechaVencimiento == date('0000-00-00')): ?>
                                             <tr>
-                                                <td style="text-align: center"><?= $receta->id ?></td>
+                                            </tr>
+                                        <?php else: ?>
+                                            <tr>
+                                                <td style="text-align: center">
+                                                    <?= $receta->id ?>
+                                                </td>
                                                 <!-- Sección para relacionar la receta con los medicamentos-->
                                                 <td>
                                                     <?php foreach ($recetaMedicamentos as $recetaMedicamento):
                                                         if ($recetaMedicamento->receta == $receta->id): ?>
-                                                                <?php foreach ($medicamentos as $medicamento):
-                                                                    if ($medicamento->id == $recetaMedicamento->medicamento): ?>
-                                                                            <li><a href="<?= base_url('/medico/medicamento/sabermasMedicamento/' . $medicamento->id); ?>"style="color:rgba(0,0,0,1)">
-                                                                                <?= $medicamento->nombreComercial . ' (' . $medicamento->dosis . ' gm)' ?></a>
-                                                                            </li>
-                                                                    <?php endif; endforeach; ?>
+                                                            <?php foreach ($medicamentos as $medicamento):
+                                                                if ($medicamento->id == $recetaMedicamento->medicamento): ?>
+                                                                    <li><a href="<?= base_url('/medico/medicamento/sabermasMedicamento/' . $medicamento->id); ?>"
+                                                                            style="color:rgba(0,0,0,1)">
+                                                                            <?= $medicamento->nombreComercial . ' (' . $medicamento->dosis . ' gm)' ?>
+                                                                        </a>
+                                                                    </li>
+                                                                <?php endif; endforeach; ?>
                                                         <?php endif; endforeach; ?>
                                                 </td>
-                                                <td style="text-align: center">   
-                                                <?= 'Consulta ' . $consulta->id . ', realizada en "' . $consulta->lugar . '"' ?>
+                                                <td style="text-align: center">
+                                                    <?= 'Consulta ' . $consulta->id . ', realizada en "' . $consulta->lugar . '"' ?>
                                                 </td>
 
-                                                <td style="text-align: center"><?= $receta->fechaVencimiento ?></td>
+                                                <td style="text-align: center">
+                                                    <?= $receta->fechaVencimiento ?>
+                                                </td>
 
                                                 <!-- Sección para determinar si la receta está vencida-->
                                                 <?php if ($receta->status == 0): ?>
-                                                        <td style="text-align: center; background-color:rgb(139,0,0)"><?= $receta->status ?></td>
-                                                        <td style="text-align: center">
-                                                            <a href="<?= base_url('/medico/recetas/renovarReceta/' . $receta->id); ?>"
-                                                                style="color:rgba(0,0,0,0.6)">
-                                                                <img src="https://cdn-icons-png.flaticon.com/128/3247/3247396.png" alt="renovar"
-                                                                    class="service-img" width="60" height="60">
-                                                                <figcaption>Renovar Vencimiento de Receta</figcaption>
-                                                            </a>
-                                                        </td>
+                                                    <td style="text-align: center; background-color:rgb(139,0,0)">
+                                                        <?= $receta->status ?>
+                                                    </td>
+                                                    <td style="text-align: center">
+                                                        <a href="<?= base_url('/medico/recetas/renovarReceta/' . $receta->id); ?>"
+                                                            style="color:rgba(0,0,0,0.6)">
+                                                            <img src="https://cdn-icons-png.flaticon.com/128/3247/3247396.png" alt="renovar"
+                                                                class="service-img" width="60" height="60">
+                                                            <figcaption>Renovar Vencimiento de Receta</figcaption>
+                                                        </a>
+                                                    </td>
                                                 <?php else: ?>
-                                                        <td style="text-align: center"><?= $receta->status ?></td>
-                                                        <td style="text-align: center">
-                                                            <a href="<?= base_url('/medico/recetas/cancelarReceta/' . $receta->id); ?>"
-                                                                style="color:rgba(0,0,0,0.6)">
-                                                                <img src="https://cdn-icons-png.flaticon.com/128/5978/5978540.png" alt="cancelar"
-                                                                    class="service-img" width="60" height="60">
-                                                                <figcaption>Cancelar Validez de Receta</figcaption>
-                                                            </a>
-                                                        </td>
+                                                    <td style="text-align: center">
+                                                        <?= $receta->status ?>
+                                                    </td>
+                                                    <td style="text-align: center">
+                                                        <a href="<?= base_url('/medico/recetas/cancelarReceta/' . $receta->id); ?>"
+                                                            style="color:rgba(0,0,0,0.6)">
+                                                            <img src="https://cdn-icons-png.flaticon.com/128/5978/5978540.png" alt="cancelar"
+                                                                class="service-img" width="60" height="60">
+                                                            <figcaption>Cancelar Validez de Receta</figcaption>
+                                                        </a>
+                                                    </td>
                                                 <?php endif; ?>
 
                                                 <td>
@@ -111,9 +123,9 @@
                                                 </td>
 
                                             </tr>
-                                    <?php endif; ?>
+                                        <?php endif; ?>
 
-                                <?php endif; endforeach; ?>
+                                    <?php endif; endforeach; ?>
                             <?php endif; endforeach; ?>
                     <?php endforeach; ?>
                 </tbody>
@@ -127,9 +139,11 @@
                     </li>
 
                     <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
-                            <li class="page-item <?php echo ($paginaActual == $i) ? 'active' : ''; ?>">
-                                <a class="page-link text-black" href="?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
-                            </li>
+                        <li class="page-item <?php echo ($paginaActual == $i) ? 'active' : ''; ?>">
+                            <a class="page-link text-black" href="?pagina=<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </a>
+                        </li>
                     <?php endfor; ?>
 
                     <li class="page-item <?php echo ($paginaActual >= $totalPaginas) ? 'disabled' : ''; ?>">

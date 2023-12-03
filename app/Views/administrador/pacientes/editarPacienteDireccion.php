@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row justify-content-center">
-        <?php
-        if (isset($validation)) {
-            print $validation->listErrors();
-        }
-        ?>
         <div class="col-md-8">
             <div id="login-container" class="row justify-content-center">
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $validation->listErrors(); ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?= base_url('/administrador/pacientes/editarPaciente/update'); ?>" method="post">
                     <?= csrf_field() ?>
                     <h1 align="center" style="color: #fff">Editar Paciente</h1>
