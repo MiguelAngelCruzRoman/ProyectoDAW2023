@@ -857,6 +857,9 @@ class Administrador extends BaseController
         $pacienteModel->delete(['paciente' => $id]);
 
 
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
         return redirect('administrador/pacientes/administrarPacientes', 'refresh');
     }
 
@@ -1324,6 +1327,10 @@ class Administrador extends BaseController
         $medicoModel = model('MedicoModel');
         $medicoModel->delete(['medico' => $id]);
 
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
+
         return redirect('administrador/medicos/administrarMedicos', 'refresh');
     }
 
@@ -1782,6 +1789,10 @@ class Administrador extends BaseController
 
         $medicamentosModel = model('MedicamentosModel');
         $medicamentosModel->delete($id);
+
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
 
         return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
     }

@@ -452,7 +452,7 @@ class Medico extends BaseController
                     $recetaMedicamentoModel->insert($dataRecetaMedicamento);
                 }
             }
-            
+
             session()->set([
                 'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
             ]);
