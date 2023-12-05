@@ -441,6 +441,10 @@ class Paciente extends BaseController
                 ];
                 $recetaModel->insert($dataReceta);
 
+                session()->set([
+                    'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+                ]);
+
                 return redirect('paciente/consultas/administrarConsultas', 'refresh');
             }
 

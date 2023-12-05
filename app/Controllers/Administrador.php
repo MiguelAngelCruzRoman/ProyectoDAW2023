@@ -500,6 +500,10 @@ class Administrador extends BaseController
             ];
             $direccionModel->insert($dataDireccion);
 
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
+
             return redirect('administrador/pacientes/administrarPacientes', 'refresh');
         }
 
@@ -813,6 +817,9 @@ class Administrador extends BaseController
             );
             $direccionModel->update($_POST['direccionID'], $data);
 
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
             return redirect('administrador/pacientes/administrarPacientes', 'refresh');
         }
 
@@ -1278,6 +1285,9 @@ class Administrador extends BaseController
             ];
             $direccionModel->update($_POST['direccionID'], $dataDireccion);
 
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
             return redirect('administrador/medicos/administrarMedicos', 'refresh');
         }
 
@@ -1523,6 +1533,9 @@ class Administrador extends BaseController
             ];
             $direccionModel->insert($dataDireccion);
 
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
             return redirect('administrador/medicos/administrarMedicos', 'refresh');
         }
     }
@@ -1741,6 +1754,10 @@ class Administrador extends BaseController
         } else {
             $medicamentosModel->update($_POST['id'], $data);
 
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
+
             return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
         }
 
@@ -1855,6 +1872,9 @@ class Administrador extends BaseController
         } else {
             $medicamentosModel->insert($data, false);
 
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
             return redirect('administrador/medicamentos/administrarMedicamentos', 'refresh');
         }
 
@@ -1987,6 +2007,10 @@ class Administrador extends BaseController
 
         $consultasModel->update($id, $data);
 
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
+
         return redirect('administrador/consultas/administrarConsultas', 'refresh');
     }
 
@@ -2018,6 +2042,10 @@ class Administrador extends BaseController
 
 
         $consultasModel->update($id, $data);
+
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
 
         return redirect('administrador/consultas/administrarConsultas', 'refresh');
     }
@@ -2453,6 +2481,10 @@ class Administrador extends BaseController
                 ];
                 $recetaModel->insert($dataReceta);
 
+                session()->set([
+                    'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+                ]);
+
                 return redirect('administrador/consultas/administrarConsultas', 'refresh');
             }
         }
@@ -2529,6 +2561,10 @@ class Administrador extends BaseController
 
         $recetaModel->update($id, $data);
 
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
+
         return redirect('administrador/recetas/administrarRecetas', 'refresh');
     }
 
@@ -2558,6 +2594,10 @@ class Administrador extends BaseController
         );
 
         $recetaModel->update($id, $data);
+
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
 
         return redirect('administrador/recetas/administrarRecetas', 'refresh');
     }

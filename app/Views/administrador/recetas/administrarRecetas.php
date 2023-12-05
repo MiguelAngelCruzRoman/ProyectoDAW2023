@@ -1,5 +1,16 @@
 <div class="container">
     <div class="row">
+        <?php if (($session->get('confirmacion') != NULL)): ?>
+            <div
+                style="background-color:white; border-top-style: solid;border-right-style: solid;border-left-style: solid;border-bottom-style: solid">
+                <br>
+                <?php print($session->get('confirmacion')) ?>
+                <?php session()->set([
+                    'confirmacion' => NULL
+                ]); ?>
+            </div>
+        <?php endif; ?><br>
+
         <h1 align="center">ADMINISTRAR RECETAS</h1>
         <div class="col-4">
 

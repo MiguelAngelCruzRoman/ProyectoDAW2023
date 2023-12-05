@@ -76,7 +76,7 @@
 
                     <div class="mab-3">
                         <label for="noInt" class="form-label" style="color: #fff">Número interior:</label>
-                        <input type="text" class="form-control" name="noInt" id="noInt" placeholder="Ejemplo: 6,8"
+                        <input type="number" class="form-control" name="noInt" id="noInt" placeholder="Ejemplo: 6,8"
                             pattern="[0-9]+" max_length="11" style="color: #000000"
                             value="<?= isset($_POST['noInt']) ? $_POST['noInt'] : '' ?>">
                     </div>

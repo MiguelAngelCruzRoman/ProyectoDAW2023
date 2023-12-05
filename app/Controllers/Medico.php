@@ -329,6 +329,9 @@ class Medico extends BaseController
         $data['medico_paciente'] = $id;
         $data['consulta'] = $consultaModel->where('fecha', null)->orderBy('id', 'desc')->findAll();
 
+        session()->set([
+            'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+        ]);
 
         return view('common/head') .
             view('common/menu') .
@@ -449,6 +452,11 @@ class Medico extends BaseController
                     $recetaMedicamentoModel->insert($dataRecetaMedicamento);
                 }
             }
+            
+            session()->set([
+                'confirmacion' => '<div class="alert alert-dark" role="alert">Operación realizada con éxito</div>'
+            ]);
+
             return redirect('medico/consultas/administrarConsultas', 'refresh');
         }
 
