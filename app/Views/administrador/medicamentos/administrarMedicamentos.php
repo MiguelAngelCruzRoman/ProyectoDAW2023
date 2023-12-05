@@ -74,7 +74,7 @@
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
             $medicamentosPagina = array_slice($medicamentos, $indiceInicio, $registrosPorPagina); ?>
 
-            <table class="table">
+            <table class="table" border="6">
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre comercial</th>

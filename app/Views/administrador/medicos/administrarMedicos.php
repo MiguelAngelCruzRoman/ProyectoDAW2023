@@ -16,7 +16,7 @@
         <h1 align="center">ADMINISTRAR MÉDICOS</h1>
 
         <!-- Sección para el formulario de búsqueda de médicos-->
-        <div class="col-6">
+        <div class="col-6" >
             <form action="<?= base_url('index.php/administrador/medicos/buscarMedicos'); ?>" method="GET">
                 <div class="col-5">
                     <label for="columnaBusquedaMedicos">Buscar médico por:</label>
@@ -74,7 +74,7 @@
             $indiceInicioUsuarios = ($paginaActualUsuarios - 1) * $registrosPorPaginaUsuarios;
             $medicosPagina = array_slice($medicos, $indiceInicioUsuarios, $registrosPorPaginaUsuarios); ?>
 
-            <table class="table">
+            <table class="table" border="6">
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre del médico</th>

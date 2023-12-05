@@ -48,7 +48,7 @@
             $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
             $recetasPagina = array_slice($recetas, $indiceInicio, $registrosPorPagina); ?>
 
-            <table class="table">
+            <table class="table" border="6">
 
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>

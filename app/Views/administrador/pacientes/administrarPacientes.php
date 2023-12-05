@@ -71,7 +71,7 @@
             $indiceInicioUsuarios = ($paginaActualUsuarios - 1) * $registrosPorPaginaUsuarios;
             $usersPagina = array_slice($users, $indiceInicioUsuarios, $registrosPorPaginaUsuarios); ?>
 
-            <table class="table">
+            <table class="table" border="6">
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Nombre del paciente</th>

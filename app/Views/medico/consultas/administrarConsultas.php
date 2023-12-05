@@ -71,7 +71,7 @@
 
             <!-- Sección para mostrar las consultas que aún no se realizan-->
             <h4>Consultas Pendientes</h4>
-            <table class="table">
+            <table class="table" border="6">
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
@@ -139,7 +139,7 @@
 
             <!-- Sección para mostrar las consultas que ya se completaron-->
             <h4>Consultas Terminadas</h4>
-            <table class="table">
+            <table class="table" border="6">
                 <thead class="thead-dark">
                     <th style="text-align: center">ID</th>
                     <th style="text-align: center">Lugar de consulta </th>
