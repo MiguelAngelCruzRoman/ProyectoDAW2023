@@ -1,3 +1,5 @@
+<?php $session = \Config\Services::session(); ?>
+
 <div class="container">
     <div class="row">
         <?php if (($session->get('confirmacion') != NULL)): ?>

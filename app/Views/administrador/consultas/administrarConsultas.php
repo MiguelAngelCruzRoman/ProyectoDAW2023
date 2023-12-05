@@ -1,3 +1,5 @@
+<?php $session = \Config\Services::session(); ?>
+
 <div class="container">
     <!--Sección para el formulario de búsqueda de consultas-->
     <div class="row">
